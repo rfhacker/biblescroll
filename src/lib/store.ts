@@ -1,11 +1,15 @@
 import type { Favorite, CardKind } from '../content/types'
 
+// mem is a same-session mirror that always wins over storage; localStorage is only
+// authoritative for values written in a previous session (i.e. not yet in mem).
 const mem = new Map<string, string>()
 function read(key: string): string | null {
-  try { return localStorage.getItem(key) } catch { return mem.get(key) ?? null }
+  if (mem.has(key)) return mem.get(key) as string
+  try { return localStorage.getItem(key) } catch { return null }
 }
 function write(key: string, value: string): void {
-  try { localStorage.setItem(key, value) } catch { mem.set(key, value) }
+  mem.set(key, value)
+  try { localStorage.setItem(key, value) } catch { /* ignore: mem already has it */ }
 }
 function readJSON<T>(key: string, ok: (v: unknown) => boolean): T | null {
   const raw = read(key)
@@ -16,8 +20,16 @@ function readJSON<T>(key: string, ok: (v: unknown) => boolean): T | null {
   } catch { return null }
 }
 
+const FAVORITE_KINDS: CardKind[] = ['verse', 'trivia', 'fact', 'map']
+function isFavoriteShape(v: unknown): v is Favorite {
+  return typeof v === 'object' && v !== null &&
+    FAVORITE_KINDS.includes((v as Favorite).kind) &&
+    typeof (v as Favorite).id === 'string' &&
+    typeof (v as Favorite).title === 'string' &&
+    typeof (v as Favorite).body === 'string'
+}
 export function getFavorites(): Favorite[] {
-  return readJSON<Favorite[]>('bs:favorites', (v) => Array.isArray(v)) ?? []
+  return readJSON<Favorite[]>('bs:favorites', (v) => Array.isArray(v) && v.every(isFavoriteShape)) ?? []
 }
 export function isFavorite(kind: CardKind, id: string): boolean {
   return getFavorites().some((f) => f.kind === kind && f.id === id)

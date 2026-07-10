@@ -1,3 +1,4 @@
+import { vi } from 'vitest'
 import { getFavorites, toggleFavorite, isFavorite, getScore, addScore, getStreakState, setStreakState, getInstallSeed } from './store'
 
 beforeEach(() => localStorage.clear())
@@ -20,16 +21,73 @@ test('score accumulates and persists', () => {
   expect(getScore()).toBe(2)
 })
 
-test('streak state round-trips; corrupt data resets to null', () => {
+test('streak state round-trips; corrupt data resets to null', async () => {
   expect(getStreakState()).toBeNull()
   setStreakState({ count: 3, last: '2026-07-09' })
   expect(getStreakState()).toEqual({ count: 3, last: '2026-07-09' })
   localStorage.setItem('bs:streak', '{not json')
-  expect(getStreakState()).toBeNull()
+  // A fresh module instance has no mem entry yet, so this exercises the real
+  // "corrupt JSON already in localStorage" path instead of getting shadowed by
+  // this test's own in-session mem write above (mem always wins over storage).
+  vi.resetModules()
+  const store = await import('./store')
+  expect(store.getStreakState()).toBeNull()
 })
 
 test('install seed is stable once created', () => {
   const s = getInstallSeed()
   expect(s).toMatch(/^[0-9a-f]{16}$/)
   expect(getInstallSeed()).toBe(s)
+})
+
+// The tests below use `vi.resetModules()` + a fresh dynamic import to get a store
+// instance with its own private `mem` Map. That keeps them independent of whatever
+// the tests above already wrote into the module-level `mem` singleton, without
+// needing any test-only reset export from store.ts.
+
+test('setItem throwing does not hide writes from reads in the same session', async () => {
+  vi.resetModules()
+  const store = await import('./store')
+  const setSpy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+    throw new Error('quota exceeded')
+  })
+  try {
+    expect(store.addScore(1)).toBe(1)
+    expect(store.getScore()).toBe(1)
+
+    const f = { kind: 'trivia' as const, id: 'quota-fav', title: 'Quota Fav', body: 'body' }
+    expect(store.toggleFavorite(f)).toBe(true)
+    expect(store.isFavorite('trivia', 'quota-fav')).toBe(true)
+  } finally {
+    setSpy.mockRestore()
+  }
+})
+
+test('getItem and setItem both throwing: no crash, writes still round-trip via mem', async () => {
+  vi.resetModules()
+  const store = await import('./store')
+  const setSpy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+    throw new Error('quota exceeded')
+  })
+  const getSpy = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+    throw new Error('storage blocked')
+  })
+  try {
+    expect(() => store.addScore(1)).not.toThrow()
+    expect(store.getScore()).toBe(1)
+
+    const f = { kind: 'fact' as const, id: 'both-broken-fav', title: 'Both Broken', body: 'body' }
+    expect(() => store.toggleFavorite(f)).not.toThrow()
+    expect(store.isFavorite('fact', 'both-broken-fav')).toBe(true)
+  } finally {
+    setSpy.mockRestore()
+    getSpy.mockRestore()
+  }
+})
+
+test('malformed favorites elements in storage are rejected, not partially trusted', async () => {
+  localStorage.setItem('bs:favorites', JSON.stringify([1, { kind: 'x' }]))
+  vi.resetModules()
+  const store = await import('./store')
+  expect(store.getFavorites()).toEqual([])
 })
