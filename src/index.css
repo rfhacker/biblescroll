@@ -36,7 +36,7 @@ body {
 /* Card gradients are always dark, so pin dark-theme tokens here regardless of
    OS light/dark preference — otherwise light-mode --text (dark) renders on
    these dark backgrounds with unreadable contrast. */
-.card { --text: #e8e4da; --text-dim: #a49e90; --surface: #1b2029; --bg: #12151c; }
+.card { --text: #e8e4da; --text-dim: #a49e90; --surface: #1b2029; --bg: #12151c; --map-sea: #141d2b; --map-land: #3a4358; }
 .card {
   height: 100dvh;
   scroll-snap-align: start;
