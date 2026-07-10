@@ -85,3 +85,27 @@ body {
 }
 .basemap { width: 100%; border-radius: 0.9rem; margin: 0.9rem 0 1rem; display: block; }
 .map-label { font-size: 11px; fill: var(--text); font-family: var(--sans); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }
+
+.feed { height: 100dvh; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; }
+.slot { height: 100dvh; scroll-snap-align: start; }
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: calc(env(safe-area-inset-top) + 0.6rem) 1rem 0.6rem;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 85%, transparent), transparent);
+  pointer-events: none;
+}
+.topbar > * { pointer-events: auto; }
+.brand { font-family: var(--serif); font-size: 1.05rem; color: var(--accent); }
+.stats { display: flex; gap: 0.9rem; font-size: 0.95rem; color: var(--text-dim); }
+.topbar-actions { display: flex; gap: 0.4rem; }
+.topbar-actions button {
+  background: none; border: none; color: var(--text-dim); font-size: 1.2rem;
+  cursor: pointer; padding: 0.3rem 0.45rem;
+}
+.splash {
+  height: 100dvh; display: grid; place-items: center;
+  font-family: var(--serif); font-size: 1.6rem; color: var(--accent);
+}
+.pulse { animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: 0.45; } }
