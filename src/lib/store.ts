@@ -40,6 +40,7 @@ export function toggleFavorite(f: Favorite): boolean {
   if (idx >= 0) favs.splice(idx, 1)
   else favs.unshift(f)
   write('bs:favorites', JSON.stringify(favs))
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('bs:favorites-changed'))
   return idx < 0
 }
 

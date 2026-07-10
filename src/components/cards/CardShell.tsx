@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Favorite } from '../../content/types'
 import { toggleFavorite, isFavorite } from '../../lib/store'
 
@@ -7,6 +7,17 @@ export function CardShell({ fav, shareText, theme, children }: {
 }) {
   const [saved, setSaved] = useState(() => isFavorite(fav.kind, fav.id))
   const [copied, setCopied] = useState(false)
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    function sync() { setSaved(isFavorite(fav.kind, fav.id)) }
+    window.addEventListener('bs:favorites-changed', sync)
+    return () => window.removeEventListener('bs:favorites-changed', sync)
+  }, [fav.kind, fav.id])
+
+  useEffect(() => {
+    return () => { if (copyTimer.current) clearTimeout(copyTimer.current) }
+  }, [])
 
   async function share() {
     const data = { text: shareText, url: new URL(import.meta.env.BASE_URL, location.origin).href }
@@ -15,7 +26,8 @@ export function CardShell({ fav, shareText, theme, children }: {
       else {
         await navigator.clipboard.writeText(`${shareText}\n${data.url}`)
         setCopied(true)
-        setTimeout(() => setCopied(false), 1600)
+        if (copyTimer.current) clearTimeout(copyTimer.current)
+        copyTimer.current = setTimeout(() => setCopied(false), 1600)
       }
     } catch { /* user cancelled */ }
   }
@@ -28,8 +40,8 @@ export function CardShell({ fav, shareText, theme, children }: {
           onClick={() => setSaved(toggleFavorite(fav))}>
           {saved ? '♥' : '♡'}
         </button>
-        <button aria-label="Share" className="act" onClick={share}>
-          {copied ? 'Copied!' : '↗'}
+        <button aria-label={copied ? 'Copied' : 'Share'} className="act" onClick={share}>
+          <span aria-live="polite">{copied ? 'Copied!' : '↗'}</span>
         </button>
       </footer>
     </article>

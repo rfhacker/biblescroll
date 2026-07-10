@@ -6,7 +6,9 @@ export function VerseCard({ text, label, votd, theme }: {
 }) {
   const [expanded, setExpanded] = useState(false)
   const long = text.length > 380
-  const shown = long && !expanded ? `${text.slice(0, 340).trimEnd()}…` : text
+  const shown = long && !expanded
+    ? `${text.slice(0, 340).replace(/\s+\S*$/, '').trimEnd()}…`
+    : text
   return (
     <CardShell theme={theme} shareText={`"${text}" — ${label} (WEB)`}
       fav={{ kind: 'verse', id: label, title: label, body: text }}>
