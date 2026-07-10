@@ -1,0 +1,197 @@
+[
+  {
+    "id": "m01",
+    "title": "Jonah runs the wrong way",
+    "body": "Called to Nineveh in the east, Jonah boarded a ship at Joppa bound for Tarshish — the far western edge of the known world. God, of course, had other plans.",
+    "ref": "Jonah 1:1-3",
+    "route": true,
+    "places": [
+      { "name": "Joppa", "lat": 32.05, "lon": 34.75 },
+      { "name": "Nineveh", "lat": 36.36, "lon": 43.15 }
+    ]
+  },
+  {
+    "id": "m02",
+    "title": "Jesus around the Sea of Galilee",
+    "body": "Most of Jesus' recorded ministry happened within a day's walk of this small lake — Capernaum His base, Nazareth His hometown in the hills to the west, Cana where He turned water to wine.",
+    "ref": "Matthew 4:12-17",
+    "route": false,
+    "places": [
+      { "name": "Nazareth", "lat": 32.7, "lon": 35.3 },
+      { "name": "Cana", "lat": 32.75, "lon": 35.34 },
+      { "name": "Capernaum", "lat": 32.88, "lon": 35.57 },
+      { "name": "Tiberias", "lat": 32.79, "lon": 35.53 }
+    ]
+  },
+  {
+    "id": "m03",
+    "title": "Abraham leaves everything behind",
+    "body": "Abram's family first moved from Ur northwest to Haran and settled there for a time. Only later, at God's call, did Abram continue southwest into Canaan, arriving at Shechem, where the Lord promised the land to his offspring.",
+    "ref": "Genesis 11:31-12:7",
+    "route": true,
+    "places": [
+      { "name": "Ur", "lat": 30.96, "lon": 46.10 },
+      { "name": "Haran", "lat": 36.86, "lon": 39.03 },
+      { "name": "Shechem", "lat": 32.22, "lon": 35.28 }
+    ]
+  },
+  {
+    "id": "m04",
+    "title": "The Exodus route to Sinai",
+    "body": "Freed from slavery, Israel marched out of Rameses in the Nile Delta, camped at Succoth, and journeyed through the wilderness to Mount Sinai, where they received the Law. From there they pressed on toward Kadesh Barnea, the staging ground for entering Canaan.",
+    "ref": "Exodus 12:37-19:2",
+    "route": true,
+    "places": [
+      { "name": "Rameses", "lat": 30.79, "lon": 31.83 },
+      { "name": "Succoth", "lat": 30.56, "lon": 32.06 },
+      { "name": "Mount Sinai", "lat": 28.54, "lon": 33.97 },
+      { "name": "Kadesh Barnea", "lat": 30.69, "lon": 34.43 }
+    ]
+  },
+  {
+    "id": "m05",
+    "title": "David on the run from Saul",
+    "body": "Fleeing Saul's jealous rage from the royal court at Gibeah, David gathered outcasts in the cave of Adullam, rescued the town of Keilah, hid in the cliffs above En Gedi, and finally sought refuge among the Philistines at Ziklag.",
+    "ref": "1 Samuel 22-27",
+    "route": true,
+    "places": [
+      { "name": "Gibeah", "lat": 31.83, "lon": 35.23 },
+      { "name": "Adullam", "lat": 31.62, "lon": 34.99 },
+      { "name": "Keilah", "lat": 31.58, "lon": 35.02 },
+      { "name": "En Gedi", "lat": 31.46, "lon": 35.39 },
+      { "name": "Ziklag", "lat": 31.28, "lon": 34.68 }
+    ]
+  },
+  {
+    "id": "m06",
+    "title": "The exile to Babylon",
+    "body": "After a long siege, Jerusalem fell to Nebuchadnezzar's army. King Zedekiah was captured, blinded, and sentenced at the Babylonian camp in Riblah, and the survivors were marched hundreds of miles east into exile in Babylon.",
+    "ref": "2 Kings 25:1-21",
+    "route": true,
+    "places": [
+      { "name": "Jerusalem", "lat": 31.78, "lon": 35.22 },
+      { "name": "Riblah", "lat": 34.47, "lon": 36.53 },
+      { "name": "Babylon", "lat": 32.54, "lon": 44.42 }
+    ]
+  },
+  {
+    "id": "m07",
+    "title": "Ruth follows Naomi home",
+    "body": "Widowed in the fields of Moab, Ruth refused to leave her mother-in-law Naomi and crossed the Jordan valley with her back to Bethlehem, choosing Naomi's people and Naomi's God as her own.",
+    "ref": "Ruth 1:1-19",
+    "route": true,
+    "places": [
+      { "name": "Moab", "lat": 31.18, "lon": 35.70 },
+      { "name": "Bethlehem", "lat": 31.70, "lon": 35.20 }
+    ]
+  },
+  {
+    "id": "m08",
+    "title": "Elijah flees to Horeb",
+    "body": "After defeating Baal's prophets on Mount Carmel, a terrified Elijah ran south past Beersheba and kept going forty days into the wilderness, all the way to Horeb, the mountain where Moses had met God.",
+    "ref": "1 Kings 18:20-19:8",
+    "route": true,
+    "places": [
+      { "name": "Mount Carmel", "lat": 32.73, "lon": 35.05 },
+      { "name": "Beersheba", "lat": 31.25, "lon": 34.79 },
+      { "name": "Horeb", "lat": 28.54, "lon": 33.97 }
+    ]
+  },
+  {
+    "id": "m09",
+    "title": "Paul's first missionary journey",
+    "body": "Sent out from the church at Antioch, Paul and Barnabas sailed to Cyprus, preached from Salamis to Paphos, then pushed into the highlands of Asia Minor through Pisidian Antioch, Iconium, Lystra, and Derbe before retracing their steps home.",
+    "ref": "Acts 13:1-14:28",
+    "route": true,
+    "places": [
+      { "name": "Antioch (Syria)", "lat": 36.20, "lon": 36.16 },
+      { "name": "Salamis", "lat": 35.18, "lon": 33.90 },
+      { "name": "Paphos", "lat": 34.75, "lon": 32.41 },
+      { "name": "Perga", "lat": 36.96, "lon": 30.85 },
+      { "name": "Pisidian Antioch", "lat": 38.31, "lon": 31.19 },
+      { "name": "Iconium", "lat": 37.87, "lon": 32.49 },
+      { "name": "Lystra", "lat": 37.58, "lon": 32.45 },
+      { "name": "Derbe", "lat": 37.35, "lon": 33.24 }
+    ]
+  },
+  {
+    "id": "m10",
+    "title": "Paul's second missionary journey",
+    "body": "A vision of a man from Macedonia sent Paul west from Lystra to Troas and across the sea into Europe for the first time, planting churches in Philippi, Thessalonica, and Berea before reasoning with philosophers in Athens and settling eighteen months in Corinth.",
+    "ref": "Acts 15:36-18:22",
+    "route": true,
+    "places": [
+      { "name": "Antioch (Syria)", "lat": 36.20, "lon": 36.16 },
+      { "name": "Lystra", "lat": 37.58, "lon": 32.45 },
+      { "name": "Troas", "lat": 39.76, "lon": 26.16 },
+      { "name": "Philippi", "lat": 41.01, "lon": 24.29 },
+      { "name": "Thessalonica", "lat": 40.64, "lon": 22.94 },
+      { "name": "Berea", "lat": 40.52, "lon": 22.20 },
+      { "name": "Athens", "lat": 37.98, "lon": 23.73 },
+      { "name": "Corinth", "lat": 37.94, "lon": 22.93 }
+    ]
+  },
+  {
+    "id": "m11",
+    "title": "Paul's third missionary journey",
+    "body": "Paul spent nearly three years teaching in Ephesus, revisited the churches of Macedonia and Corinth, then sailed back east through Troas and Miletus, determined to reach Jerusalem before Pentecost despite warnings of the arrest awaiting him.",
+    "ref": "Acts 18:23-21:17",
+    "route": true,
+    "places": [
+      { "name": "Antioch (Syria)", "lat": 36.20, "lon": 36.16 },
+      { "name": "Ephesus", "lat": 37.94, "lon": 27.34 },
+      { "name": "Corinth", "lat": 37.94, "lon": 22.93 },
+      { "name": "Troas", "lat": 39.76, "lon": 26.16 },
+      { "name": "Miletus", "lat": 37.53, "lon": 27.28 },
+      { "name": "Tyre", "lat": 33.27, "lon": 35.20 },
+      { "name": "Caesarea", "lat": 32.50, "lon": 34.89 },
+      { "name": "Jerusalem", "lat": 31.78, "lon": 35.22 }
+    ]
+  },
+  {
+    "id": "m12",
+    "title": "Paul's shipwreck voyage to Rome",
+    "body": "As a prisoner bound for trial before Caesar, Paul's ship battled storms past Crete before wrecking on the island of Malta. Months later he sailed on through Sicily and Italy, walking the last stretch of the Appian Way into Rome itself.",
+    "ref": "Acts 27:1-28:16",
+    "route": true,
+    "places": [
+      { "name": "Caesarea", "lat": 32.50, "lon": 34.89 },
+      { "name": "Sidon", "lat": 33.56, "lon": 35.37 },
+      { "name": "Myra", "lat": 36.26, "lon": 29.99 },
+      { "name": "Fair Havens", "lat": 34.92, "lon": 24.77 },
+      { "name": "Malta", "lat": 35.90, "lon": 14.51 },
+      { "name": "Syracuse", "lat": 37.07, "lon": 15.29 },
+      { "name": "Rhegium", "lat": 38.11, "lon": 15.65 },
+      { "name": "Puteoli", "lat": 40.82, "lon": 14.12 },
+      { "name": "Rome", "lat": 41.90, "lon": 12.49 }
+    ]
+  },
+  {
+    "id": "m13",
+    "title": "The five cities of the Philistines",
+    "body": "Gaza, Ashkelon, Ashdod, Gath, and Ekron formed the Philistine pentapolis on Israel's coastal border — the cities behind Samson's riddles, Goliath's taunts, and the capture of the Ark of the Covenant.",
+    "ref": "1 Samuel 6:17-18",
+    "route": false,
+    "places": [
+      { "name": "Gaza", "lat": 31.50, "lon": 34.47 },
+      { "name": "Ashkelon", "lat": 31.66, "lon": 34.57 },
+      { "name": "Ashdod", "lat": 31.80, "lon": 34.65 },
+      { "name": "Gath", "lat": 31.70, "lon": 34.79 },
+      { "name": "Ekron", "lat": 31.78, "lon": 34.85 }
+    ]
+  },
+  {
+    "id": "m14",
+    "title": "Jacob's road to Haran and back",
+    "body": "Fleeing his brother Esau, Jacob dreamed of a stairway to heaven at Bethel on his way north to Haran. Twenty years later he came home a wealthy man, wrestling with God at Peniel before settling near Shechem.",
+    "ref": "Genesis 28:10-33:18",
+    "route": true,
+    "places": [
+      { "name": "Beersheba", "lat": 31.25, "lon": 34.79 },
+      { "name": "Bethel", "lat": 31.93, "lon": 35.22 },
+      { "name": "Haran", "lat": 36.86, "lon": 39.03 },
+      { "name": "Peniel", "lat": 32.15, "lon": 35.71 },
+      { "name": "Shechem", "lat": 32.22, "lon": 35.28 }
+    ]
+  }
+]
