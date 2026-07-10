@@ -79,9 +79,9 @@ body {
 .choice.dim { opacity: 0.55; }
 .trivia-why { margin-top: 1rem; line-height: 1.55; color: var(--text); animation: fadein 0.4s ease; }
 @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
-:root { --map-sea: #1a2436; --map-land: #2c3245; }
+:root { --map-sea: #141d2b; --map-land: #3a4358; }
 @media (prefers-color-scheme: light) {
-  :root { --map-sea: #cfd9e4; --map-land: #e6dfcf; }
+  :root { --map-sea: #a7bfd4; --map-land: #f2ebd6; }
 }
 .basemap { width: 100%; border-radius: 0.9rem; margin: 0.9rem 0 1rem; display: block; }
 .map-label { font-size: 11px; fill: var(--text); font-family: var(--sans); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }

@@ -1,7 +1,9 @@
 import { CardShell } from './CardShell'
 import { BaseMap } from './BaseMap'
-import { project } from '../../lib/geo'
+import { project, VIEW } from '../../lib/geo'
 import type { MapStory } from '../../content/types'
+
+const EDGE_MARGIN = 30
 
 export function MapCard({ story, theme }: { story: MapStory; theme: number }) {
   const pts = story.places.map((p) => ({ ...p, ...project(p.lat, p.lon) }))
@@ -17,12 +19,20 @@ export function MapCard({ story, theme }: { story: MapStory; theme: number }) {
             fill="none" stroke="var(--accent)" strokeWidth="2"
             strokeDasharray="5 4" strokeLinecap="round" />
         )}
-        {pts.map((p) => (
-          <g key={p.name}>
-            <circle cx={p.x} cy={p.y} r="4.5" fill="var(--accent)" stroke="var(--bg)" strokeWidth="1.5" />
-            <text x={p.x} y={p.y - 9} textAnchor="middle" className="map-label">{p.name}</text>
-          </g>
-        ))}
+        {pts.map((p) => {
+          const labelAbove = p.y - 9
+          const labelY = labelAbove < 12 ? p.y + 18 : labelAbove
+          const nearLeft = p.x < EDGE_MARGIN
+          const nearRight = p.x > VIEW.w - EDGE_MARGIN
+          const textAnchor = nearLeft ? 'start' : nearRight ? 'end' : 'middle'
+          const labelX = nearLeft ? p.x + 6 : nearRight ? p.x - 6 : p.x
+          return (
+            <g key={p.name}>
+              <circle cx={p.x} cy={p.y} r="4.5" fill="var(--accent)" stroke="var(--bg)" strokeWidth="1.5" />
+              <text x={labelX} y={labelY} textAnchor={textAnchor} className="map-label">{p.name}</text>
+            </g>
+          )
+        })}
       </BaseMap>
       <p className="fact-body">{story.body}</p>
       <p className="verse-ref">{story.ref}</p>

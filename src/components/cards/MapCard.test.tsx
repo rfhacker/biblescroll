@@ -20,3 +20,22 @@ test('renders title, place labels, route line, and ref', () => {
   expect(container.querySelectorAll('circle')).toHaveLength(2)
   expect(container.querySelector('polyline')).not.toBeNull()
 })
+
+test('does not render a route line when route is false', () => {
+  const noRouteStory = { ...story, route: false }
+  const { container } = render(<MapCard story={noRouteStory} theme={0} />)
+  expect(container.querySelector('polyline')).toBeNull()
+})
+
+test('clamps a near-top-edge label below the marker and anchors a near-left-edge label to start', () => {
+  const romeStory = {
+    id: 'm12', title: "Paul's shipwreck voyage to Rome", route: false,
+    body: 'Paul reaches Rome.', ref: 'Acts 27:1-28:16',
+    places: [{ name: 'Rome', lat: 41.90, lon: 12.49 }],
+  }
+  const { container } = render(<MapCard story={romeStory} theme={0} />)
+  const circle = container.querySelector('circle')!
+  const text = screen.getByText('Rome')
+  expect(Number(text.getAttribute('y'))).toBeGreaterThan(Number(circle.getAttribute('cy')))
+  expect(text.getAttribute('text-anchor')).toBe('start')
+})
