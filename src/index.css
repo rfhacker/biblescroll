@@ -33,3 +33,36 @@ body {
 .theme-2 { background: linear-gradient(160deg, #1e2b28 0%, #101715 100%); }
 .theme-3 { background: linear-gradient(160deg, #2e2420 0%, #171210 100%); }
 .theme-4 { background: linear-gradient(160deg, #232b1e 0%, #131710 100%); }
+.card {
+  height: 100dvh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1.6rem 5.5rem;
+  position: relative;
+}
+.card-body { max-width: 34rem; margin: 0 auto; width: 100%; }
+.verse-text {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 5.5vw, 1.7rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.verse-ref { margin-top: 1.2rem; color: var(--accent); font-size: 0.95rem; letter-spacing: 0.04em; }
+.votd-badge {
+  color: var(--accent); font-size: 0.85rem; letter-spacing: 0.14em;
+  text-transform: uppercase; margin-bottom: 1.1rem;
+}
+.kicker { color: var(--text-dim); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.fact-title { font-family: var(--serif); font-size: 1.5rem; margin-bottom: 0.8rem; line-height: 1.3; }
+.fact-body { font-size: 1.08rem; line-height: 1.6; color: var(--text); }
+.read-more { background: none; border: none; color: var(--accent); font-size: 1rem; margin-top: 0.6rem; cursor: pointer; }
+.card-actions { position: absolute; bottom: 2.2rem; right: 1.6rem; display: flex; gap: 0.9rem; }
+.act {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-dim) 30%, transparent);
+  color: var(--text); border-radius: 999px; min-width: 2.9rem; height: 2.9rem;
+  font-size: 1.25rem; cursor: pointer; padding: 0 0.8rem;
+}
+.act.saved { color: var(--accent); border-color: var(--accent-soft); }
