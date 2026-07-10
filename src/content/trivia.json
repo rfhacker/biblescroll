@@ -1527,7 +1527,7 @@
   },
   {
     "id": "t110",
-    "q": "Who was the Roman centurion described as the first Gentile convert in Acts?",
+    "q": "Whose household received the Holy Spirit in Acts 10, showing Peter that the good news was for Gentiles too?",
     "choices": [
       "Cornelius",
       "Felix",
@@ -1535,8 +1535,8 @@
       "Julius"
     ],
     "answer": 0,
-    "why": "Cornelius, a devout Roman officer, and his household received the Holy Spirit, showing that the gospel was for Gentiles too.",
-    "ref": "Acts 10:1-2,44-48",
+    "why": "Cornelius, a devout Roman centurion, and his household received the Holy Spirit while Peter was still speaking -- convincing proof that God welcomed Gentiles into the faith.",
+    "ref": "Acts 10:44-48; 11:17-18",
     "difficulty": "hard"
   },
   {
@@ -2129,16 +2129,16 @@
   },
   {
     "id": "t153",
-    "q": "What Old Testament book is famous for teaching there is a 'time for every purpose under heaven'?",
+    "q": "What is the shortest verse in the Bible, found in the account of Lazarus?",
     "choices": [
-      "Proverbs",
-      "Ecclesiastes",
-      "Job",
-      "Song of Solomon"
+      "\"Jesus wept.\"",
+      "\"Pray without ceasing.\"",
+      "\"Rejoice always.\"",
+      "\"God is love.\""
     ],
-    "answer": 1,
-    "why": "Ecclesiastes reflects honestly on the seasons of life and points readers to find meaning by fearing God rather than chasing fleeting things.",
-    "ref": "Ecclesiastes 3:1",
+    "answer": 0,
+    "why": "At the tomb of his friend Lazarus, Jesus was moved to tears -- a brief but profound verse showing his deep compassion.",
+    "ref": "John 11:35",
     "difficulty": "easy"
   }
 ]
