@@ -1,0 +1,2144 @@
+[
+  {
+    "id": "t001",
+    "q": "How many stones did David take from the brook to face Goliath?",
+    "choices": [
+      "Three",
+      "Five",
+      "Seven",
+      "One"
+    ],
+    "answer": 1,
+    "why": "David chose five smooth stones from the brook, though he needed only one to bring Goliath down.",
+    "ref": "1 Samuel 17:40",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t002",
+    "q": "Which book comes right after the Gospels?",
+    "choices": [
+      "Romans",
+      "Hebrews",
+      "Acts",
+      "Revelation"
+    ],
+    "answer": 2,
+    "why": "Acts continues Luke's account, telling how the church spread from Jerusalem to Rome.",
+    "ref": "Acts 1:1-2",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t003",
+    "q": "On which island was Paul shipwrecked on his voyage to Rome?",
+    "choices": [
+      "Cyprus",
+      "Crete",
+      "Malta",
+      "Rhodes"
+    ],
+    "answer": 2,
+    "why": "After fourteen days of storm the ship ran aground on Malta, where the islanders showed unusual kindness.",
+    "ref": "Acts 28:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t004",
+    "q": "How many days and nights was Jonah in the belly of the fish?",
+    "choices": [
+      "One",
+      "Three",
+      "Seven",
+      "Forty"
+    ],
+    "answer": 1,
+    "why": "God prepared a great fish to hold Jonah for three days and nights, giving him time to repent and pray.",
+    "ref": "Jonah 1:17",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t005",
+    "q": "How many times did Jesus say Peter would deny him before the rooster crowed?",
+    "choices": [
+      "Once",
+      "Two times",
+      "Three times",
+      "Seven times"
+    ],
+    "answer": 2,
+    "why": "Jesus told Peter he would deny him three times that very night, a prediction that came true even as Peter wept over it.",
+    "ref": "Matthew 26:34",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t006",
+    "q": "Which of these is NOT one of the twelve apostles listed in Matthew?",
+    "choices": [
+      "Bartholomew",
+      "Thaddaeus",
+      "Barnabas",
+      "Thomas"
+    ],
+    "answer": 2,
+    "why": "Barnabas was an important early church leader and Paul's companion, but he was not one of the original twelve apostles.",
+    "ref": "Matthew 10:2-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t007",
+    "q": "What did God create on the very first day, according to Genesis?",
+    "choices": [
+      "The sun and moon",
+      "Light",
+      "Land and sea",
+      "Birds and fish"
+    ],
+    "answer": 1,
+    "why": "Before the sun or stars existed, God spoke light into being and separated it from darkness on day one.",
+    "ref": "Genesis 1:3-5",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t008",
+    "q": "How many cubits wide was Noah's ark?",
+    "choices": [
+      "Fifty",
+      "Thirty",
+      "Three hundred",
+      "Fifteen"
+    ],
+    "answer": 0,
+    "why": "God gave Noah exact measurements: three hundred cubits long, fifty wide, and thirty high, a design built to endure the flood.",
+    "ref": "Genesis 6:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t009",
+    "q": "For how many days and nights did it rain during the flood?",
+    "choices": [
+      "Seven",
+      "Forty",
+      "Ten",
+      "One hundred"
+    ],
+    "answer": 1,
+    "why": "The rain fell for forty days and nights, and the waters kept rising for months afterward before receding.",
+    "ref": "Genesis 7:12",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t010",
+    "q": "What did the Nile's water turn into during the first plague on Egypt?",
+    "choices": [
+      "Frogs",
+      "Blood",
+      "Fire",
+      "Darkness"
+    ],
+    "answer": 1,
+    "why": "Aaron struck the river with his staff and it turned to blood, the first of ten plagues that led to Israel's release.",
+    "ref": "Exodus 7:20-21",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t011",
+    "q": "How many commandments did God write on the stone tablets?",
+    "choices": [
+      "Seven",
+      "Ten",
+      "Twelve",
+      "Five"
+    ],
+    "answer": 1,
+    "why": "After forty days on the mountain, Moses came down with the Ten Commandments, the heart of the covenant law.",
+    "ref": "Exodus 34:28",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t012",
+    "q": "What was the secret of Samson's great strength?",
+    "choices": [
+      "A magic sword",
+      "His uncut hair",
+      "His shield",
+      "His diet"
+    ],
+    "answer": 1,
+    "why": "As a Nazirite from birth, Samson's strength was tied to his vow never to cut his hair; Delilah had it shaved off to betray him.",
+    "ref": "Judges 16:17-19",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t013",
+    "q": "How tall was the Philistine champion Goliath, in cubits?",
+    "choices": [
+      "Four cubits",
+      "Six cubits and a span",
+      "Ten cubits",
+      "Three cubits"
+    ],
+    "answer": 1,
+    "why": "Goliath stood over nine feet tall by most reckonings, an intimidating giant that made David's faith in God all the more remarkable.",
+    "ref": "1 Samuel 17:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t014",
+    "q": "When God offered Solomon anything he wanted, what did he ask for?",
+    "choices": [
+      "Riches",
+      "Long life",
+      "An understanding heart",
+      "Victory over enemies"
+    ],
+    "answer": 2,
+    "why": "Solomon asked for wisdom to govern well rather than wealth or power, and God was so pleased he gave him riches too.",
+    "ref": "1 Kings 3:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t015",
+    "q": "How did Elijah leave the earth?",
+    "choices": [
+      "He died of old age",
+      "In a chariot of fire, by a whirlwind",
+      "He was crucified",
+      "He walked into the sea"
+    ],
+    "answer": 1,
+    "why": "Elijah was taken up to heaven in a whirlwind, with a chariot and horses of fire appearing before Elisha's eyes.",
+    "ref": "2 Kings 2:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t016",
+    "q": "What did God send to protect Daniel when he was thrown into the lions' den?",
+    "choices": [
+      "A sword",
+      "An angel who shut the lions' mouths",
+      "A fire",
+      "Nothing, he fought them"
+    ],
+    "answer": 1,
+    "why": "Daniel testified that God sent his angel to shut the lions' mouths because he was found innocent before God.",
+    "ref": "Daniel 6:16-22",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t017",
+    "q": "How much hotter was the furnace made for Shadrach, Meshach, and Abednego?",
+    "choices": [
+      "Twice as hot",
+      "Seven times hotter",
+      "Ten times hotter",
+      "It wasn't made hotter"
+    ],
+    "answer": 1,
+    "why": "Nebuchadnezzar's fury led him to heat the furnace seven times more than usual, yet the three men walked out unharmed.",
+    "ref": "Daniel 3:19-20",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t018",
+    "q": "In which town was Jesus born?",
+    "choices": [
+      "Nazareth",
+      "Jerusalem",
+      "Bethlehem",
+      "Capernaum"
+    ],
+    "answer": 2,
+    "why": "Jesus was born in Bethlehem of Judea, fulfilling the prophecy that a ruler would come from that small town.",
+    "ref": "Matthew 2:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t019",
+    "q": "What gifts did the wise men bring to the young Jesus?",
+    "choices": [
+      "Gold, frankincense, and myrrh",
+      "Silver, oil, and wine",
+      "Gold, silver, and bronze",
+      "Spices, cloth, and grain"
+    ],
+    "answer": 0,
+    "why": "The wise men opened their treasures and offered gifts fit for a king, a priest, and one destined to suffer.",
+    "ref": "Matthew 2:11",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t020",
+    "q": "What appeared over Jesus as he came up from being baptized?",
+    "choices": [
+      "A rainbow",
+      "A dove",
+      "A star",
+      "A cloud of fire"
+    ],
+    "answer": 1,
+    "why": "The Spirit of God descended like a dove as a voice from heaven declared Jesus his beloved Son.",
+    "ref": "Matthew 3:16-17",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t021",
+    "q": "How many days did Jesus fast in the wilderness before being tempted?",
+    "choices": [
+      "Three",
+      "Seven",
+      "Forty",
+      "Twelve"
+    ],
+    "answer": 2,
+    "why": "Jesus fasted forty days and nights, echoing Israel's forty years, and answered every temptation with Scripture.",
+    "ref": "Matthew 4:1-2",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t022",
+    "q": "How many loaves and fish fed the five thousand?",
+    "choices": [
+      "Five loaves and two fish",
+      "Two loaves and five fish",
+      "Seven loaves and two fish",
+      "Five loaves and five fish"
+    ],
+    "answer": 0,
+    "why": "A boy's small lunch became more than enough when Jesus blessed and multiplied it for the crowd.",
+    "ref": "Matthew 14:17-21",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t023",
+    "q": "Where did Jesus turn water into wine?",
+    "choices": [
+      "Capernaum",
+      "Cana",
+      "Bethany",
+      "Nazareth"
+    ],
+    "answer": 1,
+    "why": "At a wedding in Cana, Jesus performed his first recorded miracle, turning ordinary water into fine wine.",
+    "ref": "John 2:1-11",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t024",
+    "q": "How many days had Lazarus been in the tomb when Jesus arrived?",
+    "choices": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "answer": 3,
+    "why": "Martha noted there would already be a stench after four days, making Jesus' raising of Lazarus all the more astonishing.",
+    "ref": "John 11:39",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t025",
+    "q": "For how many pieces of silver did Judas agree to betray Jesus?",
+    "choices": [
+      "Ten",
+      "Twenty",
+      "Thirty",
+      "Fifty"
+    ],
+    "answer": 2,
+    "why": "The chief priests weighed out thirty pieces of silver, the price of a slave, to pay Judas for his betrayal.",
+    "ref": "Matthew 26:15",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t026",
+    "q": "What did Judas do with the thirty pieces of silver after Jesus was condemned?",
+    "choices": [
+      "Kept it",
+      "Gave it to the poor",
+      "Threw it down in the temple",
+      "Buried it"
+    ],
+    "answer": 2,
+    "why": "Overcome with remorse, Judas threw the silver into the temple before going away and hanging himself.",
+    "ref": "Matthew 27:3-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t027",
+    "q": "What appeared over the disciples' heads at Pentecost?",
+    "choices": [
+      "Doves",
+      "Tongues of fire",
+      "Stars",
+      "Clouds"
+    ],
+    "answer": 1,
+    "why": "Tongues like fire rested on each believer as the Holy Spirit filled them and they began to speak in other languages.",
+    "ref": "Acts 2:1-4",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t028",
+    "q": "What happened to Saul on the road to Damascus?",
+    "choices": [
+      "He was robbed",
+      "A light blinded him and he heard Jesus' voice",
+      "He fell asleep",
+      "He met Peter"
+    ],
+    "answer": 1,
+    "why": "A sudden light from heaven struck Saul down, and Jesus' voice confronted him, turning history's fiercest persecutor into its greatest missionary.",
+    "ref": "Acts 9:3-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t029",
+    "q": "Who was the first Christian martyr, stoned for his faith?",
+    "choices": [
+      "Stephen",
+      "James",
+      "Peter",
+      "Barnabas"
+    ],
+    "answer": 0,
+    "why": "As he was stoned, Stephen prayed for his killers' forgiveness, echoing Jesus' own words from the cross.",
+    "ref": "Acts 7:59-60",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t030",
+    "q": "\"Yahweh is my shepherd; I shall lack nothing\" opens which psalm?",
+    "choices": [
+      "Psalm 1",
+      "Psalm 23",
+      "Psalm 100",
+      "Psalm 119"
+    ],
+    "answer": 1,
+    "why": "Psalm 23 pictures God's tender care with the image of a shepherd who provides, guides, and protects his flock.",
+    "ref": "Psalm 23:1",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t031",
+    "q": "According to Proverbs, what is the beginning of knowledge?",
+    "choices": [
+      "Education",
+      "Wealth",
+      "The fear of Yahweh",
+      "Experience"
+    ],
+    "answer": 2,
+    "why": "Proverbs teaches that true wisdom starts with reverence for God, not merely with cleverness or learning.",
+    "ref": "Proverbs 1:7",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t032",
+    "q": "Which of these is listed as a fruit of the Spirit in Galatians?",
+    "choices": [
+      "Wealth",
+      "Patience",
+      "Fame",
+      "Victory"
+    ],
+    "answer": 1,
+    "why": "Paul lists love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control as the Spirit's fruit growing in a believer's life.",
+    "ref": "Galatians 5:22-23",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t033",
+    "q": "Paul tells believers to put on what in Ephesians 6?",
+    "choices": [
+      "A crown",
+      "The whole armor of God",
+      "A robe",
+      "New sandals"
+    ],
+    "answer": 1,
+    "why": "Paul describes spiritual armor -- truth, righteousness, faith, and the Spirit's sword -- to help believers stand firm against evil.",
+    "ref": "Ephesians 6:11-17",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t034",
+    "q": "How many years did Israel wander in the wilderness?",
+    "choices": [
+      "Ten",
+      "Twenty",
+      "Forty",
+      "One hundred"
+    ],
+    "answer": 2,
+    "why": "Because the people distrusted God's promise after the spies' report, that generation wandered forty years before entering the land.",
+    "ref": "Numbers 14:33-34",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t035",
+    "q": "On which day did the walls of Jericho fall?",
+    "choices": [
+      "The first day",
+      "The third day",
+      "The seventh day",
+      "They never marched"
+    ],
+    "answer": 2,
+    "why": "Israel marched around Jericho once a day for six days, then seven times on the seventh day, and the walls collapsed at the trumpet blast.",
+    "ref": "Joshua 6:3-4,20",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t036",
+    "q": "Where did Naomi and her family move to because of a famine?",
+    "choices": [
+      "Egypt",
+      "Moab",
+      "Babylon",
+      "Assyria"
+    ],
+    "answer": 1,
+    "why": "Naomi's family left Bethlehem for Moab during a famine, where her sons married Moabite women including Ruth.",
+    "ref": "Ruth 1:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t037",
+    "q": "Whom did Esther replace as queen?",
+    "choices": [
+      "Vashti",
+      "Bathsheba",
+      "Jezebel",
+      "Michal"
+    ],
+    "answer": 0,
+    "why": "After Queen Vashti was deposed for refusing the king's summons, Esther was chosen queen and later used her position to save her people.",
+    "ref": "Esther 2:17",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t038",
+    "q": "After his suffering, how much did God give Job compared to before?",
+    "choices": [
+      "The same amount",
+      "Half as much",
+      "Twice as much",
+      "Nothing"
+    ],
+    "answer": 2,
+    "why": "Yahweh restored Job's fortunes and gave him twice what he had before, a picture of God's abundant compassion after suffering.",
+    "ref": "Job 42:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t039",
+    "q": "What name does Isaiah's prophecy give to the child born of a virgin?",
+    "choices": [
+      "Immanuel",
+      "Emmanuel the King",
+      "Wonderful",
+      "Messiah"
+    ],
+    "answer": 0,
+    "why": "Immanuel means 'God with us,' a name pointing forward to Jesus' birth centuries later.",
+    "ref": "Isaiah 7:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t040",
+    "q": "What object lesson did God give Jeremiah at the potter's house?",
+    "choices": [
+      "A broken jar",
+      "Clay reshaped on the wheel",
+      "A burning lamp",
+      "An empty basket"
+    ],
+    "answer": 1,
+    "why": "Watching the potter rework marred clay taught Jeremiah that God can reshape his people according to his purposes.",
+    "ref": "Jeremiah 18:1-4",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t041",
+    "q": "What did Ezekiel see filling the valley in his vision?",
+    "choices": [
+      "Water",
+      "Dry bones",
+      "Fire",
+      "Sand"
+    ],
+    "answer": 1,
+    "why": "God showed Ezekiel a valley of dry bones coming to life, a picture of hope for Israel's restoration.",
+    "ref": "Ezekiel 37:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t042",
+    "q": "What object did God show Amos to picture Israel's crookedness?",
+    "choices": [
+      "A yoke",
+      "A plumb line",
+      "A scale",
+      "A sickle"
+    ],
+    "answer": 1,
+    "why": "A plumb line shows whether a wall stands straight; God used it to show how far Israel had drifted from what was right.",
+    "ref": "Amos 7:7-8",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t043",
+    "q": "According to Micah, from which small town would Israel's ruler come?",
+    "choices": [
+      "Jerusalem",
+      "Bethlehem",
+      "Nazareth",
+      "Hebron"
+    ],
+    "answer": 1,
+    "why": "Micah named Bethlehem centuries before Jesus' birth there, a promise that God keeps his word even through the smallest places.",
+    "ref": "Micah 5:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t044",
+    "q": "In Malachi, what does God invite the people to test him on?",
+    "choices": [
+      "Prayer",
+      "Bringing the whole tithe",
+      "Fasting",
+      "Sacrifice"
+    ],
+    "answer": 1,
+    "why": "God promises to pour out abundant blessing on those who trust him enough to bring their full tithe into the storehouse.",
+    "ref": "Malachi 3:10",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t045",
+    "q": "Which two Old Testament figures appeared with Jesus at the Transfiguration?",
+    "choices": [
+      "Abraham and Isaac",
+      "Moses and Elijah",
+      "David and Solomon",
+      "Adam and Noah"
+    ],
+    "answer": 1,
+    "why": "Moses represented the Law and Elijah the Prophets, both appearing with Jesus to show he fulfills everything they pointed to.",
+    "ref": "Matthew 17:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t046",
+    "q": "In the parable of the prodigal son, what does the father do when he sees his son returning?",
+    "choices": [
+      "Turns away",
+      "Runs to him and embraces him",
+      "Sends a servant",
+      "Waits at the house"
+    ],
+    "answer": 1,
+    "why": "While the son was still far off, the father ran to him, showing how eagerly God welcomes anyone who turns back home.",
+    "ref": "Luke 15:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t047",
+    "q": "In the parable of the Good Samaritan, on which road was the traveler attacked?",
+    "choices": [
+      "Jerusalem to Jericho",
+      "Jerusalem to Bethany",
+      "Damascus to Jerusalem",
+      "Nazareth to Capernaum"
+    ],
+    "answer": 0,
+    "why": "A Samaritan, despised by many Jews of the day, was the one who stopped to show mercy to the wounded traveler.",
+    "ref": "Luke 10:30-34",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t048",
+    "q": "What did Thomas need to see before he believed Jesus had risen?",
+    "choices": [
+      "A letter from Peter",
+      "The nail marks in Jesus' hands",
+      "An empty tomb",
+      "Nothing, he believed at once"
+    ],
+    "answer": 1,
+    "why": "Jesus graciously showed Thomas his wounds, and Thomas responded with the confession, 'My Lord and my God!'",
+    "ref": "John 20:27-28",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t049",
+    "q": "What command did Jesus give his disciples just before ascending to heaven?",
+    "choices": [
+      "Stay in Jerusalem forever",
+      "Make disciples of all nations",
+      "Build a temple",
+      "Return to fishing"
+    ],
+    "answer": 1,
+    "why": "The Great Commission sends believers to teach and baptize people of every nation, with the promise of Jesus' presence always.",
+    "ref": "Matthew 28:19-20",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t050",
+    "q": "What did God provide instead of Isaac for Abraham's sacrifice?",
+    "choices": [
+      "A lamb from his flock",
+      "A ram caught in a thicket",
+      "A dove",
+      "Nothing was provided"
+    ],
+    "answer": 1,
+    "why": "At the last moment God provided a ram, showing that he himself would provide the sacrifice his people needed.",
+    "ref": "Genesis 22:13",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t051",
+    "q": "What new name did God give Jacob after he wrestled with him?",
+    "choices": [
+      "Abram",
+      "Israel",
+      "Judah",
+      "Levi"
+    ],
+    "answer": 1,
+    "why": "The name Israel marks Jacob as one who struggled with God and with people and prevailed, becoming the name of a whole nation.",
+    "ref": "Genesis 32:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t052",
+    "q": "What special item did Jacob give Joseph that made his brothers jealous?",
+    "choices": [
+      "A gold ring",
+      "A tunic of many colors",
+      "A shepherd's staff",
+      "A silver cup"
+    ],
+    "answer": 1,
+    "why": "Jacob's obvious favoritism toward Joseph, shown through this special coat, stirred deep jealousy among his brothers.",
+    "ref": "Genesis 37:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t053",
+    "q": "For how many pieces of silver was Joseph sold to the Ishmaelite traders?",
+    "choices": [
+      "Ten",
+      "Twenty",
+      "Thirty",
+      "Forty"
+    ],
+    "answer": 1,
+    "why": "Joseph's brothers sold him for twenty pieces of silver, a betrayal God later turned toward saving many lives.",
+    "ref": "Genesis 37:28",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t054",
+    "q": "In what did baby Moses' mother place him to hide him from Pharaoh?",
+    "choices": [
+      "A basket among the reeds",
+      "A cave",
+      "A tent",
+      "A wooden box buried in sand"
+    ],
+    "answer": 0,
+    "why": "Moses' mother placed him in a papyrus basket coated with tar and set it among the reeds, trusting God with her son's life.",
+    "ref": "Exodus 2:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t055",
+    "q": "Where did God first speak to Moses out of fire?",
+    "choices": [
+      "A mountain altar",
+      "A burning bush",
+      "A cloud",
+      "A tent"
+    ],
+    "answer": 1,
+    "why": "The bush burned but was not consumed, a striking sign that drew Moses near before God called him to lead Israel out of Egypt.",
+    "ref": "Exodus 3:2",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t056",
+    "q": "How did Israel cross the Red Sea?",
+    "choices": [
+      "By boat",
+      "On dry ground through a divided sea",
+      "By swimming",
+      "They didn't cross"
+    ],
+    "answer": 1,
+    "why": "A strong east wind drove the sea back all night, and Israel walked through on dry ground with walls of water on either side.",
+    "ref": "Exodus 14:21-22",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t057",
+    "q": "What food did God provide for Israel each morning in the wilderness?",
+    "choices": [
+      "Bread from a village",
+      "Manna",
+      "Fish",
+      "Fruit"
+    ],
+    "answer": 1,
+    "why": "Manna appeared like frost on the ground each morning, bread from heaven that sustained Israel through forty years of wandering.",
+    "ref": "Exodus 16:13-15",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t058",
+    "q": "What idol did the Israelites make while Moses was on the mountain?",
+    "choices": [
+      "A silver ox",
+      "A golden calf",
+      "A stone lion",
+      "A wooden eagle"
+    ],
+    "answer": 1,
+    "why": "While Moses received God's law, the impatient people melted their gold into a calf to worship, a grievous betrayal of the covenant.",
+    "ref": "Exodus 32:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t059",
+    "q": "Which two spies gave a faithful report and trusted God could take the land?",
+    "choices": [
+      "Moses and Aaron",
+      "Caleb and Joshua",
+      "Nadab and Abihu",
+      "Aaron and Miriam"
+    ],
+    "answer": 1,
+    "why": "While ten spies spread fear, Caleb and Joshua urged Israel to trust God's power to give them the promised land.",
+    "ref": "Numbers 13:30",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t060",
+    "q": "What unusual thing did Balaam's donkey do on the road?",
+    "choices": [
+      "It ran away",
+      "It spoke to him",
+      "It knelt to pray",
+      "It refused food"
+    ],
+    "answer": 1,
+    "why": "Yahweh opened the donkey's mouth to rebuke Balaam, a strange and humbling sign meant to stop him in his tracks.",
+    "ref": "Numbers 22:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t061",
+    "q": "What did Rahab hang from her window as a sign for the Israelite spies?",
+    "choices": [
+      "A white flag",
+      "A scarlet cord",
+      "A lantern",
+      "A blue cloth"
+    ],
+    "answer": 1,
+    "why": "The scarlet cord marked Rahab's house for protection when Jericho fell, because she had hidden and helped Israel's spies.",
+    "ref": "Joshua 2:18-19",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t062",
+    "q": "Who was the prophetess and judge who led Israel alongside Barak?",
+    "choices": [
+      "Miriam",
+      "Deborah",
+      "Huldah",
+      "Anna"
+    ],
+    "answer": 1,
+    "why": "Deborah judged Israel wisely and courageously led the army to victory over their oppressors alongside Barak.",
+    "ref": "Judges 4:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t063",
+    "q": "What sign did Gideon ask God for using a wool fleece?",
+    "choices": [
+      "Fire from the sky",
+      "Dew on the fleece but dry ground",
+      "A voice from heaven",
+      "Rain for seven days"
+    ],
+    "answer": 1,
+    "why": "Gideon asked for reassurance through the fleece test, and God patiently confirmed his call not once but twice.",
+    "ref": "Judges 6:37-40",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t064",
+    "q": "How many men did God use to defeat the Midianites under Gideon?",
+    "choices": [
+      "Three hundred",
+      "Three thousand",
+      "Ten thousand",
+      "Seven hundred"
+    ],
+    "answer": 0,
+    "why": "God reduced Gideon's army to just three hundred men so that Israel would know the victory came from him, not their own strength.",
+    "ref": "Judges 7:7",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t065",
+    "q": "What name did Hannah give the son God gave her after years of prayer?",
+    "choices": [
+      "Saul",
+      "Samuel",
+      "David",
+      "Eli"
+    ],
+    "answer": 1,
+    "why": "Hannah named her long-awaited son Samuel, meaning 'asked of God,' and dedicated him to the Lord's service.",
+    "ref": "1 Samuel 1:20",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t066",
+    "q": "What kind of covenant did Jonathan make with David?",
+    "choices": [
+      "A trade agreement",
+      "A covenant of loyal friendship",
+      "A battle truce",
+      "A marriage arrangement"
+    ],
+    "answer": 1,
+    "why": "Jonathan loved David as his own soul and made a covenant with him, a friendship that held even when it cost Jonathan dearly.",
+    "ref": "1 Samuel 18:3",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t067",
+    "q": "When David had the chance to kill Saul in a cave, what did he do instead?",
+    "choices": [
+      "Killed him anyway",
+      "Cut off a piece of his robe",
+      "Took his crown",
+      "Fled the cave"
+    ],
+    "answer": 1,
+    "why": "David spared Saul's life and only cut off the edge of his robe, refusing to harm the Lord's anointed even when urged to.",
+    "ref": "1 Samuel 24:4-6",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t068",
+    "q": "Whose wife was Bathsheba before David took her?",
+    "choices": [
+      "Joab's",
+      "Uriah the Hittite's",
+      "Nathan's",
+      "Absalom's"
+    ],
+    "answer": 1,
+    "why": "David's sin against Uriah and Bathsheba led to deep consequences, yet also to David's genuine repentance recorded in Psalm 51.",
+    "ref": "2 Samuel 11:3",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t069",
+    "q": "What happened to Absalom that led to his death while fleeing battle?",
+    "choices": [
+      "He drowned in a river",
+      "His hair caught in a tree branch",
+      "He was thrown from his horse",
+      "He was captured asleep"
+    ],
+    "answer": 1,
+    "why": "Riding under a great oak, Absalom's head was caught in its branches, leaving him helpless when Joab's men found him.",
+    "ref": "2 Samuel 18:9-15",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t070",
+    "q": "How many years did it take Solomon to build the temple?",
+    "choices": [
+      "Three",
+      "Seven",
+      "Twenty",
+      "Forty"
+    ],
+    "answer": 1,
+    "why": "Solomon spent seven years constructing the temple in Jerusalem, a magnificent house built for the worship of God.",
+    "ref": "1 Kings 6:38",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t071",
+    "q": "How did Solomon expose the real mother in the dispute over a baby?",
+    "choices": [
+      "He questioned witnesses",
+      "He offered to divide the child in two",
+      "He asked for money",
+      "He consulted the priests"
+    ],
+    "answer": 1,
+    "why": "The true mother begged for the baby's life to be spared even if it meant losing him, revealing her identity through her love.",
+    "ref": "1 Kings 3:24-27",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t072",
+    "q": "On Mount Carmel, how many prophets of Baal did Elijah confront?",
+    "choices": [
+      "Fifty",
+      "Four hundred fifty",
+      "One hundred",
+      "Twelve"
+    ],
+    "answer": 1,
+    "why": "Elijah stood alone against four hundred fifty prophets of Baal, and God answered with fire to prove he alone is God.",
+    "ref": "1 Kings 18:22",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t073",
+    "q": "What creature fed Elijah bread and meat by the brook Cherith?",
+    "choices": [
+      "Doves",
+      "Ravens",
+      "Sparrows",
+      "Angels"
+    ],
+    "answer": 1,
+    "why": "God used ravens, unlikely providers, to bring Elijah food morning and evening while he hid from Ahab.",
+    "ref": "1 Kings 17:6",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t074",
+    "q": "What did Elisha ask Elijah for before he was taken up to heaven?",
+    "choices": [
+      "Elijah's cloak",
+      "A double portion of his spirit",
+      "Silver and gold",
+      "A place in the palace"
+    ],
+    "answer": 1,
+    "why": "Elisha asked for a double portion of Elijah's spirit so he could carry on the prophetic ministry with even greater impact.",
+    "ref": "2 Kings 2:9-10",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t075",
+    "q": "How many times did Naaman have to dip in the Jordan to be healed of leprosy?",
+    "choices": [
+      "Once",
+      "Three times",
+      "Seven times",
+      "Ten times"
+    ],
+    "answer": 2,
+    "why": "Naaman's pride nearly kept him from obeying, but washing seven times in the Jordan as Elisha instructed brought complete healing.",
+    "ref": "2 Kings 5:14",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t076",
+    "q": "What did Hilkiah the priest discover while the temple was being repaired?",
+    "choices": [
+      "A hidden treasure",
+      "The Book of the Law",
+      "Ancient scrolls of Moses' songs",
+      "A golden altar"
+    ],
+    "answer": 1,
+    "why": "Finding the long-neglected Book of the Law sparked King Josiah's zealous reforms to turn the nation back to God.",
+    "ref": "2 Kings 22:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t077",
+    "q": "In how many days did Nehemiah and the people rebuild Jerusalem's wall?",
+    "choices": [
+      "Twenty",
+      "Fifty-two",
+      "One hundred",
+      "Three hundred sixty-five"
+    ],
+    "answer": 1,
+    "why": "Despite fierce opposition, the wall was finished in just fifty-two days, a testament to the people's unity and God's help.",
+    "ref": "Nehemiah 6:15",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t078",
+    "q": "What did Ezra do when he gathered the people at the Water Gate?",
+    "choices": [
+      "Led them in battle",
+      "Read the Book of the Law to them",
+      "Rebuilt the altar",
+      "Appointed new judges"
+    ],
+    "answer": 1,
+    "why": "Ezra read the law aloud from morning until midday, and the people listened attentively as it was explained to them.",
+    "ref": "Nehemiah 8:2-3",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t079",
+    "q": "According to Isaiah 53, what happened to the suffering servant?",
+    "choices": [
+      "He was crowned king",
+      "He was pierced for our transgressions",
+      "He conquered nations",
+      "He built a temple"
+    ],
+    "answer": 1,
+    "why": "Isaiah's prophecy describes a servant crushed and pierced so that others could be healed, pointing ahead to Jesus' suffering for us.",
+    "ref": "Isaiah 53:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t080",
+    "q": "Where was Jeremiah thrown by officials who wanted him silenced?",
+    "choices": [
+      "A prison tower",
+      "A muddy cistern",
+      "The sea",
+      "A lions' den"
+    ],
+    "answer": 1,
+    "why": "Jeremiah sank into the mire of an empty cistern for speaking hard truths, yet God preserved his life through a compassionate official.",
+    "ref": "Jeremiah 38:6",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t081",
+    "q": "What strange vision did Ezekiel see involving wheels?",
+    "choices": [
+      "Wheels of fire descending",
+      "A wheel within a wheel among living creatures",
+      "A burning chariot wheel",
+      "Wheels rolling through the temple"
+    ],
+    "answer": 1,
+    "why": "Ezekiel's vision of wheels within wheels pictured God's presence moving with perfect, unrestricted freedom.",
+    "ref": "Ezekiel 1:15-16",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t082",
+    "q": "What words appeared on the wall during Belshazzar's feast?",
+    "choices": [
+      "Peace, be still",
+      "Mene, Mene, Tekel, Upharsin",
+      "Holy, Holy, Holy",
+      "It is finished"
+    ],
+    "answer": 1,
+    "why": "Daniel interpreted the mysterious writing as God's verdict that Belshazzar's kingdom had been weighed and found wanting.",
+    "ref": "Daniel 5:25-28",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t083",
+    "q": "Whom did God tell Hosea to marry as a picture of Israel's unfaithfulness?",
+    "choices": [
+      "Gomer",
+      "Rahab",
+      "Delilah",
+      "Jezebel"
+    ],
+    "answer": 0,
+    "why": "Hosea's difficult marriage to Gomer became a living picture of God's persistent love for an unfaithful people.",
+    "ref": "Hosea 1:2-3",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t084",
+    "q": "In Joel's prophecy, on whom would God's Spirit be poured out?",
+    "choices": [
+      "Only priests",
+      "Only kings",
+      "All flesh, sons and daughters alike",
+      "Only prophets"
+    ],
+    "answer": 2,
+    "why": "Joel promised a day when God's Spirit would come on everyone, a promise Peter announced was being fulfilled at Pentecost.",
+    "ref": "Joel 2:28",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t085",
+    "q": "Obadiah, the shortest book of the Old Testament, pronounces judgment on which nation?",
+    "choices": [
+      "Moab",
+      "Edom",
+      "Assyria",
+      "Babylon"
+    ],
+    "answer": 1,
+    "why": "Obadiah condemns Edom's pride and cruelty toward Israel, showing that God holds even Israel's relatives accountable.",
+    "ref": "Obadiah 1:1",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t086",
+    "q": "According to Habakkuk, how will the righteous live?",
+    "choices": [
+      "By their works",
+      "By their wealth",
+      "By their faith",
+      "By their sacrifices"
+    ],
+    "answer": 2,
+    "why": "Habakkuk's declaration that the righteous will live by faith became a cornerstone teaching quoted throughout the New Testament.",
+    "ref": "Habakkuk 2:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t087",
+    "q": "What day does Zephaniah warn is near and coming quickly?",
+    "choices": [
+      "The day of harvest",
+      "The day of Yahweh",
+      "The day of Jubilee",
+      "The day of the king"
+    ],
+    "answer": 1,
+    "why": "Zephaniah's urgent warning about the coming day of the Lord calls people to repentance before judgment arrives.",
+    "ref": "Zephaniah 1:14",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t088",
+    "q": "What did Haggai urge the returned exiles to rebuild?",
+    "choices": [
+      "The city wall",
+      "The temple",
+      "The palace",
+      "The marketplace"
+    ],
+    "answer": 1,
+    "why": "Haggai challenged the people to stop neglecting God's house while comfortable in their own, and rebuilding began soon after.",
+    "ref": "Haggai 1:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t089",
+    "q": "How does Zechariah say Jerusalem's king would arrive?",
+    "choices": [
+      "On a war horse",
+      "Riding on a donkey",
+      "In a golden chariot",
+      "On foot with an army"
+    ],
+    "answer": 1,
+    "why": "Zechariah's prophecy of a humble king riding a donkey was fulfilled when Jesus entered Jerusalem to shouts of praise.",
+    "ref": "Zechariah 9:9",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t090",
+    "q": "Who does Jesus say is blessed first in the Beatitudes?",
+    "choices": [
+      "The rich",
+      "The poor in spirit",
+      "The powerful",
+      "The famous"
+    ],
+    "answer": 1,
+    "why": "Jesus begins his most famous sermon by blessing those who recognize their spiritual need, not those who feel self-sufficient.",
+    "ref": "Matthew 5:3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t091",
+    "q": "How does the Lord's Prayer begin?",
+    "choices": [
+      "Our Father in heaven",
+      "Blessed be the Lord",
+      "Holy, holy, holy",
+      "Give us this day"
+    ],
+    "answer": 0,
+    "why": "Jesus taught his disciples to pray simply and intimately, addressing God as a loving Father.",
+    "ref": "Matthew 6:9",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t092",
+    "q": "How did Jesus come to his disciples' boat during a night storm?",
+    "choices": [
+      "By boat",
+      "Walking on the water",
+      "He didn't come",
+      "Flying with angels"
+    ],
+    "answer": 1,
+    "why": "Jesus walked on the sea toward his frightened disciples, showing his authority even over wind and waves.",
+    "ref": "Matthew 14:25",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t093",
+    "q": "What happened to Peter after he stepped out of the boat to walk to Jesus?",
+    "choices": [
+      "He walked easily the whole way",
+      "He began to sink when he saw the wind",
+      "He turned back immediately",
+      "He fell asleep"
+    ],
+    "answer": 1,
+    "why": "Peter's fear of the wind pulled his eyes off Jesus, and he began to sink until Jesus reached out and caught him.",
+    "ref": "Matthew 14:29-31",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t094",
+    "q": "What did Jesus say to calm the storm on the sea?",
+    "choices": [
+      "Be gone",
+      "Peace, be still",
+      "Fear not, it is I",
+      "Rise and walk"
+    ],
+    "answer": 1,
+    "why": "With a word, Jesus rebuked the wind and waves, and the sea became perfectly calm, amazing his disciples.",
+    "ref": "Mark 4:39",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t095",
+    "q": "What Aramaic words did Jesus use to raise Jairus's daughter?",
+    "choices": [
+      "Lazarus, come forth",
+      "Talitha cumi",
+      "Ephphatha",
+      "It is finished"
+    ],
+    "answer": 1,
+    "why": "Jesus took the girl's hand and said 'Talitha cumi,' meaning 'Girl, get up,' and she rose immediately, healthy and alive.",
+    "ref": "Mark 5:41-42",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t096",
+    "q": "For how many years had the woman suffered a bleeding disorder before touching Jesus' cloak?",
+    "choices": [
+      "Two years",
+      "Seven years",
+      "Twelve years",
+      "Twenty years"
+    ],
+    "answer": 2,
+    "why": "After twelve years of suffering and failed treatments, she was healed the instant she touched Jesus' garment in faith.",
+    "ref": "Mark 5:25-29",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t097",
+    "q": "What did the crowds wave and cry out as Jesus entered Jerusalem?",
+    "choices": [
+      "Swords and shouts of war",
+      "Palm branches and Hosanna",
+      "Torches and silence",
+      "Nothing, they were quiet"
+    ],
+    "answer": 1,
+    "why": "The crowd welcomed Jesus as a king, waving palm branches and shouting praises, though many misunderstood what kind of king he was.",
+    "ref": "John 12:12-13",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t098",
+    "q": "What did Jesus institute at the Last Supper with bread and a cup?",
+    "choices": [
+      "A new law",
+      "The Lord's Supper, his body and blood",
+      "A farewell song",
+      "A washing ceremony"
+    ],
+    "answer": 1,
+    "why": "Jesus gave the bread and cup new meaning as symbols of his body and blood, given for his followers to remember him by.",
+    "ref": "Luke 22:19-20",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t099",
+    "q": "What unusual detail does Luke record about Jesus' agony in Gethsemane?",
+    "choices": [
+      "He fell asleep",
+      "His sweat became like drops of blood",
+      "He wept aloud for hours",
+      "He left before praying"
+    ],
+    "answer": 1,
+    "why": "Luke describes the intensity of Jesus' anguish in prayer, sweating drops like blood as he faced the cross ahead.",
+    "ref": "Luke 22:44",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t100",
+    "q": "How many criminals were crucified alongside Jesus?",
+    "choices": [
+      "None",
+      "One",
+      "Two",
+      "Three"
+    ],
+    "answer": 2,
+    "why": "Jesus was crucified between two criminals, one on each side, fulfilling the prophecy that he would be numbered with transgressors.",
+    "ref": "Luke 23:32-33",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t101",
+    "q": "What did Jesus pray for those who crucified him?",
+    "choices": [
+      "That they would be punished",
+      "Father, forgive them",
+      "That they would leave",
+      "Nothing, he was silent"
+    ],
+    "answer": 1,
+    "why": "Even in his suffering, Jesus prayed for the forgiveness of those putting him to death, modeling the mercy he taught.",
+    "ref": "Luke 23:34",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t102",
+    "q": "On what day did the women find Jesus' tomb empty?",
+    "choices": [
+      "The Sabbath",
+      "The first day of the week",
+      "The last day of the feast",
+      "A month later"
+    ],
+    "answer": 1,
+    "why": "Early on the first day of the week, the women arrived with spices and found the stone rolled away and the tomb empty.",
+    "ref": "Luke 24:1-3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t103",
+    "q": "To which village were two disciples walking when the risen Jesus joined them?",
+    "choices": [
+      "Bethany",
+      "Emmaus",
+      "Jericho",
+      "Capernaum"
+    ],
+    "answer": 1,
+    "why": "Jesus walked with two disciples toward Emmaus, opening the Scriptures to them before they recognized him at the table.",
+    "ref": "Luke 24:13-31",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t104",
+    "q": "What was John the Baptist's diet in the wilderness?",
+    "choices": [
+      "Bread and fish",
+      "Locusts and wild honey",
+      "Fruit and grain",
+      "Manna"
+    ],
+    "answer": 1,
+    "why": "John's simple, wild diet matched his call to a stark, prophetic life devoted entirely to preparing the way for Jesus.",
+    "ref": "Matthew 3:4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t105",
+    "q": "What did Zacchaeus climb to see Jesus passing by?",
+    "choices": [
+      "A wall",
+      "A sycamore tree",
+      "A rooftop",
+      "A hill"
+    ],
+    "answer": 1,
+    "why": "Being short and eager to see Jesus, Zacchaeus climbed a tree, and Jesus surprised him by inviting himself to his house.",
+    "ref": "Luke 19:1-4",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t106",
+    "q": "When did Nicodemus come to speak with Jesus?",
+    "choices": [
+      "At night",
+      "At dawn",
+      "During the feast",
+      "In the temple courts"
+    ],
+    "answer": 0,
+    "why": "Nicodemus, a religious leader, came secretly by night to ask Jesus about being born again, showing his sincere but cautious search.",
+    "ref": "John 3:1-2",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t107",
+    "q": "Where did Jesus meet the Samaritan woman and ask her for a drink?",
+    "choices": [
+      "By the Sea of Galilee",
+      "At Jacob's well",
+      "At the temple gate",
+      "By the Jordan River"
+    ],
+    "answer": 1,
+    "why": "Tired from his journey, Jesus sat at Jacob's well and crossed cultural boundaries to offer a Samaritan woman living water.",
+    "ref": "John 4:6-7",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t108",
+    "q": "What sin did Ananias and Sapphira commit that led to their deaths?",
+    "choices": [
+      "Theft from the temple",
+      "Lying about the price of land they sold",
+      "Refusing baptism",
+      "Denying Christ publicly"
+    ],
+    "answer": 1,
+    "why": "Ananias and Sapphira kept back part of the money while claiming to give it all, and their deceit toward God had severe consequences.",
+    "ref": "Acts 5:1-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t109",
+    "q": "Whom did Philip meet and baptize on the desert road, reading Isaiah?",
+    "choices": [
+      "A Roman centurion",
+      "An Ethiopian eunuch",
+      "A Samaritan leper",
+      "A Pharisee"
+    ],
+    "answer": 1,
+    "why": "Philip explained that Isaiah's suffering servant was Jesus, and the Ethiopian official believed and was baptized right there.",
+    "ref": "Acts 8:27-38",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t110",
+    "q": "Who was the Roman centurion described as the first Gentile convert in Acts?",
+    "choices": [
+      "Cornelius",
+      "Felix",
+      "Festus",
+      "Julius"
+    ],
+    "answer": 0,
+    "why": "Cornelius, a devout Roman officer, and his household received the Holy Spirit, showing that the gospel was for Gentiles too.",
+    "ref": "Acts 10:1-2,44-48",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t111",
+    "q": "How was Peter freed from prison in Acts 12?",
+    "choices": [
+      "He bribed the guards",
+      "An angel led him out",
+      "He escaped through a window",
+      "Paul rescued him"
+    ],
+    "answer": 1,
+    "why": "An angel appeared, loosed Peter's chains, and led him past the guards while the church was praying earnestly for him.",
+    "ref": "Acts 12:6-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t112",
+    "q": "What happened while Paul and Silas were singing hymns in the Philippian jail?",
+    "choices": [
+      "Nothing happened",
+      "A great earthquake shook the prison open",
+      "They were released quietly",
+      "Guards joined their singing"
+    ],
+    "answer": 1,
+    "why": "God shook the prison's foundations and loosened every prisoner's chains, leading the jailer and his family to believe.",
+    "ref": "Acts 16:25-26,31-34",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t113",
+    "q": "What issue did the Council of Jerusalem in Acts 15 mainly address?",
+    "choices": [
+      "Whether Gentiles must be circumcised to be saved",
+      "Where to build the next church",
+      "Who should lead the apostles",
+      "Whether to allow women to pray"
+    ],
+    "answer": 0,
+    "why": "The apostles and elders concluded that Gentile believers did not need to follow the law of Moses to be saved by grace.",
+    "ref": "Acts 15:6-11",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t114",
+    "q": "According to James, what is faith without works?",
+    "choices": [
+      "Complete",
+      "Dead",
+      "Growing",
+      "Enough"
+    ],
+    "answer": 1,
+    "why": "James teaches that genuine faith naturally shows itself in action, not as a way to earn salvation but as evidence of a living faith.",
+    "ref": "James 2:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t115",
+    "q": "According to 1 Corinthians 13, what are two qualities of love?",
+    "choices": [
+      "Proud and boastful",
+      "Patient and kind",
+      "Jealous and envious",
+      "Rude and selfish"
+    ],
+    "answer": 1,
+    "why": "Paul's famous description of love calls believers to a patient, kind, and selfless love that outlasts every other gift.",
+    "ref": "1 Corinthians 13:4",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t116",
+    "q": "According to Romans 3, how many people have sinned?",
+    "choices": [
+      "Only a few",
+      "Most people",
+      "All have sinned",
+      "None, some are righteous"
+    ],
+    "answer": 2,
+    "why": "Paul declares that every person has sinned and fallen short of God's glory, which is why everyone needs the grace found in Christ.",
+    "ref": "Romans 3:23",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t117",
+    "q": "According to Ephesians 2, how are believers saved?",
+    "choices": [
+      "By good works alone",
+      "By grace through faith, not of works",
+      "By keeping the law",
+      "By being born into the right family"
+    ],
+    "answer": 1,
+    "why": "Salvation is a gift from God received by faith, not something earned by human effort, so no one can boast in themselves.",
+    "ref": "Ephesians 2:8-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t118",
+    "q": "What does Paul say he can do through Christ who strengthens him?",
+    "choices": [
+      "Only easy tasks",
+      "All things",
+      "Nothing without others' help",
+      "Only spiritual tasks"
+    ],
+    "answer": 1,
+    "why": "Paul wrote this after describing contentment in both plenty and need, trusting Christ's strength in every circumstance.",
+    "ref": "Philippians 4:13",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t119",
+    "q": "How does Hebrews 11 define faith?",
+    "choices": [
+      "Blind hope",
+      "Assurance of things hoped for, proof of things unseen",
+      "A feeling of certainty",
+      "Knowledge without doubt"
+    ],
+    "answer": 1,
+    "why": "Hebrews opens its famous chapter on faith by describing it as confident trust in what God has promised, even before we see it.",
+    "ref": "Hebrews 11:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t120",
+    "q": "In Revelation, what title does God give himself meaning 'the beginning and the end'?",
+    "choices": [
+      "The Lion of Judah",
+      "The Alpha and the Omega",
+      "The Bright Morning Star",
+      "The Lamb"
+    ],
+    "answer": 1,
+    "why": "Using the first and last letters of the Greek alphabet, God declares himself the beginning and end of all things.",
+    "ref": "Revelation 1:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t121",
+    "q": "What does John see at the very end of Revelation, replacing the first heaven and earth?",
+    "choices": [
+      "A rebuilt Eden",
+      "A new heaven and a new earth",
+      "An empty void",
+      "The original Garden restored exactly"
+    ],
+    "answer": 1,
+    "why": "John's vision closes Scripture with the promise of a renewed creation where God dwells with his people forever.",
+    "ref": "Revelation 21:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t122",
+    "q": "What did God ask Abraham to count as a picture of his future offspring?",
+    "choices": [
+      "Grains of sand",
+      "The stars in the sky",
+      "Blades of grass",
+      "Stones in a field"
+    ],
+    "answer": 1,
+    "why": "God took Abram outside to look at the stars, promising descendants beyond counting, a promise Abraham believed by faith.",
+    "ref": "Genesis 15:5",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t123",
+    "q": "What happened to Lot's wife when she looked back at Sodom?",
+    "choices": [
+      "She was struck blind",
+      "She became a pillar of salt",
+      "She turned to stone",
+      "She was swallowed by the earth"
+    ],
+    "answer": 1,
+    "why": "Despite being warned not to look back, Lot's wife did, and she became a pillar of salt, a sobering warning about lingering after judgment.",
+    "ref": "Genesis 19:26",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t124",
+    "q": "Why did God confuse the languages at the Tower of Babel?",
+    "choices": [
+      "To punish murder",
+      "To scatter people who were building a tower to make a name for themselves",
+      "To end a famine",
+      "To stop a war"
+    ],
+    "answer": 1,
+    "why": "The people tried to build a tower to make themselves great, so God confused their language and scattered them across the earth.",
+    "ref": "Genesis 11:7-9",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t125",
+    "q": "Who was the first murderer in the Bible, killing his own brother?",
+    "choices": [
+      "Esau",
+      "Cain",
+      "Ishmael",
+      "Absalom"
+    ],
+    "answer": 1,
+    "why": "Jealous that his offering was rejected while his brother's was accepted, Cain killed Abel in a field, the Bible's first murder.",
+    "ref": "Genesis 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t126",
+    "q": "What did Esau trade his birthright for?",
+    "choices": [
+      "A field",
+      "A bowl of lentil stew",
+      "A flock of sheep",
+      "Silver coins"
+    ],
+    "answer": 1,
+    "why": "Overwhelmed by hunger, Esau despised his birthright and traded it away for a simple meal of bread and stew.",
+    "ref": "Genesis 25:33-34",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t127",
+    "q": "What miraculous sign confirmed Aaron as God's chosen priest?",
+    "choices": [
+      "His staff budded and bore almonds",
+      "Fire fell from heaven",
+      "His clothes turned white",
+      "He was healed of blindness"
+    ],
+    "answer": 0,
+    "why": "Among all twelve tribal staffs left overnight, only Aaron's sprouted, budded, blossomed, and bore ripe almonds, showing God's choice clearly.",
+    "ref": "Numbers 17:8",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t128",
+    "q": "What is the Shema, the central declaration in Deuteronomy 6?",
+    "choices": [
+      "Blessed is the man",
+      "Hear, Israel, Yahweh is our God, Yahweh is one",
+      "I am the Alpha and Omega",
+      "The Lord bless you and keep you"
+    ],
+    "answer": 1,
+    "why": "The Shema calls Israel to love God with all their heart, soul, and strength, and it remains central to Jewish worship today.",
+    "ref": "Deuteronomy 6:4-5",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t129",
+    "q": "Who called out to young Samuel in the night, though Samuel first thought it was Eli?",
+    "choices": [
+      "An angel",
+      "Yahweh",
+      "Moses",
+      "Samuel's mother"
+    ],
+    "answer": 1,
+    "why": "God called Samuel by name in the night, and once Eli realized what was happening, he told Samuel how to respond to the Lord.",
+    "ref": "1 Samuel 3:4-10",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t130",
+    "q": "How did God speak to Elijah at Horeb after the wind, earthquake, and fire?",
+    "choices": [
+      "In a loud shout",
+      "In a still small voice",
+      "Through a vision",
+      "He did not speak"
+    ],
+    "answer": 1,
+    "why": "God was not in the dramatic wind, earthquake, or fire, but spoke to discouraged Elijah in a gentle, quiet voice.",
+    "ref": "1 Kings 19:11-12",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t131",
+    "q": "What happened to Saul's sight immediately after Ananias prayed for him?",
+    "choices": [
+      "Nothing changed",
+      "Something like scales fell from his eyes",
+      "He saw a vision of heaven",
+      "He fell asleep"
+    ],
+    "answer": 1,
+    "why": "Scales fell from Saul's eyes and his sight was restored, and he was baptized and filled with the Holy Spirit that same day.",
+    "ref": "Acts 9:17-18",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t132",
+    "q": "What did Barnabas do with a field he owned to help the early church?",
+    "choices": [
+      "Rented it out",
+      "Sold it and gave the money to the apostles",
+      "Built a house on it",
+      "Gave it to Peter"
+    ],
+    "answer": 1,
+    "why": "Barnabas, whose name means 'son of encouragement,' generously sold his field and laid the proceeds at the apostles' feet.",
+    "ref": "Acts 4:36-37",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t133",
+    "q": "Who were set apart by the Holy Spirit at Antioch to be sent out as missionaries?",
+    "choices": [
+      "Peter and John",
+      "Barnabas and Saul",
+      "James and Andrew",
+      "Philip and Stephen"
+    ],
+    "answer": 1,
+    "why": "While the believers at Antioch worshiped and fasted, the Spirit set apart Barnabas and Saul for the missionary work God had for them.",
+    "ref": "Acts 13:2-3",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t134",
+    "q": "According to 1 John, what simple statement describes God's nature?",
+    "choices": [
+      "God is judgment",
+      "God is love",
+      "God is silence",
+      "God is distant"
+    ],
+    "answer": 1,
+    "why": "John teaches that love isn't just something God does, but who God fundamentally is, and that truth shapes how believers are called to love others.",
+    "ref": "1 John 4:8",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t135",
+    "q": "According to 2 Timothy, what is all Scripture described as?",
+    "choices": [
+      "Historical record",
+      "God-breathed and useful for teaching",
+      "Optional wisdom",
+      "Ancient poetry"
+    ],
+    "answer": 1,
+    "why": "Paul tells Timothy that Scripture is God-breathed, equipping believers for teaching, correction, and every good work.",
+    "ref": "2 Timothy 3:16",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t136",
+    "q": "In Philemon, for whom does Paul appeal to his friend Philemon?",
+    "choices": [
+      "Timothy",
+      "Onesimus, a runaway slave",
+      "Titus",
+      "Silas"
+    ],
+    "answer": 1,
+    "why": "Paul asks Philemon to receive Onesimus back not merely as a slave but as a beloved brother in Christ.",
+    "ref": "Philemon 1:10-16",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t137",
+    "q": "According to Colossians, what role does Christ hold over the church?",
+    "choices": [
+      "A distant ruler",
+      "The head of the body",
+      "An advisor",
+      "A servant"
+    ],
+    "answer": 1,
+    "why": "Paul describes Christ as the head of the church, the beginning and firstborn from the dead, holding first place in everything.",
+    "ref": "Colossians 1:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t138",
+    "q": "According to 1 Thessalonians 4, what will happen when the Lord descends with a shout and a trumpet call?",
+    "choices": [
+      "Nothing visible",
+      "The dead in Christ will rise first",
+      "Only the living will be caught up",
+      "The world will end immediately"
+    ],
+    "answer": 1,
+    "why": "Paul comforts believers grieving the dead by describing how the Lord's return will bring resurrection and reunion for all who believe.",
+    "ref": "1 Thessalonians 4:16-17",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t139",
+    "q": "To how many churches is the book of Revelation addressed at its opening?",
+    "choices": [
+      "Three",
+      "Five",
+      "Seven",
+      "Twelve"
+    ],
+    "answer": 2,
+    "why": "John writes to seven churches in Asia -- Ephesus, Smyrna, Pergamum, Thyatira, Sardis, Philadelphia, and Laodicea -- each receiving a specific message.",
+    "ref": "Revelation 1:11",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t140",
+    "q": "How many elders does John see seated around God's throne in Revelation?",
+    "choices": [
+      "Twelve",
+      "Twenty-four",
+      "Seventy",
+      "One hundred"
+    ],
+    "answer": 1,
+    "why": "Twenty-four elders in white with golden crowns surround the throne, worshiping continually before God.",
+    "ref": "Revelation 4:4",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t141",
+    "q": "What is the number associated with the beast in Revelation?",
+    "choices": [
+      "777",
+      "666",
+      "144",
+      "1000"
+    ],
+    "answer": 1,
+    "why": "John calls readers to use wisdom in calculating this number, a symbol of a human power that opposes God.",
+    "ref": "Revelation 13:18",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t142",
+    "q": "How many years of plenty did Joseph predict for Egypt before famine came?",
+    "choices": [
+      "Three",
+      "Seven",
+      "Ten",
+      "Forty"
+    ],
+    "answer": 1,
+    "why": "Joseph interpreted Pharaoh's dreams to mean seven years of abundance followed by seven years of famine, wisdom that saved many lives.",
+    "ref": "Genesis 41:29-30",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t143",
+    "q": "What did the Israelites put on their doorposts to be spared during the final plague?",
+    "choices": [
+      "Oil",
+      "Blood of a lamb",
+      "Ashes",
+      "Water"
+    ],
+    "answer": 1,
+    "why": "The blood of the Passover lamb on the doorposts caused the plague to pass over Israelite homes, sparing their firstborn.",
+    "ref": "Exodus 12:7,13",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t144",
+    "q": "On the Day of Atonement, what happened to the goat chosen by lot as the 'scapegoat'?",
+    "choices": [
+      "It was sacrificed on the altar",
+      "It carried the people's sins away into the wilderness",
+      "It was kept as a pet",
+      "It was given to the priest"
+    ],
+    "answer": 1,
+    "why": "The scapegoat symbolically carried Israel's sins away from the camp, pointing forward to how Christ would fully remove sin.",
+    "ref": "Leviticus 16:8-10",
+    "difficulty": "hard"
+  },
+  {
+    "id": "t145",
+    "q": "Who did God appoint as Moses' successor to lead Israel into the promised land?",
+    "choices": [
+      "Caleb",
+      "Joshua",
+      "Aaron",
+      "Eleazar"
+    ],
+    "answer": 1,
+    "why": "After Moses died, God commissioned Joshua to lead the people across the Jordan into the land God had promised.",
+    "ref": "Joshua 1:1-2",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t146",
+    "q": "What does Ecclesiastes say there is a time for?",
+    "choices": [
+      "Only joy",
+      "Everything under heaven",
+      "Only work",
+      "Only rest"
+    ],
+    "answer": 1,
+    "why": "The Preacher observes that life has a season for everything -- a time to weep and a time to laugh, to plant and to harvest.",
+    "ref": "Ecclesiastes 3:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t147",
+    "q": "What phrase does the Preacher repeat at the start of Ecclesiastes to describe fleeting life apart from God?",
+    "choices": [
+      "Wisdom of wisdoms",
+      "Vanity of vanities",
+      "Glory of glories",
+      "Sorrow of sorrows"
+    ],
+    "answer": 1,
+    "why": "The Preacher's refrain reminds readers that chasing wealth, pleasure, and achievement apart from God ultimately leaves us empty.",
+    "ref": "Ecclesiastes 1:2",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t148",
+    "q": "According to Proverbs, in what should we trust rather than our own understanding?",
+    "choices": [
+      "Wealth",
+      "Yahweh with all our heart",
+      "Our own wisdom",
+      "Other people"
+    ],
+    "answer": 1,
+    "why": "Proverbs calls believers to trust God fully rather than leaning only on their own limited understanding of a situation.",
+    "ref": "Proverbs 3:5",
+    "difficulty": "easy"
+  },
+  {
+    "id": "t149",
+    "q": "Job declares confidently that his what 'lives' even in the midst of his suffering?",
+    "choices": [
+      "His family",
+      "His Redeemer",
+      "His wealth",
+      "His health"
+    ],
+    "answer": 1,
+    "why": "Even stripped of everything, Job clung to the certain hope that his Redeemer lives and would one day stand upon the earth.",
+    "ref": "Job 19:25",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t150",
+    "q": "Who tested Job, though only within limits God set?",
+    "choices": [
+      "An enemy king",
+      "Satan",
+      "A false prophet",
+      "Job's own sons"
+    ],
+    "answer": 1,
+    "why": "God permitted Satan to test Job's faith but set a clear limit on what could be done, showing God's sovereignty even in Job's suffering.",
+    "ref": "Job 1:12",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t151",
+    "q": "Which psalm captures the exiles' grief, beginning 'By the rivers of Babylon'?",
+    "choices": [
+      "Psalm 23",
+      "Psalm 51",
+      "Psalm 137",
+      "Psalm 119"
+    ],
+    "answer": 2,
+    "why": "This psalm expresses the deep sorrow of God's people exiled far from Jerusalem, longing for home.",
+    "ref": "Psalm 137:1",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t152",
+    "q": "Which psalm is David's prayer of repentance after his sin with Bathsheba?",
+    "choices": [
+      "Psalm 23",
+      "Psalm 51",
+      "Psalm 100",
+      "Psalm 1"
+    ],
+    "answer": 1,
+    "why": "After the prophet Nathan confronted him, David poured out heartfelt repentance in this psalm, asking God to create in him a clean heart.",
+    "ref": "Psalm 51:1-4",
+    "difficulty": "medium"
+  },
+  {
+    "id": "t153",
+    "q": "What Old Testament book is famous for teaching there is a 'time for every purpose under heaven'?",
+    "choices": [
+      "Proverbs",
+      "Ecclesiastes",
+      "Job",
+      "Song of Solomon"
+    ],
+    "answer": 1,
+    "why": "Ecclesiastes reflects honestly on the seasons of life and points readers to find meaning by fearing God rather than chasing fleeting things.",
+    "ref": "Ecclesiastes 3:1",
+    "difficulty": "easy"
+  }
+]
