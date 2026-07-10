@@ -66,3 +66,16 @@ body {
   font-size: 1.25rem; cursor: pointer; padding: 0 0.8rem;
 }
 .act.saved { color: var(--accent); border-color: var(--accent-soft); }
+.trivia-q { font-family: var(--serif); font-size: 1.4rem; line-height: 1.35; margin-bottom: 1.2rem; }
+.choices { display: flex; flex-direction: column; gap: 0.7rem; }
+.choice {
+  text-align: left; padding: 0.9rem 1.1rem; border-radius: 0.8rem; font-size: 1.05rem;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-dim) 25%, transparent);
+  color: var(--text); cursor: pointer; transition: background 0.25s, border-color 0.25s;
+}
+.choice.correct { border-color: var(--good); background: color-mix(in srgb, var(--good) 18%, var(--surface)); }
+.choice.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 16%, var(--surface)); }
+.choice.dim { opacity: 0.55; }
+.trivia-why { margin-top: 1rem; line-height: 1.55; color: var(--text); animation: fadein 0.4s ease; }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
