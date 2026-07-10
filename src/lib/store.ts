@@ -64,6 +64,20 @@ export function setStreakState(s: StreakState): void {
   write('bs:streak', JSON.stringify(s))
 }
 
+function isAnsweredShape(v: unknown): v is Record<string, number> {
+  return typeof v === 'object' && v !== null &&
+    Object.values(v as Record<string, unknown>).every((n) => typeof n === 'number')
+}
+export function getAnsweredPick(id: string): number | null {
+  const answered = readJSON<Record<string, number>>('bs:answered', isAnsweredShape) ?? {}
+  return id in answered ? answered[id] : null
+}
+export function setAnsweredPick(id: string, pick: number): void {
+  const answered = readJSON<Record<string, number>>('bs:answered', isAnsweredShape) ?? {}
+  answered[id] = pick
+  write('bs:answered', JSON.stringify(answered))
+}
+
 export function getInstallSeed(): string {
   const existing = read('bs:seed')
   if (existing && /^[0-9a-f]{16}$/.test(existing)) return existing

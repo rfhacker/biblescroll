@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import { getFavorites, toggleFavorite, isFavorite, getScore, addScore, getStreakState, setStreakState, getInstallSeed } from './store'
+import { getFavorites, toggleFavorite, isFavorite, getScore, addScore, getStreakState, setStreakState, getInstallSeed, getAnsweredPick, setAnsweredPick } from './store'
 
 beforeEach(() => localStorage.clear())
 
@@ -32,6 +32,21 @@ test('streak state round-trips; corrupt data resets to null', async () => {
   vi.resetModules()
   const store = await import('./store')
   expect(store.getStreakState()).toBeNull()
+})
+
+test('answered trivia picks round-trip; corrupt data resets to null', async () => {
+  expect(getAnsweredPick('t001')).toBeNull()
+  setAnsweredPick('t001', 1)
+  expect(getAnsweredPick('t001')).toBe(1)
+  setAnsweredPick('t002', 0)
+  expect(getAnsweredPick('t002')).toBe(0)
+  expect(getAnsweredPick('t001')).toBe(1) // unaffected by other ids
+
+  localStorage.setItem('bs:answered', '{not json')
+  // Fresh module instance has no mem entry yet, exercising the real corrupt-storage path.
+  vi.resetModules()
+  const store = await import('./store')
+  expect(store.getAnsweredPick('t001')).toBeNull()
 })
 
 test('install seed is stable once created', () => {

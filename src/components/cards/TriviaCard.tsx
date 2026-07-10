@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import { CardShell } from './CardShell'
-import { addScore } from '../../lib/store'
+import { addScore, getAnsweredPick, setAnsweredPick } from '../../lib/store'
 import type { TriviaItem } from '../../content/types'
 
 export function TriviaCard({ item, theme, onScore }: {
   item: TriviaItem; theme: number; onScore: () => void
 }) {
-  const [picked, setPicked] = useState<number | null>(null)
+  const [picked, setPicked] = useState<number | null>(() => getAnsweredPick(item.id))
 
   function pick(i: number) {
     if (picked !== null) return
     setPicked(i)
+    setAnsweredPick(item.id, i)
     if (i === item.answer) {
       addScore(1)
       onScore()
@@ -30,7 +31,7 @@ export function TriviaCard({ item, theme, onScore }: {
             else if (i === picked) cls += ' wrong'
             else cls += ' dim'
           }
-          return <button key={c} className={cls} onClick={() => pick(i)}>{c}</button>
+          return <button key={i} className={cls} onClick={() => pick(i)}>{c}</button>
         })}
       </div>
       {picked !== null && (
