@@ -1,16 +1,15 @@
 import { useRef, useState } from 'react'
 import { cardAt } from '../lib/feed'
-import { dayKey, votdIndex } from '../lib/votd'
+import { votdIndex } from '../lib/votd'
 import { getInstallSeed } from '../lib/store'
 import type { VerseStore } from '../content/verseStore'
 import { resolveCard, POOL_SIZES } from './cards/resolve'
 
 const WINDOW = 3
 
-export function Feed({ verses, onScore }: { verses: VerseStore; onScore: () => void }) {
+export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string; onScore: () => void }) {
   const [current, setCurrent] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
-  const day = dayKey()
   const seed = `${getInstallSeed()}:${day}`
   const sizes = { ...POOL_SIZES, corpus: verses.list.length }
   const vi = votdIndex(day, sizes.curated)

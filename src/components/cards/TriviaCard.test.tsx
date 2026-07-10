@@ -40,7 +40,8 @@ test('wrong answer reveals correct one, no point, no double answering', async ()
   expect(getScore()).toBe(0)
   expect(onScore).not.toHaveBeenCalled()
   expect(screen.getByText(/smooth stones/)).toBeInTheDocument()
-  await userEvent.click(screen.getByRole('button', { name: 'Five' }))
+  // once answered, the correct choice is marked with a ✓ prefix (not color-only)
+  await userEvent.click(screen.getByRole('button', { name: /Five/ }))
   expect(getScore()).toBe(0) // locked after first answer
 })
 
@@ -62,4 +63,23 @@ test('answered pick persists across remount: locked and no re-scoring', async ()
   await userEvent.click(screen.getByRole('button', { name: 'Three' }))
   expect(onScore2).not.toHaveBeenCalled()
   expect(getScore()).toBe(1) // unchanged, no re-scoring
+})
+
+test('a wrong answer does NOT persist: remounted card is answerable again, and scores exactly once when then answered correctly', async () => {
+  const { getScore } = await import('../../lib/store')
+  const { TriviaCard } = await import('./TriviaCard')
+  const onScore = vi.fn()
+  const { unmount } = render(<TriviaCard item={item} theme={0} onScore={onScore} />)
+  await userEvent.click(screen.getByRole('button', { name: 'Three' })) // wrong
+  expect(getScore()).toBe(0)
+  expect(onScore).not.toHaveBeenCalled()
+  unmount()
+
+  // Fresh mount: the wrong pick was never persisted, so the question is unanswered again.
+  const onScore2 = vi.fn()
+  render(<TriviaCard item={item} theme={0} onScore={onScore2} />)
+  expect(screen.queryByText(/smooth stones/)).toBeNull()
+  await userEvent.click(screen.getByRole('button', { name: 'Five' })) // correct, this time
+  expect(getScore()).toBe(1)
+  expect(onScore2).toHaveBeenCalledTimes(1)
 })

@@ -14,7 +14,7 @@
     "id": "m02",
     "title": "Jesus around the Sea of Galilee",
     "body": "Most of Jesus' recorded ministry happened within a day's walk of this small lake — Capernaum His base, Nazareth His hometown in the hills to the west, Cana where He turned water to wine.",
-    "ref": "Matthew 4:12-17",
+    "ref": "Matthew 4:12-17; John 2:1-11",
     "route": false,
     "places": [
       { "name": "Nazareth", "lat": 32.7, "lon": 35.3 },
@@ -39,7 +39,7 @@
     "id": "m04",
     "title": "The Exodus route to Sinai",
     "body": "Freed from slavery, Israel marched out of Rameses in the Nile Delta, camped at Succoth, and journeyed through the wilderness to Mount Sinai, where they received the Law. From there they pressed on toward Kadesh Barnea, the staging ground for entering Canaan.",
-    "ref": "Exodus 12:37-19:2",
+    "ref": "Exodus 12:37-19:2; Numbers 33:36",
     "route": true,
     "places": [
       { "name": "Rameses", "lat": 30.79, "lon": 31.83 },
@@ -117,7 +117,7 @@
   {
     "id": "m10",
     "title": "Paul's second missionary journey",
-    "body": "A vision of a man from Macedonia sent Paul west from Lystra to Troas and across the sea into Europe for the first time, planting churches in Philippi, Thessalonica, and Berea before reasoning with philosophers in Athens and settling eighteen months in Corinth.",
+    "body": "Traveling west from Lystra through Asia Minor, Paul reached Troas, where a vision of a man from Macedonia called him across the sea into Europe for the first time, planting churches in Philippi, Thessalonica, and Berea before reasoning with philosophers in Athens and settling eighteen months in Corinth.",
     "ref": "Acts 15:36-18:22",
     "route": true,
     "places": [

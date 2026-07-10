@@ -11,8 +11,11 @@ export function TriviaCard({ item, theme, onScore }: {
   function pick(i: number) {
     if (picked !== null) return
     setPicked(i)
-    setAnsweredPick(item.id, i)
+    // Only persist correct picks: a wrong answer locks this mount (so no
+    // double-answering / farming right now) but the question comes back
+    // fresh next time, keeping the lifetime score ceiling reachable.
     if (i === item.answer) {
+      setAnsweredPick(item.id, i)
       addScore(1)
       onScore()
     }
@@ -26,12 +29,13 @@ export function TriviaCard({ item, theme, onScore }: {
       <div className="choices">
         {item.choices.map((c, i) => {
           let cls = 'choice'
+          let label = c
           if (picked !== null) {
-            if (i === item.answer) cls += ' correct'
-            else if (i === picked) cls += ' wrong'
+            if (i === item.answer) { cls += ' correct'; label = `✓ ${c}` }
+            else if (i === picked) { cls += ' wrong'; label = `✗ ${c}` }
             else cls += ' dim'
           }
-          return <button key={i} className={cls} onClick={() => pick(i)}>{c}</button>
+          return <button key={i} className={cls} onClick={() => pick(i)}>{label}</button>
         })}
       </div>
       {picked !== null && (

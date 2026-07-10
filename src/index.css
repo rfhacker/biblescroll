@@ -33,6 +33,10 @@ body {
 .theme-2 { background: linear-gradient(160deg, #1e2b28 0%, #101715 100%); }
 .theme-3 { background: linear-gradient(160deg, #2e2420 0%, #171210 100%); }
 .theme-4 { background: linear-gradient(160deg, #232b1e 0%, #131710 100%); }
+/* Card gradients are always dark, so pin dark-theme tokens here regardless of
+   OS light/dark preference — otherwise light-mode --text (dark) renders on
+   these dark backgrounds with unreadable contrast. */
+.card { --text: #e8e4da; --text-dim: #a49e90; --surface: #1b2029; --bg: #12151c; }
 .card {
   height: 100dvh;
   scroll-snap-align: start;
@@ -57,7 +61,7 @@ body {
 .kicker { color: var(--text-dim); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
 .fact-title { font-family: var(--serif); font-size: 1.5rem; margin-bottom: 0.8rem; line-height: 1.3; }
 .fact-body { font-size: 1.08rem; line-height: 1.6; color: var(--text); }
-.read-more { background: none; border: none; color: var(--accent); font-size: 1rem; margin-top: 0.6rem; cursor: pointer; }
+.read-more { background: none; border: none; color: var(--accent); font-size: 1rem; margin-top: 0.6rem; cursor: pointer; padding: 0.6rem 0.2rem; }
 .card-actions { position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); right: 1.6rem; display: flex; gap: 0.9rem; }
 .act {
   background: color-mix(in srgb, var(--surface) 70%, transparent);
@@ -89,6 +93,9 @@ body {
 .feed { height: 100dvh; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; }
 .slot { height: 100dvh; scroll-snap-align: start; }
 .topbar {
+  /* Sits above the (always-dark) card feed, so pin its tokens dark-first too —
+     otherwise the light-mode --bg/--text-dim pair reads poorly over cards. */
+  --bg: #12151c; --text-dim: #a49e90;
   position: fixed; top: 0; left: 0; right: 0; z-index: 10;
   display: flex; align-items: center; justify-content: space-between;
   padding: calc(env(safe-area-inset-top) + 0.6rem) 1rem 0.6rem;
@@ -102,6 +109,8 @@ body {
 .topbar-actions button {
   background: none; border: none; color: var(--text-dim); font-size: 1.2rem;
   cursor: pointer; padding: 0.3rem 0.45rem;
+  min-width: 2.75rem; min-height: 2.75rem;
+  display: inline-flex; align-items: center; justify-content: center;
 }
 .splash {
   height: 100dvh; display: grid; place-items: center;
@@ -123,5 +132,9 @@ body {
 .fav { display: flex; justify-content: space-between; gap: 0.8rem; padding: 0.9rem 0; border-bottom: 1px solid color-mix(in srgb, var(--text-dim) 18%, transparent); }
 .fav-title { font-weight: 600; margin-bottom: 0.25rem; }
 .fav-body { color: var(--text-dim); font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.fav button { background: none; border: none; color: var(--accent); font-size: 1.2rem; cursor: pointer; }
+.fav button {
+  background: none; border: none; color: var(--accent); font-size: 1.2rem; cursor: pointer;
+  min-width: 2.75rem; min-height: 2.75rem;
+  display: inline-flex; align-items: center; justify-content: center;
+}
 .about-body p { margin-bottom: 1rem; line-height: 1.6; }
