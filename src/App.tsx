@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Feed } from './components/Feed'
 import { TopBar } from './components/TopBar'
+import { Favorites } from './components/Favorites'
+import { About } from './components/About'
 import { loadVerses, type VerseStore } from './content/verseStore'
 import { dayKey } from './lib/votd'
 import { updateStreak } from './lib/streak'
@@ -28,7 +30,8 @@ export default function App() {
       <TopBar streak={streak} score={score}
         onFavorites={() => setPanel('favorites')} onAbout={() => setPanel('about')} />
       <Feed verses={verses} onScore={() => setScore(getScore())} />
-      {/* panels mount here in Task 16 */}
+      {panel === 'favorites' && <Favorites onClose={() => setPanel(null)} />}
+      {panel === 'about' && <About onClose={() => setPanel(null)} />}
     </div>
   )
 }
