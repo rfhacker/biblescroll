@@ -68,7 +68,7 @@ const lakes = [
 
 // Rivers: 50m everywhere (Nile, Euphrates, Tigris), plus 10m Jordan.
 const rivers = [
-  ...clipLineFeatures(rivers50.features, REGION),
+  ...clipLineFeatures(rivers50.features.filter((f) => !/jordan/i.test(nameOf(f))), REGION),
   ...clipLineFeatures(rivers10.features.filter((f) => /jordan/i.test(nameOf(f))), LEVANT),
 ]
 
