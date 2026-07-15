@@ -20,3 +20,20 @@ test('geometry is present and well-formed', () => {
     }
   }
 })
+
+test('labels are present, in-frame, ranked, and follow the naming convention', () => {
+  expect(basemap.labels.length).toBeGreaterThanOrEqual(20)
+  const allowedHints = ['Mediterranean', 'Salt Sea', 'Greece']
+  for (const l of basemap.labels) {
+    expect(['sea', 'river', 'region']).toContain(l.kind)
+    expect([1, 2, 3]).toContain(l.rank)
+    expect(l.x).toBeGreaterThanOrEqual(0); expect(l.x).toBeLessThanOrEqual(800)
+    expect(l.y).toBeGreaterThanOrEqual(0); expect(l.y).toBeLessThanOrEqual(600)
+    const hint = l.text.match(/\(([^)]+)\)/)
+    if (hint) expect(allowedHints).toContain(hint[1])
+  }
+  const texts = basemap.labels.map((l: { text: string }) => l.text)
+  for (const t of ['Great Sea (Mediterranean)', 'Sea of Galilee', 'Egypt', 'Judea', 'Galilee']) {
+    expect(texts).toContain(t)
+  }
+})
