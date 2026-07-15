@@ -1,5 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { MapCard } from './MapCard'
+import maps from '../../content/maps.json'
+import { VIEW } from '../../lib/geo'
+import type { MapStory } from '../../content/types'
 
 const story = {
   id: 'm01', title: 'Jonah runs the wrong way', route: true,
@@ -10,6 +13,9 @@ const story = {
     { name: 'Nineveh', lat: 36.36, lon: 43.15 },
   ],
 }
+
+const galilee = (maps as MapStory[]).find((m) => m.title.toLowerCase().includes('galilee'))!
+const voyage = (maps as MapStory[]).find((m) => m.title.toLowerCase().includes('rome') || m.id === 'm12')!
 
 test('renders title, place labels, route line, and ref', () => {
   const { container } = render(<MapCard story={story} theme={0} />)
@@ -27,19 +33,75 @@ test('does not render a route line when route is false', () => {
   expect(container.querySelector('polyline')).toBeNull()
 })
 
-test('clamps a near-top-edge label below the marker and anchors a near-left-edge label to start', () => {
+test('clamps a near-top-edge label below its marker when the fitted window hits the region top', () => {
   const edgeStory = {
-    id: 'm12', title: 'Edges of the known world', route: false,
-    body: 'Places near the frame edges.', ref: 'Acts 27:1-28:16',
+    id: 'mX', title: 'North-South edge test', route: false,
+    body: 'Places near the region top edge.', ref: 'Test 1:1',
     places: [
-      { name: 'Sinope', lat: 43.1, lon: 35.0 },
-      { name: 'Carthage-ish', lat: 36.8, lon: 10.3 },
+      { name: 'North', lat: 43.3, lon: 20 },
+      { name: 'South', lat: 42.0, lon: 20 },
     ],
   }
   const { container } = render(<MapCard story={edgeStory} theme={0} />)
+  const svg = container.querySelector('svg.basemap')!
+  const [, vy, vw] = svg.getAttribute('viewBox')!.split(' ').map(Number)
+  const s = vw / VIEW.w
+  expect(vy).toBe(0) // fitted window clamps to the region's top edge
+
   const circles = container.querySelectorAll('circle')
-  const sinopeText = screen.getByText('Sinope')
-  const carthageText = screen.getByText('Carthage-ish')
-  expect(Number(sinopeText.getAttribute('y'))).toBeGreaterThan(Number(circles[0].getAttribute('cy')))
-  expect(carthageText.getAttribute('text-anchor')).toBe('start')
+  const northCy = Number(circles[0].getAttribute('cy'))
+  const southCy = Number(circles[1].getAttribute('cy'))
+  // per MapCard's labelYFor: cy - 30*s < view.y + 20*s triggers below-marker placement
+  expect(northCy - 30 * s).toBeLessThan(vy + 20 * s)
+  expect(southCy - 30 * s).not.toBeLessThan(vy + 20 * s)
+
+  const northText = screen.getByText('North')
+  const southText = screen.getByText('South')
+  expect(Number(northText.getAttribute('y'))).toBeGreaterThan(northCy)
+  expect(Number(southText.getAttribute('y'))).toBeLessThan(southCy)
+})
+
+test('anchors a near-left-edge label to start when the fitted window hits the region left edge', () => {
+  const edgeStory = {
+    id: 'mY', title: 'Left anchor test', route: false,
+    body: 'A place near the region left edge.', ref: 'Test 2:1',
+    places: [{ name: 'West', lat: 36.8, lon: 8.6 }],
+  }
+  const { container } = render(<MapCard story={edgeStory} theme={0} />)
+  const svg = container.querySelector('svg.basemap')!
+  const [vx, , vw] = svg.getAttribute('viewBox')!.split(' ').map(Number)
+  const s = vw / VIEW.w
+  expect(vx).toBe(0) // fitted window clamps to the region's left edge
+
+  const circle = container.querySelector('circle')!
+  const cx = Number(circle.getAttribute('cx'))
+  expect(cx).toBeLessThan(vx + 60 * s) // inside the anchorFor edge zone
+
+  const westText = screen.getByText('West')
+  expect(westText.getAttribute('text-anchor')).toBe('start')
+})
+
+test('zooms to the story: Galilee window is small, voyage window is region-wide', () => {
+  const { container: g } = render(<MapCard story={galilee} theme={0} />)
+  const gw = Number(g.querySelector('svg.basemap')!.getAttribute('viewBox')!.split(' ')[2])
+  expect(gw).toBeLessThan(300)
+  const { container: v } = render(<MapCard story={voyage} theme={0} />)
+  const vw = Number(v.querySelector('svg.basemap')!.getAttribute('viewBox')!.split(' ')[2])
+  expect(vw).toBeGreaterThan(600) // Caesarea→Rome spans ~427 ref units; padded+aspect ≈ 644
+})
+
+test('locator inset appears only when zoomed in', () => {
+  const { container: g } = render(<MapCard story={galilee} theme={0} />)
+  expect(g.querySelector('[data-testid="inset"]')).not.toBeNull()
+  const { container: v } = render(<MapCard story={voyage} theme={0} />)
+  expect(v.querySelector('[data-testid="inset"]')).toBeNull()
+})
+
+test('all 14 stories render without error and with ≤6 context labels', () => {
+  for (const s of maps as MapStory[]) {
+    const { container, unmount } = render(<MapCard story={s} theme={1} />)
+    expect(container.querySelectorAll('circle').length).toBe(s.places.length)
+    expect(container.querySelectorAll('text.bm-label').length).toBeLessThanOrEqual(6)
+    unmount()
+  }
 })

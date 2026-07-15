@@ -6,7 +6,7 @@ interface MapLabel { text: string; kind: string; x: number; y: number; rank: num
 
 const FONT = { sea: 20, river: 13, region: 15 } as const
 
-export function BaseMap({ view = { x: 0, y: 0, w: VIEW.w, h: VIEW.h }, children }: { view?: Box; children?: ReactNode }) {
+export function BaseMap({ view, children }: { view: Box; children?: ReactNode }) {
   const s = view.w / VIEW.w
   const m = 10 * s
   const labels = (basemap.labels as MapLabel[])
