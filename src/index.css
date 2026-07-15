@@ -88,10 +88,10 @@ body {
   :root { --map-sea: #a7bfd4; --map-land: #f2ebd6; }
 }
 .basemap { width: 100%; border-radius: 0.9rem; margin: 0.9rem 0 1rem; display: block; }
-.bm-label { font-family: var(--sans); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }
+.bm-label { font-family: var(--sans); paint-order: stroke; stroke: var(--map-sea); }
 .bm-sea, .bm-river { font-style: italic; fill: var(--text-dim); }
 .bm-region { fill: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.85; }
-.map-label { font-family: var(--sans); fill: var(--text); paint-order: stroke; stroke: var(--map-sea); stroke-width: 3px; }
+.map-label { font-family: var(--sans); fill: var(--text); paint-order: stroke; stroke: var(--map-sea); }
 
 .feed { height: 100dvh; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; }
 .slot { height: 100dvh; scroll-snap-align: start; }

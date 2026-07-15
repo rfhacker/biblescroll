@@ -97,6 +97,71 @@ test('locator inset appears only when zoomed in', () => {
   expect(v.querySelector('[data-testid="inset"]')).toBeNull()
 })
 
+test('inset avoids occluding a story place, picking a free corner (m03: Ur)', () => {
+  const m03 = (maps as MapStory[]).find((m) => m.id === 'm03')!
+  const { container } = render(<MapCard story={m03} theme={0} />)
+  const svg = container.querySelector('svg.basemap')!
+  const [vx, vy, vw, vh] = svg.getAttribute('viewBox')!.split(' ').map(Number)
+  const s = vw / VIEW.w
+
+  const insetRect = container.querySelector('[data-testid="inset"] rect')!
+  const ix = Number(insetRect.getAttribute('x'))
+  const iy = Number(insetRect.getAttribute('y'))
+  const iw = Number(insetRect.getAttribute('width'))
+  const ih = Number(insetRect.getAttribute('height'))
+
+  const brX = vx + vw - iw - 12 * s
+  const brY = vy + vh - ih - 12 * s
+  expect(ix === brX && iy === brY).toBe(false) // bottom-right is occupied by Ur; must have moved
+
+  // Ur (first place in m03) sits at ~(725.7, 429.9) in view space and must be outside the inset rect.
+  const urCircle = container.querySelectorAll('circle')[0]
+  const urX = Number(urCircle.getAttribute('cx'))
+  const urY = Number(urCircle.getAttribute('cy'))
+  expect(urX).toBeCloseTo(725.7, 0)
+  expect(urY).toBeCloseTo(429.9, 0)
+  const urInsideInset = urX >= ix && urX <= ix + iw && urY >= iy && urY <= iy + ih
+  expect(urInsideInset).toBe(false)
+})
+
+test('inset stays bottom-right when no story place occupies that corner', () => {
+  const m02 = (maps as MapStory[]).find((m) => m.id === 'm02')!
+  const { container } = render(<MapCard story={m02} theme={0} />)
+  const svg = container.querySelector('svg.basemap')!
+  const [vx, vy, vw, vh] = svg.getAttribute('viewBox')!.split(' ').map(Number)
+  const s = vw / VIEW.w
+
+  const insetRect = container.querySelector('[data-testid="inset"] rect')!
+  const ix = Number(insetRect.getAttribute('x'))
+  const iy = Number(insetRect.getAttribute('y'))
+  const iw = Number(insetRect.getAttribute('width'))
+  const ih = Number(insetRect.getAttribute('height'))
+
+  const brX = vx + vw - iw - 12 * s
+  const brY = vy + vh - ih - 12 * s
+  expect(ix).toBeCloseTo(brX, 5)
+  expect(iy).toBeCloseTo(brY, 5)
+})
+
+test('dodges a near-coincident place label below to avoid stacking on an earlier marker', () => {
+  const dodgeStory = {
+    id: 'mZ', title: 'Coincident places test', route: false,
+    body: 'Two places close enough on the map to collide.', ref: 'Test 3:1',
+    places: [
+      { name: 'Nazareth', lat: 32.7, lon: 35.3 },
+      { name: 'Cana', lat: 32.75, lon: 35.34 },
+    ],
+  }
+  const { container } = render(<MapCard story={dodgeStory} theme={0} />)
+  const svg = container.querySelector('svg.basemap')!
+  const vw = Number(svg.getAttribute('viewBox')!.split(' ')[2])
+  const s = vw / VIEW.w
+
+  const nazarethY = Number(screen.getByText('Nazareth').getAttribute('y'))
+  const canaY = Number(screen.getByText('Cana').getAttribute('y'))
+  expect(Math.abs(canaY - nazarethY)).toBeGreaterThan(20 * s)
+})
+
 test('all 14 stories render without error and with ≤6 context labels', () => {
   for (const s of maps as MapStory[]) {
     const { container, unmount } = render(<MapCard story={s} theme={1} />)

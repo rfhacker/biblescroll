@@ -1,8 +1,8 @@
 [
   { "text": "Great Sea (Mediterranean)", "kind": "sea", "lat": 34.3, "lon": 20.5, "rank": 1 },
   { "text": "Black Sea", "kind": "sea", "lat": 42.9, "lon": 33.0, "rank": 2 },
-  { "text": "Red Sea", "kind": "sea", "lat": 27.3, "lon": 34.9, "rank": 2, "angle": -45 },
-  { "text": "Sea of Galilee", "kind": "sea", "lat": 32.82, "lon": 35.59, "rank": 2 },
+  { "text": "Red Sea", "kind": "sea", "lat": 28.6, "lon": 33.2, "rank": 2, "angle": -45 },
+  { "text": "Sea of Galilee", "kind": "sea", "lat": 32.75, "lon": 35.62, "rank": 3 },
   { "text": "Dead Sea (Salt Sea)", "kind": "sea", "lat": 31.4, "lon": 35.5, "rank": 3 },
   { "text": "Jordan R.", "kind": "river", "lat": 32.3, "lon": 35.57, "rank": 3, "angle": 90 },
   { "text": "Nile R.", "kind": "river", "lat": 28.8, "lon": 30.9, "rank": 2, "angle": 75 },

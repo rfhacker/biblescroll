@@ -6,13 +6,18 @@ interface MapLabel { text: string; kind: string; x: number; y: number; rank: num
 
 const FONT = { sea: 20, river: 13, region: 15 } as const
 
-export function BaseMap({ view, children }: { view: Box; children?: ReactNode }) {
+export function BaseMap({ view, children, avoid }: { view: Box; children?: ReactNode; avoid?: { x: number; y: number }[] }) {
   const s = view.w / VIEW.w
   const m = 10 * s
+  const cx = view.x + view.w / 2
+  const cy = view.y + view.h / 2
+  const distToCenter = (l: MapLabel) => Math.hypot(l.x - cx, l.y - cy)
+  const avoidRadius = 15 * s
   const labels = (basemap.labels as MapLabel[])
     .filter((l) => l.x >= view.x + m && l.x <= view.x + view.w - m &&
                    l.y >= view.y + m && l.y <= view.y + view.h - m)
-    .sort((a, b) => a.rank - b.rank)
+    .filter((l) => !avoid?.some((a) => Math.hypot(l.x - a.x, l.y - a.y) < avoidRadius))
+    .sort((a, b) => (a.rank - b.rank) || (distToCenter(a) - distToCenter(b)))
     .slice(0, 6)
 
   return (
@@ -33,6 +38,7 @@ export function BaseMap({ view, children }: { view: Box; children?: ReactNode })
         <text key={l.text} x={l.x} y={l.y} textAnchor="middle"
           className={`bm-label bm-${l.kind}`}
           style={{ fontSize: FONT[l.kind as keyof typeof FONT] * s }}
+          strokeWidth={3 * s}
           transform={l.angle ? `rotate(${l.angle} ${l.x} ${l.y})` : undefined}>
           {l.text}
         </text>
