@@ -12,7 +12,7 @@ export function BaseMap({ view, children, avoid }: { view: Box; children?: React
   const cx = view.x + view.w / 2
   const cy = view.y + view.h / 2
   const distToCenter = (l: MapLabel) => Math.hypot(l.x - cx, l.y - cy)
-  const avoidRadius = 15 * s
+  const avoidRadius = 10 * s
   const labels = (basemap.labels as MapLabel[])
     .filter((l) => l.x >= view.x + m && l.x <= view.x + view.w - m &&
                    l.y >= view.y + m && l.y <= view.y + view.h - m)

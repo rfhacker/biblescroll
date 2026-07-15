@@ -57,6 +57,24 @@ test('Red Sea label falls within the Exodus (m04) window after the Gulf-of-Suez 
   expect(texts).toContain('Red Sea')
 })
 
+test('Sea of Galilee label survives on its own story window (m02) despite the nearby Tiberias marker', () => {
+  const galilee = (maps as MapStory[]).find((m) => m.id === 'm02')!
+  const pts = galilee.places.map((p) => project(p.lat, p.lon))
+  const view = fitViewBox(pts)
+  const { container } = render(<BaseMap view={view} avoid={pts} />)
+  const texts = [...container.querySelectorAll('text.bm-label')].map((t) => t.textContent)
+  expect(texts).toContain('Sea of Galilee')
+})
+
+test('Dead Sea (Salt Sea) label renders on the David-on-the-run window (m05)', () => {
+  const david = (maps as MapStory[]).find((m) => m.id === 'm05')!
+  const pts = david.places.map((p) => project(p.lat, p.lon))
+  const view = fitViewBox(pts)
+  const { container } = render(<BaseMap view={view} avoid={pts} />)
+  const texts = [...container.querySelectorAll('text.bm-label')].map((t) => t.textContent)
+  expect(texts).toContain('Dead Sea (Salt Sea)')
+})
+
 test('avoid suppresses context labels near given points, regardless of window', () => {
   // Levant window includes "Galilee" per the earlier test; passing an avoid point
   // right on top of its anchor should hide it while leaving other labels alone.
