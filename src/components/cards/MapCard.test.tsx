@@ -28,14 +28,18 @@ test('does not render a route line when route is false', () => {
 })
 
 test('clamps a near-top-edge label below the marker and anchors a near-left-edge label to start', () => {
-  const romeStory = {
-    id: 'm12', title: "Paul's shipwreck voyage to Rome", route: false,
-    body: 'Paul reaches Rome.', ref: 'Acts 27:1-28:16',
-    places: [{ name: 'Rome', lat: 41.90, lon: 12.49 }],
+  const edgeStory = {
+    id: 'm12', title: 'Edges of the known world', route: false,
+    body: 'Places near the frame edges.', ref: 'Acts 27:1-28:16',
+    places: [
+      { name: 'Sinope', lat: 43.1, lon: 35.0 },
+      { name: 'Carthage-ish', lat: 36.8, lon: 10.3 },
+    ],
   }
-  const { container } = render(<MapCard story={romeStory} theme={0} />)
-  const circle = container.querySelector('circle')!
-  const text = screen.getByText('Rome')
-  expect(Number(text.getAttribute('y'))).toBeGreaterThan(Number(circle.getAttribute('cy')))
-  expect(text.getAttribute('text-anchor')).toBe('start')
+  const { container } = render(<MapCard story={edgeStory} theme={0} />)
+  const circles = container.querySelectorAll('circle')
+  const sinopeText = screen.getByText('Sinope')
+  const carthageText = screen.getByText('Carthage-ish')
+  expect(Number(sinopeText.getAttribute('y'))).toBeGreaterThan(Number(circles[0].getAttribute('cy')))
+  expect(carthageText.getAttribute('text-anchor')).toBe('start')
 })
