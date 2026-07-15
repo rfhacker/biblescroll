@@ -15,8 +15,8 @@ test('clipPolygonToRect clips a polygon straddling an edge', () => {
     expect(x).toBeGreaterThanOrEqual(0); expect(x).toBeLessThanOrEqual(10)
     expect(y).toBeGreaterThanOrEqual(0); expect(y).toBeLessThanOrEqual(10)
   }
-  expect(out.some(([x]) => x === 0)).toBe(true)   // new points on the clip edge
-  expect(out.some(([x]) => x === 5)).toBe(true)   // original inside points kept
+  expect(out.some(([x]: number[]) => x === 0)).toBe(true)   // new points on the clip edge
+  expect(out.some(([x]: number[]) => x === 5)).toBe(true)   // original inside points kept
 })
 
 test('clipPolygonToRect returns [] for a fully outside polygon', () => {
@@ -68,7 +68,7 @@ test('clipPolygonToRect clips an engulfing polygon down to the rect corners', ()
   expect(out).toHaveLength(4)
   const expectedCorners = [[0, 0], [10, 0], [10, 10], [0, 10]]
   for (const corner of expectedCorners) {
-    expect(out.some(([x, y]) => x === corner[0] && y === corner[1])).toBe(true)
+    expect(out.some(([x, y]: number[]) => x === corner[0] && y === corner[1])).toBe(true)
   }
 })
 
