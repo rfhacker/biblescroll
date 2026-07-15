@@ -1,6 +1,12 @@
 // Pure geometry for the basemap build pipeline. No dependencies.
 
 // Sutherland–Hodgman polygon clip against an axis-aligned rect (convex).
+//
+// Ring convention: the input ring may be GeoJSON-closed (first point === last
+// point — this is harmless, S-H clipping tolerates the repeated vertex). The
+// returned ring is always OPEN (no duplicated closing vertex). Callers that
+// build SVG paths (or any other closed representation) from the output must
+// close the path themselves (e.g. with 'Z').
 export function clipPolygonToRect(ring, [minX, minY, maxX, maxY]) {
   const edges = [
     { inside: (p) => p[0] >= minX, cross: (a, b) => lerpX(a, b, minX) },
@@ -25,7 +31,23 @@ export function clipPolygonToRect(ring, [minX, minY, maxX, maxY]) {
     }
     if (out.length === 0) return []
   }
-  return out
+  return dedupeRing(out)
+}
+
+// Remove consecutive duplicate points (epsilon 1e-9), treating the first and
+// last points as adjacent too (since the ring is implicitly closed). Guards
+// against degenerate slivers (e.g. corner-touch clips) that survive the S-H
+// passes as rings of 4+ coincident points. Returns [] if fewer than 3
+// distinct points remain.
+function dedupeRing(points) {
+  const EPS = 1e-9
+  const same = (a, b) => Math.abs(a[0] - b[0]) < EPS && Math.abs(a[1] - b[1]) < EPS
+  const out = []
+  for (const p of points) {
+    if (out.length === 0 || !same(out[out.length - 1], p)) out.push(p)
+  }
+  while (out.length > 1 && same(out[0], out[out.length - 1])) out.pop()
+  return out.length < 3 ? [] : out
 }
 
 function lerpX(a, b, x) {
@@ -39,58 +61,89 @@ function lerpY(a, b, y) {
 
 // Clip a polyline; returns an array of segments (may exit/re-enter the rect).
 export function clipPolylineToRect(line, rect) {
-  const [minX, minY, maxX, maxY] = rect
-  const inside = (p) => p[0] >= minX && p[0] <= maxX && p[1] >= minY && p[1] <= maxY
   const segs = []
-  let cur = []
-  for (let i = 0; i < line.length; i++) {
-    const p = line[i], prev = i > 0 ? line[i - 1] : null
-    if (inside(p)) {
-      if (prev && !inside(prev)) cur.push(boundaryPoint(prev, p, rect))
-      cur.push(p)
-    } else if (prev && inside(prev)) {
-      cur.push(boundaryPoint(p, prev, rect))
-      if (cur.length > 1) segs.push(cur)
-      cur = []
-    }
+  let cur = null
+  const EPS = 1e-9
+  const samePoint = (a, b) => Math.abs(a[0] - b[0]) < EPS && Math.abs(a[1] - b[1]) < EPS
+
+  const closeCur = () => {
+    if (cur && cur.length > 1) segs.push(cur)
+    cur = null
   }
-  if (cur.length > 1) segs.push(cur)
+
+  for (let i = 1; i < line.length; i++) {
+    const a = line[i - 1], b = line[i]
+    const clipped = clipSegment(a, b, rect)
+    if (!clipped) {
+      closeCur()
+      continue
+    }
+    const { p0, p1, exits } = clipped
+    if (!cur) {
+      cur = [p0]
+    } else if (!samePoint(cur[cur.length - 1], p0)) {
+      closeCur()
+      cur = [p0]
+    }
+    cur.push(p1)
+    if (exits) closeCur()
+  }
+  closeCur()
   return segs
 }
 
-// Intersection of segment (out -> in) with the rect boundary, via binary search
-// (robust for axis crossings without enumerating edge cases).
-function boundaryPoint(outside, insideP, rect) {
-  const [minX, minY, maxX, maxY] = rect
-  const inR = (p) => p[0] >= minX && p[0] <= maxX && p[1] >= minY && p[1] <= maxY
-  let lo = outside, hi = insideP
-  for (let i = 0; i < 40; i++) {
-    const mid = [(lo[0] + hi[0]) / 2, (lo[1] + hi[1]) / 2]
-    if (inR(mid)) hi = mid
-    else lo = mid
+// Liang–Barsky parametric clipping of segment a->b against an axis-aligned
+// rect. Returns null if the segment doesn't intersect the rect, otherwise
+// the clipped endpoints and whether the clipped segment exits the rect
+// before reaching b (t1 < 1).
+function clipSegment(a, b, [minX, minY, maxX, maxY]) {
+  const dx = b[0] - a[0], dy = b[1] - a[1]
+  let t0 = 0, t1 = 1
+  const p = [-dx, dx, -dy, dy]
+  const q = [a[0] - minX, maxX - a[0], a[1] - minY, maxY - a[1]]
+  for (let i = 0; i < 4; i++) {
+    if (p[i] === 0) {
+      if (q[i] < 0) return null
+    } else {
+      const r = q[i] / p[i]
+      if (p[i] < 0) {
+        if (r > t1) return null
+        if (r > t0) t0 = r
+      } else {
+        if (r < t0) return null
+        if (r < t1) t1 = r
+      }
+    }
   }
-  // snap to the exact boundary coordinate
-  const p = hi.slice()
-  if (Math.abs(p[0] - minX) < 1e-6) p[0] = minX
-  if (Math.abs(p[0] - maxX) < 1e-6) p[0] = maxX
-  if (Math.abs(p[1] - minY) < 1e-6) p[1] = minY
-  if (Math.abs(p[1] - maxY) < 1e-6) p[1] = maxY
-  return p
+  return { p0: [a[0] + t0 * dx, a[1] + t0 * dy], p1: [a[0] + t1 * dx, a[1] + t1 * dy], exits: t1 < 1 }
 }
 
 // Douglas–Peucker simplification. tolerance in the data's coordinate units.
+// Iterative (explicit stack) so it doesn't blow the call stack on
+// tens-of-thousands-point coastlines. Endpoints are always preserved.
 export function simplify(points, tolerance) {
   if (points.length <= 2) return points
-  let maxDist = 0, index = 0
-  const [a, b] = [points[0], points[points.length - 1]]
-  for (let i = 1; i < points.length - 1; i++) {
-    const d = perpDist(points[i], a, b)
-    if (d > maxDist) { maxDist = d; index = i }
+  const keep = new Uint8Array(points.length)
+  keep[0] = 1
+  keep[points.length - 1] = 1
+  const stack = [[0, points.length - 1]]
+  while (stack.length > 0) {
+    const [lo, hi] = stack.pop()
+    if (hi - lo < 2) continue
+    const a = points[lo], b = points[hi]
+    let maxDist = 0, index = -1
+    for (let i = lo + 1; i < hi; i++) {
+      const d = perpDist(points[i], a, b)
+      if (d > maxDist) { maxDist = d; index = i }
+    }
+    if (maxDist > tolerance && index !== -1) {
+      keep[index] = 1
+      stack.push([lo, index], [index, hi])
+    }
   }
-  if (maxDist <= tolerance) return [a, b]
-  const left = simplify(points.slice(0, index + 1), tolerance)
-  const right = simplify(points.slice(index), tolerance)
-  return left.slice(0, -1).concat(right)
+  const out = []
+  for (let i = 0; i < points.length; i++) if (keep[i]) out.push(points[i])
+  return out
 }
 
 function perpDist(p, a, b) {
