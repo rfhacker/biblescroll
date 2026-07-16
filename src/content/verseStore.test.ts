@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { buildStore, refKey, refLabel, refText, chapterOf, prevChapter, nextChapter, parseRefLabel } from './verseStore'
+import { buildStore, refKey, refLabel, refText, chapterOf, prevChapter, nextChapter, parseRefLabel, parseLooseRef } from './verseStore'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
 
@@ -51,4 +51,16 @@ test('parseRefLabel inverts refLabel for singles, ranges, and numbered books', (
   expect(parseRefLabel('Song of Solomon 2:1')).toEqual({ b: 'SNG', c: 2, v: 1 })
   expect(parseRefLabel('Nonsense')).toBeNull()
   expect(parseRefLabel('Atlantis 3:16')).toBeNull()
+})
+
+test('parseLooseRef reads prose citation shapes', () => {
+  expect(parseLooseRef('1 Samuel 17:40')).toEqual({ b: '1SA', c: 17, v: 40 })
+  expect(parseLooseRef('Acts 1:1-2')).toEqual({ b: 'ACT', c: 1, v: 1 })
+  expect(parseLooseRef('Acts 10:44-48; 11:17-18')).toEqual({ b: 'ACT', c: 10, v: 44 })
+  expect(parseLooseRef('Exodus 12:37-19:2; Numbers 33:36')).toEqual({ b: 'EXO', c: 12, v: 37 })
+  expect(parseLooseRef('Psalms 23:1–6')).toEqual({ b: 'PSA', c: 23, v: 1 })
+  expect(parseLooseRef('Psalm 117:1')).toEqual({ b: 'PSA', c: 117, v: 1 })   // alias
+  expect(parseLooseRef('Song of Songs 2:1')).toEqual({ b: 'SNG', c: 2, v: 1 }) // alias
+  expect(parseLooseRef('Atlantis 3:16')).toBeNull()
+  expect(parseLooseRef('John')).toBeNull()
 })
