@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "convert": "node scripts/convert-web-xml.mjs",
     "icons": "node scripts/make-icons.mjs",
-    "basemap": "node scripts/make-basemap.mjs"
+    "basemap": "node scripts/make-basemap.mjs",
+    "commentary": "node scripts/make-commentary.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

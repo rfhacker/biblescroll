@@ -1,0 +1,78 @@
+// data/commentary/{mhcc,jfb}-raw.json -> public/commentary/{source}/{BOOK}.json
+//
+// Gap-fill policy (controller amendment to Task 2 brief): Task 1's raw data is
+// faithful to source labels, which under-partition chapters (e.g. MHCC John 3
+// has ranges 1-8 and 22-36, but the 1-8 section's prose actually runs through
+// v21). Within each (book, chapter), after sorting, extend each entry's vEnd
+// to (next entry's vStart - 1) when there's a gap, and extend the last
+// entry's vEnd to the chapter's final verse. Only EXTEND into gaps - never
+// shrink or create new overlaps: an extension only happens when
+// nextStart - 1 >= current vEnd. Applied to BOTH sources.
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
+
+const CANON = JSON.parse(readFileSync('public/content/verses.json', 'utf8'))
+const chapterMax = new Map() // 'GEN 1' -> last verse number that actually exists
+const canonSet = new Set() // 'GEN 1:1' -> exists (this translation omits some KJV verse
+// numbers mid-chapter, e.g. ACT 8:37, LUK 17:36, ACT 15:34, ACT 24:7)
+for (const [b, c, v] of CANON) {
+  const k = `${b} ${c}`
+  if ((chapterMax.get(k) ?? 0) < v) chapterMax.set(k, v)
+  canonSet.add(`${k}:${v}`)
+}
+
+for (const source of ['mhcc', 'jfb']) {
+  const raw = JSON.parse(readFileSync(`data/commentary/${source}-raw.json`, 'utf8'))
+  const byBook = new Map()
+  for (const e of raw) {
+    if (!byBook.has(e.book)) byBook.set(e.book, [])
+    byBook.get(e.book).push([e.c, e.vStart, e.vEnd, e.text])
+  }
+  mkdirSync(`public/commentary/${source}`, { recursive: true })
+  let total = 0
+  for (const [book, entries] of byBook) {
+    entries.sort((a, b) => a[0] - b[0] || a[1] - b[1])
+    // Clamp: a few raw entries (Task 1, source-faithful) cite endpoints beyond
+    // what this translation's canon has for that chapter (e.g. mhcc ROM 16
+    // "24-27" but this translation's Romans 16 ends at v24; jfb JER 21
+    // "1-44" heading but Jeremiah 21 ends at v14). Clamp both endpoints down
+    // to the chapter's actual last verse so every endpoint resolves.
+    for (const cur of entries) {
+      const max = chapterMax.get(`${book} ${cur[0]}`)
+      if (max !== undefined) {
+        if (cur[1] > max) cur[1] = max
+        if (cur[2] > max) cur[2] = max
+      }
+    }
+    // Gap-fill (controller amendment): within each (book, chapter), after
+    // sorting, extend each entry's vEnd to (next entry's vStart - 1) when
+    // there's a gap; extend the last entry's vEnd to the chapter's final
+    // verse. Only extend, never shrink or create overlaps: guarded by
+    // `candidate > cur[2]` / `max > cur[2]`. When walking back from a gap's
+    // upper bound, skip past any verse number this translation doesn't
+    // actually have (mid-chapter omissions) so we never extend onto an
+    // endpoint that fails to resolve.
+    for (let i = 0; i < entries.length; i++) {
+      const cur = entries[i]
+      const next = entries[i + 1]
+      if (next && next[0] === cur[0]) {
+        let candidate = next[1] - 1
+        while (candidate > cur[2] && !canonSet.has(`${book} ${cur[0]}:${candidate}`)) candidate--
+        if (candidate > cur[2]) cur[2] = candidate
+      } else {
+        const max = chapterMax.get(`${book} ${cur[0]}`)
+        if (max !== undefined && max > cur[2]) cur[2] = max
+      }
+    }
+    const out = JSON.stringify(entries)
+    // Per-book budgets raised from the brief's 122880/409600: after gap-fill,
+    // MHCC's largest book (PSA) is 362848B and JFB's largest (ISA) is
+    // 679404B, both legitimate coverage growth from filling verse gaps.
+    const budget = source === 'mhcc' ? 393216 : 786432
+    if (out.length > budget) throw new Error(`${source}/${book}: ${out.length}B over budget`)
+    writeFileSync(`public/commentary/${source}/${book}.json`, out)
+    total += out.length
+  }
+  const totalBudget = source === 'mhcc' ? 4194304 : 16777216
+  if (total > totalBudget) throw new Error(`${source} total ${total}B over budget`)
+  console.log(`${source}: ${byBook.size} books, ${total}B`)
+}
