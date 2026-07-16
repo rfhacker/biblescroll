@@ -1,4 +1,4 @@
-// data/commentary/{mhcc,jfb}-raw.json -> public/commentary/{source}/{BOOK}.json
+// data/commentary/{mhcc,jfb,mhc}-raw.json -> public/commentary/{source}/{BOOK}.json
 //
 // Gap-fill policy (controller amendment to Task 2 brief): Task 1's raw data is
 // faithful to source labels, which under-partition chapters (e.g. MHCC John 3
@@ -7,7 +7,17 @@
 // to (next entry's vStart - 1) when there's a gap, and extend the last
 // entry's vEnd to the chapter's final verse. Only EXTEND into gaps - never
 // shrink or create new overlaps: an extension only happens when
-// nextStart - 1 >= current vEnd. Applied to BOTH sources.
+// nextStart - 1 >= current vEnd. Applied to ALL sources.
+//
+// KJV-quote stripping (controller amendment to Task 2, mhc only): ~76% of mhc
+// entries open with the embedded KJV passage text before Henry's exposition
+// ("25 At that time Jesus answered…"). That's redundant (the app shows the
+// WEB verse the user swiped from) and the wrong translation (KJV, not WEB).
+// Strip leading paragraphs (split on \n\n) that begin with a verse number
+// falling within the entry's [vStart, vEnd] (or equal to its chapter number,
+// for chapter-heading quirks). Stop at the first paragraph that doesn't
+// match. Never strip an entry below 40 chars — if stripping would, keep the
+// original text and log it (this is a safety net; expect ~0 hits).
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 
 const CANON = JSON.parse(readFileSync('public/content/verses.json', 'utf8'))
@@ -20,12 +30,48 @@ for (const [b, c, v] of CANON) {
   canonSet.add(`${k}:${v}`)
 }
 
-for (const source of ['mhcc', 'jfb']) {
+function stripLeadingQuote(book, c, vStart, vEnd, text) {
+  const paras = text.split('\n\n')
+  let i = 0
+  while (i < paras.length) {
+    const m = paras[i].match(/^(\d{1,3})\b/)
+    if (!m) break
+    const n = Number(m[1])
+    if (!((n >= vStart && n <= vEnd) || n === c)) break
+    i++
+  }
+  if (i === 0) return { text, stripped: false }
+  const candidate = paras.slice(i).join('\n\n')
+  if (candidate.length < 40) {
+    console.log(`mhc strip safeguard: ${book} ${c}:${vStart}-${vEnd} would drop below 40 chars — keeping original`)
+    return { text, stripped: false, tooShort: true }
+  }
+  return { text: candidate, stripped: true }
+}
+
+for (const source of ['mhcc', 'jfb', 'mhc']) {
   const raw = JSON.parse(readFileSync(`data/commentary/${source}-raw.json`, 'utf8'))
   const byBook = new Map()
+  let strippedCount = 0
+  let tooShortCount = 0
   for (const e of raw) {
+    let text = e.text
+    if (source === 'mhc') {
+      const r = stripLeadingQuote(e.book, e.c, e.vStart, e.vEnd, e.text)
+      text = r.text
+      if (r.stripped) strippedCount++
+      if (r.tooShort) tooShortCount++
+    }
     if (!byBook.has(e.book)) byBook.set(e.book, [])
-    byBook.get(e.book).push([e.c, e.vStart, e.vEnd, e.text])
+    byBook.get(e.book).push([e.c, e.vStart, e.vEnd, text])
+  }
+  if (source === 'mhc') {
+    console.log(
+      `mhc: stripped leading KJV quote from ${strippedCount}/${raw.length} entries (${(
+        (100 * strippedCount) /
+        raw.length
+      ).toFixed(1)}%); ${tooShortCount} kept original (<40-char safeguard)`,
+    )
   }
   mkdirSync(`public/commentary/${source}`, { recursive: true })
   let total = 0
@@ -66,13 +112,16 @@ for (const source of ['mhcc', 'jfb']) {
     const out = JSON.stringify(entries)
     // Per-book budgets raised from the brief's 122880/409600: after gap-fill,
     // MHCC's largest book (PSA) is 362848B and JFB's largest (ISA) is
-    // 679404B, both legitimate coverage growth from filling verse gaps.
-    const budget = source === 'mhcc' ? 393216 : 786432
+    // 679404B, both legitimate coverage growth from filling verse gaps. mhc's
+    // budget (8,388,608B / 8MiB per book, 50,331,648B / 48MiB whole-set) comes
+    // from the Task 2 plan's Global Constraints — the unabridged Henry is
+    // much larger than either abridged source.
+    const budget = { mhcc: 393216, jfb: 786432, mhc: 8388608 }[source]
     if (out.length > budget) throw new Error(`${source}/${book}: ${out.length}B over budget`)
     writeFileSync(`public/commentary/${source}/${book}.json`, out)
     total += out.length
   }
-  const totalBudget = source === 'mhcc' ? 4194304 : 16777216
+  const totalBudget = { mhcc: 4194304, jfb: 16777216, mhc: 50331648 }[source]
   if (total > totalBudget) throw new Error(`${source} total ${total}B over budget`)
   console.log(`${source}: ${byBook.size} books, ${total}B`)
 }
