@@ -230,16 +230,20 @@ body {
 /* First-visit scroll hint: shown on card 0 until the user first scrolls,
    then remembered on-device (bs:scrolled) and never shown again. */
 .scroll-hint {
-  position: fixed; bottom: calc(1.1rem + env(safe-area-inset-bottom));
+  /* Overlays always-dark cards, so lock dark tokens (same idiom as .topbar).
+     Sits ABOVE the card-actions band ([2.2rem, 5.1rem] from the bottom) so
+     the centered pill can never overlap the save/share buttons. */
+  --bg: #12151c; --text-dim: #a49e90; --accent: #d4a95a;
+  position: fixed; bottom: calc(5.9rem + env(safe-area-inset-bottom));
   left: 50%; z-index: 5; pointer-events: none;
   display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
-  color: #a49e90; font-size: 0.88rem; letter-spacing: 0.02em;
-  background: rgba(18, 21, 28, 0.55); border-radius: 999px;
+  color: var(--text-dim); font-size: 0.88rem; letter-spacing: 0.02em;
+  background: color-mix(in srgb, var(--bg) 55%, transparent); border-radius: 999px;
   padding: 0.45rem 1rem 0.5rem;
   transform: translate(-50%, 0);
   animation: hintbob 2.4s ease-in-out infinite;
 }
-.scroll-hint-arrow { color: #d4a95a; font-size: 1rem; line-height: 1; }
+.scroll-hint-arrow { color: var(--accent); font-size: 1rem; line-height: 1; }
 @keyframes hintbob {
   0%, 100% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, -7px); }

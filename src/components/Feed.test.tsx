@@ -36,7 +36,7 @@ test('scroll hint shows on the first card for a first-time visitor', () => {
 
 test('scroll hint is absent for someone who has scrolled before', () => {
   localStorage.clear()
-  localStorage.setItem('bs:scrolled', '"1"')
+  localStorage.setItem('bs:scrolled', '1')
   render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
   expect(screen.queryByText(/swipe up/i)).toBeNull()
   cleanup()
