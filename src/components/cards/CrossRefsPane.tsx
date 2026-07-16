@@ -39,7 +39,7 @@ export function CrossRefsPane({ book, c, v, verses, active }: {
       {status === 'loading' && <p className="commentary-dim">Gathering the echoes…</p>}
       {status === 'failed' && (
         <p className="commentary-dim">
-          References for this book aren't downloaded yet.
+          References for this book aren’t downloaded yet.
           <button className="commentary-switch" onClick={() => setAttempt((a) => a + 1)}>Try again</button>
         </p>
       )}

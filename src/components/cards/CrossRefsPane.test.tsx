@@ -59,7 +59,7 @@ test('fetch failure shows the offline message with Try again', async () => {
     .mockResolvedValueOnce(new Response(JSON.stringify([[3, 16, [['ROM', 5, 8]]]]), { status: 200 }))
   render(<CrossRefsPane book="ISA" c={3} v={16} verses={store} active={true} />)
   await waitFor(() =>
-    expect(screen.getByText(/references for this book aren't downloaded yet/i)).toBeInTheDocument())
+    expect(screen.getByText(/references for this book aren’t downloaded yet/i)).toBeInTheDocument())
   await userEvent.click(screen.getByRole('button', { name: /try again/i }))
   await screen.findByText('Romans 5:8')
 })
