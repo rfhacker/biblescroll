@@ -64,3 +64,8 @@ test('parseLooseRef reads prose citation shapes', () => {
   expect(parseLooseRef('Atlantis 3:16')).toBeNull()
   expect(parseLooseRef('John')).toBeNull()
 })
+
+test('parseLooseRef accepts chapter-only citations, defaulting to verse 1', () => {
+  expect(parseLooseRef('2 John 1')).toEqual({ b: '2JN', c: 1, v: 1 })
+  expect(parseLooseRef('Psalms 117')).toEqual({ b: 'PSA', c: 117, v: 1 })
+})

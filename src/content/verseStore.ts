@@ -77,18 +77,28 @@ const BOOK_ALIASES: Record<string, string> = {
   Canticles: 'SNG',
 }
 
-// Forgiving parser for prose citations: "1 Samuel 17:40", "Acts 1:1-2",
-// "Acts 10:44-48; 11:17-18", "Exodus 12:37-19:2", "Psalms 23:1–6".
-// Returns the FIRST cited book/chapter/verse; null when unrecognizable.
+// Combined and sorted book-name matching list (built once at module load).
+// Combines NAME_TO_CODE and BOOK_ALIASES, sorted by name length descending
+// to avoid partial matches.
+const LOOSE_BOOK_NAMES: [string, string][] = [
+  ...Array.from(NAME_TO_CODE.entries()),
+  ...Object.entries(BOOK_ALIASES),
+].sort((a, b) => b[0].length - a[0].length)
+
+/**
+ * Forgiving parser for prose citations: "1 Samuel 17:40", "Acts 1:1-2",
+ * "Acts 10:44-48; 11:17-18", "Exodus 12:37-19:2", "Psalms 23:1–6".
+ *
+ * Contract:
+ * - Returns the FIRST cited book/chapter/verse (splits on `;`).
+ * - Chapter is required; verse is optional (defaults to 1).
+ * - Book matching uses longest-first strategy to avoid partial matches.
+ * - Returns null when citation cannot be recognized.
+ */
 export function parseLooseRef(ref: string): { b: string; c: number; v: number } | null {
   const first = ref.split(';')[0].trim()
 
-  // Try to match book names (longest first to avoid partial matches)
-  // Build array of [name, code] sorted by name length descending
-  const bookNames = Array.from(NAME_TO_CODE.entries()).sort((a, b) => b[0].length - a[0].length)
-  const aliases = Object.entries(BOOK_ALIASES).sort((a, b) => b[0].length - a[0].length)
-
-  for (const [name, code] of [...bookNames, ...aliases]) {
+  for (const [name, code] of LOOSE_BOOK_NAMES) {
     if (first.startsWith(name + ' ')) {
       const remainder = first.slice(name.length + 1).trim()
       const m = remainder.match(/^(\d+)(?::(\d+))?/)
