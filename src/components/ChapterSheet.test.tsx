@@ -17,6 +17,20 @@ test('renders the chapter with heading, verse numbers, and highlight', () => {
   expect(hl!.textContent).toMatch(/God so loved/)
 })
 
+test('navigating to a chapter without a highlight resets scroll position', () => {
+  const { container, rerender } = render(
+    <ChapterSheet store={store} b="JHN" c={3} highlight={16} onClose={() => {}} onOpen={() => {}} />,
+  )
+  const body = container.querySelector('.chapter-body') as HTMLDivElement
+  expect(body).not.toBeNull()
+  body.scrollTop = 400
+  expect(body.scrollTop).toBe(400)
+  rerender(
+    <ChapterSheet store={store} b="JHN" c={4} onClose={() => {}} onOpen={() => {}} />,
+  )
+  expect(body.scrollTop).toBe(0)
+})
+
 test('prev/next navigate and clamp at canon edges', async () => {
   const onOpen = vi.fn()
   const { rerender } = render(

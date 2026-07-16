@@ -16,6 +16,11 @@
     --surface: #fbf8f1;
     --text: #2b2822;
     --text-dim: #6f6a5e;
+    /* Darker gold than the dark-scheme --accent (#d4a95a, ~1.9:1 on this
+       cream background) so refs/bolded matches/chips stay readable in
+       light mode. #7d5c19 measures ~5.36:1 against --bg #f3efe6. */
+    --accent: #7d5c19;
+    --accent-soft: #a98d55;
   }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,7 +41,7 @@ body {
 /* Card gradients are always dark, so pin dark-theme tokens here regardless of
    OS light/dark preference — otherwise light-mode --text (dark) renders on
    these dark backgrounds with unreadable contrast. */
-.card { --text: #e8e4da; --text-dim: #a49e90; --surface: #1b2029; --bg: #12151c; --map-sea: #141d2b; --map-land: #3a4358; color: var(--text); }
+.card { --text: #e8e4da; --text-dim: #a49e90; --surface: #1b2029; --bg: #12151c; --accent: #d4a95a; --accent-soft: #8a744a; --map-sea: #141d2b; --map-land: #3a4358; color: var(--text); }
 .card {
   height: 100dvh;
   scroll-snap-align: start;
@@ -98,7 +103,7 @@ body {
 .topbar {
   /* Sits above the (always-dark) card feed, so pin its tokens dark-first too —
      otherwise the light-mode --bg/--text-dim pair reads poorly over cards. */
-  --bg: #12151c; --text-dim: #a49e90;
+  --bg: #12151c; --text-dim: #a49e90; --accent: #d4a95a; --accent-soft: #8a744a;
   position: fixed; top: 0; left: 0; right: 0; z-index: 10;
   display: flex; align-items: center; justify-content: space-between;
   padding: calc(env(safe-area-inset-top) + 0.6rem) 1rem 0.6rem;
@@ -144,6 +149,7 @@ body {
 .chapter-scrim { position: fixed; inset: 0; z-index: 30; background: rgba(0,0,0,0.45); }
 .chapter-sheet {
   --text: #e8e4da; --text-dim: #a49e90; --bg: #12151c; --surface: #1b2029;
+  --accent: #d4a95a; --accent-soft: #8a744a;
   position: absolute; left: 0; right: 0; bottom: 0; max-height: 85dvh;
   display: flex; flex-direction: column;
   background: var(--bg); color: var(--text);
@@ -193,6 +199,9 @@ body {
 .feel-go:disabled { opacity: 0.45; cursor: default; }
 .feel-results { padding: 0; overflow: hidden; }
 .feel-results-head {
+  /* Renders over the always-dark feelings feed, so pin its tokens dark-first
+     too — otherwise the light-mode --bg/--text-dim pair reads poorly over cards. */
+  --bg: #12151c; --text-dim: #a49e90; --accent: #d4a95a; --accent-soft: #8a744a;
   position: absolute; top: 0; left: 0; right: 0; z-index: 2; margin: 0;
   padding: calc(env(safe-area-inset-top) + 0.6rem) 1rem 0.6rem;
   background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 85%, transparent), transparent);
@@ -202,7 +211,7 @@ body {
 .feel-feed { height: 100dvh; }
 .menu-scrim { position: fixed; inset: 0; z-index: 15; }
 .menu-sheet {
-  --bg: #12151c; --text: #e8e4da; --text-dim: #a49e90;
+  --bg: #12151c; --text: #e8e4da; --text-dim: #a49e90; --accent: #d4a95a; --accent-soft: #8a744a;
   position: fixed; z-index: 16; right: 0.6rem;
   top: calc(env(safe-area-inset-top) + 3.4rem);
   display: flex; flex-direction: column; min-width: 15rem;

@@ -12,9 +12,14 @@ export function ChapterSheet({ store, b, c, highlight, onClose, onOpen }: {
   const prev = prevChapter(store, b, c)
   const next = nextChapter(store, b, c)
   const hlRef = useRef<HTMLSpanElement>(null)
+  const bodyRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    hlRef.current?.scrollIntoView({ block: 'center' })
+    if (hlRef.current) {
+      hlRef.current.scrollIntoView({ block: 'center' })
+    } else if (bodyRef.current) {
+      bodyRef.current.scrollTop = 0
+    }
   }, [b, c, highlight])
 
   return (
@@ -25,7 +30,7 @@ export function ChapterSheet({ store, b, c, highlight, onClose, onOpen }: {
           <h2>{BOOKS[b] ?? b} {c}</h2>
           <button aria-label="Close" onClick={onClose}>✕</button>
         </header>
-        <div className="chapter-body">
+        <div className="chapter-body" ref={bodyRef}>
           <p className="chapter-text">
             {verses.map(({ v, text }) => (
               <span key={v} ref={v === highlight ? hlRef : undefined}
