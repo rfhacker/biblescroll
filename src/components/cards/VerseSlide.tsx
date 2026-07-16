@@ -14,10 +14,14 @@ export function VerseSlide({ book, c, v, children }: {
   }, [book])
 
   function onScroll() {
-    if (!engaged && (track.current?.scrollLeft ?? 0) > 0) setEngaged(true)
+    if (!engaged && (track.current?.scrollLeft ?? 0) > 0) {
+      setEngaged(true)
+      window.dispatchEvent(new CustomEvent('bs:slide-engaged'))
+    }
   }
 
   function openPane() {
+    if (!engaged) window.dispatchEvent(new CustomEvent('bs:slide-engaged'))
     setEngaged(true)
     const el = track.current
     if (el) el.scrollTo({ left: el.clientWidth, behavior: 'smooth' })

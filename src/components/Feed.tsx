@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { cardAt } from '../lib/feed'
 import { votdIndex } from '../lib/votd'
 import { getInstallSeed, getHasScrolled, setHasScrolled } from '../lib/store'
@@ -15,6 +15,17 @@ export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string
   const sizes = { ...POOL_SIZES, corpus: verses.list.length }
   const vi = votdIndex(day, sizes.curated)
   const total = Math.max(current + 15, 40)
+
+  useEffect(() => {
+    function onSlideEngaged() {
+      if (showHint) {
+        setShowHint(false)
+        setHasScrolled()
+      }
+    }
+    window.addEventListener('bs:slide-engaged', onSlideEngaged)
+    return () => window.removeEventListener('bs:slide-engaged', onSlideEngaged)
+  }, [showHint])
 
   function onScroll() {
     const el = ref.current

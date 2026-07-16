@@ -16,6 +16,26 @@ test('commentaryFor finds the covering entry', () => {
   expect(commentaryFor(ENTRIES, 1, 14)).toBeNull()
 })
 
+test('commentaryFor returns the tightest covering entry, JFB-shaped overlap', () => {
+  const overlapping: CommentaryEntry[] = [
+    [3, 1, 21, 'section heading stub'],
+    [3, 1, 2, 'nicodemus note'],
+    [3, 16, 16, 'the famous note'],
+    [3, 14, 18, 'wider note'],
+  ]
+  expect(commentaryFor(overlapping, 3, 16)![3]).toBe('the famous note')
+  expect(commentaryFor(overlapping, 3, 1)![3]).toBe('nicodemus note')
+  expect(commentaryFor(overlapping, 3, 20)![3]).toBe('section heading stub')
+})
+
+test('commentaryFor breaks span ties by first-in-sort-order', () => {
+  const tied: CommentaryEntry[] = [
+    [16, 24, 24, 'first'],
+    [16, 24, 24, 'second'],
+  ]
+  expect(commentaryFor(tied, 16, 24)![3]).toBe('first')
+})
+
 test('loadCommentary fetches once per source:book and caches', async () => {
   const spy = vi.spyOn(globalThis, 'fetch').mockImplementation(
     () => Promise.resolve(new Response(JSON.stringify(ENTRIES), { status: 200 })),

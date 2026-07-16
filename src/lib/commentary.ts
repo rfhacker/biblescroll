@@ -6,11 +6,24 @@ export const SOURCE_NAMES: Record<CommentarySource, string> = {
   jfb: 'Jamieson-Fausset-Brown',
 }
 
+// Returns the TIGHTEST covering entry for (c, v): among all entries whose
+// [vStart, vEnd] range contains v, the one with the smallest span (vEnd - vStart)
+// wins. Ties fall back to first-in-sort-order. This matters because JFB source
+// files open sections with broad heading entries (e.g. a whole pericope stub)
+// that would otherwise shadow the narrower per-verse notes nested inside them.
 export function commentaryFor(entries: CommentaryEntry[], c: number, v: number): CommentaryEntry | null {
+  let best: CommentaryEntry | null = null
+  let bestSpan = Infinity
   for (const e of entries) {
-    if (e[0] === c && e[1] <= v && v <= e[2]) return e
+    if (e[0] === c && e[1] <= v && v <= e[2]) {
+      const span = e[2] - e[1]
+      if (span < bestSpan) {
+        best = e
+        bestSpan = span
+      }
+    }
   }
-  return null
+  return best
 }
 
 const cache = new Map<string, CommentaryEntry[]>()
