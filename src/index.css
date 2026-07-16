@@ -264,3 +264,19 @@ body {
   background: none; border: none; color: var(--accent); cursor: pointer;
   font-size: 1rem; padding: 0.6rem 0.4rem; min-height: 2.75rem; display: inline-flex; align-items: center;
 }
+.vslide {
+  height: 100%; display: flex;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.vslide::-webkit-scrollbar { display: none; }
+.vpane { flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative; }
+.commentary-chip {
+  /* Bottom-left, mirroring card-actions' bottom offset; clear of the
+     first-visit hint band (bottom-center, 5.9rem). Dark-pinned like cards. */
+  position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); left: 1.6rem;
+  background: color-mix(in srgb, #1b2029 70%, transparent);
+  border: 1px solid color-mix(in srgb, #a49e90 30%, transparent);
+  color: #a49e90; border-radius: 999px; min-height: 2.75rem;
+  padding: 0 1rem; font-size: 0.88rem; cursor: pointer;
+}
