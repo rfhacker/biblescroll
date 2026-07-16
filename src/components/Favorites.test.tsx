@@ -27,3 +27,16 @@ test('close button fires onClose', async () => {
   await userEvent.click(screen.getByRole('button', { name: /close/i }))
   expect(onClose).toHaveBeenCalled()
 })
+
+test('tapping a saved verse opens its chapter', async () => {
+  const { ChapterContext } = await import('./ChapterContext')
+  toggleFavorite({ kind: 'verse', id: 'John 3:16', title: 'John 3:16', body: 'For God so loved…' })
+  const openChapter = vi.fn()
+  render(
+    <ChapterContext.Provider value={{ openChapter }}>
+      <Favorites onClose={() => {}} />
+    </ChapterContext.Provider>,
+  )
+  await userEvent.click(screen.getByText('John 3:16'))
+  expect(openChapter).toHaveBeenCalledWith('JHN', 3, 16)
+})

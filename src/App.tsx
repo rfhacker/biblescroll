@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Feed } from './components/Feed'
 import { TopBar } from './components/TopBar'
+import { Menu } from './components/Menu'
 import { Favorites } from './components/Favorites'
 import { About } from './components/About'
+import { Feelings } from './components/Feelings'
+import { Search } from './components/Search'
 import { ChapterContext } from './components/ChapterContext'
 import { ChapterSheet } from './components/ChapterSheet'
 import { loadVerses, type VerseStore } from './content/verseStore'
@@ -15,7 +18,8 @@ export default function App() {
   const [error, setError] = useState(false)
   const [streak, setStreak] = useState(0)
   const [score, setScore] = useState(getScore())
-  const [panel, setPanel] = useState<'favorites' | 'about' | null>(null)
+  const [panel, setPanel] = useState<'favorites' | 'about' | 'feelings' | 'search' | null>(null)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [day, setDay] = useState(dayKey())
   const [chapter, setChapter] = useState<{ b: string; c: number; highlight?: number } | null>(null)
   const openChapter = (b: string, c: number, v?: number) => setChapter({ b, c, highlight: v })
@@ -49,11 +53,13 @@ export default function App() {
   return (
     <ChapterContext.Provider value={{ openChapter }}>
       <div className="app">
-        <TopBar streak={streak} score={score}
-          onFavorites={() => setPanel('favorites')} onAbout={() => setPanel('about')} />
+        <TopBar streak={streak} score={score} onMenu={() => setMenuOpen((o) => !o)} />
         <Feed verses={verses} day={day} onScore={() => setScore(getScore())} />
+        {menuOpen && <Menu onNavigate={setPanel} onClose={() => setMenuOpen(false)} />}
         {panel === 'favorites' && <Favorites onClose={() => setPanel(null)} />}
         {panel === 'about' && <About onClose={() => setPanel(null)} />}
+        {panel === 'feelings' && <Feelings verses={verses} onClose={() => setPanel(null)} />}
+        {panel === 'search' && <Search verses={verses} onClose={() => setPanel(null)} />}
         {chapter && verses && (
           <ChapterSheet store={verses} b={chapter.b} c={chapter.c} highlight={chapter.highlight}
             onClose={() => setChapter(null)} onOpen={(b, c) => setChapter({ b, c })} />

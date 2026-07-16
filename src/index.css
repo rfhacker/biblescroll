@@ -200,3 +200,20 @@ body {
 .feel-results-head button { background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 1rem; min-height: 2.75rem; }
 .feel-tags { color: var(--accent); font-size: 0.9rem; align-self: center; }
 .feel-feed { height: 100dvh; }
+.menu-scrim { position: fixed; inset: 0; z-index: 15; }
+.menu-sheet {
+  --bg: #12151c; --text: #e8e4da; --text-dim: #a49e90;
+  position: fixed; z-index: 16; right: 0.6rem;
+  top: calc(env(safe-area-inset-top) + 3.4rem);
+  display: flex; flex-direction: column; min-width: 15rem;
+  background: color-mix(in srgb, var(--bg) 96%, white);
+  border: 1px solid color-mix(in srgb, var(--text-dim) 25%, transparent);
+  border-radius: 0.9rem; overflow: hidden; animation: fadein 0.18s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+}
+.menu-sheet button {
+  background: none; border: none; color: var(--text); font-size: 1.02rem;
+  text-align: left; padding: 0.95rem 1.2rem; cursor: pointer; min-height: 2.75rem;
+}
+.menu-sheet button:not(:last-child) { border-bottom: 1px solid color-mix(in srgb, var(--text-dim) 14%, transparent); }
+.fav-open { background: none; border: none; color: var(--text); text-align: left; padding: 0; cursor: pointer; flex: 1; }

@@ -1,7 +1,7 @@
 import { scoreTitle } from '../lib/streak'
 
-export function TopBar({ streak, score, onFavorites, onAbout }: {
-  streak: number; score: number; onFavorites: () => void; onAbout: () => void
+export function TopBar({ streak, score, onMenu }: {
+  streak: number; score: number; onMenu: () => void
 }) {
   return (
     <header className="topbar">
@@ -11,8 +11,7 @@ export function TopBar({ streak, score, onFavorites, onAbout }: {
         <span title={`Trivia score — ${scoreTitle(score)}`}>✓ {score}</span>
       </span>
       <span className="topbar-actions">
-        <button aria-label="Favorites" onClick={onFavorites}>♥</button>
-        <button aria-label="About" onClick={onAbout}>ⓘ</button>
+        <button aria-label="Menu" onClick={onMenu}>☰</button>
       </span>
     </header>
   )

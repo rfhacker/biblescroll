@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { getFavorites, toggleFavorite } from '../lib/store'
 import type { CardKind } from '../content/types'
+import { ChapterContext } from './ChapterContext'
+import { parseRefLabel } from '../content/verseStore'
 
 const GROUPS: [CardKind, string][] = [
   ['verse', 'Verses'], ['trivia', 'Trivia'], ['fact', 'Facts'], ['map', 'Maps'],
@@ -8,6 +10,7 @@ const GROUPS: [CardKind, string][] = [
 
 export function Favorites({ onClose }: { onClose: () => void }) {
   const [favs, setFavs] = useState(getFavorites)
+  const { openChapter } = useContext(ChapterContext)
   return (
     <div className="panel">
       <header className="panel-head">
@@ -23,10 +26,20 @@ export function Favorites({ onClose }: { onClose: () => void }) {
             <h2>{label}</h2>
             {group.map((f) => (
               <div className="fav" key={`${f.kind}:${f.id}`}>
-                <div>
-                  <div className="fav-title">{f.title}</div>
-                  <div className="fav-body">{f.body}</div>
-                </div>
+                {f.kind === 'verse' ? (
+                  <button className="fav-open" onClick={() => {
+                    const r = parseRefLabel(f.id)
+                    if (r) openChapter(r.b, r.c, r.v)
+                  }}>
+                    <div className="fav-title">{f.title}</div>
+                    <div className="fav-body">{f.body}</div>
+                  </button>
+                ) : (
+                  <div>
+                    <div className="fav-title">{f.title}</div>
+                    <div className="fav-body">{f.body}</div>
+                  </div>
+                )}
                 <button aria-label={`Remove ${f.title}`}
                   onClick={() => { toggleFavorite(f); setFavs(getFavorites()) }}>♥</button>
               </div>
