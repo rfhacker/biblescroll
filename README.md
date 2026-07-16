@@ -17,6 +17,16 @@ shared, trivia keeps score, and a daily streak tracks how many days in a row
 you've opened the feed. Everything — content, favorites, streaks — lives on
 the device; there is no backend and nothing is ever sent anywhere.
 
+Beyond the feed, the ☰ menu opens three more doors:
+
+- **How are you feeling?** — pick from 16 feelings (anxious, grieving,
+  grateful…) and receive hand-curated passages chosen for that state. What
+  you select is never recorded, not even locally.
+- **Read the chapter** — tap any verse's reference to open its full chapter,
+  with the verse highlighted and ‹ › navigation across the whole canon.
+- **Search** — offline word search across all 31,098 verses, straight to the
+  chapter.
+
 ## Tech
 
 - [Vite](https://vitejs.dev/) + [React](https://react.dev/) + TypeScript
