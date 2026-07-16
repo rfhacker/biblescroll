@@ -82,7 +82,7 @@ test('scrolling hides the hint and remembers it', async () => {
   cleanup()
 })
 
-test('verse slots are two-pane slides with a commentary chip; no commentary fetch before engagement beyond prefetch', () => {
+test('verse slots are three-pane slides with chips; no commentary/crossrefs fetch before engagement beyond prefetch', () => {
   localStorage.clear()
   localStorage.setItem('bs:scrolled', '1')
   const spy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response('[]', { status: 200 }))
@@ -90,7 +90,8 @@ test('verse slots are two-pane slides with a commentary chip; no commentary fetc
   expect(container.querySelector('.vslide')).not.toBeNull()
   expect(container.querySelector('.commentary-pane')).toBeNull()
   for (const [url] of spy.mock.calls) {
-    expect(String(url)).toMatch(/\/commentary\//) // only commentary prefetches, no other fetches
+    // only commentary/crossrefs prefetches, no other fetches
+    expect(String(url)).toMatch(/\/(commentary|crossrefs)\//)
   }
   spy.mockRestore()
   cleanup()

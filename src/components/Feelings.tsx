@@ -81,7 +81,7 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
         </article></section>
         {ordered.map((r, i) => (
           <section className="slot" key={r.join(':')}>
-            <VerseSlide book={r[0]} c={r[1]} v={r[2]}>
+            <VerseSlide book={r[0]} c={r[1]} v={r[2]} verses={verses}>
               <VerseCard text={refText(verses, r)} label={refLabel(r)} theme={(i + 1) % 5} />
             </VerseSlide>
           </section>

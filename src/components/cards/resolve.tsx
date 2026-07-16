@@ -28,14 +28,14 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
       if (item.pool === 'curated') {
         const ref = (curated as CuratedRef[])[item.poolIndex]
         return (
-          <VerseSlide book={ref[0]} c={ref[1]} v={ref[2]}>
+          <VerseSlide book={ref[0]} c={ref[1]} v={ref[2]} verses={verses}>
             <VerseCard text={refText(verses, ref)} label={refLabel(ref)} votd={item.votd} theme={theme} />
           </VerseSlide>
         )
       }
       const [b, c, v, text] = verses.list[item.poolIndex]
       return (
-        <VerseSlide book={b} c={c} v={v}>
+        <VerseSlide book={b} c={c} v={v} verses={verses}>
           <VerseCard text={text} label={`${BOOKS[b] ?? b} ${c}:${v}`} theme={theme} />
         </VerseSlide>
       )
