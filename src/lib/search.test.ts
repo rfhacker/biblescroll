@@ -16,11 +16,17 @@ test('all terms must match — adding a bogus term empties results', () => {
 })
 
 test('exact word outranks prefix-only match', () => {
-  const r = searchVerses(store, 'shepherd')
-  const first = store.list[r[0].index][3].toLowerCase()
-  expect(first).toContain('shepherd')
-  // a verse containing the exact word must not rank below one matching only by prefix elsewhere
-  expect(r[0].score).toBeGreaterThanOrEqual(r[r.length - 1].score)
+  // Synthetic store: one verse has the exact term "shepherd", the other only
+  // matches by prefix ("shepherds"). The exact match must score strictly higher.
+  const tiny = buildStore([
+    ['GEN', 1, 1, 'the shepherds sat'],
+    ['GEN', 1, 2, 'the shepherd sat'],
+  ])
+  const r = searchVerses(tiny, 'shepherd')
+  expect(r).toHaveLength(2)
+  expect(r[0].index).toBe(1) // exact match verse ranks first
+  expect(r[1].index).toBe(0) // prefix-only match ranks second
+  expect(r[0].score).toBeGreaterThan(r[1].score)
 })
 
 test('caps results and respects the limit param', () => {
@@ -36,5 +42,23 @@ test('punctuation and case are ignored; sub-2-char terms dropped', () => {
 })
 
 test('normalize strips punctuation and lowercases', () => {
-  expect(normalize("Don't—Fear!")).toBe('don t fear')
+  expect(normalize("Don't—Fear!")).toBe('dont fear')
+})
+
+test('caches per-verse word arrays: repeated calls return identical results', () => {
+  const first = searchVerses(store, 'eagle wing')
+  const second = searchVerses(store, 'eagle wing')
+  expect(second).toEqual(first)
+})
+
+test('apostrophe-free query matches contractions in the source text', () => {
+  const r = searchVerses(store, 'dont be afraid')
+  expect(r.length).toBeGreaterThan(0)
+  const text = store.list[r[0].index][3]
+  expect(text.toLowerCase()).toMatch(/don['’]t be afraid/)
+})
+
+test('possessive apostrophes are stripped so "gods" matches "God\'s"', () => {
+  const r = searchVerses(store, 'gods love')
+  expect(r.length).toBeGreaterThan(0)
 })

@@ -1,7 +1,26 @@
 import type { VerseStore } from '../content/verseStore'
 
 export function normalize(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9\s]+/g, ' ').replace(/\s+/g, ' ').trim()
+  return s
+    .toLowerCase()
+    .replace(/[’ʼ']/g, '')
+    .replace(/[^a-z0-9\s]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+// Per-verse word arrays are expensive to recompute (normalize + split over
+// ~31k verses). Cache them per store on first search so repeat searches
+// only pay for scoring, not re-tokenizing the whole corpus.
+const wordCache = new WeakMap<VerseStore, string[][]>()
+
+function wordsFor(store: VerseStore): string[][] {
+  let words = wordCache.get(store)
+  if (!words) {
+    words = store.list.map((t) => normalize(t[3]).split(' '))
+    wordCache.set(store, words)
+  }
+  return words
 }
 
 export function searchVerses(
@@ -9,9 +28,10 @@ export function searchVerses(
 ): { index: number; score: number }[] {
   const terms = normalize(query).split(' ').filter((t) => t.length >= 2)
   if (terms.length === 0) return []
+  const allWords = wordsFor(store)
   const out: { index: number; score: number }[] = []
   for (let i = 0; i < store.list.length; i++) {
-    const words = normalize(store.list[i][3]).split(' ')
+    const words = allWords[i]
     let score = 0
     let ok = true
     for (const t of terms) {
