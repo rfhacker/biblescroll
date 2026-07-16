@@ -69,7 +69,7 @@ palette; warm tone; validation-tested data; feed performance untouched
   "Scripture on {Book C:V}" (anchor = the card's verse; range cards use
   their start verse); then the list — each item: gold tappable ref label
   (opens the chapter reader at that verse) + its WEB text in serif
-  (clamped to 4 lines with a per-item expand if longer). First 15 items
+  (clamped to 4 lines (the full text is one tap away via the chapter reader — no per-item expand)). First 15 items
   render; a "Show all (N)" button reveals the rest (TSK lists can exceed
   50). Empty state (rare uncovered verse): "No cross-references recorded
   for this verse." Offline-uncached (only if runtime-cached tier):
