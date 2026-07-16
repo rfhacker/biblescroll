@@ -5,7 +5,7 @@ export function TopBar({ streak, score, onMenu }: {
 }) {
   return (
     <header className="topbar">
-      <span className="brand">BibleScroll</span>
+      <span className="brand">JesusFeed</span>
       <span className="stats">
         <span title="Daily streak">🔥 {streak}</span>
         <span title={`Trivia score — ${scoreTitle(score)}`}>✓ {score}</span>

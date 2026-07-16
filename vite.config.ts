@@ -4,15 +4,15 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/biblescroll/',
+  base: '/',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'BibleScroll',
-        short_name: 'BibleScroll',
+        name: 'JesusFeed',
+        short_name: 'JesusFeed',
         description: 'An endless scroll of Scripture — verses, trivia, and the world of the Bible.',
         theme_color: '#12151c',
         background_color: '#12151c',

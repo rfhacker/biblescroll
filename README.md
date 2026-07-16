@@ -1,4 +1,4 @@
-# BibleScroll
+# JesusFeed
 
 A Christian alternative to doom-scrolling: an endless, snap-scrolling feed of
 Bible verses, trivia, maps, and facts — built for the same swipe-and-scroll
@@ -6,7 +6,7 @@ habit as social media, minus the social media. No accounts, no ads, no
 tracking. Installs as an offline-first PWA so it works on a plane, in a
 basement, or anywhere else the signal doesn't reach.
 
-**Live:** https://rfhacker.github.io/biblescroll/
+**Live:** https://jesusfeed.com/ (the old rfhacker.github.io/biblescroll URL redirects)
 
 ## What it is
 

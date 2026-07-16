@@ -48,7 +48,7 @@ export default function App() {
   }, [day])
 
   if (error) return <div className="splash">Couldn’t load — check your connection and refresh.</div>
-  if (!verses) return <div className="splash pulse">BibleScroll</div>
+  if (!verses) return <div className="splash pulse">JesusFeed</div>
 
   return (
     <ChapterContext.Provider value={{ openChapter }}>

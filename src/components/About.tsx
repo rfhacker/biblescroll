@@ -6,7 +6,7 @@ export function About({ onClose }: { onClose: () => void }) {
         <button aria-label="Close" onClick={onClose}>✕</button>
       </header>
       <div className="about-body">
-        <p>BibleScroll turns idle scrolling into time in the Word — verses, trivia, maps, and glimpses into the world of the Bible, one card at a time.</p>
+        <p>JesusFeed turns idle scrolling into time in the Word — verses, trivia, maps, and glimpses into the world of the Bible, one card at a time.</p>
         <p>Scripture quotations are from the <strong>World English Bible (WEB)</strong>, a public-domain modern English translation.</p>
         <p>Maps are drawn from <strong>Natural Earth</strong>, a public-domain map dataset.</p>
         <p>Everything stays on your device. No account, no ads, no tracking — just Scripture.</p>
