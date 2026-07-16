@@ -1,14 +1,20 @@
-import { SESSION_SEED } from './session'
+import { getSessionSeed, regenerateSessionSeed, randomSeed, RESUME_SESSION_MS } from './session'
 
-test('session seed is a 16-hex string, stable within one module instance', async () => {
-  expect(SESSION_SEED).toMatch(/^[0-9a-f]{16}$/)
-  const again = await import('./session')
-  expect(again.SESSION_SEED).toBe(SESSION_SEED)
+test('session seed is a 16-hex string, stable until regenerated', () => {
+  const a = getSessionSeed()
+  expect(a).toMatch(/^[0-9a-f]{16}$/)
+  expect(getSessionSeed()).toBe(a)
 })
 
-test('a fresh app load (new module instance) gets a different seed', async () => {
-  vi.resetModules()
-  const fresh = await import('./session')
-  expect(fresh.SESSION_SEED).toMatch(/^[0-9a-f]{16}$/)
-  expect(fresh.SESSION_SEED).not.toBe(SESSION_SEED)
+test('regenerateSessionSeed swaps in a new seed', () => {
+  const before = getSessionSeed()
+  const next = regenerateSessionSeed()
+  expect(next).toMatch(/^[0-9a-f]{16}$/)
+  expect(next).not.toBe(before)
+  expect(getSessionSeed()).toBe(next)
+})
+
+test('randomSeed produces distinct values; resume threshold is 30 minutes', () => {
+  expect(randomSeed()).not.toBe(randomSeed())
+  expect(RESUME_SESSION_MS).toBe(30 * 60 * 1000)
 })

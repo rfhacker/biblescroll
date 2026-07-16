@@ -83,3 +83,15 @@ test('feelings selections are never persisted', async () => {
   const keys = Object.keys(localStorage).filter((k) => k !== 'bs:seed')
   expect(keys.filter((k) => /feel/i.test(k))).toEqual([])
 })
+
+test('reopening the same feeling reshuffles the verse order', async () => {
+  render(<Feelings verses={store} onClose={() => {}} />)
+  await userEvent.click(screen.getByRole('button', { name: 'Anxious' }))
+  await userEvent.click(screen.getByRole('button', { name: /show me verses/i }))
+  const order1 = [...document.querySelectorAll('.verse-ref-btn')].map((b) => b.textContent).join('|')
+  await userEvent.click(screen.getByRole('button', { name: /back to feelings/i }))
+  await userEvent.click(screen.getByRole('button', { name: /show me verses/i }))
+  const order2 = [...document.querySelectorAll('.verse-ref-btn')].map((b) => b.textContent).join('|')
+  // 13 refs -> 13! orderings; two random seeds colliding is ~1.6e-10
+  expect(order2).not.toBe(order1)
+})

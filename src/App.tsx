@@ -12,6 +12,7 @@ import { loadVerses, type VerseStore } from './content/verseStore'
 import { dayKey } from './lib/votd'
 import { updateStreak } from './lib/streak'
 import { getStreakState, setStreakState, getScore } from './lib/store'
+import { getSessionSeed, regenerateSessionSeed, RESUME_SESSION_MS } from './lib/session'
 
 export default function App() {
   const [verses, setVerses] = useState<VerseStore | null>(null)
@@ -21,6 +22,7 @@ export default function App() {
   const [panel, setPanel] = useState<'favorites' | 'about' | 'feelings' | 'search' | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [day, setDay] = useState(dayKey())
+  const [sessionSeed, setSessionSeed] = useState(getSessionSeed)
   const [chapter, setChapter] = useState<{ b: string; c: number; highlight?: number } | null>(null)
   const openChapter = (b: string, c: number, v?: number) => setChapter({ b, c, highlight: v })
 
@@ -28,17 +30,27 @@ export default function App() {
     loadVerses(import.meta.env.BASE_URL).then(setVerses).catch(() => setError(true))
   }, [])
 
-  // Keep `day` current for an installed PWA resumed across midnight without a
-  // full reload — the feed's seed/VOTD and the streak both key off it.
+  // Installed PWAs resume from memory without a reload. On return to the
+  // foreground: refresh `day` (VOTD/streak), and after a long absence
+  // (RESUME_SESSION_MS) treat it as a new session — fresh shuffle seed so the
+  // feed order changes, matching a real app start. Quick app-switches keep
+  // the current order.
   useEffect(() => {
-    function onVisible() {
-      if (document.visibilityState === 'visible') {
-        const today = dayKey()
-        if (today !== day) setDay(today)
+    let hiddenAt: number | null = null
+    function onVisibility() {
+      if (document.visibilityState === 'hidden') {
+        hiddenAt = Date.now()
+        return
       }
+      const today = dayKey()
+      if (today !== day) setDay(today)
+      if (hiddenAt !== null && Date.now() - hiddenAt >= RESUME_SESSION_MS) {
+        setSessionSeed(regenerateSessionSeed())
+      }
+      hiddenAt = null
     }
-    document.addEventListener('visibilitychange', onVisible)
-    return () => document.removeEventListener('visibilitychange', onVisible)
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => document.removeEventListener('visibilitychange', onVisibility)
   }, [day])
 
   useEffect(() => {
@@ -54,7 +66,7 @@ export default function App() {
     <ChapterContext.Provider value={{ openChapter }}>
       <div className="app">
         <TopBar streak={streak} score={score} onMenu={() => setMenuOpen((o) => !o)} />
-        <Feed verses={verses} day={day} onScore={() => setScore(getScore())} />
+        <Feed verses={verses} day={day} sessionSeed={sessionSeed} onScore={() => setScore(getScore())} />
         {menuOpen && <Menu onNavigate={setPanel} onClose={() => setMenuOpen(false)} />}
         {panel === 'favorites' && <Favorites onClose={() => setPanel(null)} />}
         {panel === 'about' && <About onClose={() => setPanel(null)} />}

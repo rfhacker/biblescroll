@@ -2,17 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import { cardAt } from '../lib/feed'
 import { votdIndex } from '../lib/votd'
 import { getHasScrolled, setHasScrolled } from '../lib/store'
-import { SESSION_SEED } from '../lib/session'
 import type { VerseStore } from '../content/verseStore'
 import { resolveCard, POOL_SIZES } from './cards/resolve'
 
 const WINDOW = 3
 
-export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string; onScore: () => void }) {
+export function Feed({ verses, day, sessionSeed, onScore }: { verses: VerseStore; day: string; sessionSeed: string; onScore: () => void }) {
   const [current, setCurrent] = useState(0)
   const [showHint, setShowHint] = useState(() => !getHasScrolled())
   const ref = useRef<HTMLDivElement>(null)
-  const seed = `${SESSION_SEED}:${day}`
+  const seed = `${sessionSeed}:${day}`
   const sizes = { ...POOL_SIZES, corpus: verses.list.length }
   const vi = votdIndex(day, sizes.curated)
   const total = Math.max(current + 15, 40)
@@ -27,6 +26,14 @@ export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string
     window.addEventListener('bs:slide-engaged', onSlideEngaged)
     return () => window.removeEventListener('bs:slide-engaged', onSlideEngaged)
   }, [showHint])
+
+  // A new session seed means a fresh feed — return to the top like a real
+  // app start rather than remapping cards under the user's thumb.
+  useEffect(() => {
+    const el = ref.current
+    if (el) el.scrollTop = 0
+    setCurrent(0)
+  }, [sessionSeed])
 
   function onScroll() {
     const el = ref.current

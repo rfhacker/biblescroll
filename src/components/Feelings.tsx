@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { VerseCard } from './cards/VerseCard'
 import { VerseSlide } from './cards/VerseSlide'
 import { seededShuffle } from '../lib/rng'
-import { SESSION_SEED } from '../lib/session'
+import { randomSeed } from '../lib/session'
 import { refLabel, refText, type VerseStore } from '../content/verseStore'
 import feelings from '../content/feelings.json'
 import type { CuratedRef } from '../content/types'
@@ -13,6 +13,7 @@ const FEELINGS = feelings as Feeling[]
 export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () => void }) {
   const [selected, setSelected] = useState<string[]>([])
   const [showing, setShowing] = useState(false)
+  const [shuffleSeed, setShuffleSeed] = useState('')
 
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]))
@@ -36,8 +37,8 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
       return contained && !identical
     }))
     const ids = [...selected].sort().join('+')
-    return seededShuffle(refs, `${SESSION_SEED}:feel:${ids}`)
-  }, [selected, showing])
+    return seededShuffle(refs, `${shuffleSeed}:feel:${ids}`)
+  }, [selected, showing, shuffleSeed])
 
   if (!showing) {
     return (
@@ -55,7 +56,7 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
           ))}
         </div>
         <button className="feel-go" disabled={selected.length === 0}
-          onClick={() => setShowing(true)}>Show me verses</button>
+          onClick={() => { setShuffleSeed(randomSeed()); setShowing(true) }}>Show me verses</button>
       </div>
     )
   }
