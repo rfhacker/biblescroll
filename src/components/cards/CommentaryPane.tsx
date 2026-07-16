@@ -57,8 +57,12 @@ export function CommentaryPane({ book, c, v, active }: {
       )}
       {status === 'ready' && !entry && (
         <p className="commentary-dim">
-          JFB doesn't comment on this verse —
-          <button className="commentary-switch" onClick={() => pick('mhcc')}>read Matthew Henry</button>
+          {source === 'jfb'
+            ? "JFB doesn't comment on this verse —"
+            : "This verse doesn't have a note here."}
+          {source === 'jfb' && (
+            <button className="commentary-switch" onClick={() => pick('mhcc')}>read Matthew Henry</button>
+          )}
         </p>
       )}
       {entry && (

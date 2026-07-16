@@ -64,3 +64,18 @@ test('fetch failure on jfb shows the offline-tier message', async () => {
   await waitFor(() =>
     expect(screen.getByText(/isn't downloaded yet — Matthew Henry is always available offline/)).toBeInTheDocument())
 })
+
+test('retry on mhcc failure refetches and succeeds', async () => {
+  const { setCommentarySource } = await import('../../lib/store')
+  setCommentarySource('mhcc')
+  const spy = vi.spyOn(globalThis, 'fetch')
+  spy.mockRejectedValueOnce(new TypeError('failed to fetch'))
+  spy.mockResolvedValueOnce(
+    new Response(JSON.stringify([[3, 16, 16, 'after retry']]), { status: 200 }),
+  )
+  render(<CommentaryPane book="EXO" c={3} v={16} active={true} />)
+  await waitFor(() => expect(screen.getByText(/Commentary couldn't load\./)).toBeInTheDocument())
+  const tryAgainBtn = screen.getByRole('button', { name: /Try again/i })
+  await userEvent.click(tryAgainBtn)
+  await screen.findByText(/after retry/)
+})
