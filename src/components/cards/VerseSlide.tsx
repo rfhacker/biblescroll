@@ -24,9 +24,16 @@ export function VerseSlide({ book, c, v, verses, children }: {
   }, [book])
 
   function engage(side: 'left' | 'right') {
-    if (side === 'left' && !engagedLeft) setEngagedLeft(true)
-    if (side === 'right' && !engagedRight) setEngagedRight(true)
-    window.dispatchEvent(new CustomEvent('bs:slide-engaged'))
+    // Dispatch only on a side's FIRST engagement; repeat taps/scrolls on an
+    // already-engaged side must not re-fire bs:slide-engaged.
+    if (side === 'left' && !engagedLeft) {
+      setEngagedLeft(true)
+      window.dispatchEvent(new CustomEvent('bs:slide-engaged'))
+    }
+    if (side === 'right' && !engagedRight) {
+      setEngagedRight(true)
+      window.dispatchEvent(new CustomEvent('bs:slide-engaged'))
+    }
   }
 
   function onScroll() {
@@ -51,8 +58,8 @@ export function VerseSlide({ book, c, v, verses, children }: {
       <div className="vpane vpane-card">
         {children}
         <div className="slide-chips">
-          <button className="commentary-chip" onClick={() => goTo(0)}>‹ References</button>
-          <button className="commentary-chip" onClick={() => goTo(2)}>Commentary ›</button>
+          <button className="slide-chip" aria-label="Cross references" onClick={() => goTo(0)}>‹ Refs</button>
+          <button className="slide-chip" aria-label="Commentary" onClick={() => goTo(2)}>Commentary ›</button>
         </div>
       </div>
       <div className="vpane">

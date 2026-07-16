@@ -93,3 +93,23 @@ test('tapping the commentary chip engages the right pane', async () => {
   await userEvent.click(screen.getByRole('button', { name: /commentary/i }))
   await screen.findByText(/chip engaged/)
 })
+
+test('bs:slide-engaged fires only on first engagement of a side, not on repeat taps', async () => {
+  vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+    new Response(JSON.stringify([[3, 16, 16, 'engage once text']]), { status: 200 }),
+  )
+  render(<VerseSlide book="DEU" c={3} v={16} verses={store}><article className="card">v</article></VerseSlide>)
+  let engagedCount = 0
+  const onEngaged = () => { engagedCount += 1 }
+  window.addEventListener('bs:slide-engaged', onEngaged)
+  try {
+    await userEvent.click(screen.getByRole('button', { name: /commentary/i }))
+    await screen.findByText(/engage once text/)
+    expect(engagedCount).toBe(1)
+    // Repeat tap of the same (already-engaged) chip must not re-dispatch.
+    await userEvent.click(screen.getByRole('button', { name: /commentary/i }))
+    expect(engagedCount).toBe(1)
+  } finally {
+    window.removeEventListener('bs:slide-engaged', onEngaged)
+  }
+})

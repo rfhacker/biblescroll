@@ -273,17 +273,36 @@ body {
 .vpane { flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative; }
 .slide-chips {
   /* Bottom-left, mirroring card-actions' bottom offset; clear of the
-     first-visit hint band (bottom-center, 5.9rem). Dark-pinned like cards. */
+     first-visit hint band (bottom-center, 5.9rem). Dark-pinned like cards.
+     One compact pill (not two separate chips) so its reserved width can
+     never collide with .card-actions' 132.8px band reserved on the right.
+
+     Geometry budget (narrowest supported screen, 320px):
+       left offset:        1.6rem                = 25.6px
+       label text "‹ Refs" + "Commentary ›"
+         (18 chars, Helvetica-metric estimate)    ≈ 118px
+       button padding, 2 buttons x 0 0.6rem       = 38.4px  (4 x 9.6px)
+       internal divider border                    =  1px
+       ------------------------------------------------
+       pill width                                 ≈ 157.5px
+       pill right edge = 25.6 + 157.5             ≈ 183.1px
+     .card-actions left edge on 320px screen = 320 - 132.8 = 187.2px
+       -> ~4.1px clearance at 320px (worst case)
+     .card-actions left edge on 390px screen = 390 - 132.8 = 257.2px
+       -> ~74.1px clearance at 390px
+     Text-width estimate has rendering-engine slop; keep an eye on real
+     320px devices if the accent font ever changes. */
   position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); left: 1.6rem;
-  display: flex; gap: 0.5rem;
-}
-.slide-chips .commentary-chip { position: static; }
-.commentary-chip {
+  display: flex; align-items: stretch;
   background: color-mix(in srgb, #1b2029 70%, transparent);
   border: 1px solid color-mix(in srgb, #a49e90 30%, transparent);
-  color: #a49e90; border-radius: 999px; min-height: 2.75rem;
-  padding: 0 1rem; font-size: 0.88rem; cursor: pointer;
+  border-radius: 999px; overflow: hidden;
 }
+.slide-chip {
+  background: none; border: none; color: #a49e90; min-height: 2.75rem;
+  padding: 0 0.6rem; font-size: 0.82rem; cursor: pointer;
+}
+.slide-chip + .slide-chip { border-left: 1px solid color-mix(in srgb, #a49e90 30%, transparent); }
 .xref-item { margin-bottom: 1rem; }
 .xref-text {
   font-family: var(--serif); font-size: 1.02rem; line-height: 1.6;
