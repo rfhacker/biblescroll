@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import { commentaryFor, loadCommentary, type CommentaryEntry } from './commentary'
+import { commentaryFor, loadCommentary, SOURCE_NAMES, type CommentaryEntry } from './commentary'
 
 const ENTRIES: CommentaryEntry[] = [
   [1, 1, 8, 'first section'],
@@ -72,5 +72,20 @@ test('loadCommentary rejects on HTTP failure and malformed payloads, without cac
   await expect(loadCommentary('mhcc', 'EXO')).rejects.toThrow()
   await expect(loadCommentary('mhcc', 'EXO')).rejects.toThrow()
   await expect(loadCommentary('mhcc', 'EXO')).resolves.toEqual(ENTRIES)
+  spy.mockRestore()
+})
+
+test('SOURCE_NAMES has the exact display names for all three sources', () => {
+  expect(SOURCE_NAMES.mhcc).toBe('Matthew Henry (Concise)')
+  expect(SOURCE_NAMES.mhc).toBe('Matthew Henry (Complete)')
+  expect(SOURCE_NAMES.jfb).toBe('Jamieson-Fausset-Brown')
+})
+
+test('loadCommentary fetches mhc from the /commentary/mhc/ path', async () => {
+  const spy = vi.spyOn(globalThis, 'fetch').mockImplementation(
+    () => Promise.resolve(new Response(JSON.stringify(ENTRIES), { status: 200 })),
+  )
+  await loadCommentary('mhc', 'RUT')
+  expect(spy.mock.calls[0][0]).toContain('/commentary/mhc/RUT.json')
   spy.mockRestore()
 })

@@ -31,15 +31,27 @@ test('inactive pane fetches and renders nothing', () => {
 test('active pane loads and shows source, covered range, and paragraphs', async () => {
   mockFetchOk()
   render(<CommentaryPane book="JHN" c={3} v={16} active={true} />)
-  await waitFor(() => expect(screen.getByText(/Matthew Henry · John 3:14–18/)).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText(/Matthew Henry \(Concise\) · John 3:14–18/)).toBeInTheDocument())
   expect(screen.getByText(/herein is love indeed/)).toBeInTheDocument()
   expect(screen.getByText(/Second paragraph/)).toBeInTheDocument()
+})
+
+test('three toggle chips render with aria-pressed reflecting the selected source', async () => {
+  mockFetchOk()
+  render(<CommentaryPane book="1CH" c={3} v={16} active={true} />)
+  await waitFor(() => screen.getByText(/Matthew Henry \(Concise\)/))
+  const concise = screen.getByRole('button', { name: 'Concise' })
+  const full = screen.getByRole('button', { name: 'Full' })
+  const jfb = screen.getByRole('button', { name: 'JFB' })
+  expect(concise).toHaveAttribute('aria-pressed', 'true')
+  expect(full).toHaveAttribute('aria-pressed', 'false')
+  expect(jfb).toHaveAttribute('aria-pressed', 'false')
 })
 
 test('toggle switches source, persists, and refetches', async () => {
   const spy = mockFetchOk()
   render(<CommentaryPane book="GEN" c={3} v={16} active={true} />)
-  await waitFor(() => screen.getByText(/Matthew Henry · Genesis/))
+  await waitFor(() => screen.getByText(/Matthew Henry \(Concise\) · Genesis/))
   await userEvent.click(screen.getByRole('button', { name: 'JFB' }))
   await waitFor(() => expect(screen.getByText(/Jamieson-Fausset-Brown/)).toBeInTheDocument())
   expect(spy.mock.calls.some(([url]) => String(url).includes('/jfb/'))).toBe(true)
@@ -47,22 +59,62 @@ test('toggle switches source, persists, and refetches', async () => {
   expect(getCommentarySource()).toBe('jfb')
 })
 
-test('gap in JFB offers the Henry switch', async () => {
-  localStorage.setItem('bs:commentary', 'jfb')
+test('selecting Full loads mhc and shows the Matthew Henry (Complete) header', async () => {
+  const { setCommentarySource } = await import('../../lib/store')
+  setCommentarySource('mhcc')
+  const spy = mockFetchOk()
+  render(<CommentaryPane book="2CH" c={3} v={16} active={true} />)
+  await waitFor(() => screen.getByText(/Matthew Henry \(Concise\) · 2 Chronicles/))
+  await userEvent.click(screen.getByRole('button', { name: 'Full' }))
+  await waitFor(() => expect(screen.getByText(/Matthew Henry \(Complete\) · 2 Chronicles/)).toBeInTheDocument())
+  expect(spy.mock.calls.some(([url]) => String(url).includes('/mhc/'))).toBe(true)
+  const { getCommentarySource } = await import('../../lib/store')
+  expect(getCommentarySource()).toBe('mhc')
+})
+
+test('gap in JFB offers the Concise switch', async () => {
+  const { setCommentarySource } = await import('../../lib/store')
+  setCommentarySource('jfb')
   vi.spyOn(globalThis, 'fetch').mockResolvedValue(
     new Response(JSON.stringify([[99, 1, 2, 'elsewhere']]), { status: 200 }),
   )
   render(<CommentaryPane book="PSA" c={3} v={16} active={true} />)
-  await waitFor(() => expect(screen.getByText(/JFB doesn't comment on this verse/)).toBeInTheDocument())
-  expect(screen.getByRole('button', { name: /read Matthew Henry/i })).toBeInTheDocument()
+  await waitFor(() => expect(screen.getByText(/Jamieson-Fausset-Brown doesn't comment on this verse/)).toBeInTheDocument())
+  expect(screen.getByRole('button', { name: /read Matthew Henry \(Concise\)/i })).toBeInTheDocument()
+})
+
+test('gap in mhc offers the Concise switch', async () => {
+  const { setCommentarySource } = await import('../../lib/store')
+  setCommentarySource('mhc')
+  vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+    new Response(JSON.stringify([[99, 1, 2, 'elsewhere']]), { status: 200 }),
+  )
+  render(<CommentaryPane book="OBA" c={3} v={16} active={true} />)
+  await waitFor(() => expect(screen.getByText(/Matthew Henry \(Complete\) doesn't comment on this verse/)).toBeInTheDocument())
+  expect(screen.getByRole('button', { name: /read Matthew Henry \(Concise\)/i })).toBeInTheDocument()
 })
 
 test('fetch failure on jfb shows the offline-tier message', async () => {
-  localStorage.setItem('bs:commentary', 'jfb')
+  const { setCommentarySource } = await import('../../lib/store')
+  setCommentarySource('jfb')
   vi.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('failed to fetch'))
   render(<CommentaryPane book="ISA" c={3} v={16} active={true} />)
   await waitFor(() =>
-    expect(screen.getByText(/isn't downloaded yet — Matthew Henry is always available offline/)).toBeInTheDocument())
+    expect(screen.getByText(
+      "Jamieson-Fausset-Brown for this book isn't downloaded yet — Matthew Henry (Concise) is always available offline.",
+    )).toBeInTheDocument())
+})
+
+test('fetch failure on mhc shows the offline-tier message, exact copy', async () => {
+  const { setCommentarySource } = await import('../../lib/store')
+  setCommentarySource('mhc')
+  vi.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('failed to fetch'))
+  render(<CommentaryPane book="NAM" c={3} v={16} active={true} />)
+  await waitFor(() =>
+    expect(screen.getByText(
+      "Matthew Henry (Complete) for this book isn't downloaded yet — Matthew Henry (Concise) is always available offline.",
+    )).toBeInTheDocument())
+  expect(screen.getByRole('button', { name: /read Matthew Henry \(Concise\)/i })).toBeInTheDocument()
 })
 
 test('retry on mhcc failure refetches and succeeds', async () => {

@@ -98,7 +98,9 @@ export function setHasScrolled(): void {
 
 export function getCommentarySource(): CommentarySource {
   const raw = read('bs:commentary')
-  return raw === '"jfb"' || raw === 'jfb' ? 'jfb' : 'mhcc'
+  if (raw === '"jfb"' || raw === 'jfb') return 'jfb'
+  if (raw === '"mhc"' || raw === 'mhc') return 'mhc'
+  return 'mhcc'
 }
 export function setCommentarySource(s: CommentarySource): void {
   write('bs:commentary', s)

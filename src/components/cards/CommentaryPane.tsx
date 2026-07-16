@@ -9,6 +9,9 @@ import { getCommentarySource, setCommentarySource } from '../../lib/store'
 
 type Status = 'loading' | 'ready' | 'failed'
 
+const SOURCES: CommentarySource[] = ['mhcc', 'mhc', 'jfb']
+const TOGGLE_LABELS: Record<CommentarySource, string> = { mhcc: 'Concise', mhc: 'Full', jfb: 'JFB' }
+
 export function CommentaryPane({ book, c, v, active }: {
   book: string; c: number; v: number; active: boolean
 }) {
@@ -38,30 +41,38 @@ export function CommentaryPane({ book, c, v, active }: {
   return (
     <div className="commentary-pane">
       <div className="commentary-toggle" role="group" aria-label="Commentary source">
-        <button className={source === 'mhcc' ? 'chip chip-on' : 'chip'} onClick={() => pick('mhcc')}>Henry</button>
-        <button className={source === 'jfb' ? 'chip chip-on' : 'chip'} onClick={() => pick('jfb')}>JFB</button>
+        {SOURCES.map((s) => (
+          <button
+            key={s}
+            className={source === s ? 'chip chip-on' : 'chip'}
+            aria-pressed={source === s}
+            onClick={() => pick(s)}
+          >
+            {TOGGLE_LABELS[s]}
+          </button>
+        ))}
       </div>
       {status === 'loading' && <p className="commentary-dim">Opening the commentary…</p>}
       {status === 'failed' && (
         <p className="commentary-dim">
-          {source === 'jfb'
-            ? "JFB for this book isn't downloaded yet — Matthew Henry is always available offline."
+          {source !== 'mhcc'
+            ? `${SOURCE_NAMES[source]} for this book isn't downloaded yet — ${SOURCE_NAMES.mhcc} is always available offline.`
             : "Commentary couldn’t load."}
           {source === 'mhcc' && (
             <button className="commentary-switch" onClick={() => setAttempt((a) => a + 1)}>Try again</button>
           )}
-          {source === 'jfb' && (
-            <button className="commentary-switch" onClick={() => pick('mhcc')}>Read Matthew Henry</button>
+          {source !== 'mhcc' && (
+            <button className="commentary-switch" onClick={() => pick('mhcc')}>Read {SOURCE_NAMES.mhcc}</button>
           )}
         </p>
       )}
       {status === 'ready' && !entry && (
         <p className="commentary-dim">
-          {source === 'jfb'
-            ? "JFB doesn't comment on this verse —"
+          {source !== 'mhcc'
+            ? `${SOURCE_NAMES[source]} doesn't comment on this verse —`
             : "This verse doesn’t have a note here."}
-          {source === 'jfb' && (
-            <button className="commentary-switch" onClick={() => pick('mhcc')}>read Matthew Henry</button>
+          {source !== 'mhcc' && (
+            <button className="commentary-switch" onClick={() => pick('mhcc')}>read {SOURCE_NAMES.mhcc}</button>
           )}
         </p>
       )}

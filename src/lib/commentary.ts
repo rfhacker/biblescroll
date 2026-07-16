@@ -1,8 +1,9 @@
 export type CommentaryEntry = [c: number, vStart: number, vEnd: number, text: string]
-export type CommentarySource = 'mhcc' | 'jfb'
+export type CommentarySource = 'mhcc' | 'mhc' | 'jfb'
 
 export const SOURCE_NAMES: Record<CommentarySource, string> = {
-  mhcc: 'Matthew Henry',
+  mhcc: 'Matthew Henry (Concise)',
+  mhc: 'Matthew Henry (Complete)',
   jfb: 'Jamieson-Fausset-Brown',
 }
 

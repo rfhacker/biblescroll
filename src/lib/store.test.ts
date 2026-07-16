@@ -122,3 +122,22 @@ test('commentary source preference defaults, persists, and rejects garbage', asy
   const store2 = await import('./store')
   expect(store2.getCommentarySource()).toBe('mhcc')
 })
+
+test('commentary source preference accepts mhc and round-trips', async () => {
+  vi.resetModules()
+  const store = await import('./store')
+  localStorage.clear()
+  store.setCommentarySource('mhc')
+  expect(store.getCommentarySource()).toBe('mhc')
+
+  // A fresh module instance reading the persisted value from localStorage.
+  vi.resetModules()
+  const store2 = await import('./store')
+  expect(store2.getCommentarySource()).toBe('mhc')
+
+  // Garbage still falls back to 'mhcc', not 'mhc'.
+  localStorage.setItem('bs:commentary', '"latin-vulgate"')
+  vi.resetModules()
+  const store3 = await import('./store')
+  expect(store3.getCommentarySource()).toBe('mhcc')
+})
