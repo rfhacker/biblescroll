@@ -1,4 +1,5 @@
 import type { Favorite, CardKind } from '../content/types'
+import type { CommentarySource } from './commentary'
 
 // mem is a same-session mirror that always wins over storage; localStorage is only
 // authoritative for values written in a previous session (i.e. not yet in mem).
@@ -93,4 +94,12 @@ export function getHasScrolled(): boolean {
 }
 export function setHasScrolled(): void {
   write('bs:scrolled', '1')
+}
+
+export function getCommentarySource(): CommentarySource {
+  const raw = read('bs:commentary')
+  return raw === '"jfb"' || raw === 'jfb' ? 'jfb' : 'mhcc'
+}
+export function setCommentarySource(s: CommentarySource): void {
+  write('bs:commentary', s)
 }

@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import { getFavorites, toggleFavorite, isFavorite, getScore, addScore, getStreakState, setStreakState, getInstallSeed, getAnsweredPick, setAnsweredPick } from './store'
+import { getFavorites, toggleFavorite, isFavorite, getScore, addScore, getStreakState, setStreakState, getInstallSeed, getAnsweredPick, setAnsweredPick, getCommentarySource, setCommentarySource } from './store'
 
 beforeEach(() => localStorage.clear())
 
@@ -105,4 +105,20 @@ test('malformed favorites elements in storage are rejected, not partially truste
   vi.resetModules()
   const store = await import('./store')
   expect(store.getFavorites()).toEqual([])
+})
+
+test('commentary source preference defaults, persists, and rejects garbage', async () => {
+  vi.resetModules()
+  const store = await import('./store')
+  localStorage.clear()
+  expect(store.getCommentarySource()).toBe('mhcc')
+  store.setCommentarySource('jfb')
+  expect(store.getCommentarySource()).toBe('jfb')
+
+  // Test that invalid values in storage are rejected. Use a fresh module
+  // instance so mem is empty and we read the invalid value from localStorage.
+  localStorage.setItem('bs:commentary', '"latin-vulgate"')
+  vi.resetModules()
+  const store2 = await import('./store')
+  expect(store2.getCommentarySource()).toBe('mhcc')
 })
