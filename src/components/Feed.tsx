@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { cardAt } from '../lib/feed'
 import { votdIndex } from '../lib/votd'
-import { getInstallSeed } from '../lib/store'
+import { getInstallSeed, getHasScrolled, setHasScrolled } from '../lib/store'
 import type { VerseStore } from '../content/verseStore'
 import { resolveCard, POOL_SIZES } from './cards/resolve'
 
@@ -9,6 +9,7 @@ const WINDOW = 3
 
 export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string; onScore: () => void }) {
   const [current, setCurrent] = useState(0)
+  const [showHint, setShowHint] = useState(() => !getHasScrolled())
   const ref = useRef<HTMLDivElement>(null)
   const seed = `${getInstallSeed()}:${day}`
   const sizes = { ...POOL_SIZES, corpus: verses.list.length }
@@ -20,6 +21,10 @@ export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string
     if (!el || el.clientHeight === 0) return
     const i = Math.round(el.scrollTop / el.clientHeight)
     if (i !== current) setCurrent(i)
+    if (showHint && el.scrollTop > 0) {
+      setShowHint(false)
+      setHasScrolled()
+    }
   }
 
   return (
@@ -31,6 +36,12 @@ export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string
             : null}
         </section>
       ))}
+      {showHint && current === 0 && (
+        <div className="scroll-hint" aria-hidden="true">
+          <span className="scroll-hint-arrow">↑</span>
+          Swipe up for the next card
+        </div>
+      )}
     </div>
   )
 }

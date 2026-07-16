@@ -26,3 +26,32 @@ test('changing the day prop remaps the feed (VOTD updates without remount)', () 
   const secondDayRef = screen.getByText(/Verse of the Day/i).closest('.card')?.textContent
   expect(secondDayRef).not.toBe(firstDayRef)
 })
+
+test('scroll hint shows on the first card for a first-time visitor', () => {
+  localStorage.clear()
+  render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  expect(screen.getByText(/swipe up for the next card/i)).toBeInTheDocument()
+  cleanup()
+})
+
+test('scroll hint is absent for someone who has scrolled before', () => {
+  localStorage.clear()
+  localStorage.setItem('bs:scrolled', '"1"')
+  render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  expect(screen.queryByText(/swipe up/i)).toBeNull()
+  cleanup()
+})
+
+test('scrolling hides the hint and remembers it', async () => {
+  localStorage.clear()
+  const { container } = render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  const feed = container.querySelector('.feed') as HTMLElement
+  Object.defineProperty(feed, 'clientHeight', { value: 800, configurable: true })
+  feed.scrollTop = 800
+  const { fireEvent } = await import('@testing-library/react')
+  fireEvent.scroll(feed)
+  expect(screen.queryByText(/swipe up/i)).toBeNull()
+  const { getHasScrolled } = await import('../lib/store')
+  expect(getHasScrolled()).toBe(true)
+  cleanup()
+})

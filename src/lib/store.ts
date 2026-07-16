@@ -87,3 +87,10 @@ export function getInstallSeed(): string {
   write('bs:seed', seed)
   return seed
 }
+
+export function getHasScrolled(): boolean {
+  return read('bs:scrolled') != null
+}
+export function setHasScrolled(): void {
+  write('bs:scrolled', JSON.stringify('1'))
+}

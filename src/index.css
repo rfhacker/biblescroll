@@ -226,3 +226,24 @@ body {
 }
 .menu-sheet button:not(:last-child) { border-bottom: 1px solid color-mix(in srgb, var(--text-dim) 14%, transparent); }
 .fav-open { background: none; border: none; color: var(--text); text-align: left; padding: 0; cursor: pointer; flex: 1; }
+
+/* First-visit scroll hint: shown on card 0 until the user first scrolls,
+   then remembered on-device (bs:scrolled) and never shown again. */
+.scroll-hint {
+  position: fixed; bottom: calc(1.1rem + env(safe-area-inset-bottom));
+  left: 50%; z-index: 5; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; gap: 0.15rem;
+  color: #a49e90; font-size: 0.88rem; letter-spacing: 0.02em;
+  background: rgba(18, 21, 28, 0.55); border-radius: 999px;
+  padding: 0.45rem 1rem 0.5rem;
+  transform: translate(-50%, 0);
+  animation: hintbob 2.4s ease-in-out infinite;
+}
+.scroll-hint-arrow { color: #d4a95a; font-size: 1rem; line-height: 1; }
+@keyframes hintbob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -7px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint { animation: none; transform: translate(-50%, 0); }
+}
