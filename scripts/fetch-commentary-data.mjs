@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Vendors two public-domain commentaries (Matthew Henry's Concise Commentary,
-// and Jamieson-Fausset-Brown) from CCEL's ThML/XML editions and normalizes
-// them into data/commentary/{mhcc,jfb}-raw.json.
+// Vendors three public-domain commentaries (Matthew Henry's Concise
+// Commentary, Jamieson-Fausset-Brown, and Matthew Henry's UNABRIDGED
+// Commentary on the Whole Bible) from CCEL's ThML/XML editions and
+// normalizes them into data/commentary/{mhcc,jfb,mhc}-raw.json.
 //
 // Output shape: Array<{ book: string /* USFM code */, c: number, vStart: number,
 //   vEnd: number, text: string }>, sorted by canonical book order then (c, vStart).
@@ -13,6 +14,22 @@
 //
 //   MHCC: https://www.ccel.org/ccel/henry/mhcc.xml
 //   JFB:  https://www.ccel.org/ccel/jamieson/jfb.xml
+//
+// The unabridged Henry (mhc) has no usable single-file edition: CCEL's
+// https://www.ccel.org/ccel/henry/mhc.xml is only a ~10KB volume-index page
+// (front matter + links), not the commentary text. The actual content lives
+// in six per-volume ThML files (contiguous canon spans: I Gen-Deut, II
+// Josh-Esth, III Job-Song, IV Isa-Mal, V Matt-John, VI Acts-Rev):
+//   https://www.ccel.org/ccel/henry/mhc1.xml .. mhc6.xml
+// All six are ingested into one `mhc` entry stream (see .superpowers/sdd/
+// hc-task-1-report.md for full detail, including two mhc-specific source
+// quirks not present in mhcc/jfb: (1) chapter divs are titled with Roman
+// numerals ("Chapter XCV") rather than Arabic numbers; (2) volume IV
+// (Isaiah-Malachi) alone serializes <scripCom> attributes in a different
+// (alphabetical) order, with type="Commentary" last instead of first -- the
+// original type-must-be-first scripCom regex silently matched zero tags in
+// that one volume. Both are handled below in an order/format-agnostic way
+// that doesn't change mhcc/jfb behavior.
 //
 // Re-running this script re-uses cached downloads (system temp dir) and is
 // deterministic given the same cached inputs.
@@ -41,6 +58,19 @@ const SOURCES = {
     outFile: join(OUT_DIR, "jfb-raw.json"),
     minEntries: 10000,
     requireAllBooks: false, // >= 60 required
+  },
+  mhc: {
+    // Six-volume unabridged edition -- see header comment. Ingested as one
+    // logical source; each volume is fetched/cached/extracted independently
+    // and the raw entries are concatenated before hygiene+sort+assertions.
+    volumes: [1, 2, 3, 4, 5, 6].map((v) => ({
+      name: `mhc${v}`,
+      url: `https://www.ccel.org/ccel/henry/mhc${v}.xml`,
+      cacheFile: join(CACHE_DIR, `mhc${v}.xml`),
+    })),
+    outFile: join(OUT_DIR, "mhc-raw.json"),
+    minEntries: 2500,
+    requireAllBooks: true,
   },
 };
 
@@ -120,6 +150,25 @@ const TITLE_TO_BOOK = {
 // per the brief, such endpoints must be widened by one verse so the omitted
 // verse becomes an interior point, never a boundary.
 const OMITTED_VARIANTS = new Set(["LUK|17|36", "ACT|8|37", "ACT|15|34", "ACT|24|7", "ROM|16|25"]);
+
+// mhc-specific quirk: every chapter div in the unabridged edition is titled
+// "Chapter <RomanNumeral>" (e.g. "Chapter XCV") rather than an Arabic number
+// (mhcc/jfb use "Chapter 95" / "Psalm 95"). This converts either form.
+function romanToInt(s) {
+  const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  const up = s.toUpperCase();
+  let total = 0;
+  for (let i = 0; i < up.length; i++) {
+    const cur = map[up[i]];
+    if (cur === undefined) return null;
+    const next = map[up[i + 1]];
+    total += next && cur < next ? -cur : cur;
+  }
+  return total;
+}
+function parseChapterNumeral(token) {
+  return /^[0-9]+$/.test(token) ? parseInt(token, 10) : romanToInt(token);
+}
 
 // ---------------------------------------------------------------------------
 // Download (cached)
@@ -288,7 +337,12 @@ function adjustOmittedVariantEndpoints(entry, stats) {
 // inside non-chapter divs such as book overviews/indexes) has no enclosing
 // chapter and is still skipped as preface.
 // ---------------------------------------------------------------------------
-function extractEntries(xml, sourceName, lastVerseMap) {
+// Extracts raw (pre-hygiene, pre-sort) entries from a single ThML document.
+// Split out from extractEntries so mhc's six volumes can each be parsed
+// independently and their raw entries concatenated before a single
+// hygiene+sort pass runs over the combined set (see finalizeEntries/
+// extractEntries below).
+function extractRawEntries(xml, sourceName, lastVerseMap) {
   const stats = {
     crossChapterClamps: 0,
     omittedVariantAdjustments: [],
@@ -331,12 +385,21 @@ function extractEntries(xml, sourceName, lastVerseMap) {
     }
   }
 
-  // scripCom => range reset.
+  // scripCom => range reset. Matched attribute-order-agnostically: mhcc/jfb
+  // always serialize `type="Commentary"` first, but mhc's volume IV
+  // (Isaiah-Malachi) alone serializes scripCom attributes alphabetically
+  // (`id osisRef parsed passage type`), which a type-must-be-first regex
+  // would silently match zero times for. Matching the whole tag and testing
+  // for type/parsed independently is robust to either order and changes no
+  // behavior for mhcc/jfb (which never have any other scripCom type).
   {
-    const scRe = /<scripCom type="Commentary"[^>]*?parsed="([^"]*)"[^>]*\/>/g;
+    const scRe = /<scripCom\b([^>]*)\/>/g;
     let sm;
     while ((sm = scRe.exec(cleaned))) {
-      events.push({ pos: sm.index, type: "scripCom", parsed: sm[1] });
+      if (!/\btype="Commentary"/.test(sm[1])) continue;
+      const pm = /\bparsed="([^"]*)"/.exec(sm[1]);
+      if (!pm) continue;
+      events.push({ pos: sm.index, type: "scripCom", parsed: pm[1] });
     }
   }
 
@@ -363,7 +426,9 @@ function extractEntries(xml, sourceName, lastVerseMap) {
   let currentChapterBook = null;
   let currentChapterNum = null;
   let chapterBuffer = [];
-  const chapterTitleRe = /^(?:Chapter|Psalm)\s+(\d+)$/i;
+  // Accepts both Arabic ("Chapter 95", mhcc/jfb) and Roman ("Chapter XCV",
+  // mhc) chapter numerals -- see parseChapterNumeral/romanToInt above.
+  const chapterTitleRe = /^(?:Chapter|Psalm)\s+([0-9]+|[IVXLCDMivxlcdm]+)$/;
 
   // Book-level deferred buffer: MHCC's "2 Chronicles" (unlike every other
   // book, including its sibling "2 Kings") has no separate "Chapter 1" div
@@ -485,9 +550,11 @@ function extractEntries(xml, sourceName, lastVerseMap) {
         sawFirstChapterInBook = false;
       }
 
-      const chMatch = ev.title ? chapterTitleRe.exec(ev.title) : null;
+      const chMatchRaw = ev.title ? chapterTitleRe.exec(ev.title) : null;
+      const chNumParsed = chMatchRaw ? parseChapterNumeral(chMatchRaw[1]) : null;
+      const chMatch = chNumParsed != null ? chMatchRaw : null;
       if (chMatch && currentTitleBook) {
-        const chNum = parseInt(chMatch[1], 10);
+        const chNum = chNumParsed;
         if (bookLevelBook === currentTitleBook && !sawFirstChapterInBook) {
           sawFirstChapterInBook = true;
           if (bookLevelBuffer.length) {
@@ -563,8 +630,14 @@ function extractEntries(xml, sourceName, lastVerseMap) {
   stats.prefaceParagraphsSkipped += bookLevelBuffer.length;
   stats.titleBookOverrides = titleBookOverrides;
 
-  // Hygiene: drop anything that still has a stray '<' (shouldn't happen) or
-  // is under the 40-char floor (can't invent text, so drop rather than pad).
+  return { entries: rawEntries, stats };
+}
+
+// Hygiene (drop anything that still has a stray '<', which shouldn't happen,
+// or is under the 40-char floor -- can't invent text, so drop rather than
+// pad) + canonical sort. Runs once over the fully-combined raw entry set
+// (a single document for mhcc/jfb; all six volumes concatenated for mhc).
+function finalizeEntries(rawEntries, sourceName, stats) {
   const hygienic = [];
   for (const e of rawEntries) {
     if (e.text.includes("<")) {
@@ -584,7 +657,15 @@ function extractEntries(xml, sourceName, lastVerseMap) {
     return a.vStart - b.vStart;
   });
 
-  return { entries: hygienic, stats };
+  return hygienic;
+}
+
+// Single-document convenience wrapper (mhcc/jfb): extract + finalize in one
+// call, matching the original (pre-refactor) extractEntries behavior exactly.
+function extractEntries(xml, sourceName, lastVerseMap) {
+  const { entries: raw, stats } = extractRawEntries(xml, sourceName, lastVerseMap);
+  const entries = finalizeEntries(raw, sourceName, stats);
+  return { entries, stats };
 }
 
 // ---------------------------------------------------------------------------
@@ -638,6 +719,21 @@ function runAssertions(name, entries, cfg, chapterList) {
   if (missing.length) console.log(`  (missing: ${missing.join(", ")})`);
 }
 
+// Sums numeric stats fields and concatenates array fields across volumes
+// (used only for the multi-volume mhc source).
+function mergeStats(target, src) {
+  for (const key of Object.keys(src)) {
+    if (Array.isArray(src[key])) {
+      target[key] = (target[key] ?? []).concat(src[key]);
+    } else if (typeof src[key] === "number") {
+      target[key] = (target[key] ?? 0) + src[key];
+    } else {
+      target[key] = src[key];
+    }
+  }
+  return target;
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -651,8 +747,28 @@ async function main() {
   for (let i = 0; i < names.length; i++) {
     const name = names[i];
     const cfg = SOURCES[name];
-    const xml = await fetchCached(name, cfg);
-    const { entries, stats } = extractEntries(xml, name, lastVerseMap);
+    let entries, stats;
+    if (cfg.volumes) {
+      // Multi-volume source (mhc): fetch + extract each volume
+      // independently (each is a self-contained ThML document with its own
+      // book-title divs -- no state carries across volume boundaries), then
+      // concatenate raw entries and run a single hygiene+sort pass.
+      let rawAll = [];
+      stats = {};
+      for (let vi = 0; vi < cfg.volumes.length; vi++) {
+        const vol = cfg.volumes[vi];
+        const xml = await fetchCached(vol.name, vol);
+        const { entries: raw, stats: volStats } = extractRawEntries(xml, vol.name, lastVerseMap);
+        console.log(`[${vol.name}] volume raw entries: ${raw.length}, stats:`, volStats);
+        rawAll = rawAll.concat(raw);
+        mergeStats(stats, volStats);
+        if (vi < cfg.volumes.length - 1) await new Promise((r) => setTimeout(r, 300));
+      }
+      entries = finalizeEntries(rawAll, name, stats);
+    } else {
+      const xml = await fetchCached(name, cfg);
+      ({ entries, stats } = extractEntries(xml, name, lastVerseMap));
+    }
     console.log(`[${name}] stats:`, {
       crossChapterClamps: stats.crossChapterClamps,
       apocryphaSkipped: stats.apocryphaSkipped,
