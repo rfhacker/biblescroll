@@ -43,7 +43,7 @@ export default function App() {
     setStreak(s.count)
   }, [day])
 
-  if (error) return <div className="splash">Couldn't load — check your connection and refresh.</div>
+  if (error) return <div className="splash">Couldn’t load — check your connection and refresh.</div>
   if (!verses) return <div className="splash pulse">BibleScroll</div>
 
   return (

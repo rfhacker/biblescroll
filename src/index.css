@@ -154,10 +154,10 @@ body {
 .chapter-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.2rem 0.5rem; }
 .chapter-head h2 { font-family: var(--serif); font-size: 1.3rem; }
 .chapter-head button { background: none; border: none; color: var(--text-dim); font-size: 1.25rem; cursor: pointer; min-width: 2.75rem; min-height: 2.75rem; }
-.chapter-body { overflow-y: auto; padding: 0.4rem 1.3rem 1rem; }
+.chapter-body { overflow-y: auto; overscroll-behavior: contain; padding: 0.4rem 1.3rem 1rem; }
 .chapter-text { font-family: var(--serif); font-size: 1.12rem; line-height: 1.75; }
 .ch-num { color: var(--accent); font-family: var(--sans); font-size: 0.7em; margin-right: 0.15em; }
 .ch-highlight { background: color-mix(in srgb, var(--accent) 22%, transparent); border-radius: 0.25rem; padding: 0.05rem 0.15rem; }
 .chapter-nav { display: flex; justify-content: space-between; padding: 0.6rem 1rem calc(0.8rem + env(safe-area-inset-bottom)); border-top: 1px solid color-mix(in srgb, var(--text-dim) 18%, transparent); }
 .chapter-nav button { background: none; border: none; color: var(--accent); font-size: 1rem; cursor: pointer; min-height: 2.75rem; padding: 0 0.8rem; }
-.verse-ref-btn { background: none; border: none; cursor: pointer; padding: 0.4rem 0; display: inline-block; text-align: left; }
+.verse-ref-btn { background: none; border: none; cursor: pointer; padding: 0.7rem 0; min-height: 2.75rem; display: inline-flex; align-items: center; text-align: left; }
