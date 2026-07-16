@@ -277,21 +277,22 @@ body {
      One compact pill (not two separate chips) so its reserved width can
      never collide with .card-actions' 132.8px band reserved on the right.
 
-     Geometry budget (narrowest supported screen, 320px):
+     Geometry budget (narrowest supported screen, 320px), including the
+     pill's OWN 2px of outer border and UA-button-font slop (SF/Roboto run
+     ~2-4% wider than the Helvetica estimate):
        left offset:        1.6rem                = 25.6px
        label text "‹ Refs" + "Commentary ›"
-         (18 chars, Helvetica-metric estimate)    ≈ 118px
-       button padding, 2 buttons x 0 0.6rem       = 38.4px  (4 x 9.6px)
+         (SF-metric worst case)                   ≈ 123px
+       button padding, 2 buttons x 0 0.5rem       = 32px   (4 x 8px)
        internal divider border                    =  1px
+       outer pill border, 1px x 2                 =  2px
        ------------------------------------------------
-       pill width                                 ≈ 157.5px
-       pill right edge = 25.6 + 157.5             ≈ 183.1px
+       pill width                                 ≈ 158px
+       pill right edge = 25.6 + 158               ≈ 183.6px
      .card-actions left edge on 320px screen = 320 - 132.8 = 187.2px
-       -> ~4.1px clearance at 320px (worst case)
+       -> ~3.6px clearance at 320px (SF worst case; ~8.5px Helvetica)
      .card-actions left edge on 390px screen = 390 - 132.8 = 257.2px
-       -> ~74.1px clearance at 390px
-     Text-width estimate has rendering-engine slop; keep an eye on real
-     320px devices if the accent font ever changes. */
+       -> ~73px clearance at 390px */
   position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); left: 1.6rem;
   display: flex; align-items: stretch;
   background: color-mix(in srgb, #1b2029 70%, transparent);
@@ -300,7 +301,7 @@ body {
 }
 .slide-chip {
   background: none; border: none; color: #a49e90; min-height: 2.75rem;
-  padding: 0 0.6rem; font-size: 0.82rem; cursor: pointer;
+  padding: 0 0.5rem; font-size: 0.82rem; cursor: pointer;
 }
 .slide-chip + .slide-chip { border-left: 1px solid color-mix(in srgb, #a49e90 30%, transparent); }
 .xref-item { margin-bottom: 1rem; }
