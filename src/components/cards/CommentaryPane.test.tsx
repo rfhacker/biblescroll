@@ -32,6 +32,7 @@ test('active pane loads and shows source, covered range, and paragraphs', async 
   mockFetchOk()
   render(<CommentaryPane book="JHN" c={3} v={16} active={true} />)
   await waitFor(() => expect(screen.getByText(/Matthew Henry \(Concise\) · John 3:14–18/)).toBeInTheDocument())
+  expect(screen.getByText('Bible Commentary')).toBeInTheDocument()
   expect(screen.getByText(/herein is love indeed/)).toBeInTheDocument()
   expect(screen.getByText(/Second paragraph/)).toBeInTheDocument()
 })

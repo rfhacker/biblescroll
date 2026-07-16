@@ -40,6 +40,7 @@ export function CommentaryPane({ book, c, v, active }: {
 
   return (
     <div className="commentary-pane">
+      <div className="kicker">Bible Commentary</div>
       <div className="commentary-toggle" role="group" aria-label="Commentary source">
         {SOURCES.map((s) => (
           <button
