@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { VerseCard } from './cards/VerseCard'
 import { seededShuffle } from '../lib/rng'
 import { getInstallSeed } from '../lib/store'
@@ -15,6 +15,28 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
 
   const toggle = (id: string) =>
     setSelected((s) => (s.includes(id) ? s.filter((x) => x !== id) : [...s, id]))
+
+  const ordered = useMemo(() => {
+    const chosenFeelings = FEELINGS.filter((f) => selected.includes(f.id))
+    const seen = new Set<string>()
+    const union: CuratedRef[] = []
+    for (const f of chosenFeelings) for (const r of f.refs) {
+      const k = r.join(':')
+      if (!seen.has(k)) { seen.add(k); union.push(r) }
+    }
+    // Absorb refs whose span is fully contained within another kept ref's
+    // (wider) span in the same book+chapter, e.g. JHN 11:35 inside JHN 11:32-35.
+    const refs = union.filter((r) => !union.some((o) => {
+      if (o === r || o[0] !== r[0] || o[1] !== r[1]) return false
+      const oEnd = o[3] ?? o[2]
+      const rEnd = r[3] ?? r[2]
+      const contained = o[2] <= r[2] && oEnd >= rEnd
+      const identical = o[2] === r[2] && oEnd === rEnd
+      return contained && !identical
+    }))
+    const ids = [...selected].sort().join('+')
+    return seededShuffle(refs, `${getInstallSeed()}:feel:${ids}`)
+  }, [selected, showing])
 
   if (!showing) {
     return (
@@ -38,14 +60,6 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
   }
 
   const chosen = FEELINGS.filter((f) => selected.includes(f.id))
-  const seen = new Set<string>()
-  const refs: CuratedRef[] = []
-  for (const f of chosen) for (const r of f.refs) {
-    const k = r.join(':')
-    if (!seen.has(k)) { seen.add(k); refs.push(r) }
-  }
-  const ids = [...selected].sort().join('+')
-  const ordered = seededShuffle(refs, `${getInstallSeed()}:feel:${ids}`)
   const introText = chosen.length === 1
     ? chosen[0].intro
     : `For what you're carrying — ${chosen.map((f) => f.label.toLowerCase()).join(', ')} — the Word has a word.`
