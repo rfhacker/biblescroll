@@ -1,0 +1,322 @@
+[
+  {
+    "id": "anxious",
+    "label": "Anxious",
+    "intro": "You're not the first to lie awake at night — and you're not alone in it.",
+    "refs": [
+      ["PHP", 4, 6, 7],
+      ["MAT", 6, 25, 27],
+      ["PSA", 94, 19],
+      ["1PE", 5, 7],
+      ["ISA", 41, 10],
+      ["PSA", 55, 22],
+      ["JHN", 14, 27],
+      ["PSA", 34, 4],
+      ["PRO", 12, 25],
+      ["1JN", 4, 18],
+      ["PSA", 56, 3],
+      ["MAT", 11, 28, 30],
+      ["PHP", 4, 19]
+    ]
+  },
+  {
+    "id": "overwhelmed",
+    "label": "Overwhelmed",
+    "intro": "When everything piles up at once, it's okay to just breathe for a moment.",
+    "refs": [
+      ["PSA", 61, 1, 2],
+      ["PSA", 143, 4],
+      ["EXO", 18, 17, 18],
+      ["NUM", 11, 14, 17],
+      ["2CO", 1, 8, 9],
+      ["2CO", 4, 8, 9],
+      ["ISA", 43, 2],
+      ["MAT", 11, 28, 30],
+      ["PSA", 46, 1, 3],
+      ["PSA", 55, 22],
+      ["PSA", 121, 1, 2],
+      ["1KI", 19, 3, 8],
+      ["PHP", 4, 6, 7]
+    ]
+  },
+  {
+    "id": "sad",
+    "label": "Sad",
+    "intro": "Sadness doesn't need to be fixed right now — it just needs to be felt.",
+    "refs": [
+      ["PSA", 34, 18],
+      ["MAT", 5, 4],
+      ["PSA", 30, 5],
+      ["JHN", 16, 20],
+      ["PSA", 147, 3],
+      ["ISA", 61, 1, 3],
+      ["REV", 21, 4],
+      ["PSA", 56, 8],
+      ["ECC", 3, 4],
+      ["2CO", 1, 3, 4],
+      ["PSA", 42, 11],
+      ["LAM", 3, 22, 23],
+      ["JHN", 11, 35]
+    ]
+  },
+  {
+    "id": "depressed",
+    "label": "Depressed",
+    "intro": "The heaviness is real, and so is the God who stays close in the dark.",
+    "refs": [
+      ["PSA", 42, 1, 6],
+      ["PSA", 88, 1, 3],
+      ["1KI", 19, 4, 8],
+      ["LAM", 3, 19, 24],
+      ["ISA", 43, 1, 3],
+      ["MAT", 11, 28, 30],
+      ["PSA", 34, 18],
+      ["PSA", 143, 7, 8],
+      ["PSA", 40, 1, 3],
+      ["2CO", 1, 3, 4],
+      ["PSA", 61, 1, 2],
+      ["JHN", 11, 32, 35],
+      ["ROM", 8, 38, 39]
+    ]
+  },
+  {
+    "id": "lonely",
+    "label": "Lonely",
+    "intro": "Even in an empty room, you are not as alone as it feels right now.",
+    "refs": [
+      ["PSA", 25, 16],
+      ["PSA", 68, 6],
+      ["DEU", 31, 6],
+      ["HEB", 13, 5],
+      ["MAT", 28, 20],
+      ["JHN", 14, 18],
+      ["PSA", 27, 10],
+      ["PSA", 139, 7, 10],
+      ["ISA", 41, 10],
+      ["1KI", 19, 9, 13],
+      ["MAT", 18, 20],
+      ["ROM", 8, 38, 39],
+      ["PSA", 23, 4]
+    ]
+  },
+  {
+    "id": "tired",
+    "label": "Tired",
+    "intro": "Bone-tired is a real place to be — rest is allowed, and so is stopping.",
+    "refs": [
+      ["MAT", 11, 28, 30],
+      ["ISA", 40, 28, 31],
+      ["PSA", 127, 2],
+      ["EXO", 33, 14],
+      ["PSA", 23, 1, 3],
+      ["GAL", 6, 9],
+      ["HEB", 4, 9, 10],
+      ["PSA", 4, 8],
+      ["1KI", 19, 5, 8],
+      ["PSA", 62, 1],
+      ["PSA", 116, 7],
+      ["MRK", 6, 31],
+      ["PSA", 3, 5]
+    ]
+  },
+  {
+    "id": "angry",
+    "label": "Angry",
+    "intro": "Anger isn't shameful — bring it honestly before the one who can hold it.",
+    "refs": [
+      ["EPH", 4, 26, 27],
+      ["JAS", 1, 19, 20],
+      ["PRO", 15, 1],
+      ["PRO", 29, 11],
+      ["PSA", 37, 8],
+      ["ECC", 7, 9],
+      ["COL", 3, 8],
+      ["PRO", 14, 29],
+      ["ROM", 12, 19],
+      ["PSA", 4, 4],
+      ["PRO", 16, 32],
+      ["NEH", 9, 17],
+      ["MRK", 3, 5]
+    ]
+  },
+  {
+    "id": "afraid",
+    "label": "Afraid",
+    "intro": "Fear can be loud, but it doesn't get the last word over you tonight.",
+    "refs": [
+      ["ISA", 41, 10],
+      ["PSA", 23, 4],
+      ["PSA", 27, 1],
+      ["2TI", 1, 7],
+      ["JOS", 1, 9],
+      ["DEU", 31, 6],
+      ["PSA", 34, 4],
+      ["1JN", 4, 18],
+      ["MAT", 8, 23, 27],
+      ["PSA", 56, 3, 4],
+      ["PSA", 91, 4, 5],
+      ["JHN", 14, 27],
+      ["ISA", 43, 1, 3]
+    ]
+  },
+  {
+    "id": "panicked",
+    "label": "Panicked",
+    "intro": "When your chest is tight and thoughts race, this is a place to be still.",
+    "refs": [
+      ["PSA", 46, 1, 3],
+      ["EXO", 14, 13, 14],
+      ["MAT", 8, 23, 27],
+      ["PSA", 55, 4, 8],
+      ["PHP", 4, 6, 7],
+      ["JHN", 14, 1],
+      ["PSA", 34, 17, 18],
+      ["NAM", 1, 7],
+      ["PSA", 3, 3, 6],
+      ["ISA", 41, 10],
+      ["2TI", 1, 7],
+      ["PSA", 61, 1, 2],
+      ["ROM", 8, 38, 39]
+    ]
+  },
+  {
+    "id": "guilty",
+    "label": "Guilty",
+    "intro": "Whatever you're carrying, grace is already running toward you.",
+    "refs": [
+      ["LUK", 15, 20, 24],
+      ["PSA", 103, 8, 12],
+      ["1JN", 1, 9],
+      ["ROM", 8, 1],
+      ["MIC", 7, 18, 19],
+      ["ISA", 1, 18],
+      ["PSA", 51, 1, 3],
+      ["JHN", 8, 10, 11],
+      ["HEB", 4, 15, 16],
+      ["EPH", 2, 8, 9],
+      ["PSA", 32, 1, 5],
+      ["ROM", 5, 8],
+      ["LAM", 3, 22, 23]
+    ]
+  },
+  {
+    "id": "doubting",
+    "label": "Doubting",
+    "intro": "Questions aren't the opposite of faith — even the faithful have asked them.",
+    "refs": [
+      ["JHN", 20, 24, 28],
+      ["MRK", 9, 24],
+      ["HEB", 11, 1],
+      ["ISA", 40, 27, 31],
+      ["PSA", 77, 7, 14],
+      ["JOB", 23, 8, 10],
+      ["ROM", 8, 26],
+      ["MAT", 11, 2, 6],
+      ["PSA", 13, 1, 2],
+      ["JAS", 1, 5],
+      ["PSA", 42, 5],
+      ["LUK", 24, 38, 39],
+      ["PSA", 73, 25, 26]
+    ]
+  },
+  {
+    "id": "grieving",
+    "label": "Grieving",
+    "intro": "Loss leaves a hole nothing else fills — grief is allowed here, loud or silent.",
+    "refs": [
+      ["JHN", 11, 32, 35],
+      ["PSA", 34, 18],
+      ["PSA", 147, 3],
+      ["MAT", 5, 4],
+      ["REV", 21, 4],
+      ["2CO", 1, 3, 4],
+      ["1TH", 4, 13, 14],
+      ["JOB", 1, 20, 21],
+      ["JOB", 2, 11, 13],
+      ["PSA", 116, 15],
+      ["ISA", 61, 1, 3],
+      ["PSA", 23, 4],
+      ["LAM", 3, 22, 24]
+    ]
+  },
+  {
+    "id": "hopeful",
+    "label": "Hopeful",
+    "intro": "Something in you is lifting — let scripture add fuel to that flicker.",
+    "refs": [
+      ["ROM", 15, 13],
+      ["JER", 29, 11],
+      ["ROM", 8, 28],
+      ["HEB", 6, 19],
+      ["ROM", 5, 3, 5],
+      ["LAM", 3, 22, 24],
+      ["ISA", 40, 31],
+      ["PRO", 23, 18],
+      ["1PE", 1, 3, 4],
+      ["ROM", 12, 12],
+      ["PSA", 130, 5],
+      ["PSA", 71, 14],
+      ["PSA", 42, 11]
+    ]
+  },
+  {
+    "id": "grateful",
+    "label": "Grateful",
+    "intro": "Thankfulness is its own kind of prayer — let these words help shape yours.",
+    "refs": [
+      ["PSA", 100, 4, 5],
+      ["1TH", 5, 16, 18],
+      ["PSA", 107, 1],
+      ["COL", 3, 15, 17],
+      ["PSA", 116, 12, 13],
+      ["PSA", 9, 1],
+      ["1CH", 16, 34],
+      ["PSA", 103, 1, 5],
+      ["EPH", 5, 20],
+      ["JAS", 1, 17],
+      ["LUK", 17, 15, 16],
+      ["PSA", 92, 1, 2],
+      ["PHP", 4, 6]
+    ]
+  },
+  {
+    "id": "joyful",
+    "label": "Joyful",
+    "intro": "Let this joy be loud — it's a gift worth celebrating with the God who gave it.",
+    "refs": [
+      ["PSA", 16, 11],
+      ["NEH", 8, 10],
+      ["PSA", 30, 11, 12],
+      ["JHN", 15, 11],
+      ["GAL", 5, 22, 23],
+      ["PSA", 100, 1, 2],
+      ["ZEP", 3, 17],
+      ["PSA", 118, 24],
+      ["LUK", 15, 32],
+      ["1PE", 1, 8],
+      ["PSA", 126, 2, 3],
+      ["HAB", 3, 17, 18],
+      ["JHN", 16, 22]
+    ]
+  },
+  {
+    "id": "tempted",
+    "label": "Tempted",
+    "intro": "The pull is real, and so is the way out — you don't have to face it alone.",
+    "refs": [
+      ["1CO", 10, 13],
+      ["HEB", 2, 18],
+      ["HEB", 4, 15, 16],
+      ["JAS", 1, 12, 13],
+      ["MAT", 4, 1, 4],
+      ["GAL", 6, 1],
+      ["PSA", 119, 9, 11],
+      ["2PE", 2, 9],
+      ["ROM", 6, 12, 14],
+      ["EPH", 6, 10, 11],
+      ["PRO", 4, 14, 15],
+      ["1PE", 5, 8, 9],
+      ["LUK", 22, 40]
+    ]
+  }
+]
