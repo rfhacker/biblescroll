@@ -1,11 +1,23 @@
 import { vi } from 'vitest'
-import { render, screen, cleanup } from '@testing-library/react'
+import { render, screen, cleanup, act, fireEvent } from '@testing-library/react'
 import { Feed } from './Feed'
 import { buildStore } from '../content/verseStore'
 import { dayKey } from '../lib/votd'
 import { readFileSync } from 'node:fs'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
+
+// The hint tests mutate the store's module-level mem cache (setHasScrolled), which
+// localStorage.clear() cannot reset. Each hint test therefore uses vi.resetModules()
+// + dynamic imports (the same idiom as store.test.ts / TriviaCard.test.tsx) so every
+// test gets a fresh store instance and stays order-independent.
+async function freshFeed() {
+  vi.resetModules()
+  localStorage.clear()
+  const { Feed: FreshFeed } = await import('./Feed')
+  const storeLib = await import('../lib/store')
+  return { FreshFeed, storeLib }
+}
 
 test('renders VOTD as the first card and placeholders beyond the window', () => {
   const { container } = render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
@@ -28,46 +40,45 @@ test('changing the day prop remaps the feed (VOTD updates without remount)', () 
   expect(secondDayRef).not.toBe(firstDayRef)
 })
 
-test('scroll hint shows on the first card for a first-time visitor', () => {
-  localStorage.clear()
-  render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+test('scroll hint shows on the first card for a first-time visitor', async () => {
+  const { FreshFeed } = await freshFeed()
+  render(<FreshFeed verses={store} day={dayKey()} onScore={() => {}} />)
   expect(screen.getByText(/swipe up for the next card/i)).toBeInTheDocument()
   cleanup()
 })
 
-test('scroll hint is absent for someone who has scrolled before', () => {
+test('scroll hint is absent for someone who has scrolled before', async () => {
+  vi.resetModules()
   localStorage.clear()
   localStorage.setItem('bs:scrolled', '1')
-  render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  const { Feed: FreshFeed } = await import('./Feed')
+  render(<FreshFeed verses={store} day={dayKey()} onScore={() => {}} />)
   expect(screen.queryByText(/swipe up/i)).toBeNull()
   cleanup()
 })
 
 test('sideways slide engagement dismisses the hint and persists it', async () => {
-  localStorage.clear()
-  render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  const { FreshFeed, storeLib } = await freshFeed()
+  render(<FreshFeed verses={store} day={dayKey()} onScore={() => {}} />)
   expect(screen.getByText(/swipe up for the next card/i)).toBeInTheDocument()
-  const { act } = await import('@testing-library/react')
   act(() => {
     window.dispatchEvent(new CustomEvent('bs:slide-engaged'))
   })
   expect(screen.queryByText(/swipe up/i)).toBeNull()
-  const { getHasScrolled } = await import('../lib/store')
-  expect(getHasScrolled()).toBe(true)
+  expect(storeLib.getHasScrolled()).toBe(true)
   cleanup()
 })
 
 test('scrolling hides the hint and remembers it', async () => {
-  localStorage.clear()
-  const { container } = render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  const { FreshFeed, storeLib } = await freshFeed()
+  const { container } = render(<FreshFeed verses={store} day={dayKey()} onScore={() => {}} />)
+  expect(screen.getByText(/swipe up for the next card/i)).toBeInTheDocument()
   const feed = container.querySelector('.feed') as HTMLElement
   Object.defineProperty(feed, 'clientHeight', { value: 800, configurable: true })
   feed.scrollTop = 800
-  const { fireEvent } = await import('@testing-library/react')
   fireEvent.scroll(feed)
   expect(screen.queryByText(/swipe up/i)).toBeNull()
-  const { getHasScrolled } = await import('../lib/store')
-  expect(getHasScrolled()).toBe(true)
+  expect(storeLib.getHasScrolled()).toBe(true)
   cleanup()
 })
 
