@@ -1,5 +1,6 @@
 import { CardShell } from './CardShell'
 import { BaseMap } from './BaseMap'
+import { RefButton } from './RefButton'
 import { project, fitViewBox, VIEW } from '../../lib/geo'
 import basemap from '../../content/basemap.json'
 import type { MapStory } from '../../content/types'
@@ -77,7 +78,7 @@ export function MapCard({ story, theme }: { story: MapStory; theme: number }) {
         )}
       </BaseMap>
       <p className="fact-body">{story.body}</p>
-      <p className="verse-ref">{story.ref}</p>
+      <RefButton refString={story.ref} />
     </CardShell>
   )
 }

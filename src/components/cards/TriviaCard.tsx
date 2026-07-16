@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CardShell } from './CardShell'
+import { RefButton } from './RefButton'
 import { addScore, getAnsweredPick, setAnsweredPick } from '../../lib/store'
 import type { TriviaItem } from '../../content/types'
 
@@ -40,7 +41,7 @@ export function TriviaCard({ item, theme, onScore }: {
       </div>
       {picked !== null && (
         <p className="trivia-why">
-          {picked === item.answer ? '✓ ' : ''}{item.why} <span className="verse-ref">{item.ref}</span>
+          {picked === item.answer ? '✓ ' : ''}{item.why} <RefButton refString={item.ref} />
         </p>
       )}
     </CardShell>

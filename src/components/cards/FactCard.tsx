@@ -1,4 +1,5 @@
 import { CardShell } from './CardShell'
+import { RefButton } from './RefButton'
 import type { FactItem } from '../../content/types'
 
 export function FactCard({ fact, theme }: { fact: FactItem; theme: number }) {
@@ -8,7 +9,7 @@ export function FactCard({ fact, theme }: { fact: FactItem; theme: number }) {
       <div className="kicker">Did you know?</div>
       <h2 className="fact-title">{fact.title}</h2>
       <p className="fact-body">{fact.body}</p>
-      <p className="verse-ref">{fact.ref}</p>
+      <RefButton refString={fact.ref} />
     </CardShell>
   )
 }

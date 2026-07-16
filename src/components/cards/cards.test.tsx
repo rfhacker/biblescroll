@@ -3,6 +3,7 @@ import { render, screen, waitFor, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { VerseCard } from './VerseCard'
 import { FactCard } from './FactCard'
+import { TriviaCard } from './TriviaCard'
 import { getFavorites, toggleFavorite } from '../../lib/store'
 import { ChapterContext } from '../ChapterContext'
 
@@ -54,6 +55,17 @@ test('FactCard renders title, body, ref', () => {
   render(<FactCard theme={2} fact={{ id: 'f001', title: 'A title here', body: 'Body text long enough to be a fact body for sure.', ref: 'John 11:35' }} />)
   expect(screen.getByText('A title here')).toBeInTheDocument()
   expect(screen.getByText(/John 11:35/)).toBeInTheDocument()
+})
+
+test('FactCard ref button opens the chapter via context', async () => {
+  const openChapter = vi.fn()
+  render(
+    <ChapterContext.Provider value={{ openChapter }}>
+      <FactCard theme={2} fact={{ id: 'f001', title: 'A title here', body: 'Body text long enough to be a fact body for sure.', ref: 'John 11:35' }} />
+    </ChapterContext.Provider>,
+  )
+  await userEvent.click(screen.getByRole('button', { name: /John 11:35/ }))
+  expect(openChapter).toHaveBeenCalledWith('JHN', 11, 35)
 })
 
 test('Share uses navigator.share when available', async () => {
@@ -114,4 +126,25 @@ test('reference tap without a provider is a safe no-op', async () => {
   render(<VerseCard text="abc" label="Genesis 1:1" theme={0} />)
   await userEvent.click(screen.getByRole('button', { name: /Genesis 1:1/ }))
   expect(screen.getByText(/Genesis 1:1/)).toBeInTheDocument() // still alive
+})
+
+test('TriviaCard ref button opens the chapter after answering', async () => {
+  const item = {
+    id: 't001', q: 'How many stones did David take?', choices: ['Three', 'Five', 'Seven'],
+    answer: 1, why: 'He chose five smooth stones from the brook.', ref: '1 Samuel 17:40',
+    difficulty: 'easy' as const,
+  }
+  const openChapter = vi.fn()
+  const onScore = vi.fn()
+  localStorage.clear()
+  render(
+    <ChapterContext.Provider value={{ openChapter }}>
+      <TriviaCard item={item} theme={0} onScore={onScore} />
+    </ChapterContext.Provider>,
+  )
+  // Answer the question first
+  await userEvent.click(screen.getByRole('button', { name: 'Five' }))
+  // Then click the ref button
+  await userEvent.click(screen.getByRole('button', { name: /1 Samuel 17:40/ }))
+  expect(openChapter).toHaveBeenCalledWith('1SA', 17, 40)
 })

@@ -83,3 +83,4 @@ test('a wrong answer does NOT persist: remounted card is answerable again, and s
   expect(getScore()).toBe(1)
   expect(onScore2).toHaveBeenCalledTimes(1)
 })
+
