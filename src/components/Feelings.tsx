@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { VerseCard } from './cards/VerseCard'
 import { VerseSlide } from './cards/VerseSlide'
 import { seededShuffle } from '../lib/rng'
-import { getInstallSeed } from '../lib/store'
+import { SESSION_SEED } from '../lib/session'
 import { refLabel, refText, type VerseStore } from '../content/verseStore'
 import feelings from '../content/feelings.json'
 import type { CuratedRef } from '../content/types'
@@ -36,7 +36,7 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
       return contained && !identical
     }))
     const ids = [...selected].sort().join('+')
-    return seededShuffle(refs, `${getInstallSeed()}:feel:${ids}`)
+    return seededShuffle(refs, `${SESSION_SEED}:feel:${ids}`)
   }, [selected, showing])
 
   if (!showing) {

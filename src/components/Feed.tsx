@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { cardAt } from '../lib/feed'
 import { votdIndex } from '../lib/votd'
-import { getInstallSeed, getHasScrolled, setHasScrolled } from '../lib/store'
+import { getHasScrolled, setHasScrolled } from '../lib/store'
+import { SESSION_SEED } from '../lib/session'
 import type { VerseStore } from '../content/verseStore'
 import { resolveCard, POOL_SIZES } from './cards/resolve'
 
@@ -11,7 +12,7 @@ export function Feed({ verses, day, onScore }: { verses: VerseStore; day: string
   const [current, setCurrent] = useState(0)
   const [showHint, setShowHint] = useState(() => !getHasScrolled())
   const ref = useRef<HTMLDivElement>(null)
-  const seed = `${getInstallSeed()}:${day}`
+  const seed = `${SESSION_SEED}:${day}`
   const sizes = { ...POOL_SIZES, corpus: verses.list.length }
   const vi = votdIndex(day, sizes.curated)
   const total = Math.max(current + 15, 40)
