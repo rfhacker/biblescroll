@@ -26,15 +26,15 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,json}'],
-        globIgnores: ['**/commentary/jfb/**', '**/commentary/mhc/**'],
+        globIgnores: ['**/commentary/jfb/**', '**/commentary/mhc/**', '**/crossrefs/**'],
         maximumFileSizeToCacheInBytes: 8388608,
         runtimeCaching: [
           {
-            urlPattern: /\/commentary\/(jfb|mhc)\/[A-Z0-9]+\.json$/,
+            urlPattern: /\/(commentary\/(jfb|mhc)|crossrefs)\/[A-Z0-9]+\.json$/,
             handler: 'CacheFirst',
             options: {
               cacheName: 'ondemand-commentary',
-              expiration: { maxEntries: 160 },
+              expiration: { maxEntries: 240 },
             },
           },
         ],
