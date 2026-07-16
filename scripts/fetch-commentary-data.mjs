@@ -269,6 +269,24 @@ function adjustOmittedVariantEndpoints(entry, stats) {
 // the current range (so front-matter / book-title-page content preceding
 // the first scripCom of a section is dropped rather than mis-attached to
 // the previous chapter's last entry).
+//
+// Whole-chapter fallback (fixes a Critical review finding): both editions
+// title every chapter-level div "Chapter N" (MHCC: div2 directly under a
+// book's div1; JFB: div3 under a book-named div2). Some MHCC chapters have
+// *no* scripCom tags anywhere in them (e.g. Psalm 23) -- every paragraph in
+// them would previously have currentRange === null for the whole chapter
+// and be silently discarded as "preface". We now track the enclosing
+// chapter (book + chapter number, derived from the same div-title/TITLE_TO_BOOK
+// tracking already used for the Jude/Judges fix) separately from the
+// scripCom-derived currentRange. Any paragraph that arrives with
+// currentRange === null *while inside a known chapter* accumulates into a
+// whole-chapter entry {book, c, vStart: 1, vEnd: <last verse of c>} instead
+// of being dropped -- this also correctly captures unlabeled *leading*
+// paragraphs (chapter introductions) in chapters that otherwise do have
+// scripCom-ranged entries, without mis-attaching them to the first range.
+// True front matter (title-page prose etc. before any chapter div, or
+// inside non-chapter divs such as book overviews/indexes) has no enclosing
+// chapter and is still skipped as preface.
 // ---------------------------------------------------------------------------
 function extractEntries(xml, sourceName, lastVerseMap) {
   const stats = {
@@ -277,6 +295,8 @@ function extractEntries(xml, sourceName, lastVerseMap) {
     apocryphaSkipped: 0,
     prefaceParagraphsSkipped: 0,
     droppedShort: 0,
+    fallbackEntriesCreated: 0,
+    chapterNumberOverrides: 0,
   };
 
   // Remove self-closed empty spacer paragraphs (<p id="..." />) up front --
@@ -339,6 +359,28 @@ function extractEntries(xml, sourceName, lastVerseMap) {
   let currentTitleBook = null;
   let titleBookOverrides = 0;
 
+  // Whole-chapter fallback state (see comment above extractEntries).
+  let currentChapterBook = null;
+  let currentChapterNum = null;
+  let chapterBuffer = [];
+  const chapterTitleRe = /^(?:Chapter|Psalm)\s+(\d+)$/i;
+
+  // Book-level deferred buffer: MHCC's "2 Chronicles" (unlike every other
+  // book, including its sibling "2 Kings") has no separate "Chapter 1" div
+  // at all -- its chapter-1 prose sits directly under the book's own div1,
+  // and the first div2 encountered is already titled "Chapter 2". We can't
+  // tell, at the time we see bare paragraphs directly under a book's title
+  // div, whether they are (a) genuine book-overview front matter (the
+  // common case -- a real "Chapter 1" div follows) or (b) unwrapped
+  // chapter-1 content (the "2 Chronicles" case -- the first chapter div is
+  // "Chapter 2"). So we buffer them and resolve on seeing the book's first
+  // chapter div: discard as preface if that div is "Chapter 1" (real
+  // Chapter 1 owns its own content), else emit as the whole-chapter-1
+  // fallback entry.
+  let bookLevelBook = null;
+  let bookLevelBuffer = [];
+  let sawFirstChapterInBook = false;
+
   // NOTE: this override is intentionally narrow (Jude/Judges only). JFB
   // legitimately places Gospel-harmony commentary on a *parallel* passage
   // (e.g. discussing Luke 3 within a Matthew chapter, or Mark within John)
@@ -356,6 +398,37 @@ function extractEntries(xml, sourceName, lastVerseMap) {
     return parsed;
   };
 
+  // Another narrow, source-typo override: MHCC's Isaiah 36 div (title
+  // "Chapter 36") opens with a bare whole-chapter self-reference scripCom
+  // (parsed="|Isa|26|0|0|0", vStart/cEnd/vEnd all 0) that cites chapter 26
+  // instead of 36 -- a one-off transposition typo (verified: this exact
+  // mismatch pattern occurs exactly once in the entire MHCC+JFB corpus).
+  // Every OTHER chapter div's leading whole-chapter self-reference scripCom
+  // correctly cites its own enclosing chapter (e.g. Isaiah 37's div opens
+  // with parsed="|Isa|37|0|0|0"), so trusting the enclosing div's chapter
+  // number over a same-book, first-in-chapter, whole-chapter scripCom is
+  // safe and narrowly scoped -- it cannot touch legitimate cross-book or
+  // cross-chapter citations (those aren't bare whole-chapter self-refs, or
+  // aren't first in their chapter, or aren't same-book).
+  const applyChapterNumberOverride = (parsed) => {
+    if (
+      parsed &&
+      currentChapterBook &&
+      currentChapterNum != null &&
+      !sectionHasScripCom &&
+      chapterBuffer.length === 0 &&
+      parsed.book === currentChapterBook &&
+      parsed.vStart === 0 &&
+      parsed.cEnd === 0 &&
+      parsed.vEnd === 0 &&
+      parsed.cStart !== currentChapterNum
+    ) {
+      parsed = { ...parsed, cStart: currentChapterNum };
+      stats.chapterNumberOverrides++;
+    }
+    return parsed;
+  };
+
   const flush = () => {
     if (currentRange && buffer.length) {
       const normalized = normalizeRange(currentRange, lastVerseMap, stats);
@@ -366,20 +439,83 @@ function extractEntries(xml, sourceName, lastVerseMap) {
     buffer = [];
   };
 
+  const pushWholeChapterEntry = (book, c, textParts) => {
+    if (!textParts.length) return;
+    const vEnd = lastVerseMap.get(`${book}|${c}`);
+    if (vEnd == null) {
+      throw new Error(`[${sourceName}] whole-chapter fallback: unknown chapter ${book} ${c} (not in verses.json)`);
+    }
+    // Variant-endpoint rule: chapter lengths come from the corpus, which
+    // already excludes the 5 omitted-variant verses, so neither endpoint
+    // of a whole-chapter range should ever land on one -- assert it.
+    if (OMITTED_VARIANTS.has(`${book}|${c}|1`) || OMITTED_VARIANTS.has(`${book}|${c}|${vEnd}`)) {
+      throw new Error(`[${sourceName}] whole-chapter fallback ${book} ${c} (1-${vEnd}) ends on an omitted variant verse`);
+    }
+    rawEntries.push({ book, c, vStart: 1, vEnd, text: textParts.join("\n\n") });
+    stats.fallbackEntriesCreated++;
+  };
+
+  const flushChapter = () => {
+    if (currentChapterBook && currentChapterNum != null) {
+      pushWholeChapterEntry(currentChapterBook, currentChapterNum, chapterBuffer);
+    }
+    chapterBuffer = [];
+  };
+
   const leadingScripRefRe = /^\s*(?:<b>\s*)?<scripRef\b[^>]*\bparsed="([^"]*)"[^>]*>/;
 
   for (const ev of events) {
     if (ev.type === "boundary") {
       flush();
+      flushChapter();
       currentRange = null;
       sectionHasScripCom = false;
-      if (ev.title && TITLE_TO_BOOK[ev.title]) currentTitleBook = TITLE_TO_BOOK[ev.title];
+
+      const isNewBookTitle = ev.title && TITLE_TO_BOOK[ev.title];
+      if (isNewBookTitle) {
+        // Entering a new book-level div. Any still-pending book-level
+        // buffer from the previous book (shouldn't happen -- every book has
+        // at least one chapter div) is unresolvable, so treat as preface.
+        if (bookLevelBuffer.length) {
+          stats.prefaceParagraphsSkipped += bookLevelBuffer.length;
+          bookLevelBuffer = [];
+        }
+        currentTitleBook = TITLE_TO_BOOK[ev.title];
+        bookLevelBook = currentTitleBook;
+        sawFirstChapterInBook = false;
+      }
+
+      const chMatch = ev.title ? chapterTitleRe.exec(ev.title) : null;
+      if (chMatch && currentTitleBook) {
+        const chNum = parseInt(chMatch[1], 10);
+        if (bookLevelBook === currentTitleBook && !sawFirstChapterInBook) {
+          sawFirstChapterInBook = true;
+          if (bookLevelBuffer.length) {
+            if (chNum === 1) {
+              // Real "Chapter 1" div follows -> the buffered book-level
+              // paragraphs were genuine front matter/overview.
+              stats.prefaceParagraphsSkipped += bookLevelBuffer.length;
+            } else {
+              // No separate "Chapter 1" div exists -- the buffered
+              // book-level paragraphs ARE chapter 1's content.
+              pushWholeChapterEntry(currentTitleBook, 1, bookLevelBuffer);
+            }
+            bookLevelBuffer = [];
+          }
+        }
+        currentChapterBook = currentTitleBook;
+        currentChapterNum = chNum;
+      } else {
+        currentChapterBook = null;
+        currentChapterNum = null;
+      }
       continue;
     }
     if (ev.type === "scripCom") {
       flush();
       let parsed = parseRangeAttr(ev.parsed);
       parsed = applyTitleOverride(parsed);
+      parsed = applyChapterNumberOverride(parsed);
       if (parsed === null) {
         currentRange = null;
         stats.apocryphaSkipped++;
@@ -406,12 +542,25 @@ function extractEntries(xml, sourceName, lastVerseMap) {
       }
     }
     if (currentRange === null) {
-      stats.prefaceParagraphsSkipped++;
+      if (currentChapterBook && currentChapterNum != null) {
+        chapterBuffer.push(strippedProbe);
+      } else if (bookLevelBook && !sawFirstChapterInBook) {
+        // Directly under a known book's title div, before its first
+        // chapter div -- defer the decision (preface vs. unwrapped
+        // chapter-1 content) to when that first chapter div is seen.
+        bookLevelBuffer.push(strippedProbe);
+      } else {
+        stats.prefaceParagraphsSkipped++;
+      }
       continue;
     }
     buffer.push(strippedProbe);
   }
   flush();
+  flushChapter();
+  // Any book-level buffer still pending at end-of-document (shouldn't
+  // happen) is unresolvable -- count as preface rather than lose it silently.
+  stats.prefaceParagraphsSkipped += bookLevelBuffer.length;
   stats.titleBookOverrides = titleBookOverrides;
 
   // Hygiene: drop anything that still has a stray '<' (shouldn't happen) or
@@ -441,11 +590,24 @@ function extractEntries(xml, sourceName, lastVerseMap) {
 // ---------------------------------------------------------------------------
 // Assertions
 // ---------------------------------------------------------------------------
-function runAssertions(name, entries, cfg) {
+function runAssertions(name, entries, cfg, chapterList) {
   const booksPresent = new Set(entries.map((e) => e.book));
   const missing = CANONICAL_ORDER.filter((b) => !booksPresent.has(b));
 
   console.log(`\n[${name}] entries: ${entries.length}, books present: ${booksPresent.size}/66`);
+
+  // Whole-chapter fallback regression guard: every canonical chapter (per
+  // public/content/verses.json) must be covered by at least one entry.
+  // Before the fallback fix, chapters with no scripCom tags at all (e.g.
+  // MHCC's Psalm 23) had zero entries and were silently dropped.
+  const chaptersCovered = new Set(entries.map((e) => `${e.book}|${e.c}`));
+  const missingChapters = chapterList.filter((key) => !chaptersCovered.has(key));
+  if (missingChapters.length > 0) {
+    throw new Error(
+      `[${name}] ${missingChapters.length} canonical chapter(s) with zero entries: ${missingChapters.slice(0, 20).join(", ")}${missingChapters.length > 20 ? ", ..." : ""}`
+    );
+  }
+  console.log(`[${name}] chapter coverage: 0/${chapterList.length} missing`);
 
   if (cfg.requireAllBooks) {
     if (missing.length > 0) {
@@ -481,6 +643,7 @@ function runAssertions(name, entries, cfg) {
 // ---------------------------------------------------------------------------
 async function main() {
   const lastVerseMap = buildLastVerseMap();
+  const chapterList = [...lastVerseMap.keys()];
   mkdirSync(OUT_DIR, { recursive: true });
 
   const results = {};
@@ -496,9 +659,11 @@ async function main() {
       prefaceParagraphsSkipped: stats.prefaceParagraphsSkipped,
       droppedShort: stats.droppedShort,
       titleBookOverrides: stats.titleBookOverrides,
+      fallbackEntriesCreated: stats.fallbackEntriesCreated,
+      chapterNumberOverrides: stats.chapterNumberOverrides,
       omittedVariantAdjustments: stats.omittedVariantAdjustments,
     });
-    runAssertions(name, entries, cfg);
+    runAssertions(name, entries, cfg, chapterList);
     results[name] = entries;
     if (i < names.length - 1) await new Promise((r) => setTimeout(r, 300));
   }
