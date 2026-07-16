@@ -46,7 +46,7 @@ export function CommentaryPane({ book, c, v, active }: {
         <p className="commentary-dim">
           {source === 'jfb'
             ? "JFB for this book isn't downloaded yet — Matthew Henry is always available offline."
-            : "Commentary couldn't load."}
+            : "Commentary couldn’t load."}
           {source === 'mhcc' && (
             <button className="commentary-switch" onClick={() => setAttempt((a) => a + 1)}>Try again</button>
           )}
@@ -59,7 +59,7 @@ export function CommentaryPane({ book, c, v, active }: {
         <p className="commentary-dim">
           {source === 'jfb'
             ? "JFB doesn't comment on this verse —"
-            : "This verse doesn't have a note here."}
+            : "This verse doesn’t have a note here."}
           {source === 'jfb' && (
             <button className="commentary-switch" onClick={() => pick('mhcc')}>read Matthew Henry</button>
           )}

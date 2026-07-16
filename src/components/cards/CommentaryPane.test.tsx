@@ -74,7 +74,7 @@ test('retry on mhcc failure refetches and succeeds', async () => {
     new Response(JSON.stringify([[3, 16, 16, 'after retry']]), { status: 200 }),
   )
   render(<CommentaryPane book="EXO" c={3} v={16} active={true} />)
-  await waitFor(() => expect(screen.getByText(/Commentary couldn't load\./)).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText(/Commentary couldn’t load\./)).toBeInTheDocument())
   const tryAgainBtn = screen.getByRole('button', { name: /Try again/i })
   await userEvent.click(tryAgainBtn)
   await screen.findByText(/after retry/)
