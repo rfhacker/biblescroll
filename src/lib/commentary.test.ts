@@ -30,6 +30,20 @@ test('loadCommentary fetches once per source:book and caches', async () => {
   spy.mockRestore()
 })
 
+test('loadCommentary dedupes concurrent in-flight requests for the same source:book', async () => {
+  let resolveFetch!: (r: Response) => void
+  const spy = vi.spyOn(globalThis, 'fetch').mockImplementation(
+    () => new Promise((resolve) => { resolveFetch = resolve }),
+  )
+  const p1 = loadCommentary('mhcc', 'REV')
+  const p2 = loadCommentary('mhcc', 'REV')
+  resolveFetch(new Response(JSON.stringify(ENTRIES), { status: 200 }))
+  const [a, b] = await Promise.all([p1, p2])
+  expect(spy).toHaveBeenCalledTimes(1)
+  expect(a).toBe(b)
+  spy.mockRestore()
+})
+
 test('loadCommentary rejects on HTTP failure and malformed payloads, without caching them', async () => {
   const spy = vi.spyOn(globalThis, 'fetch')
     .mockResolvedValueOnce(new Response('', { status: 404 }))

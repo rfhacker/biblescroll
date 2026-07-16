@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { VerseCard } from './cards/VerseCard'
+import { VerseSlide } from './cards/VerseSlide'
 import { seededShuffle } from '../lib/rng'
 import { getInstallSeed } from '../lib/store'
 import { refLabel, refText, type VerseStore } from '../content/verseStore'
@@ -80,7 +81,9 @@ export function Feelings({ verses, onClose }: { verses: VerseStore; onClose: () 
         </article></section>
         {ordered.map((r, i) => (
           <section className="slot" key={r.join(':')}>
-            <VerseCard text={refText(verses, r)} label={refLabel(r)} theme={(i + 1) % 5} />
+            <VerseSlide book={r[0]} c={r[1]} v={r[2]}>
+              <VerseCard text={refText(verses, r)} label={refLabel(r)} theme={(i + 1) % 5} />
+            </VerseSlide>
           </section>
         ))}
         <section className="slot"><article className="card theme-2">

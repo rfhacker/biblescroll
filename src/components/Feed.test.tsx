@@ -1,3 +1,4 @@
+import { vi } from 'vitest'
 import { render, screen, cleanup } from '@testing-library/react'
 import { Feed } from './Feed'
 import { buildStore } from '../content/verseStore'
@@ -53,5 +54,19 @@ test('scrolling hides the hint and remembers it', async () => {
   expect(screen.queryByText(/swipe up/i)).toBeNull()
   const { getHasScrolled } = await import('../lib/store')
   expect(getHasScrolled()).toBe(true)
+  cleanup()
+})
+
+test('verse slots are two-pane slides with a commentary chip; no commentary fetch before engagement beyond prefetch', () => {
+  localStorage.clear()
+  localStorage.setItem('bs:scrolled', '1')
+  const spy = vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response('[]', { status: 200 }))
+  const { container } = render(<Feed verses={store} day={dayKey()} onScore={() => {}} />)
+  expect(container.querySelector('.vslide')).not.toBeNull()
+  expect(container.querySelector('.commentary-pane')).toBeNull()
+  for (const [url] of spy.mock.calls) {
+    expect(String(url)).toMatch(/\/commentary\//) // only commentary prefetches, no other fetches
+  }
+  spy.mockRestore()
   cleanup()
 })

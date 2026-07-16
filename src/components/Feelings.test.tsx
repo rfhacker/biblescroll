@@ -28,6 +28,8 @@ test('selecting a feeling yields intro card, its verses, and the closing card', 
   const cards = document.querySelectorAll('.card')
   expect(cards.length).toBe(anxious.refs.length + 2) // intro + verses + closing
   expect(screen.getByText(/may these stay with you/i)).toBeInTheDocument()
+  expect(document.querySelector('.vslide')).not.toBeNull()
+  expect(document.querySelector('.commentary-pane')).toBeNull()
 })
 
 test('multi-select dedupes overlapping refs, absorbs contained ranges, and Back returns to the picker', async () => {

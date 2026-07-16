@@ -26,7 +26,18 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,json}'],
+        globIgnores: ['**/commentary/jfb/**'],
         maximumFileSizeToCacheInBytes: 8388608,
+        runtimeCaching: [
+          {
+            urlPattern: /\/commentary\/jfb\/[A-Z0-9]+\.json$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'jfb-commentary',
+              expiration: { maxEntries: 80 },
+            },
+          },
+        ],
       },
     }),
   ],

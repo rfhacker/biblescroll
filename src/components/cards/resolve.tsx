@@ -3,6 +3,7 @@ import type { FeedItem } from '../../lib/feed'
 import type { VerseStore } from '../../content/verseStore'
 import { refLabel, refText } from '../../content/verseStore'
 import { VerseCard } from './VerseCard'
+import { VerseSlide } from './VerseSlide'
 import { FactCard } from './FactCard'
 import { TriviaCard } from './TriviaCard'
 import { MapCard } from './MapCard'
@@ -26,10 +27,18 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
     case 'verse': {
       if (item.pool === 'curated') {
         const ref = (curated as CuratedRef[])[item.poolIndex]
-        return <VerseCard text={refText(verses, ref)} label={refLabel(ref)} votd={item.votd} theme={theme} />
+        return (
+          <VerseSlide book={ref[0]} c={ref[1]} v={ref[2]}>
+            <VerseCard text={refText(verses, ref)} label={refLabel(ref)} votd={item.votd} theme={theme} />
+          </VerseSlide>
+        )
       }
       const [b, c, v, text] = verses.list[item.poolIndex]
-      return <VerseCard text={text} label={`${BOOKS[b] ?? b} ${c}:${v}`} theme={theme} />
+      return (
+        <VerseSlide book={b} c={c} v={v}>
+          <VerseCard text={text} label={`${BOOKS[b] ?? b} ${c}:${v}`} theme={theme} />
+        </VerseSlide>
+      )
     }
     case 'trivia':
       return <TriviaCard item={(trivia as TriviaItem[])[item.poolIndex]} theme={theme} onScore={onScore} />
