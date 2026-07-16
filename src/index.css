@@ -251,3 +251,16 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .scroll-hint { animation: none; transform: translate(-50%, 0); }
 }
+.commentary-pane {
+  height: 100%; overflow-y: auto; overscroll-behavior: contain;
+  padding: calc(env(safe-area-inset-top) + 4.2rem) 1.4rem calc(3rem + env(safe-area-inset-bottom));
+  max-width: 34rem; margin: 0 auto;
+}
+.commentary-toggle { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.commentary-head { font-family: var(--serif); font-size: 1.15rem; color: var(--accent); margin-bottom: 0.9rem; line-height: 1.4; }
+.commentary-body p { font-family: var(--serif); font-size: 1.08rem; line-height: 1.7; margin-bottom: 0.9rem; }
+.commentary-dim { color: var(--text-dim); line-height: 1.6; margin-top: 1rem; }
+.commentary-switch {
+  background: none; border: none; color: var(--accent); cursor: pointer;
+  font-size: 1rem; padding: 0.6rem 0.4rem; min-height: 2.75rem; display: inline-flex; align-items: center;
+}
