@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { VerseCard } from './VerseCard'
 import { FactCard } from './FactCard'
 import { getFavorites, toggleFavorite } from '../../lib/store'
+import { ChapterContext } from '../ChapterContext'
 
 beforeEach(() => localStorage.clear())
 
@@ -96,4 +97,21 @@ test('heart stays in sync when a favorite is removed elsewhere', async () => {
   await waitFor(() => {
     expect(screen.getByRole('button', { name: /^save$/i })).toBeInTheDocument()
   })
+})
+
+test('tapping the reference opens the chapter via context', async () => {
+  const openChapter = vi.fn()
+  render(
+    <ChapterContext.Provider value={{ openChapter }}>
+      <VerseCard text="For God so loved…" label="John 3:16" theme={0} />
+    </ChapterContext.Provider>,
+  )
+  await userEvent.click(screen.getByRole('button', { name: /John 3:16/ }))
+  expect(openChapter).toHaveBeenCalledWith('JHN', 3, 16)
+})
+
+test('reference tap without a provider is a safe no-op', async () => {
+  render(<VerseCard text="abc" label="Genesis 1:1" theme={0} />)
+  await userEvent.click(screen.getByRole('button', { name: /Genesis 1:1/ }))
+  expect(screen.getByText(/Genesis 1:1/)).toBeInTheDocument() // still alive
 })
