@@ -33,3 +33,24 @@ test('tapping a result opens the chapter at that verse', async () => {
   await userEvent.click(screen.getByText(/Isaiah 40:31/))
   expect(openChapter).toHaveBeenCalledWith('ISA', 40, 31)
 })
+
+test('matching terms are bolded within a result snippet', async () => {
+  const { container } = render(<Search verses={store} onClose={() => {}} />)
+  await userEvent.type(screen.getByRole('searchbox'), 'eagles wings')
+  await waitFor(() => expect(screen.getByText(/Isaiah 40:31/)).toBeInTheDocument(), { timeout: 2000 })
+  const strongEls = container.querySelectorAll('.search-row strong')
+  expect(strongEls.length).toBeGreaterThan(0)
+  expect(Array.from(strongEls).some((el) => /eagle|wing/i.test(el.textContent ?? ''))).toBe(true)
+})
+
+test('apostrophe words highlight against a normalized query', async () => {
+  const { container } = render(<Search verses={store} onClose={() => {}} />)
+  await userEvent.type(screen.getByRole('searchbox'), 'dont be afraid')
+  await waitFor(() => expect(screen.queryAllByText(/don.?t/i).length).toBeGreaterThan(0), { timeout: 2000 })
+  const rows = Array.from(container.querySelectorAll('.search-row'))
+  const rowWithContraction = rows.find((row) => /don['’]t/i.test(row.textContent ?? ''))
+  expect(rowWithContraction).toBeTruthy()
+  const strong = rowWithContraction!.querySelector('strong')
+  expect(strong).toBeTruthy()
+  expect(/don['’]t/i.test(strong!.textContent ?? '')).toBe(true)
+})

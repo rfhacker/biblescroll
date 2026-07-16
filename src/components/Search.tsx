@@ -6,9 +6,16 @@ import type { VerseStore } from '../content/verseStore'
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
+// Terms are normalized (apostrophes stripped), but the raw verse text keeps
+// contractions like "God's" / "Don't". Interleave an optional apostrophe
+// class between every character (and after the last one) so a term like
+// "gods" matches "God's" in the untouched text.
+const apostropheTolerant = (term: string) =>
+  term.split('').map(escapeRe).join("['’ʼ]?") + "['’ʼ]?"
+
 function Snippet({ text, terms }: { text: string; terms: string[] }) {
   if (terms.length === 0) return <>{text}</>
-  const re = new RegExp(`\\b(${terms.map(escapeRe).join('|')})`, 'ig')
+  const re = new RegExp(`\\b(${terms.map(apostropheTolerant).join('|')})`, 'ig')
   const parts = text.split(re)
   return (
     <>{parts.map((p, i) => (i % 2 === 1 ? <strong key={i}>{p}</strong> : p))}</>
@@ -22,7 +29,7 @@ export function Search({ verses, onClose }: { verses: VerseStore; onClose: () =>
 
   useEffect(() => {
     if (normalize(query).length < 3) { setResults([]); return }
-    const t = setTimeout(() => setResults(searchVerses(verses, query)), 250)
+    const t = setTimeout(() => setResults(searchVerses(verses, query, 51)), 250)
     return () => clearTimeout(t)
   }, [query, verses])
 
@@ -43,8 +50,10 @@ export function Search({ verses, onClose }: { verses: VerseStore; onClose: () =>
       )}
       {results.length > 0 && (
         <>
-          <p className="search-count">{results.length === 50 ? '50+' : results.length} verse{results.length === 1 ? '' : 's'}</p>
-          {results.map(({ index }) => {
+          <p className="search-count">
+            {results.length > 50 ? '50+' : results.length} verse{results.length === 1 ? '' : 's'}
+          </p>
+          {results.slice(0, 50).map(({ index }) => {
             const [b, c, v, text] = verses.list[index]
             return (
               <button key={`${b}${c}:${v}`} className="search-row"
