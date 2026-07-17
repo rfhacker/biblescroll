@@ -12,6 +12,9 @@ import { WhoSaidCard } from './WhoSaidCard'
 import { ContinueCard } from './ContinueCard'
 import { PrayerCard } from './PrayerCard'
 import { NamesCard } from './NamesCard'
+import { ProphecyCard } from './ProphecyCard'
+import { HymnCard } from './HymnCard'
+import { TimelineCard } from './TimelineCard'
 import { BOOKS } from '../../content/books'
 import curated from '../../content/curated.json'
 import trivia from '../../content/trivia.json'
@@ -21,7 +24,10 @@ import whosaid from '../../content/whosaid.json'
 import cont from '../../content/continue.json'
 import prayer from '../../content/prayer.json'
 import names from '../../content/names.json'
-import type { CuratedRef, TriviaItem, FactItem, MapStory, WhoSaidItem, ContinueItem, PrayerItem, NamesItem } from '../../content/types'
+import prophecy from '../../content/prophecy.json'
+import hymns from '../../content/hymns.json'
+import timeline from '../../content/timeline.json'
+import type { CuratedRef, TriviaItem, FactItem, MapStory, WhoSaidItem, ContinueItem, PrayerItem, NamesItem, ProphecyItem, HymnItem, TimelineItem } from '../../content/types'
 
 export const POOL_SIZES = {
   curated: (curated as CuratedRef[]).length,
@@ -33,6 +39,9 @@ export const POOL_SIZES = {
   continue: (cont as ContinueItem[]).length,
   prayer: (prayer as PrayerItem[]).length,
   names: (names as NamesItem[]).length,
+  prophecy: (prophecy as ProphecyItem[]).length,
+  hymn: (hymns as HymnItem[]).length,
+  timeline: (timeline as TimelineItem[]).length,
 }
 
 // A memory-card puzzle renders its full curated text plus up to 10 word-bank
@@ -91,5 +100,11 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
       return <PrayerCard item={(prayer as PrayerItem[])[item.poolIndex]} theme={theme} />
     case 'names':
       return <NamesCard item={(names as NamesItem[])[item.poolIndex]} theme={theme} />
+    case 'prophecy':
+      return <ProphecyCard item={(prophecy as ProphecyItem[])[item.poolIndex]} verses={verses} theme={theme} />
+    case 'hymn':
+      return <HymnCard item={(hymns as HymnItem[])[item.poolIndex]} theme={theme} />
+    case 'timeline':
+      return <TimelineCard item={(timeline as TimelineItem[])[item.poolIndex]} theme={theme} />
   }
 }

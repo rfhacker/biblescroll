@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { vi } from 'vitest'
 import { Favorites } from './Favorites'
 import { toggleFavorite } from '../lib/store'
 
@@ -25,15 +26,24 @@ test('lists newer card kinds under their own headings and removes on unheart', a
   toggleFavorite({ kind: 'whosaid', id: 'ws001', title: 'Let there be light', body: 'God, at creation' })
   toggleFavorite({ kind: 'continue', id: 'c001', title: 'The Lord is my shepherd…', body: 'Psalm 23' })
   toggleFavorite({ kind: 'names', id: 'n001', title: 'Elohim', body: 'God, the mighty creator' })
+  toggleFavorite({ kind: 'prophecy', id: 'p001', title: 'Isaiah 53 → Christ', body: 'The Suffering Servant' })
+  toggleFavorite({ kind: 'hymn', id: 'h001', title: 'Amazing Grace', body: 'John Newton, 1779' })
+  toggleFavorite({ kind: 'timeline', id: 't001', title: 'Birth of Jesus', body: '4 BC - Bethlehem' })
   render(<Favorites onClose={() => {}} />)
   expect(screen.getByText('Who said it?')).toBeInTheDocument()
   expect(screen.getByText('Continue the verse')).toBeInTheDocument()
   expect(screen.getByText('Names of God')).toBeInTheDocument()
+  expect(screen.getByText('Prophecy & Fulfillment')).toBeInTheDocument()
+  expect(screen.getByText('Hymn Stories')).toBeInTheDocument()
+  expect(screen.getByText('Timeline')).toBeInTheDocument()
   expect(screen.getByText('Let there be light')).toBeInTheDocument()
   expect(screen.getByText('The Lord is my shepherd…')).toBeInTheDocument()
   expect(screen.getByText('Elohim')).toBeInTheDocument()
-  await userEvent.click(screen.getByRole('button', { name: /remove elohim/i }))
-  expect(screen.queryByText('Elohim')).toBeNull()
+  expect(screen.getByText('Isaiah 53 → Christ')).toBeInTheDocument()
+  expect(screen.getByText('Amazing Grace')).toBeInTheDocument()
+  expect(screen.getByText('Birth of Jesus')).toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button', { name: /remove birth of jesus/i }))
+  expect(screen.queryByText('Birth of Jesus')).toBeNull()
 })
 
 test('close button fires onClose', async () => {

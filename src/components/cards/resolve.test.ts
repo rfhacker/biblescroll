@@ -9,7 +9,10 @@ import whosaid from '../../content/whosaid.json'
 import cont from '../../content/continue.json'
 import prayer from '../../content/prayer.json'
 import names from '../../content/names.json'
-import type { CuratedRef, WhoSaidItem, ContinueItem, PrayerItem, NamesItem } from '../../content/types'
+import prophecy from '../../content/prophecy.json'
+import hymns from '../../content/hymns.json'
+import timeline from '../../content/timeline.json'
+import type { CuratedRef, WhoSaidItem, ContinueItem, PrayerItem, NamesItem, ProphecyItem, HymnItem, TimelineItem } from '../../content/types'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
 
@@ -87,4 +90,34 @@ test('names kind renders its distinct kicker', () => {
   }
   render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
   expect(screen.getByText('Names of God')).toBeInTheDocument()
+})
+
+test('prophecy kind renders its distinct kicker', () => {
+  const item = {
+    kind: 'prophecy' as const,
+    pool: 'prophecy' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
+  expect(screen.getByText('Prophecy · Fulfilled')).toBeInTheDocument()
+})
+
+test('hymn kind renders its distinct kicker', () => {
+  const item = {
+    kind: 'hymn' as const,
+    pool: 'hymn' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
+  expect(screen.getByText('Hymn Story')).toBeInTheDocument()
+})
+
+test('timeline kind renders its distinct kicker', () => {
+  const item = {
+    kind: 'timeline' as const,
+    pool: 'timeline' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
+  expect(screen.getByText('Biblical Timeline')).toBeInTheDocument()
 })

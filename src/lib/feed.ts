@@ -1,19 +1,20 @@
 import { shuffledRange } from './rng'
 
-export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number; whosaid: number; continue: number; prayer: number; names: number }
+export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number; whosaid: number; continue: number; prayer: number; names: number; prophecy: number; hymn: number; timeline: number }
 export interface FeedItem {
-  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names'
-  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names'
+  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names' | 'prophecy' | 'hymn' | 'timeline'
+  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names' | 'prophecy' | 'hymn' | 'timeline'
   poolIndex: number
   votd?: boolean
 }
 
 const CYCLE = [
   'verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid',
-  'verse', 'fact', 'verse', 'trivia', 'verse', 'memory', 'verse', 'continue',
-  'verse', 'prayer', 'verse', 'names',
+  'verse', 'memory', 'verse', 'continue', 'verse', 'prayer', 'verse', 'names',
+  'verse', 'prophecy', 'verse', 'hymn', 'verse', 'timeline', 'verse', 'fact',
+  'verse', 'trivia',
 ] as const
-const PER_CYCLE = { verse: 10, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1 } as const
+const PER_CYCLE = { verse: 13, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1, prophecy: 1, hymn: 1, timeline: 1 } as const
 
 // Card background theme. Not simply i % 5: the 20-slot cycle is a multiple
 // of the 5-theme period, which would pin every non-verse kind to one theme
