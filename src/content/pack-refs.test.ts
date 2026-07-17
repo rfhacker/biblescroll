@@ -3,12 +3,18 @@ import { buildStore, parseLooseRef, refKey } from './verseStore'
 import trivia from './trivia.json'
 import facts from './facts.json'
 import maps from './maps.json'
+import whosaid from './whosaid.json'
+import cont from './continue.json'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
 const allRefs: { src: string; ref: string }[] = [
   ...(trivia as { id: string; ref: string }[]).map((t) => ({ src: `trivia ${t.id}`, ref: t.ref })),
   ...(facts as { id: string; ref: string }[]).map((f) => ({ src: `facts ${f.id}`, ref: f.ref })),
   ...(maps as { id: string; ref: string }[]).map((m) => ({ src: `maps ${m.id}`, ref: m.ref })),
+  ...(whosaid as { id: string; ref: string }[]).map((w) => ({ src: `whosaid ${w.id}`, ref: w.ref })),
+  ...(cont as { id: string; ref: string }[]).map((c) => ({ src: `continue ${c.id}`, ref: c.ref })),
+  ...(cont as { id: string; sources: string[] }[]).flatMap((c) =>
+    c.sources.map((s, i) => ({ src: `continue ${c.id} source ${i}`, ref: s }))),
 ]
 
 test('every pack ref parses and resolves to a real chapter and verse', () => {
