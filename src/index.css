@@ -310,6 +310,7 @@ body {
   display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
 }
 .xref-more { margin-top: 0.5rem; }
+.memory-card .card-body { max-height: 100%; overflow-y: auto; }
 .memory-hint { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 0.8rem; }
 .memory-blank { color: var(--accent-soft); letter-spacing: 0.05em; }
 .memory-next { color: var(--accent); animation: memorypulse 2.4s ease-in-out infinite; }

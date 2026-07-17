@@ -21,7 +21,23 @@ export const POOL_SIZES = {
   trivia: (trivia as TriviaItem[]).length,
   fact: (facts as FactItem[]).length,
   map: (maps as MapStory[]).length,
-  memory: (curated as CuratedRef[]).length,
+}
+
+// A memory-card puzzle renders its full curated text plus up to 10 word-bank
+// chips inside a fixed-height (100dvh) card. Long multi-verse ranges (e.g.
+// Psalms 23:1–6 at 595 chars) overflow the card before layout can react, so
+// the memory pool is restricted to curated refs whose resolved text is short
+// enough to fit. Verse text only exists once the runtime VerseStore has
+// loaded, so this is computed lazily and cached against the store instance
+// (a stable singleton after load) rather than at module load time.
+export const MEMORY_MAX_CHARS = 280
+let memoryPoolCache: { store: VerseStore; pool: CuratedRef[] } | null = null
+
+export function memoryPool(verses: VerseStore): CuratedRef[] {
+  if (memoryPoolCache && memoryPoolCache.store === verses) return memoryPoolCache.pool
+  const pool = (curated as CuratedRef[]).filter((ref) => refText(verses, ref).length <= MEMORY_MAX_CHARS)
+  memoryPoolCache = { store: verses, pool }
+  return pool
 }
 
 export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, onScore: () => void): ReactNode {
@@ -49,7 +65,7 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
     case 'map':
       return <MapCard story={(maps as MapStory[])[item.poolIndex]} theme={theme} />
     case 'memory': {
-      const ref = (curated as CuratedRef[])[item.poolIndex]
+      const ref = memoryPool(verses)[item.poolIndex]
       return (
         <MemoryCard text={refText(verses, ref)} label={refLabel(ref)}
           seed={`mem:${item.poolIndex}`} theme={theme} onScore={onScore} />

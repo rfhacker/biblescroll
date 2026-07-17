@@ -35,7 +35,7 @@ export function MemoryCard({ text, label, seed, theme, onScore }: {
   const blanksFilled = new Set(puzzle.blankIndexes.slice(0, filled))
 
   return (
-    <article className={`card theme-${theme}`}>
+    <article className={`card memory-card theme-${theme}`}>
       <div className="card-body">
         <div className="kicker">Memory Verse</div>
         {!done && <p className="memory-hint">Fill in the missing words</p>}

@@ -77,6 +77,20 @@ test('duplicate identical chips are consumed one at a time', async () => {
   expect(screen.getByText(/hidden in your heart/i)).toBeInTheDocument()
 })
 
+// Smoke check for a long-ish (near the 280-char memory-pool cap) text: jsdom
+// can't verify layout/overflow, but this guards against render-time crashes
+// (e.g. puzzle building or blank-index math) on texts near the threshold.
+const LONG_TEXT =
+  "The Lord is my shepherd: I shall lack nothing. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his names sake. Yea though I walk through the valley of the shadow of death I will fear"
+
+test('renders and shows bank buttons for a long (~270 char) verse', async () => {
+  const { MemoryCard } = await import('./MemoryCard')
+  const puzzle = buildPuzzle(LONG_TEXT, DISTRACTOR_TEXTS, 'long1')
+  render(<MemoryCard text={LONG_TEXT} label="Psalms 23:1-4" seed="long1" theme={0} onScore={() => {}} />)
+  expect(screen.getAllByText('______')).toHaveLength(puzzle.blankIndexes.length)
+  expect(screen.getAllByRole('button').length).toBeGreaterThan(0)
+})
+
 test('completed card remounts completed and never re-awards', async () => {
   const { storeLib } = await freshCard()
   const p = expectedPuzzle('ms1')

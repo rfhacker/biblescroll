@@ -3,7 +3,7 @@ import { cardAt } from '../lib/feed'
 import { votdIndex } from '../lib/votd'
 import { getHasScrolled, setHasScrolled } from '../lib/store'
 import type { VerseStore } from '../content/verseStore'
-import { resolveCard, POOL_SIZES } from './cards/resolve'
+import { resolveCard, POOL_SIZES, memoryPool } from './cards/resolve'
 
 const WINDOW = 3
 
@@ -12,7 +12,7 @@ export function Feed({ verses, day, sessionSeed, onScore }: { verses: VerseStore
   const [showHint, setShowHint] = useState(() => !getHasScrolled())
   const ref = useRef<HTMLDivElement>(null)
   const seed = `${sessionSeed}:${day}`
-  const sizes = { ...POOL_SIZES, corpus: verses.list.length }
+  const sizes = { ...POOL_SIZES, corpus: verses.list.length, memory: memoryPool(verses).length }
   const vi = votdIndex(day, sizes.curated)
   const total = Math.max(current + 15, 40)
 
