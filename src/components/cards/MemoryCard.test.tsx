@@ -45,6 +45,38 @@ test('wrong chip stays, marks mistake, and prevents the perfect point', async ()
   expect(onScore).not.toHaveBeenCalled()
 })
 
+test('imperfect completion persists but never awards, even after remount', async () => {
+  const { onScore, storeLib } = await freshCard()
+  const p = expectedPuzzle('ms1')
+  const wrong = p.bank.find((w) => !p.answers.includes(w))!
+  await userEvent.click(screen.getByRole('button', { name: wrong }))
+  for (const a of p.answers) await userEvent.click(screen.getByRole('button', { name: a }))
+  expect(storeLib.getScore()).toBe(0)
+  const { cleanup } = await import('@testing-library/react')
+  cleanup()
+  const { MemoryCard } = await import('./MemoryCard')
+  render(<MemoryCard text={TEXT} label={LABEL} seed="ms1" theme={0} onScore={onScore} />)
+  expect(screen.getByText(/hidden in your heart/i)).toBeInTheDocument() // completed state kept
+  expect(storeLib.getScore()).toBe(0) // no late award
+  expect(onScore).not.toHaveBeenCalled()
+})
+
+// This text+seed pair yields answers ['rejoice','rejoice'] and a bank with two
+// identical 'rejoice' chips — removal must be by chip index, not by value.
+const DUP_TEXT = 'Rejoice always, rejoice again; give thanks and rejoice evermore today.'
+
+test('duplicate identical chips are consumed one at a time', async () => {
+  const { MemoryCard } = await import('./MemoryCard')
+  const dup = buildPuzzle(DUP_TEXT, DISTRACTOR_TEXTS, 'd9')
+  expect(dup.answers).toEqual(['rejoice', 'rejoice']) // guard: pair still holds
+  render(<MemoryCard text={DUP_TEXT} label="Philippians 4:4" seed="d9" theme={0} onScore={() => {}} />)
+  expect(screen.getAllByRole('button', { name: 'rejoice' })).toHaveLength(2)
+  await userEvent.click(screen.getAllByRole('button', { name: 'rejoice' })[0])
+  expect(screen.getAllByRole('button', { name: 'rejoice' })).toHaveLength(1) // only one removed
+  await userEvent.click(screen.getByRole('button', { name: 'rejoice' }))
+  expect(screen.getByText(/hidden in your heart/i)).toBeInTheDocument()
+})
+
 test('completed card remounts completed and never re-awards', async () => {
   const { storeLib } = await freshCard()
   const p = expectedPuzzle('ms1')

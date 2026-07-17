@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { RefButton } from './RefButton'
-import { buildPuzzle, DISTRACTOR_TEXTS, cleanWord } from '../../lib/memory'
+import { buildPuzzle, DISTRACTOR_TEXTS } from '../../lib/memory'
 import { addScore, isMemorized, setMemorized } from '../../lib/store'
 
 export function MemoryCard({ text, label, seed, theme, onScore }: {
