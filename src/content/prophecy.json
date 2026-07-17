@@ -1,0 +1,338 @@
+[
+  {
+    "id": "pf001",
+    "prophecyRef": "Isaiah 7:14",
+    "fulfillmentRef": "Matthew 1:22-23",
+    "note": "Matthew names Isaiah directly, reading the virgin-born child as fulfilled in Jesus."
+  },
+  {
+    "id": "pf002",
+    "prophecyRef": "Micah 5:2",
+    "fulfillmentRef": "Matthew 2:5-6",
+    "note": "The chief priests quote Micah to Herod to identify Bethlehem as the Messiah’s birthplace."
+  },
+  {
+    "id": "pf003",
+    "prophecyRef": "Zechariah 9:9",
+    "fulfillmentRef": "Matthew 21:4-5",
+    "note": "Matthew cites Zechariah’s king-on-a-donkey oracle as fulfilled at the triumphal entry."
+  },
+  {
+    "id": "pf004",
+    "prophecyRef": "Psalms 22:18",
+    "fulfillmentRef": "John 19:24",
+    "note": "John notes the soldiers dividing Jesus’s garments and casting lots fulfilled this psalm."
+  },
+  {
+    "id": "pf005",
+    "prophecyRef": "Isaiah 53:5-6",
+    "fulfillmentRef": "1 Peter 2:24",
+    "note": "Peter draws directly on the Suffering Servant’s wounds to describe Christ bearing sin."
+  },
+  {
+    "id": "pf006",
+    "prophecyRef": "Psalms 16:10",
+    "fulfillmentRef": "Acts 2:31",
+    "note": "Peter’s Pentecost sermon quotes this psalm as David foreseeing the resurrection."
+  },
+  {
+    "id": "pf007",
+    "prophecyRef": "Isaiah 40:3",
+    "fulfillmentRef": "Matthew 3:3",
+    "note": "Matthew identifies John the Baptist as the voice crying in the wilderness Isaiah foretold."
+  },
+  {
+    "id": "pf008",
+    "prophecyRef": "Malachi 3:1",
+    "fulfillmentRef": "Mark 1:2",
+    "note": "Mark opens his Gospel by quoting Malachi’s messenger promise as fulfilled in John the Baptist."
+  },
+  {
+    "id": "pf009",
+    "prophecyRef": "Hosea 11:1",
+    "fulfillmentRef": "Matthew 2:15",
+    "note": "Matthew reads Hosea’s \"out of Egypt\" line as fulfilled in the holy family’s return from Egypt."
+  },
+  {
+    "id": "pf010",
+    "prophecyRef": "Jeremiah 31:15",
+    "fulfillmentRef": "Matthew 2:17-18",
+    "note": "Matthew ties Jeremiah’s Rachel-weeping image to Herod’s slaughter of the infants."
+  },
+  {
+    "id": "pf011",
+    "prophecyRef": "Zechariah 11:13",
+    "fulfillmentRef": "Matthew 27:9",
+    "note": "Matthew connects the thirty pieces of silver thrown to the potter with Judas’s betrayal price."
+  },
+  {
+    "id": "pf012",
+    "prophecyRef": "Psalms 118:22",
+    "fulfillmentRef": "Acts 4:11",
+    "note": "Peter tells the council that the rejected stone of this psalm is the risen Jesus."
+  },
+  {
+    "id": "pf013",
+    "prophecyRef": "Isaiah 61:1",
+    "fulfillmentRef": "Luke 4:18",
+    "note": "Jesus reads this very passage aloud in the Nazareth synagogue and claims it for himself."
+  },
+  {
+    "id": "pf014",
+    "prophecyRef": "Joel 2:28",
+    "fulfillmentRef": "Acts 2:16-17",
+    "note": "Peter tells the Pentecost crowd that the Spirit’s outpouring is exactly what Joel foretold."
+  },
+  {
+    "id": "pf015",
+    "prophecyRef": "Psalms 110:1",
+    "fulfillmentRef": "Matthew 22:43-44",
+    "note": "Jesus quotes David’s psalm to press the point that the Messiah is David’s Lord, not merely his son."
+  },
+  {
+    "id": "pf016",
+    "prophecyRef": "Isaiah 9:2",
+    "fulfillmentRef": "Matthew 4:16",
+    "note": "Matthew cites Isaiah’s light-in-darkness oracle as fulfilled when Jesus began preaching in Galilee."
+  },
+  {
+    "id": "pf017",
+    "prophecyRef": "Zechariah 12:10",
+    "fulfillmentRef": "John 19:37",
+    "note": "John cites Zechariah’s \"look on him whom they pierced\" as fulfilled at the crucifixion."
+  },
+  {
+    "id": "pf018",
+    "prophecyRef": "Psalms 69:21",
+    "fulfillmentRef": "John 19:28-29",
+    "note": "John records Jesus given sour wine on the cross, echoing this psalm of the suffering righteous one."
+  },
+  {
+    "id": "pf019",
+    "prophecyRef": "Exodus 12:46",
+    "fulfillmentRef": "John 19:36",
+    "note": "John notes that none of Jesus’s bones were broken, as with the Passover lamb."
+  },
+  {
+    "id": "pf020",
+    "prophecyRef": "Isaiah 6:9-10",
+    "fulfillmentRef": "Matthew 13:14",
+    "note": "Jesus applies Isaiah’s warning about a dull-hearted people to those who hear his parables unmoved."
+  },
+  {
+    "id": "pf021",
+    "prophecyRef": "Genesis 22:18",
+    "fulfillmentRef": "Galatians 3:16",
+    "note": "Paul builds his gospel argument on the singular \"seed\" promised to Abraham, meaning Christ."
+  },
+  {
+    "id": "pf022",
+    "prophecyRef": "Isaiah 53:4",
+    "fulfillmentRef": "Matthew 8:17",
+    "note": "Matthew cites the Servant’s borne griefs as fulfilled when Jesus healed the sick."
+  },
+  {
+    "id": "pf023",
+    "prophecyRef": "Isaiah 53:9",
+    "fulfillmentRef": "1 Peter 2:22",
+    "note": "Peter echoes Isaiah’s sinless, deceit-free Servant in describing Christ’s innocence."
+  },
+  {
+    "id": "pf024",
+    "prophecyRef": "Isaiah 53:7",
+    "fulfillmentRef": "Acts 8:32",
+    "note": "Philip explains this very passage to the Ethiopian official as speaking of Jesus’s silent suffering."
+  },
+  {
+    "id": "pf025",
+    "prophecyRef": "Isaiah 42:1",
+    "fulfillmentRef": "Matthew 12:18",
+    "note": "Matthew quotes God’s chosen, Spirit-anointed Servant as fulfilled in Jesus’s quiet ministry."
+  },
+  {
+    "id": "pf026",
+    "prophecyRef": "Amos 9:11",
+    "fulfillmentRef": "Acts 15:16",
+    "note": "James quotes Amos at the Jerusalem council to defend Gentiles being welcomed into the rebuilt house of David."
+  },
+  {
+    "id": "pf027",
+    "prophecyRef": "Deuteronomy 18:15",
+    "fulfillmentRef": "Acts 3:22",
+    "note": "Peter tells the crowd that Moses’s promised prophet like himself is Jesus."
+  },
+  {
+    "id": "pf028",
+    "prophecyRef": "Psalms 2:7",
+    "fulfillmentRef": "Acts 13:33",
+    "note": "Paul quotes this psalm at Antioch as fulfilled in God raising Jesus up."
+  },
+  {
+    "id": "pf029",
+    "prophecyRef": "Psalms 2:1-2",
+    "fulfillmentRef": "Acts 4:25-26",
+    "note": "The Jerusalem church quotes this psalm of raging kings as fulfilled in the plot against Jesus."
+  },
+  {
+    "id": "pf030",
+    "prophecyRef": "Psalms 41:9",
+    "fulfillmentRef": "John 13:18",
+    "note": "Jesus quotes this psalm about a trusted friend’s betrayal just before naming Judas."
+  },
+  {
+    "id": "pf031",
+    "prophecyRef": "Psalms 35:19",
+    "fulfillmentRef": "John 15:25",
+    "note": "Jesus cites this psalm’s \"hated without cause\" line as fulfilled in the world’s hatred of him."
+  },
+  {
+    "id": "pf032",
+    "prophecyRef": "Psalms 109:8",
+    "fulfillmentRef": "Acts 1:20",
+    "note": "Peter quotes this psalm about a vacated office as the basis for replacing Judas among the apostles."
+  },
+  {
+    "id": "pf033",
+    "prophecyRef": "Isaiah 29:13",
+    "fulfillmentRef": "Matthew 15:8-9",
+    "note": "Jesus quotes Isaiah’s lip-service worship line against the Pharisees’ empty tradition."
+  },
+  {
+    "id": "pf034",
+    "prophecyRef": "Isaiah 8:14",
+    "fulfillmentRef": "1 Peter 2:8",
+    "note": "Peter cites Isaiah’s stone of stumbling as the fate of those who reject Christ."
+  },
+  {
+    "id": "pf035",
+    "prophecyRef": "Isaiah 28:16",
+    "fulfillmentRef": "Romans 9:33",
+    "note": "Paul quotes Isaiah’s tested cornerstone as fulfilled in Christ, a stone some stumble over."
+  },
+  {
+    "id": "pf036",
+    "prophecyRef": "Isaiah 65:1",
+    "fulfillmentRef": "Romans 10:20",
+    "note": "Paul says Isaiah boldly foretold God being found by those who never sought him, namely the Gentiles."
+  },
+  {
+    "id": "pf037",
+    "prophecyRef": "Habakkuk 1:5",
+    "fulfillmentRef": "Acts 13:41",
+    "note": "Paul warns his hearers at Antioch with Habakkuk’s words about a work they would not believe."
+  },
+  {
+    "id": "pf038",
+    "prophecyRef": "Habakkuk 2:4",
+    "fulfillmentRef": "Romans 1:17",
+    "note": "Paul grounds his gospel of faith on Habakkuk’s \"the righteous will live by faith.\""
+  },
+  {
+    "id": "pf039",
+    "prophecyRef": "Jonah 1:17",
+    "fulfillmentRef": "Matthew 12:40",
+    "note": "Jesus points to Jonah’s three days in the fish as a sign of his own coming burial and resurrection."
+  },
+  {
+    "id": "pf040",
+    "prophecyRef": "Zechariah 13:7",
+    "fulfillmentRef": "Matthew 26:31",
+    "note": "Jesus quotes Zechariah’s struck shepherd and scattered sheep to predict the disciples fleeing."
+  },
+  {
+    "id": "pf041",
+    "prophecyRef": "Isaiah 53:12",
+    "fulfillmentRef": "Luke 22:37",
+    "note": "Jesus says Isaiah’s line about being counted among criminals must be fulfilled in him."
+  },
+  {
+    "id": "pf042",
+    "prophecyRef": "Isaiah 53:1",
+    "fulfillmentRef": "John 12:38",
+    "note": "John cites Isaiah’s lament that his report went unbelieved to explain the crowd’s unbelief."
+  },
+  {
+    "id": "pf043",
+    "prophecyRef": "Deuteronomy 21:23",
+    "fulfillmentRef": "Galatians 3:13",
+    "note": "Paul applies the law’s curse on one hung on a tree to Christ’s crucifixion."
+  },
+  {
+    "id": "pf044",
+    "prophecyRef": "Malachi 4:5",
+    "fulfillmentRef": "Matthew 11:14",
+    "note": "Jesus identifies John the Baptist as the promised Elijah of Malachi’s closing prophecy."
+  },
+  {
+    "id": "pf045",
+    "prophecyRef": "Isaiah 11:10",
+    "fulfillmentRef": "Romans 15:12",
+    "note": "Paul quotes Isaiah’s root of Jesse as the one in whom Gentiles would hope."
+  },
+  {
+    "id": "pf046",
+    "prophecyRef": "Deuteronomy 32:21",
+    "fulfillmentRef": "Romans 10:19",
+    "note": "Paul quotes Moses’s song about a foolish nation to explain Gentile inclusion provoking Israel."
+  },
+  {
+    "id": "pf047",
+    "prophecyRef": "2 Samuel 7:14",
+    "fulfillmentRef": "Hebrews 1:5",
+    "note": "Hebrews quotes God’s promise to be a father to David’s heir as spoken of the Son."
+  },
+  {
+    "id": "pf048",
+    "prophecyRef": "Psalms 45:6",
+    "fulfillmentRef": "Hebrews 1:8",
+    "note": "Hebrews applies this royal psalm’s \"your throne, O God\" directly to the Son."
+  },
+  {
+    "id": "pf049",
+    "prophecyRef": "Psalms 102:25",
+    "fulfillmentRef": "Hebrews 1:10",
+    "note": "Hebrews quotes this psalm’s creation language as addressed to the eternal Son."
+  },
+  {
+    "id": "pf050",
+    "prophecyRef": "Psalms 8:4",
+    "fulfillmentRef": "Hebrews 2:6",
+    "note": "Hebrews quotes this psalm on humanity’s dignity as fulfilled in the Son made lower than angels for a while."
+  },
+  {
+    "id": "pf051",
+    "prophecyRef": "Psalms 40:6",
+    "fulfillmentRef": "Hebrews 10:5",
+    "note": "Hebrews puts this psalm’s \"a body you prepared for me\" in the mouth of Christ entering the world."
+  },
+  {
+    "id": "pf052",
+    "prophecyRef": "Genesis 12:3",
+    "fulfillmentRef": "Galatians 3:8",
+    "note": "Paul calls this promise to Abraham the gospel preached in advance to the nations."
+  },
+  {
+    "id": "pf053",
+    "prophecyRef": "Isaiah 25:8",
+    "fulfillmentRef": "1 Corinthians 15:54",
+    "note": "Paul quotes Isaiah’s promise that death is swallowed up as fulfilled in the resurrection."
+  },
+  {
+    "id": "pf054",
+    "prophecyRef": "Hosea 13:14",
+    "fulfillmentRef": "1 Corinthians 15:55",
+    "note": "Paul taunts death with Hosea’s own words after affirming the resurrection."
+  },
+  {
+    "id": "pf055",
+    "prophecyRef": "Psalms 34:20",
+    "fulfillmentRef": "John 19:36",
+    "note": "John’s note that not one of Jesus’s bones was broken also echoes this psalm of the righteous sufferer."
+  },
+  {
+    "id": "pf056",
+    "prophecyRef": "Daniel 7:13",
+    "fulfillmentRef": "Matthew 26:64",
+    "note": "Jesus tells the high priest he will see the Son of Man coming on the clouds, as Daniel foresaw."
+  }
+]

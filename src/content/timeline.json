@@ -1,0 +1,250 @@
+[
+  {
+    "id": "tl001",
+    "title": "Call of Abraham",
+    "when": "c. 2091 BC",
+    "position": 6,
+    "blurb": "God calls Abram to leave his homeland for an unknown country, promising to make him into a great nation.",
+    "ref": "Genesis 12:1-3"
+  },
+  {
+    "id": "tl002",
+    "title": "Covenant confirmed with Abraham",
+    "when": "c. 2066 BC",
+    "position": 9,
+    "blurb": "God renews his promise to Abram, telling him to count the stars, for so his descendants would be.",
+    "ref": "Genesis 15:5-6"
+  },
+  {
+    "id": "tl003",
+    "title": "Joseph sold into slavery",
+    "when": "c. 1898 BC",
+    "position": 12,
+    "blurb": "Jealous of their father’s favorite, Joseph’s brothers sell him to traders bound for Egypt.",
+    "ref": "Genesis 37:28"
+  },
+  {
+    "id": "tl004",
+    "title": "Joseph rises to rule Egypt",
+    "when": "c. 1876 BC",
+    "position": 15,
+    "blurb": "Joseph, once a prisoner, is elevated to govern Egypt and later welcomes his family into Goshen.",
+    "ref": "Genesis 45:4-5"
+  },
+  {
+    "id": "tl005",
+    "title": "Birth of Moses",
+    "when": "c. 1526 BC",
+    "position": 18,
+    "blurb": "Moses is born under Pharaoh’s order to kill Hebrew infants, and hidden, then adopted from the river.",
+    "ref": "Exodus 2:2-3"
+  },
+  {
+    "id": "tl006",
+    "title": "The Exodus from Egypt",
+    "when": "c. 1446 BC",
+    "position": 24,
+    "blurb": "After the plagues, Pharaoh finally lets Israel go, and the nation leaves Egyptian slavery for good.",
+    "ref": "Exodus 12:31"
+  },
+  {
+    "id": "tl007",
+    "title": "The Law given at Sinai",
+    "when": "c. 1446 BC",
+    "position": 25,
+    "blurb": "At Mount Sinai, God gives Israel the Ten Commandments as the foundation of their covenant with him.",
+    "ref": "Exodus 20:1-3"
+  },
+  {
+    "id": "tl008",
+    "title": "Fall of Jericho",
+    "when": "c. 1406 BC",
+    "position": 27,
+    "blurb": "Under Joshua, Israel enters the promised land and the walls of Jericho fall after seven days of marching.",
+    "ref": "Joshua 6:20"
+  },
+  {
+    "id": "tl009",
+    "title": "Ruth and Boaz in Bethlehem",
+    "when": "c. 1100 BC",
+    "position": 30,
+    "blurb": "A Moabite widow named Ruth gleans in Boaz’s fields, and their marriage places her in the line of David.",
+    "ref": "Ruth 4:13"
+  },
+  {
+    "id": "tl010",
+    "title": "Saul anointed first king",
+    "when": "c. 1050 BC",
+    "position": 33,
+    "blurb": "Samuel anoints Saul as Israel’s first king, in response to the people’s demand to be like other nations.",
+    "ref": "1 Samuel 10:1"
+  },
+  {
+    "id": "tl011",
+    "title": "David anointed king",
+    "when": "c. 1010 BC",
+    "position": 38,
+    "blurb": "After years as a fugitive from Saul, David is anointed king over all Israel at Hebron.",
+    "ref": "2 Samuel 5:3"
+  },
+  {
+    "id": "tl012",
+    "title": "Solomon’s temple completed",
+    "when": "c. 959 BC",
+    "position": 42,
+    "blurb": "Solomon finishes building the temple in Jerusalem, and the ark of the covenant is brought into it.",
+    "ref": "1 Kings 6:38"
+  },
+  {
+    "id": "tl013",
+    "title": "Kingdom divides",
+    "when": "c. 931 BC",
+    "position": 44,
+    "blurb": "After Solomon’s death, the nation splits into the northern kingdom of Israel and the southern kingdom of Judah.",
+    "ref": "1 Kings 12:16"
+  },
+  {
+    "id": "tl014",
+    "title": "Elijah at Mount Carmel",
+    "when": "c. 850 BC",
+    "position": 47,
+    "blurb": "Elijah confronts the prophets of Baal in a public contest, and fire from heaven proves Yahweh is God.",
+    "ref": "1 Kings 18:38"
+  },
+  {
+    "id": "tl015",
+    "title": "Fall of Samaria",
+    "when": "722 BC",
+    "position": 50,
+    "blurb": "Assyria conquers the northern kingdom of Israel and deports its people, ending the northern monarchy.",
+    "ref": "2 Kings 17:6"
+  },
+  {
+    "id": "tl016",
+    "title": "Hezekiah and Assyria",
+    "when": "701 BC",
+    "position": 51,
+    "blurb": "King Hezekiah prays for deliverance as Assyria besieges Jerusalem, and the city is spared overnight.",
+    "ref": "2 Kings 19:35"
+  },
+  {
+    "id": "tl017",
+    "title": "Fall of Jerusalem",
+    "when": "586 BC",
+    "position": 55,
+    "blurb": "Babylon destroys Jerusalem and the temple, ending the kingdom of Judah and beginning the exile.",
+    "ref": "2 Kings 25:9"
+  },
+  {
+    "id": "tl018",
+    "title": "Exile in Babylon",
+    "when": "586 BC",
+    "position": 56,
+    "blurb": "Israel’s captives grieve their homeland by the rivers of Babylon, uncertain if they will ever return.",
+    "ref": "Psalms 137:1"
+  },
+  {
+    "id": "tl019",
+    "title": "Return under Cyrus",
+    "when": "538 BC",
+    "position": 60,
+    "blurb": "The Persian king Cyrus decrees that the exiles may return home and rebuild the temple in Jerusalem.",
+    "ref": "Ezra 1:1"
+  },
+  {
+    "id": "tl020",
+    "title": "Second temple completed",
+    "when": "516 BC",
+    "position": 63,
+    "blurb": "Decades after the return from exile, the rebuilt temple in Jerusalem is finally finished and dedicated.",
+    "ref": "Ezra 6:15"
+  },
+  {
+    "id": "tl021",
+    "title": "Esther becomes queen",
+    "when": "c. 479 BC",
+    "position": 66,
+    "blurb": "A Jewish orphan named Esther is chosen queen of Persia, setting up her later role in saving her people.",
+    "ref": "Esther 2:17"
+  },
+  {
+    "id": "tl022",
+    "title": "Nehemiah rebuilds the wall",
+    "when": "445 BC",
+    "position": 69,
+    "blurb": "Nehemiah leads the exiles who remained in rebuilding Jerusalem’s broken walls in just fifty-two days.",
+    "ref": "Nehemiah 6:15"
+  },
+  {
+    "id": "tl023",
+    "title": "Birth of Jesus",
+    "when": "c. 5 BC",
+    "position": 74,
+    "blurb": "Jesus is born in Bethlehem to Mary, fulfilling the ancient hope of a promised deliverer.",
+    "ref": "Luke 2:7"
+  },
+  {
+    "id": "tl024",
+    "title": "Jesus baptized, ministry begins",
+    "when": "c. AD 27",
+    "position": 77,
+    "blurb": "John baptizes Jesus in the Jordan, and a voice from heaven names him God’s beloved Son.",
+    "ref": "Matthew 3:16-17"
+  },
+  {
+    "id": "tl025",
+    "title": "Crucifixion and resurrection",
+    "when": "c. AD 30",
+    "position": 78,
+    "blurb": "Jesus is crucified outside Jerusalem at Passover and rises from the dead on the third day.",
+    "ref": "Luke 24:6"
+  },
+  {
+    "id": "tl026",
+    "title": "Pentecost",
+    "when": "c. AD 30",
+    "position": 80,
+    "blurb": "Fifty days after the resurrection, the Holy Spirit fills the disciples and the church begins in Jerusalem.",
+    "ref": "Acts 2:1"
+  },
+  {
+    "id": "tl027",
+    "title": "Paul’s conversion",
+    "when": "c. AD 34",
+    "position": 83,
+    "blurb": "A blinding light on the road to Damascus turns Saul the persecutor into Paul the apostle.",
+    "ref": "Acts 9:3-4"
+  },
+  {
+    "id": "tl028",
+    "title": "Paul’s first missionary journey",
+    "when": "c. AD 46",
+    "position": 86,
+    "blurb": "The church at Antioch sends Paul and Barnabas out to preach across Cyprus and Asia Minor.",
+    "ref": "Acts 13:2-3"
+  },
+  {
+    "id": "tl029",
+    "title": "Council at Jerusalem",
+    "when": "c. AD 49",
+    "position": 88,
+    "blurb": "Apostles and elders meet in Jerusalem to settle whether Gentile believers must keep the Jewish law.",
+    "ref": "Acts 15:6"
+  },
+  {
+    "id": "tl030",
+    "title": "Paul imprisoned in Rome",
+    "when": "c. AD 60",
+    "position": 92,
+    "blurb": "Paul arrives in Rome as a prisoner awaiting trial, yet continues teaching about Jesus from his rented house.",
+    "ref": "Acts 28:16"
+  },
+  {
+    "id": "tl031",
+    "title": "Revelation on Patmos",
+    "when": "c. AD 95",
+    "position": 97,
+    "blurb": "Exiled to the island of Patmos, John receives the visions that become the book of Revelation.",
+    "ref": "Revelation 1:9"
+  }
+]

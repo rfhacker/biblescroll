@@ -7,6 +7,9 @@ import whosaid from './whosaid.json'
 import cont from './continue.json'
 import prayer from './prayer.json'
 import names from './names.json'
+import prophecy from './prophecy.json'
+import hymns from './hymns.json'
+import timeline from './timeline.json'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
 const allRefs: { src: string; ref: string }[] = [
@@ -20,6 +23,12 @@ const allRefs: { src: string; ref: string }[] = [
   ...(prayer as { id: string; ref: string }[]).map((p) => ({ src: `prayer ${p.id}`, ref: p.ref })),
   ...(names as { id: string; refs: string[] }[]).flatMap((n) =>
     n.refs.map((r, i) => ({ src: `names ${n.id} ref ${i}`, ref: r }))),
+  ...(prophecy as { id: string; prophecyRef: string; fulfillmentRef: string }[]).flatMap((p) => [
+    { src: `prophecy ${p.id} prophecyRef`, ref: p.prophecyRef },
+    { src: `prophecy ${p.id} fulfillmentRef`, ref: p.fulfillmentRef },
+  ]),
+  ...(hymns as { id: string; ref: string }[]).map((h) => ({ src: `hymns ${h.id}`, ref: h.ref })),
+  ...(timeline as { id: string; ref: string }[]).map((t) => ({ src: `timeline ${t.id}`, ref: t.ref })),
 ]
 
 test('every pack ref parses and resolves to a real chapter and verse', () => {

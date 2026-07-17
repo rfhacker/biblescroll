@@ -1,0 +1,191 @@
+[
+  {
+    "id": "hy001",
+    "title": "Amazing Grace",
+    "author": "John Newton",
+    "year": 1779,
+    "stanza": "Amazing grace! How sweet the sound,\nThat saved a wretch like me!\nI once was lost, but now am found,\nWas blind, but now I see.",
+    "story": "John Newton had captained slave ships before a violent storm at sea in 1748 turned him toward faith; he later became an Anglican pastor in Olney, England. He wrote this hymn’s words for a New Year’s Day sermon in 1773, reflecting on his own rescue from a life he called wretched.",
+    "ref": "Ephesians 2:8"
+  },
+  {
+    "id": "hy002",
+    "title": "It Is Well with My Soul",
+    "author": "Horatio Spafford",
+    "year": 1873,
+    "stanza": "When peace, like a river, attendeth my way,\nWhen sorrows like sea billows roll—\nWhatever my lot, Thou hast taught me to say,\nIt is well, it is well with my soul.",
+    "story": "Horatio Spafford’s four daughters drowned when their ship sank crossing the Atlantic in 1873; his wife survived and cabled him the news. Spafford wrote these words at sea while sailing to join her, reportedly as his own ship passed near the place his daughters had died.",
+    "ref": "John 14:27"
+  },
+  {
+    "id": "hy003",
+    "title": "Great Is Thy Faithfulness",
+    "author": "Thomas O. Chisholm",
+    "year": 1923,
+    "stanza": "Great is Thy faithfulness, O God my Father,\nThere is no shadow of turning with Thee;\nThou changest not, Thy compassions, they fail not,\nAs Thou hast been, Thou forever wilt be.",
+    "story": "Thomas Chisholm was a Kentucky schoolteacher and pastor who wrote the words late in life, not after any dramatic crisis but as a quiet reflection on God’s steady provision through an ordinary, modest income. He sent the poem to composer William Runyan, who set it to music in 1923.",
+    "ref": "Lamentations 3:23"
+  },
+  {
+    "id": "hy004",
+    "title": "Be Thou My Vision",
+    "author": "trans. Mary E. Byrne, versified Eleanor H. Hull",
+    "year": 1912,
+    "stanza": "Be Thou my vision, O Lord of my heart;\nNaught be all else to me, save that Thou art;\nThou my best thought, by day or by night,\nWaking or sleeping, Thy presence my light.",
+    "story": "The text descends from an Old Irish poem of uncertain early authorship. Mary Byrne translated it into English prose in 1905 for the journal Eriu, and Eleanor Hull versified that translation into hymn form in 1912, later paired with the Irish folk tune \"Slane.\"",
+    "ref": "Psalms 73:25"
+  },
+  {
+    "id": "hy005",
+    "title": "Holy, Holy, Holy",
+    "author": "Reginald Heber",
+    "year": 1826,
+    "stanza": "Holy, holy, holy! Lord God Almighty!\nEarly in the morning our song shall rise to Thee;\nHoly, holy, holy! Merciful and mighty!\nGod in three Persons, blessed Trinity!",
+    "story": "Reginald Heber wrote the hymn for Trinity Sunday while serving as a parish vicar in Shropshire, England, years before he became Bishop of Calcutta. He died in India in 1826, and his widow published the hymn posthumously the following year in a collection of his works.",
+    "ref": "Revelation 4:8"
+  },
+  {
+    "id": "hy006",
+    "title": "How Firm a Foundation",
+    "author": "John Rippon (attributed to \"K\")",
+    "year": 1787,
+    "stanza": "How firm a foundation, ye saints of the Lord,\nIs laid for your faith in His excellent Word!\nWhat more can He say than to you He hath said,\nTo you who for refuge to Jesus have fled?",
+    "story": "The hymn first appeared in John Rippon’s 1787 hymnal, credited only to a mysterious signature, \"K,\" whose identity scholars still debate. Biographers record that Andrew Jackson asked to have it sung at his bedside in the days before his death in 1845.",
+    "ref": "Isaiah 43:2"
+  },
+  {
+    "id": "hy007",
+    "title": "Rock of Ages",
+    "author": "Augustus Toplady",
+    "year": 1776,
+    "stanza": "Rock of Ages, cleft for me,\nLet me hide myself in Thee;\nLet the water and the blood,\nFrom Thy wounded side which flowed,\nBe of sin the double cure,\nSave from wrath and make me pure.",
+    "story": "Augustus Toplady, an English clergyman, published the hymn in 1776 as a meditation on Christ as shelter from judgment. A long-told but unverified legend says he found the image while sheltering from a sudden storm in a rocky gorge at Burrington Combe in the Mendip Hills.",
+    "ref": "Exodus 33:22"
+  },
+  {
+    "id": "hy008",
+    "title": "Blessed Assurance",
+    "author": "Fanny Crosby",
+    "year": 1873,
+    "stanza": "Blessed assurance, Jesus is mine!\nOh, what a foretaste of glory divine!\nHeir of salvation, purchase of God,\nBorn of His Spirit, washed in His blood.",
+    "story": "Fanny Crosby, blind since infancy, wrote the words in under an hour after her friend Phoebe Knapp played a new melody for her on the piano and asked what it said to her. Crosby answered, \"Blessed assurance, Jesus is mine,\" and the hymn grew from that phrase.",
+    "ref": "Hebrews 10:22"
+  },
+  {
+    "id": "hy009",
+    "title": "What a Friend We Have in Jesus",
+    "author": "Joseph Scriven",
+    "year": 1855,
+    "stanza": "What a friend we have in Jesus,\nAll our sins and griefs to bear!\nWhat a privilege to carry\nEverything to God in prayer!",
+    "story": "Joseph Scriven wrote the poem to comfort his mother in Ireland after grief struck his own life in Canada: his first fiancee drowned the night before their wedding, and years later a second engagement ended when his bride-to-be died of illness before they could marry.",
+    "ref": "Philippians 4:6"
+  },
+  {
+    "id": "hy010",
+    "title": "A Mighty Fortress Is Our God",
+    "author": "Martin Luther (trans. Frederic H. Hedge)",
+    "year": 1529,
+    "stanza": "A mighty fortress is our God,\nA bulwark never failing;\nOur helper He, amid the flood\nOf mortal ills prevailing;\nFor still our ancient foe\nDoth seek to work us woe.",
+    "story": "Martin Luther based the hymn on Psalm 46 during the turbulent years of the Reformation, though historians still debate its exact date of composition. Frederic Hedge’s widely sung English translation was published in Boston in 1853.",
+    "ref": "Psalms 46:1"
+  },
+  {
+    "id": "hy011",
+    "title": "All Creatures of Our God and King",
+    "author": "St. Francis of Assisi (trans. William H. Draper)",
+    "year": 1919,
+    "stanza": "All creatures of our God and King,\nLift up your voice and with us sing:\nAlleluia! Alleluia!\nThou burning sun with golden beam,\nThou silver moon with softer gleam,\nO praise Him! O praise Him!\nAlleluia! Alleluia! Alleluia!",
+    "story": "The words descend from Francis of Assisi’s \"Canticle of the Sun,\" composed near the end of his life around 1225 while he was gravely ill and nearly blind. William Draper paraphrased it into English for a children’s Whitsuntide festival in Leeds in 1919.",
+    "ref": "Psalms 148:3"
+  },
+  {
+    "id": "hy012",
+    "title": "Come Thou Fount of Every Blessing",
+    "author": "Robert Robinson",
+    "year": 1758,
+    "stanza": "Come, Thou Fount of every blessing,\nTune my heart to sing Thy grace;\nStreams of mercy, never ceasing,\nCall for songs of loudest praise.\nTeach me some melodious sonnet,\nSung by flaming tongues above;\nPraise the mount—I’m fixed upon it—\nMount of Thy redeeming love.",
+    "story": "Robert Robinson wrote the hymn at about age twenty-two, not long after his conversion under the preaching of George Whitefield. His biographers tell that in later years he grew troubled in his faith, and wept upon hearing a stranger in a carriage sing his own hymn back to him.",
+    "ref": "1 Samuel 7:12"
+  },
+  {
+    "id": "hy013",
+    "title": "When I Survey the Wondrous Cross",
+    "author": "Isaac Watts",
+    "year": 1707,
+    "stanza": "When I survey the wondrous cross\nOn which the Prince of Glory died,\nMy richest gain I count but loss,\nAnd pour contempt on all my pride.",
+    "story": "Isaac Watts wrote the hymn for a Communion service, deliberately departing from the strict psalm-paraphrase tradition of his day to write in his own voice about the cross. It appeared in his 1707 collection Hymns and Spiritual Songs and helped launch English hymn-writing as a new form.",
+    "ref": "Galatians 6:14"
+  },
+  {
+    "id": "hy014",
+    "title": "Just As I Am",
+    "author": "Charlotte Elliott",
+    "year": 1835,
+    "stanza": "Just as I am, without one plea,\nBut that Thy blood was shed for me,\nAnd that Thou bidd’st me come to Thee,\nO Lamb of God, I come, I come!",
+    "story": "Charlotte Elliott lived much of her life as an invalid and wrote the hymn after a conversation about faith with the Swiss pastor Cesar Malan. It became one of the most used invitation hymns of the following century, sung at countless evangelistic meetings.",
+    "ref": "John 6:37"
+  },
+  {
+    "id": "hy015",
+    "title": "Abide with Me",
+    "author": "Henry F. Lyte",
+    "year": 1847,
+    "stanza": "Abide with me: fast falls the eventide;\nThe darkness deepens; Lord, with me abide;\nWhen other helpers fail and comforts flee,\nHelp of the helpless, O abide with me.",
+    "story": "Henry Lyte, an English vicar dying of tuberculosis, preached his final sermon to his Devon congregation in September 1847 and finished this hymn soon after. He died in Nice, France, just weeks later, having never seen it published.",
+    "ref": "Luke 24:29"
+  },
+  {
+    "id": "hy016",
+    "title": "I Surrender All",
+    "author": "Judson W. Van DeVenter",
+    "year": 1896,
+    "stanza": "All to Jesus, I surrender;\nAll to Him I freely give;\nI will ever love and trust Him,\nIn His presence daily live.",
+    "story": "Judson Van DeVenter was an art teacher who spent years wrestling with a call to give up his career for evangelistic ministry. He wrote the hymn about the day he finally yielded, and his friend Winfield Weeden composed the tune.",
+    "ref": "Romans 12:1"
+  },
+  {
+    "id": "hy017",
+    "title": "Nearer, My God, to Thee",
+    "author": "Sarah Flower Adams",
+    "year": 1841,
+    "stanza": "Nearer, my God, to Thee, nearer to Thee!\nE’en though it be a cross that raiseth me,\nStill all my song shall be nearer, my God, to Thee.\nNearer, my God, to Thee, nearer to Thee!",
+    "story": "Sarah Flower Adams, an English writer, based the hymn on Jacob’s dream of a ladder to heaven at Bethel. It became famous well beyond her lifetime through the enduring, though disputed, claim that it was the tune played by the band as the Titanic sank in 1912.",
+    "ref": "Genesis 28:12"
+  },
+  {
+    "id": "hy018",
+    "title": "Jesus Loves Me",
+    "author": "Anna B. Warner",
+    "year": 1860,
+    "stanza": "Jesus loves me! This I know,\nFor the Bible tells me so;\nLittle ones to Him belong,\nThey are weak, but He is strong.",
+    "story": "Anna Warner wrote the words as a poem inside a novel her sister Susan was writing, meant to comfort a dying child in the story. William Bradbury set it to music and added the familiar refrain in 1862, and it spread as one of the most translated children’s hymns in the world.",
+    "ref": "Mark 10:14"
+  },
+  {
+    "id": "hy019",
+    "title": "O for a Thousand Tongues to Sing",
+    "author": "Charles Wesley",
+    "year": 1739,
+    "stanza": "O for a thousand tongues to sing\nMy great Redeemer’s praise,\nThe glories of my God and King,\nThe triumphs of His grace!",
+    "story": "Charles Wesley wrote the hymn to mark the first anniversary of his own conversion on May 21, 1739. Wesley scholars often trace its opening line to a comment by the Moravian leader Peter Bohler, who once said he would praise God with a thousand tongues if he had them.",
+    "ref": "Psalms 103:1"
+  },
+  {
+    "id": "hy020",
+    "title": "Take My Life and Let It Be",
+    "author": "Frances Ridley Havergal",
+    "year": 1874,
+    "stanza": "Take my life, and let it be\nConsecrated, Lord, to Thee;\nTake my moments and my days,\nLet them flow in ceaseless praise.",
+    "story": "Frances Havergal wrote the hymn in a single sitting in 1874 after a personal season of renewed devotion, during a visit in a house where she prayed for every person present to come to faith. Her sister’s memoir of her records that all ten short couplets came in one evening.",
+    "ref": "1 Corinthians 6:20"
+  },
+  {
+    "id": "hy021",
+    "title": "Turn Your Eyes upon Jesus",
+    "author": "Helen H. Lemmel",
+    "year": 1922,
+    "stanza": "O soul, are you weary and troubled?\nNo light in the darkness you see?\nThere’s a light for a look at the Savior,\nAnd life more abundant and free!\nTurn your eyes upon Jesus,\nLook full in His wonderful face,\nAnd the things of earth will grow strangely dim,\nIn the light of His glory and grace.",
+    "story": "Helen Lemmel wrote both words and music in 1922 after reading a small missionary tract containing the line \"turn your eyes upon Jesus, look full in His face, and the things of earth will grow strangely dim.\" She said the tune came to her almost as quickly as the phrase itself.",
+    "ref": "Hebrews 12:2"
+  }
+]
