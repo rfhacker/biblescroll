@@ -148,7 +148,7 @@ body {
 .panel h2 { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin: 1.4rem 0 0.6rem; }
 .empty { color: var(--text-dim); margin-top: 2rem; text-align: center; }
 .fav { display: flex; justify-content: space-between; gap: 0.8rem; padding: 0.9rem 0; border-bottom: 1px solid color-mix(in srgb, var(--text-dim) 18%, transparent); }
-.fav-title { font-weight: 600; margin-bottom: 0.25rem; }
+.fav-title { font-weight: 600; margin-bottom: 0.25rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .fav-body { color: var(--text-dim); font-size: 0.95rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .fav button {
   background: none; border: none; color: var(--accent); font-size: 1.2rem; cursor: pointer;

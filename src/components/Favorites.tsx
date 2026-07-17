@@ -6,6 +6,7 @@ import { parseRefLabel } from '../content/verseStore'
 
 const GROUPS: [CardKind, string][] = [
   ['verse', 'Verses'], ['trivia', 'Trivia'], ['fact', 'Facts'], ['map', 'Maps'],
+  ['whosaid', 'Who said it?'], ['continue', 'Continue the verse'], ['names', 'Names of God'],
 ]
 
 export function Favorites({ onClose }: { onClose: () => void }) {
@@ -40,7 +41,7 @@ export function Favorites({ onClose }: { onClose: () => void }) {
                     <div className="fav-body">{f.body}</div>
                   </div>
                 )}
-                <button aria-label={`Remove ${f.title}`}
+                <button aria-label={`Remove ${f.title.slice(0, 60)}`}
                   onClick={() => { toggleFavorite(f); setFavs(getFavorites()) }}>♥</button>
               </div>
             ))}

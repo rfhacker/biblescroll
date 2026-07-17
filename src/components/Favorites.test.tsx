@@ -21,6 +21,21 @@ test('lists saved items grouped by kind and removes on unheart', async () => {
   expect(screen.queryByText('John 3:16')).toBeNull()
 })
 
+test('lists newer card kinds under their own headings and removes on unheart', async () => {
+  toggleFavorite({ kind: 'whosaid', id: 'ws001', title: 'Let there be light', body: 'God, at creation' })
+  toggleFavorite({ kind: 'continue', id: 'c001', title: 'The Lord is my shepherd…', body: 'Psalm 23' })
+  toggleFavorite({ kind: 'names', id: 'n001', title: 'Elohim', body: 'God, the mighty creator' })
+  render(<Favorites onClose={() => {}} />)
+  expect(screen.getByText('Who said it?')).toBeInTheDocument()
+  expect(screen.getByText('Continue the verse')).toBeInTheDocument()
+  expect(screen.getByText('Names of God')).toBeInTheDocument()
+  expect(screen.getByText('Let there be light')).toBeInTheDocument()
+  expect(screen.getByText('The Lord is my shepherd…')).toBeInTheDocument()
+  expect(screen.getByText('Elohim')).toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button', { name: /remove elohim/i }))
+  expect(screen.queryByText('Elohim')).toBeNull()
+})
+
 test('close button fires onClose', async () => {
   const onClose = vi.fn()
   render(<Favorites onClose={onClose} />)
