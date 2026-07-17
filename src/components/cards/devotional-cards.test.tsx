@@ -25,9 +25,16 @@ test('NamesCard: name, original script, meaning, body, refs, favoritable', () =>
 
 test('favorites accept whosaid/continue/names kinds', async () => {
   localStorage.clear()
-  const { toggleFavorite, isFavorite } = await import('../../lib/store')
+  const { toggleFavorite, isFavorite, getFavorites } = await import('../../lib/store')
+  // Add a trivia favorite first
+  toggleFavorite({ kind: 'trivia', id: 'x-trivia', title: 't', body: 'b' })
+  expect(isFavorite('trivia', 'x-trivia')).toBe(true)
+  // Then add new kind favorites
   for (const kind of ['whosaid', 'continue', 'names'] as const) {
     toggleFavorite({ kind, id: `x-${kind}`, title: 't', body: 'b' })
     expect(isFavorite(kind, `x-${kind}`)).toBe(true)
   }
+  // Verify the trivia favorite is still there
+  expect(isFavorite('trivia', 'x-trivia')).toBe(true)
+  expect(getFavorites()).toHaveLength(4)
 })
