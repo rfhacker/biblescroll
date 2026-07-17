@@ -75,6 +75,15 @@ body {
 .names-original { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 0.8rem; }
 .names-meaning { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem; }
 .names-refs { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.pf-block { margin-bottom: 0.9rem; }
+.pf-label { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+.pf-text { font-family: var(--serif); font-size: 1.1rem; line-height: 1.5; }
+.pf-note { color: var(--text-dim); font-size: 0.98rem; line-height: 1.5; margin-top: 0.4rem; }
+.hymn-byline { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 0.8rem; }
+.hymn-stanza { white-space: pre-line; }
+.timeline-svg { width: 100%; margin: 0.6rem 0 0.9rem; }
+.timeline-era { font-size: 11px; fill: var(--text-dim); font-family: var(--sans); }
+.timeline-when { font-size: 13px; fill: var(--accent); font-family: var(--sans); letter-spacing: 0.04em; }
 .read-more { background: none; border: none; color: var(--accent); font-size: 1rem; margin-top: 0.6rem; cursor: pointer; padding: 0.6rem 0.2rem; }
 .card-actions { position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); right: 1.6rem; display: flex; gap: 0.9rem; }
 .act {

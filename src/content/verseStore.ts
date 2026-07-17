@@ -116,3 +116,15 @@ export async function loadVerses(baseUrl: string): Promise<VerseStore> {
   if (!res.ok) throw new Error(`verses fetch failed: ${res.status}`)
   return buildStore(await res.json())
 }
+
+export function looseRefTuple(ref: string): CuratedRef | null {
+  const r = parseLooseRef(ref)
+  if (!r) return null
+  const m = ref.match(/:(\d+)[–-](\d+)/)
+  return m ? [r.b, r.c, r.v, Number(m[2])] : [r.b, r.c, r.v]
+}
+
+export function looseRefText(store: VerseStore, ref: string): string {
+  const t = looseRefTuple(ref)
+  return t ? refText(store, t) : ''
+}

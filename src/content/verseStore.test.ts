@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs'
-import { buildStore, refKey, refLabel, refText, chapterOf, prevChapter, nextChapter, parseRefLabel, parseLooseRef } from './verseStore'
+import { buildStore, refKey, refLabel, refText, chapterOf, prevChapter, nextChapter, parseRefLabel, parseLooseRef, looseRefTuple, looseRefText } from './verseStore'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
 
@@ -68,4 +68,16 @@ test('parseLooseRef reads prose citation shapes', () => {
 test('parseLooseRef accepts chapter-only citations, defaulting to verse 1', () => {
   expect(parseLooseRef('2 John 1')).toEqual({ b: '2JN', c: 1, v: 1 })
   expect(parseLooseRef('Psalms 117')).toEqual({ b: 'PSA', c: 117, v: 1 })
+})
+
+test('looseRefTuple parses single verses and ranges', () => {
+  expect(looseRefTuple('John 3:16')).toEqual(['JHN', 3, 16])
+  expect(looseRefTuple('Isaiah 53:5-6')).toEqual(['ISA', 53, 5, 6])
+  expect(looseRefTuple('Atlantis 3:16')).toBeNull()
+})
+
+test('looseRefText renders verse text from a loose reference', () => {
+  const text = looseRefText(store, 'John 3:16')
+  expect(text).toMatch(/God so loved/)
+  expect(looseRefText(store, 'Atlantis 3:16')).toBe('')
 })

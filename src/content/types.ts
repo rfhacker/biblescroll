@@ -69,7 +69,33 @@ export interface MapStory {
   route: boolean
 }
 
-export type CardKind = 'verse' | 'trivia' | 'fact' | 'map' | 'whosaid' | 'continue' | 'names'
+export interface ProphecyItem {
+  id: string
+  prophecyRef: string
+  fulfillmentRef: string
+  note: string
+}
+
+export interface HymnItem {
+  id: string
+  title: string
+  author: string
+  year: number
+  stanza: string
+  story: string
+  ref: string
+}
+
+export interface TimelineItem {
+  id: string
+  title: string
+  when: string
+  position: number
+  blurb: string
+  ref: string
+}
+
+export type CardKind = 'verse' | 'trivia' | 'fact' | 'map' | 'whosaid' | 'continue' | 'names' | 'prophecy' | 'hymn' | 'timeline'
 
 export interface Favorite {
   kind: CardKind
