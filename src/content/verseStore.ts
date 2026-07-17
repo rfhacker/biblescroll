@@ -121,7 +121,9 @@ export function looseRefTuple(ref: string): CuratedRef | null {
   const r = parseLooseRef(ref)
   if (!r) return null
   const m = ref.match(/:(\d+)[–-](\d+)/)
-  return m ? [r.b, r.c, r.v, Number(m[2])] : [r.b, r.c, r.v]
+  // A cross-chapter citation ("Exodus 12:37-19:2") parses as end < v here;
+  // fall back to the first verse rather than an empty range.
+  return m && Number(m[2]) >= r.v ? [r.b, r.c, r.v, Number(m[2])] : [r.b, r.c, r.v]
 }
 
 export function looseRefText(store: VerseStore, ref: string): string {

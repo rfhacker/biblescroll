@@ -81,3 +81,7 @@ test('looseRefText renders verse text from a loose reference', () => {
   expect(text).toMatch(/God so loved/)
   expect(looseRefText(store, 'Atlantis 3:16')).toBe('')
 })
+
+test('looseRefTuple degrades a cross-chapter range to its first verse', () => {
+  expect(looseRefTuple('Exodus 12:37-19:2')).toEqual(['EXO', 12, 37])
+})
