@@ -139,7 +139,7 @@
       "Pilate"
     ],
     "answer": 2,
-    "why": "Jesus cries this out in Aramaic from the cross, quoting the opening of Psalm 22.",
+    "why": "Jesus cries this out with a loud voice from the cross, quoting the opening of Psalm 22.",
     "ref": "Matthew 27:46"
   },
   {
@@ -204,7 +204,7 @@
       "Peter"
     ],
     "answer": 2,
-    "why": "Thomas responds this way once he touches the risen Jesus’ wounds, having doubted the other disciples’ report.",
+    "why": "Thomas says this when the risen Jesus shows him his wounds and invites him to stop doubting.",
     "ref": "John 20:28"
   },
   {
@@ -484,8 +484,8 @@
     "id": "ws038",
     "quote": "‘Let my people go, that they may hold a feast to me in the wilderness.’",
     "choices": [
-      "Aaron alone",
-      "Moses",
+      "Aaron and Miriam",
+      "Moses and Aaron",
       "Joseph",
       "Joshua"
     ],
@@ -508,7 +508,7 @@
   },
   {
     "id": "ws040",
-    "quote": "If it seems evil to you to serve Yahweh, choose today whom you will serve; whether the gods which your fathers served that were beyond the River, or the gods of the Amorites, in whose land you dwell; but as for me and my house, we will serve Yahweh.",
+    "quote": "but as for me and my house, we will serve Yahweh.",
     "choices": [
       "Moses",
       "Caleb",
@@ -625,7 +625,7 @@
   },
   {
     "id": "ws049",
-    "quote": "I have been very jealous for Yahweh, the God of Armies; for the children of Israel have forsaken your covenant, thrown down your altars, and killed your prophets with the sword. I, even I only, am left; and they seek my life, to take it away.",
+    "quote": "I, even I only, am left; and they seek my life, to take it away.",
     "choices": [
       "Obadiah",
       "Micaiah",
@@ -794,7 +794,7 @@
   },
   {
     "id": "ws062",
-    "quote": "Yahweh of Armies, if you will indeed look at the affliction of your servant and remember me, and not forget your servant, but will give to your servant a boy, then I will give him to Yahweh all the days of his life, and no razor shall come on his head.",
+    "quote": "but will give to your servant a boy, then I will give him to Yahweh all the days of his life",
     "choices": [
       "Deborah",
       "Peninnah",

@@ -48,7 +48,7 @@ export interface NamesItem {
   id: string
   name: string
   original: string
-  language: 'Hebrew' | 'Greek'
+  language: 'Hebrew' | 'Greek' | 'Aramaic'
   meaning: string
   body: string
   refs: string[]

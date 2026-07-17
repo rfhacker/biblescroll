@@ -32,7 +32,7 @@ test('names: 25+ items, unique ids, complete fields, 1–3 resolvable refs each'
   for (const n of NGP) {
     expect(n.id).toMatch(/^ng\d{3}$/)
     for (const f of [n.name, n.original, n.meaning, n.body] as string[]) expect(f.length).toBeGreaterThan(1)
-    expect(['Hebrew', 'Greek']).toContain(n.language)
+    expect(['Hebrew', 'Greek', 'Aramaic']).toContain(n.language)
     expect(n.refs.length).toBeGreaterThanOrEqual(1)
     expect(n.refs.length).toBeLessThanOrEqual(3)
     for (const ref of n.refs) {
@@ -47,6 +47,7 @@ test('names: originals use real Hebrew/Greek script matching the language', () =
   for (const n of NGP) {
     const hasHebrew = /[֐-׿]/.test(n.original)
     const hasGreek = /[Ͱ-Ͽἀ-῿]/.test(n.original)
-    expect(n.language === 'Hebrew' ? hasHebrew : hasGreek, `${n.id}: script/language mismatch`).toBe(true)
+    // Aramaic (Daniel) shares the Hebrew square script.
+    expect(n.language === 'Greek' ? hasGreek : hasHebrew, `${n.id}: script/language mismatch`).toBe(true)
   }
 })

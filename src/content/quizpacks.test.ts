@@ -61,6 +61,8 @@ test('continue: 50+ items, unique ids, distinct endings, every answer index used
     expect(c.endings).toHaveLength(3)
     expect(c.sources).toHaveLength(3)
     expect(new Set(c.endings.map(norm)).size).toBe(3)
+    expect(c.answer).toBeGreaterThanOrEqual(0)
+    expect(c.answer).toBeLessThan(3)
     used.add(c.answer)
   }
   expect(used.size).toBe(3)
@@ -69,7 +71,9 @@ test('continue: 50+ items, unique ids, distinct endings, every answer index used
 test('continue: stem + true ending reconstructs the ref text exactly', () => {
   for (const c of CVP) {
     const text = norm(refText(store, toTuple(c.ref)))
-    expect(norm(`${c.stem} ${c.endings[c.answer]}`), `${c.id}: does not reconstruct ${c.ref}`).toBe(text)
+    // endsWith (not equality): psalm superscriptions and acrostic headers
+    // are trimmed from stems, so stem+ending reconstructs the verse tail.
+    expect(text.endsWith(norm(`${c.stem} ${c.endings[c.answer]}`)), `${c.id}: does not reconstruct ${c.ref}`).toBe(true)
     expect(norm(c.sources[c.answer])).toBe(norm(c.ref))
   }
 })
