@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { cardAt } from '../lib/feed'
+import { cardAt, themeFor } from '../lib/feed'
 import { votdIndex } from '../lib/votd'
 import { getHasScrolled, setHasScrolled } from '../lib/store'
 import type { VerseStore } from '../content/verseStore'
@@ -51,7 +51,7 @@ export function Feed({ verses, day, sessionSeed, onScore }: { verses: VerseStore
       {Array.from({ length: total }, (_, i) => (
         <section className="slot" key={i}>
           {Math.abs(i - current) <= WINDOW
-            ? resolveCard(cardAt(i, seed, sizes, vi), verses, i % 5, onScore)
+            ? resolveCard(cardAt(i, seed, sizes, vi), verses, themeFor(i), onScore)
             : null}
         </section>
       ))}

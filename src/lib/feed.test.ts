@@ -1,4 +1,4 @@
-import { cardAt, type PoolSizes } from './feed'
+import { cardAt, type PoolSizes, themeFor } from './feed'
 
 const SIZES: PoolSizes = { curated: 280, corpus: 31103, trivia: 150, fact: 100, map: 14, memory: 280, whosaid: 60, continue: 50, prayer: 40, names: 25 }
 const at = (i: number) => cardAt(i, 'test-seed', SIZES, 7)
@@ -69,4 +69,13 @@ test('verse cards are ~70% curated', () => {
   }
   expect(curated).toBe(70)
   expect(corpus).toBe(30)
+})
+
+test('themeFor rotates every cycle slot through all 5 themes across cycles', () => {
+  // 20-slot cycle is a multiple of the 5-theme period; a plain i % 5 would
+  // pin each non-verse slot to one theme forever.
+  for (let slot = 0; slot < 20; slot++) {
+    const themes = new Set(Array.from({ length: 5 }, (_, c) => themeFor(slot + c * 20)))
+    expect(themes.size).toBe(5)
+  }
 })

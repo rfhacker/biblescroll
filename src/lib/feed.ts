@@ -15,6 +15,13 @@ const CYCLE = [
 ] as const
 const PER_CYCLE = { verse: 10, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1 } as const
 
+// Card background theme. Not simply i % 5: the 20-slot cycle is a multiple
+// of the 5-theme period, which would pin every non-verse kind to one theme
+// forever — shifting the mapping by one per full cycle rotates them all.
+export function themeFor(i: number): number {
+  return (i + Math.floor(i / CYCLE.length)) % 5
+}
+
 function poolIndexFor(pool: string, occ: number, size: number, seed: string): number {
   const epoch = Math.floor(occ / size)
   return shuffledRange(size, `${seed}:${pool}:${epoch}`)[occ % size]
