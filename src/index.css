@@ -150,6 +150,7 @@ body {
   display: inline-flex; align-items: center; justify-content: center;
 }
 .about-body p { margin-bottom: 1rem; line-height: 1.6; }
+.about-contact { color: var(--accent); text-decoration: underline; text-underline-offset: 0.15em; }
 .chapter-scrim { position: fixed; inset: 0; z-index: 30; background: rgba(0,0,0,0.45); }
 .chapter-sheet {
   --text: #e8e4da; --text-dim: #a49e90; --bg: #12151c; --surface: #1b2029;
