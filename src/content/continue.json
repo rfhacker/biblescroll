@@ -3,16 +3,16 @@
     "id": "cv001",
     "stem": "For God so loved the world, that he gave his only born Son,",
     "endings": [
-      "that whoever believes in him should not perish, but have eternal life.",
       "I shall lack nothing.",
+      "that whoever believes in him should not perish, but have eternal life.",
       "Seek, and you will find. Knock, and it will be opened for you."
     ],
     "sources": [
-      "John 3:16",
       "Psalms 23:1",
+      "John 3:16",
       "Matthew 7:7"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Psalms 23:1 and Matthew 7:7.",
     "ref": "John 3:16"
   },
@@ -37,16 +37,16 @@
     "id": "cv003",
     "stem": "Trust in Yahweh with all your heart,",
     "endings": [
-      "to give you hope and a future.",
       "and fall short of the glory of God;",
-      "and don’t lean on your own understanding."
+      "and don’t lean on your own understanding.",
+      "to give you hope and a future."
     ],
     "sources": [
-      "Jeremiah 29:11",
       "Romans 3:23",
-      "Proverbs 3:5"
+      "Proverbs 3:5",
+      "Jeremiah 29:11"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish Jeremiah 29:11 and Romans 3:23.",
     "ref": "Proverbs 3:5"
   },
@@ -54,16 +54,16 @@
     "id": "cv004",
     "stem": "For I know the thoughts that I think toward you,” says Yahweh, “thoughts of peace, and not of evil,",
     "endings": [
+      "but the free gift of God is eternal life in Christ Jesus our Lord.",
       "to give you hope and a future.",
-      "through Christ who strengthens me.",
-      "but the free gift of God is eternal life in Christ Jesus our Lord."
+      "through Christ who strengthens me."
     ],
     "sources": [
+      "Romans 6:23",
       "Jeremiah 29:11",
-      "Philippians 4:13",
-      "Romans 6:23"
+      "Philippians 4:13"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Philippians 4:13 and Romans 6:23.",
     "ref": "Jeremiah 29:11"
   },
@@ -88,13 +88,13 @@
     "id": "cv006",
     "stem": "but those who wait for Yahweh will renew their strength. They will mount up with wings like eagles. They will run, and not be weary.",
     "endings": [
-      "and all these things will be given to you as well.",
       "for instruction in righteousness,",
+      "and all these things will be given to you as well.",
       "They will walk, and not faint."
     ],
     "sources": [
-      "Matthew 6:33",
       "2 Timothy 3:16",
+      "Matthew 6:33",
       "Isaiah 40:31"
     ],
     "answer": 2,
@@ -105,16 +105,16 @@
     "id": "cv007",
     "stem": "But seek first God’s Kingdom and his righteousness;",
     "endings": [
+      "Behold, all things have become new.",
       "and all these things will be given to you as well.",
-      "baptizing them in the name of the Father and of the Son and of the Holy Spirit,",
-      "Behold, all things have become new."
+      "baptizing them in the name of the Father and of the Son and of the Holy Spirit,"
     ],
     "sources": [
+      "2 Corinthians 5:17",
       "Matthew 6:33",
-      "Matthew 28:19",
-      "2 Corinthians 5:17"
+      "Matthew 28:19"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Matthew 28:19 and 2 Corinthians 5:17.",
     "ref": "Matthew 6:33"
   },
@@ -123,15 +123,15 @@
     "stem": "Go and make disciples of all nations,",
     "endings": [
       "the heavens and the earth.",
-      "baptizing them in the name of the Father and of the Son and of the Holy Spirit,",
-      "Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?"
+      "Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?",
+      "baptizing them in the name of the Father and of the Son and of the Holy Spirit,"
     ],
     "sources": [
       "Genesis 1:1",
-      "Matthew 28:19",
-      "Psalms 27:1"
+      "Psalms 27:1",
+      "Matthew 28:19"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The other endings finish Genesis 1:1 and Psalms 27:1.",
     "ref": "Matthew 28:19"
   },
@@ -140,15 +140,15 @@
     "stem": "In the beginning, God created",
     "endings": [
       "a very present help in trouble.",
-      "Where does my help come from?",
-      "the heavens and the earth."
+      "the heavens and the earth.",
+      "Where does my help come from?"
     ],
     "sources": [
       "Psalms 46:1",
-      "Psalms 121:1",
-      "Genesis 1:1"
+      "Genesis 1:1",
+      "Psalms 121:1"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish Psalms 46:1 and Psalms 121:1.",
     "ref": "Genesis 1:1"
   },
@@ -156,16 +156,16 @@
     "id": "cv010",
     "stem": "For the Chief Musician. By the sons of Korah. According to Alamoth. God is our refuge and strength,",
     "endings": [
-      "a very present help in trouble.",
       "His name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.",
+      "a very present help in trouble.",
       "and a time for every purpose under heaven:"
     ],
     "sources": [
-      "Psalms 46:1",
       "Isaiah 9:6",
+      "Psalms 46:1",
       "Ecclesiastes 3:1"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Isaiah 9:6 and Ecclesiastes 3:1.",
     "ref": "Psalms 46:1"
   },
@@ -173,16 +173,16 @@
     "id": "cv011",
     "stem": "For a child is born to us. A son is given to us; and the government will be on his shoulders.",
     "endings": [
-      "with all your heart, with all your soul, and with all your might.",
       "His name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.",
-      "but the righteous will live by his faith."
+      "but the righteous will live by his faith.",
+      "with all your heart, with all your soul, and with all your might."
     ],
     "sources": [
-      "Deuteronomy 6:5",
       "Isaiah 9:6",
-      "Habakkuk 2:4"
+      "Habakkuk 2:4",
+      "Deuteronomy 6:5"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "The other endings finish Deuteronomy 6:5 and Habakkuk 2:4.",
     "ref": "Isaiah 9:6"
   },
@@ -224,14 +224,14 @@
     "id": "cv014",
     "stem": "Love is patient and is kind.",
     "endings": [
-      "The greatest of these is love.",
+      "and be gracious to you.",
       "Love doesn’t envy. Love doesn’t brag, is not proud,",
-      "and be gracious to you."
+      "The greatest of these is love."
     ],
     "sources": [
-      "1 Corinthians 13:13",
+      "Numbers 6:25",
       "1 Corinthians 13:4",
-      "Numbers 6:25"
+      "1 Corinthians 13:13"
     ],
     "answer": 1,
     "why": "The other endings finish 1 Corinthians 13:13 and Numbers 6:25.",
@@ -242,15 +242,15 @@
     "stem": "But now faith, hope, and love remain—these three.",
     "endings": [
       "and that not of yourselves; it is the gift of God,",
-      "Renew a right spirit within me.",
-      "The greatest of these is love."
+      "The greatest of these is love.",
+      "Renew a right spirit within me."
     ],
     "sources": [
       "Ephesians 2:8",
-      "Psalms 51:10",
-      "1 Corinthians 13:13"
+      "1 Corinthians 13:13",
+      "Psalms 51:10"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish Ephesians 2:8 and Psalms 51:10.",
     "ref": "1 Corinthians 13:13"
   },
@@ -258,16 +258,16 @@
     "id": "cv016",
     "stem": "for by grace you have been saved through faith,",
     "endings": [
-      "and that not of yourselves; it is the gift of God,",
       "patience, kindness, goodness, faith,",
+      "and that not of yourselves; it is the gift of God,",
       "and the sheep of his pasture."
     ],
     "sources": [
-      "Ephesians 2:8",
       "Galatians 5:22",
+      "Ephesians 2:8",
       "Psalms 100:3"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Galatians 5:22 and Psalms 100:3.",
     "ref": "Ephesians 2:8"
   },
@@ -275,14 +275,14 @@
     "id": "cv017",
     "stem": "But the fruit of the Spirit is love, joy, peace,",
     "endings": [
-      "proof of things not seen.",
+      "but the foolish despise wisdom and instruction.",
       "patience, kindness, goodness, faith,",
-      "but the foolish despise wisdom and instruction."
+      "proof of things not seen."
     ],
     "sources": [
-      "Hebrews 11:1",
+      "Proverbs 1:7",
       "Galatians 5:22",
-      "Proverbs 1:7"
+      "Hebrews 11:1"
     ],
     "answer": 1,
     "why": "The other endings finish Hebrews 11:1 and Proverbs 1:7.",
@@ -292,16 +292,16 @@
     "id": "cv018",
     "stem": "Now faith is assurance of things hoped for,",
     "endings": [
-      "when you fall into various temptations,",
       "with the right hand of my righteousness.",
-      "proof of things not seen."
+      "proof of things not seen.",
+      "when you fall into various temptations,"
     ],
     "sources": [
-      "James 1:2",
       "Isaiah 41:10",
-      "Hebrews 11:1"
+      "Hebrews 11:1",
+      "James 1:2"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish James 1:2 and Isaiah 41:10.",
     "ref": "Hebrews 11:1"
   },
@@ -309,16 +309,16 @@
     "id": "cv019",
     "stem": "Count it all joy, my brothers,",
     "endings": [
-      "when you fall into various temptations,",
       "of your faith produces endurance.",
-      "for they shall be comforted."
+      "for they shall be comforted.",
+      "when you fall into various temptations,"
     ],
     "sources": [
-      "James 1:2",
       "James 1:3",
-      "Matthew 5:4"
+      "Matthew 5:4",
+      "James 1:2"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "The other endings finish James 1:3 and Matthew 5:4.",
     "ref": "James 1:2"
   },
@@ -327,15 +327,15 @@
     "stem": "knowing that the testing",
     "endings": [
       "and a light for my path.",
-      "of your faith produces endurance.",
-      "for they shall inherit the earth."
+      "for they shall inherit the earth.",
+      "of your faith produces endurance."
     ],
     "sources": [
       "Psalms 119:105",
-      "James 1:3",
-      "Matthew 5:5"
+      "Matthew 5:5",
+      "James 1:3"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The other endings finish Psalms 119:105 and Matthew 5:5.",
     "ref": "James 1:3"
   },
@@ -343,16 +343,16 @@
     "id": "cv021",
     "stem": "NUN Your word is a lamp to my feet,",
     "endings": [
-      "and when he is old he will not depart from it.",
       "for God is love.",
-      "and a light for my path."
+      "and a light for my path.",
+      "and when he is old he will not depart from it."
     ],
     "sources": [
-      "Proverbs 22:6",
       "1 John 4:8",
-      "Psalms 119:105"
+      "Psalms 119:105",
+      "Proverbs 22:6"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish Proverbs 22:6 and 1 John 4:8.",
     "ref": "Psalms 119:105"
   },
@@ -360,16 +360,16 @@
     "id": "cv022",
     "stem": "Train up a child in the way he should go,",
     "endings": [
-      "and when he is old he will not depart from it.",
       "and by his wounds we are healed.",
+      "and when he is old he will not depart from it.",
       "because he cares for you."
     ],
     "sources": [
-      "Proverbs 22:6",
       "Isaiah 53:5",
+      "Proverbs 22:6",
       "1 Peter 5:7"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Isaiah 53:5 and 1 Peter 5:7.",
     "ref": "Proverbs 22:6"
   },
@@ -378,15 +378,15 @@
     "stem": "But he was pierced for our transgressions. He was crushed for our iniquities. The punishment that brought our peace was on him;",
     "endings": [
       "but God meant it for good, to save many people alive, as is happening today.",
-      "and by his wounds we are healed.",
-      "as for the Lord and not for men,"
+      "as for the Lord and not for men,",
+      "and by his wounds we are healed."
     ],
     "sources": [
       "Genesis 50:20",
-      "Isaiah 53:5",
-      "Colossians 3:23"
+      "Colossians 3:23",
+      "Isaiah 53:5"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The other endings finish Genesis 50:20 and Colossians 3:23.",
     "ref": "Isaiah 53:5"
   },
@@ -394,16 +394,16 @@
     "id": "cv024",
     "stem": "As for you, you meant evil against me,",
     "endings": [
-      "but Yahweh looks at the heart.”",
+      "but God meant it for good, to save many people alive, as is happening today.",
       "nor sit in the seat of scoffers;",
-      "but God meant it for good, to save many people alive, as is happening today."
+      "but Yahweh looks at the heart.”"
     ],
     "sources": [
-      "1 Samuel 16:7",
+      "Genesis 50:20",
       "Psalms 1:1",
-      "Genesis 50:20"
+      "1 Samuel 16:7"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "The other endings finish 1 Samuel 16:7 and Psalms 1:1.",
     "ref": "Genesis 50:20"
   },
@@ -412,13 +412,13 @@
     "stem": "But Yahweh said to Samuel, “Don’t look on his face, or on the height of his stature, because I have rejected him; for I don’t see as man sees. For man looks at the outward appearance,",
     "endings": [
       "but Yahweh looks at the heart.”",
-      "and glorify your Father who is in heaven.",
-      "in the shadow of the Almighty."
+      "in the shadow of the Almighty.",
+      "and glorify your Father who is in heaven."
     ],
     "sources": [
       "1 Samuel 16:7",
-      "Matthew 5:16",
-      "Psalms 91:1"
+      "Psalms 91:1",
+      "Matthew 5:16"
     ],
     "answer": 0,
     "why": "The other endings finish Matthew 5:16 and Psalms 91:1.",
@@ -428,16 +428,16 @@
     "id": "cv026",
     "stem": "Even so, let your light shine before men, that they may see your good works",
     "endings": [
-      "and I will give you rest.",
       "and glorify your Father who is in heaven.",
+      "and I will give you rest.",
       "Blessed is the man who takes refuge in him."
     ],
     "sources": [
-      "Matthew 11:28",
       "Matthew 5:16",
+      "Matthew 11:28",
       "Psalms 34:8"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "The other endings finish Matthew 11:28 and Psalms 34:8.",
     "ref": "Matthew 5:16"
   },
@@ -463,13 +463,13 @@
     "stem": "“Ask, and it will be given you.",
     "endings": [
       "Seek, and you will find. Knock, and it will be opened for you.",
-      "and the Word was with God, and the Word was God.",
-      "with all your heart, with all your soul, and with all your mind.’"
+      "with all your heart, with all your soul, and with all your mind.’",
+      "and the Word was with God, and the Word was God."
     ],
     "sources": [
       "Matthew 7:7",
-      "John 1:1",
-      "Matthew 22:37"
+      "Matthew 22:37",
+      "John 1:1"
     ],
     "answer": 0,
     "why": "The other endings finish John 1:1 and Matthew 22:37.",
@@ -496,16 +496,16 @@
     "id": "cv030",
     "stem": "for all have sinned,",
     "endings": [
-      "but the free gift of God is eternal life in Christ Jesus our Lord.",
+      "and fall short of the glory of God;",
       "I shall lack nothing.",
-      "and fall short of the glory of God;"
+      "but the free gift of God is eternal life in Christ Jesus our Lord."
     ],
     "sources": [
-      "Romans 6:23",
+      "Romans 3:23",
       "Psalms 23:1",
-      "Romans 3:23"
+      "Romans 6:23"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "The other endings finish Romans 6:23 and Psalms 23:1.",
     "ref": "Romans 3:23"
   },
@@ -514,13 +514,13 @@
     "stem": "For the wages of sin is death,",
     "endings": [
       "but the free gift of God is eternal life in Christ Jesus our Lord.",
-      "but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
-      "and don’t lean on your own understanding."
+      "and don’t lean on your own understanding.",
+      "but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God."
     ],
     "sources": [
       "Romans 6:23",
-      "Romans 12:2",
-      "Proverbs 3:5"
+      "Proverbs 3:5",
+      "Romans 12:2"
     ],
     "answer": 0,
     "why": "The other endings finish Romans 12:2 and Proverbs 3:5.",
@@ -531,15 +531,15 @@
     "stem": "Don’t be conformed to this world,",
     "endings": [
       "for instruction in righteousness,",
-      "but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
-      "to give you hope and a future."
+      "to give you hope and a future.",
+      "but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God."
     ],
     "sources": [
       "2 Timothy 3:16",
-      "Romans 12:2",
-      "Jeremiah 29:11"
+      "Jeremiah 29:11",
+      "Romans 12:2"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The other endings finish 2 Timothy 3:16 and Jeremiah 29:11.",
     "ref": "Romans 12:2"
   },
@@ -547,16 +547,16 @@
     "id": "cv033",
     "stem": "Every Scripture is God-breathed and profitable for teaching, for reproof, for correction, and",
     "endings": [
+      "for instruction in righteousness,",
       "Behold, all things have become new.",
-      "through Christ who strengthens me.",
-      "for instruction in righteousness,"
+      "through Christ who strengthens me."
     ],
     "sources": [
+      "2 Timothy 3:16",
       "2 Corinthians 5:17",
-      "Philippians 4:13",
-      "2 Timothy 3:16"
+      "Philippians 4:13"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "The other endings finish 2 Corinthians 5:17 and Philippians 4:13.",
     "ref": "2 Timothy 3:16"
   },
@@ -564,16 +564,16 @@
     "id": "cv034",
     "stem": "Therefore if anyone is in Christ, he is a new creation. The old things have passed away.",
     "endings": [
-      "Behold, all things have become new.",
       "Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?",
+      "Behold, all things have become new.",
       "They will walk, and not faint."
     ],
     "sources": [
-      "2 Corinthians 5:17",
       "Psalms 27:1",
+      "2 Corinthians 5:17",
       "Isaiah 40:31"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Psalms 27:1 and Isaiah 40:31.",
     "ref": "2 Corinthians 5:17"
   },
@@ -582,15 +582,15 @@
     "stem": "By David. Yahweh is my light and my salvation.",
     "endings": [
       "Where does my help come from?",
-      "Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?",
-      "and all these things will be given to you as well."
+      "and all these things will be given to you as well.",
+      "Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?"
     ],
     "sources": [
       "Psalms 121:1",
-      "Psalms 27:1",
-      "Matthew 6:33"
+      "Matthew 6:33",
+      "Psalms 27:1"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The other endings finish Psalms 121:1 and Matthew 6:33.",
     "ref": "Psalms 27:1"
   },
@@ -598,16 +598,16 @@
     "id": "cv036",
     "stem": "A Song of Ascents. I will lift up my eyes to the hills.",
     "endings": [
-      "and a time for every purpose under heaven:",
+      "Where does my help come from?",
       "baptizing them in the name of the Father and of the Son and of the Holy Spirit,",
-      "Where does my help come from?"
+      "and a time for every purpose under heaven:"
     ],
     "sources": [
-      "Ecclesiastes 3:1",
+      "Psalms 121:1",
       "Matthew 28:19",
-      "Psalms 121:1"
+      "Ecclesiastes 3:1"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "The other endings finish Ecclesiastes 3:1 and Matthew 28:19.",
     "ref": "Psalms 121:1"
   },
@@ -615,16 +615,16 @@
     "id": "cv037",
     "stem": "For everything there is a season,",
     "endings": [
-      "and a time for every purpose under heaven:",
+      "the heavens and the earth.",
       "but the righteous will live by his faith.",
-      "the heavens and the earth."
+      "and a time for every purpose under heaven:"
     ],
     "sources": [
-      "Ecclesiastes 3:1",
+      "Genesis 1:1",
       "Habakkuk 2:4",
-      "Genesis 1:1"
+      "Ecclesiastes 3:1"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "The other endings finish Habakkuk 2:4 and Genesis 1:1.",
     "ref": "Ecclesiastes 3:1"
   },
@@ -632,16 +632,16 @@
     "id": "cv038",
     "stem": "Behold, his soul is puffed up. It is not upright in him,",
     "endings": [
-      "for they shall be called children of God.",
       "but the righteous will live by his faith.",
-      "a very present help in trouble."
+      "a very present help in trouble.",
+      "for they shall be called children of God."
     ],
     "sources": [
-      "Matthew 5:9",
       "Habakkuk 2:4",
-      "Psalms 46:1"
+      "Psalms 46:1",
+      "Matthew 5:9"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "The other endings finish Matthew 5:9 and Psalms 46:1.",
     "ref": "Habakkuk 2:4"
   },
@@ -666,16 +666,16 @@
     "id": "cv040",
     "stem": "For there is born to you today, in David’s city,",
     "endings": [
-      "a Savior, who is Christ the Lord.",
       "and be gracious to you.",
+      "a Savior, who is Christ the Lord.",
       "with all your heart, with all your soul, and with all your might."
     ],
     "sources": [
-      "Luke 2:11",
       "Numbers 6:25",
+      "Luke 2:11",
       "Deuteronomy 6:5"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Numbers 6:25 and Deuteronomy 6:5.",
     "ref": "Luke 2:11"
   },
@@ -683,16 +683,16 @@
     "id": "cv041",
     "stem": "Yahweh make his face to shine on you,",
     "endings": [
+      "‘You shall love your neighbor as yourself.’",
       "Renew a right spirit within me.",
-      "and be gracious to you.",
-      "‘You shall love your neighbor as yourself.’"
+      "and be gracious to you."
     ],
     "sources": [
+      "Matthew 22:39",
       "Psalms 51:10",
-      "Numbers 6:25",
-      "Matthew 22:39"
+      "Numbers 6:25"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The other endings finish Psalms 51:10 and Matthew 22:39.",
     "ref": "Numbers 6:25"
   },
@@ -701,15 +701,15 @@
     "stem": "Create in me a clean heart, O God.",
     "endings": [
       "and the sheep of his pasture.",
-      "Love doesn’t envy. Love doesn’t brag, is not proud,",
-      "Renew a right spirit within me."
+      "Renew a right spirit within me.",
+      "Love doesn’t envy. Love doesn’t brag, is not proud,"
     ],
     "sources": [
       "Psalms 100:3",
-      "1 Corinthians 13:4",
-      "Psalms 51:10"
+      "Psalms 51:10",
+      "1 Corinthians 13:4"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish Psalms 100:3 and 1 Corinthians 13:4.",
     "ref": "Psalms 51:10"
   },
@@ -717,16 +717,16 @@
     "id": "cv043",
     "stem": "Know that Yahweh, he is God. It is he who has made us, and we are his. We are his people,",
     "endings": [
-      "and the sheep of his pasture.",
+      "The greatest of these is love.",
       "but the foolish despise wisdom and instruction.",
-      "The greatest of these is love."
+      "and the sheep of his pasture."
     ],
     "sources": [
-      "Psalms 100:3",
+      "1 Corinthians 13:13",
       "Proverbs 1:7",
-      "1 Corinthians 13:13"
+      "Psalms 100:3"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "The other endings finish Proverbs 1:7 and 1 Corinthians 13:13.",
     "ref": "Psalms 100:3"
   },
@@ -734,16 +734,16 @@
     "id": "cv044",
     "stem": "The fear of Yahweh is the beginning of knowledge,",
     "endings": [
-      "with the right hand of my righteousness.",
       "but the foolish despise wisdom and instruction.",
-      "and that not of yourselves; it is the gift of God,"
+      "and that not of yourselves; it is the gift of God,",
+      "with the right hand of my righteousness."
     ],
     "sources": [
-      "Isaiah 41:10",
       "Proverbs 1:7",
-      "Ephesians 2:8"
+      "Ephesians 2:8",
+      "Isaiah 41:10"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "The other endings finish Isaiah 41:10 and Ephesians 2:8.",
     "ref": "Proverbs 1:7"
   },
@@ -768,16 +768,16 @@
     "id": "cv046",
     "stem": "Blessed are those who mourn,",
     "endings": [
-      "for they shall be comforted.",
       "for they shall inherit the earth.",
+      "for they shall be comforted.",
       "proof of things not seen."
     ],
     "sources": [
-      "Matthew 5:4",
       "Matthew 5:5",
+      "Matthew 5:4",
       "Hebrews 11:1"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Matthew 5:5 and Hebrews 11:1.",
     "ref": "Matthew 5:4"
   },
@@ -803,15 +803,15 @@
     "stem": "He who doesn’t love doesn’t know God,",
     "endings": [
       "because he cares for you.",
-      "of your faith produces endurance.",
-      "for God is love."
+      "for God is love.",
+      "of your faith produces endurance."
     ],
     "sources": [
       "1 Peter 5:7",
-      "James 1:3",
-      "1 John 4:8"
+      "1 John 4:8",
+      "James 1:3"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish 1 Peter 5:7 and James 1:3.",
     "ref": "1 John 4:8"
   },
@@ -819,16 +819,16 @@
     "id": "cv049",
     "stem": "casting all your worries on him,",
     "endings": [
-      "because he cares for you.",
+      "and a light for my path.",
       "as for the Lord and not for men,",
-      "and a light for my path."
+      "because he cares for you."
     ],
     "sources": [
-      "1 Peter 5:7",
+      "Psalms 119:105",
       "Colossians 3:23",
-      "Psalms 119:105"
+      "1 Peter 5:7"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "The other endings finish Colossians 3:23 and Psalms 119:105.",
     "ref": "1 Peter 5:7"
   },
@@ -836,16 +836,16 @@
     "id": "cv050",
     "stem": "And whatever you do, work heartily,",
     "endings": [
-      "nor sit in the seat of scoffers;",
       "as for the Lord and not for men,",
+      "nor sit in the seat of scoffers;",
       "and when he is old he will not depart from it."
     ],
     "sources": [
-      "Psalms 1:1",
       "Colossians 3:23",
+      "Psalms 1:1",
       "Proverbs 22:6"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "The other endings finish Psalms 1:1 and Proverbs 22:6.",
     "ref": "Colossians 3:23"
   },
@@ -854,15 +854,15 @@
     "stem": "Blessed is the man who doesn’t walk in the counsel of the wicked, nor stand on the path of sinners,",
     "endings": [
       "in the shadow of the Almighty.",
-      "and by his wounds we are healed.",
-      "nor sit in the seat of scoffers;"
+      "nor sit in the seat of scoffers;",
+      "and by his wounds we are healed."
     ],
     "sources": [
       "Psalms 91:1",
-      "Isaiah 53:5",
-      "Psalms 1:1"
+      "Psalms 1:1",
+      "Isaiah 53:5"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The other endings finish Psalms 91:1 and Isaiah 53:5.",
     "ref": "Psalms 1:1"
   },
@@ -870,16 +870,16 @@
     "id": "cv052",
     "stem": "He who dwells in the secret place of the Most High will rest",
     "endings": [
-      "in the shadow of the Almighty.",
       "Blessed is the man who takes refuge in him.",
+      "in the shadow of the Almighty.",
       "but God meant it for good, to save many people alive, as is happening today."
     ],
     "sources": [
-      "Psalms 91:1",
       "Psalms 34:8",
+      "Psalms 91:1",
       "Genesis 50:20"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish Psalms 34:8 and Genesis 50:20.",
     "ref": "Psalms 91:1"
   },
@@ -887,14 +887,14 @@
     "id": "cv053",
     "stem": "Oh taste and see that Yahweh is good.",
     "endings": [
-      "for those who are called according to his purpose.",
+      "but Yahweh looks at the heart.”",
       "Blessed is the man who takes refuge in him.",
-      "but Yahweh looks at the heart.”"
+      "for those who are called according to his purpose."
     ],
     "sources": [
-      "Romans 8:28",
+      "1 Samuel 16:7",
       "Psalms 34:8",
-      "1 Samuel 16:7"
+      "Romans 8:28"
     ],
     "answer": 1,
     "why": "The other endings finish Romans 8:28 and 1 Samuel 16:7.",
@@ -904,16 +904,16 @@
     "id": "cv054",
     "stem": "We know that all things work together for good for those who love God,",
     "endings": [
-      "with all your heart, with all your soul, and with all your mind.’",
+      "for those who are called according to his purpose.",
       "and glorify your Father who is in heaven.",
-      "for those who are called according to his purpose."
+      "with all your heart, with all your soul, and with all your mind.’"
     ],
     "sources": [
-      "Matthew 22:37",
+      "Romans 8:28",
       "Matthew 5:16",
-      "Romans 8:28"
+      "Matthew 22:37"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "The other endings finish Matthew 22:37 and Matthew 5:16.",
     "ref": "Romans 8:28"
   },
@@ -921,16 +921,16 @@
     "id": "cv055",
     "stem": "Jesus said to him, “‘You shall love the Lord your God",
     "endings": [
+      "and I will give you rest.",
       "with all your heart, with all your soul, and with all your mind.’",
-      "that whoever believes in him should not perish, but have eternal life.",
-      "and I will give you rest."
+      "that whoever believes in him should not perish, but have eternal life."
     ],
     "sources": [
+      "Matthew 11:28",
       "Matthew 22:37",
-      "John 3:16",
-      "Matthew 11:28"
+      "John 3:16"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "The other endings finish John 3:16 and Matthew 11:28.",
     "ref": "Matthew 22:37"
   }

@@ -3,12 +3,12 @@
     "id": "ws001",
     "quote": "I am the way, the truth, and the life. No one comes to the Father, except through me.",
     "choices": [
-      "Jesus",
       "Paul",
       "John the Baptist",
+      "Jesus",
       "Peter"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "Jesus makes this claim to Thomas at the Last Supper, in answer to the question of how to know the way to the Father.",
     "ref": "John 14:6"
   },
@@ -16,12 +16,12 @@
     "id": "ws002",
     "quote": "I am the resurrection and the life. He who believes in me will still live, even if he dies.",
     "choices": [
-      "Peter",
       "Jesus",
       "Martha",
-      "Lazarus"
+      "Lazarus",
+      "Peter"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "Jesus says this to Martha outside Bethany, just before he raises her brother Lazarus from the dead.",
     "ref": "John 11:25"
   },
@@ -29,12 +29,12 @@
     "id": "ws003",
     "quote": "My soul magnifies the Lord.",
     "choices": [
-      "Anna the prophetess",
-      "Hannah",
       "Mary",
-      "Elizabeth"
+      "Anna the prophetess",
+      "Elizabeth",
+      "Hannah"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "Mary sings this opening line of the Magnificat while visiting her relative Elizabeth.",
     "ref": "Luke 1:46"
   },
@@ -42,12 +42,12 @@
     "id": "ws004",
     "quote": "Behold, the Lamb of God, who takes away the sin of the world!",
     "choices": [
+      "John the Baptist",
       "Andrew",
       "Nicodemus",
-      "Simon Peter",
-      "John the Baptist"
+      "Simon Peter"
     ],
-    "answer": 3,
+    "answer": 0,
     "why": "John the Baptist says this on seeing Jesus approach him at the Jordan.",
     "ref": "John 1:29"
   },
@@ -55,12 +55,12 @@
     "id": "ws005",
     "quote": "Lord, to whom would we go? You have the words of eternal life.",
     "choices": [
-      "Simon Peter",
+      "Thomas",
       "Andrew",
       "Judas Iscariot",
-      "Thomas"
+      "Simon Peter"
     ],
-    "answer": 0,
+    "answer": 3,
     "why": "Peter answers this way after many disciples desert Jesus over his hard teaching about eating his flesh.",
     "ref": "John 6:68"
   },
@@ -69,11 +69,11 @@
     "quote": "Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of sins, and you will receive the gift of the Holy Spirit.",
     "choices": [
       "Philip",
-      "Peter",
       "Paul",
+      "Peter",
       "Stephen"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "Peter calls the Pentecost crowd to repentance after they ask what they should do.",
     "ref": "Acts 2:38"
   },
@@ -81,12 +81,12 @@
     "id": "ws007",
     "quote": "There is salvation in no one else, for there is no other name under heaven that is given among men, by which we must be saved!",
     "choices": [
-      "Stephen",
-      "Barnabas",
+      "John",
       "Peter",
-      "John"
+      "Stephen",
+      "Barnabas"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "Peter declares this to the Sanhedrin after healing a lame beggar in Jesus’ name.",
     "ref": "Acts 4:12"
   },
@@ -94,12 +94,12 @@
     "id": "ws008",
     "quote": "It is written, ‘Man shall not live by bread alone, but by every word that proceeds out of God’s mouth.’",
     "choices": [
-      "Moses",
+      "Jesus",
       "Satan",
       "John the Baptist",
-      "Jesus"
+      "Moses"
     ],
-    "answer": 3,
+    "answer": 0,
     "why": "Jesus answers the tempter in the wilderness by quoting Deuteronomy.",
     "ref": "Matthew 4:4"
   },
@@ -107,12 +107,12 @@
     "id": "ws009",
     "quote": "Father, forgive them, for they don’t know what they are doing.",
     "choices": [
-      "Jesus",
       "Stephen",
       "the centurion",
-      "one of the criminals"
+      "one of the criminals",
+      "Jesus"
     ],
-    "answer": 0,
+    "answer": 3,
     "why": "Jesus prays this from the cross as the soldiers divide his clothing.",
     "ref": "Luke 23:34"
   },
@@ -121,11 +121,11 @@
     "quote": "It is finished!",
     "choices": [
       "John",
+      "Pilate",
       "Jesus",
-      "the centurion",
-      "Pilate"
+      "the centurion"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "These are Jesus’ last words before he bows his head and dies on the cross.",
     "ref": "John 19:30"
   },
@@ -133,10 +133,10 @@
     "id": "ws011",
     "quote": "My God, my God, why have you forsaken me?",
     "choices": [
+      "one of the two thieves",
       "the centurion",
-      "Pilate",
       "Jesus",
-      "one of the two thieves"
+      "Pilate"
     ],
     "answer": 2,
     "why": "Jesus cries this out in Aramaic from the cross, quoting the opening of Psalm 22.",
@@ -146,12 +146,12 @@
     "id": "ws012",
     "quote": "You are the Christ, the Son of the living God.",
     "choices": [
-      "John",
       "Thomas",
       "Judas Iscariot",
-      "Peter"
+      "Peter",
+      "John"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "Simon Peter answers Jesus’ question “Who do you say that I am?” at Caesarea Philippi.",
     "ref": "Matthew 16:16"
   },
@@ -159,12 +159,12 @@
     "id": "ws013",
     "quote": "Get behind me, Satan! You are a stumbling block to me, for you are not setting your mind on the things of God, but on the things of men.",
     "choices": [
-      "Jesus",
       "Peter",
-      "the high priest",
-      "Pilate"
+      "Jesus",
+      "Pilate",
+      "the high priest"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "Jesus rebukes Peter for objecting to his prediction of suffering and death.",
     "ref": "Matthew 16:23"
   },
@@ -172,12 +172,12 @@
     "id": "ws014",
     "quote": "Behold, the servant of the Lord; let it be done to me according to your word.",
     "choices": [
-      "Martha",
-      "Mary",
       "Elizabeth",
-      "Anna the prophetess"
+      "Anna the prophetess",
+      "Martha",
+      "Mary"
     ],
-    "answer": 1,
+    "answer": 3,
     "why": "Mary responds this way to the angel Gabriel’s announcement that she will bear the Messiah.",
     "ref": "Luke 1:38"
   },
@@ -185,12 +185,12 @@
     "id": "ws015",
     "quote": "Glory to God in the highest, on earth peace, good will toward men.",
     "choices": [
-      "the wise men",
-      "Zechariah",
       "the angels",
-      "the shepherds"
+      "the shepherds",
+      "Zechariah",
+      "the wise men"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "A multitude of the heavenly host praise God after the announcement of Jesus’ birth to the shepherds.",
     "ref": "Luke 2:14"
   },
@@ -198,12 +198,12 @@
     "id": "ws016",
     "quote": "My Lord and my God!",
     "choices": [
-      "Peter",
-      "John",
       "Mary Magdalene",
-      "Thomas"
+      "John",
+      "Thomas",
+      "Peter"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "Thomas responds this way once he touches the risen Jesus’ wounds, having doubted the other disciples’ report.",
     "ref": "John 20:28"
   },
@@ -211,12 +211,12 @@
     "id": "ws017",
     "quote": "Saul, Saul, why do you persecute me?",
     "choices": [
-      "Jesus",
+      "Ananias",
       "an angel",
       "God the Father",
-      "Ananias"
+      "Jesus"
     ],
-    "answer": 0,
+    "answer": 3,
     "why": "A voice from heaven says this to Saul on the road to Damascus; Jesus identifies himself in the next verse.",
     "ref": "Acts 9:4"
   },
@@ -224,12 +224,12 @@
     "id": "ws018",
     "quote": "Who are you, Lord?",
     "choices": [
-      "Stephen",
       "Saul",
       "Ananias",
+      "Stephen",
       "Barnabas"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "Saul asks this after being knocked to the ground by a light from heaven on the road to Damascus.",
     "ref": "Acts 9:5"
   },
@@ -239,10 +239,10 @@
     "choices": [
       "Paul",
       "James",
-      "Stephen",
-      "Peter"
+      "Peter",
+      "Stephen"
     ],
-    "answer": 2,
+    "answer": 3,
     "why": "Stephen prays this as he is being stoned to death, the first Christian martyr.",
     "ref": "Acts 7:59"
   },
@@ -251,8 +251,8 @@
     "quote": "Believe in the Lord Jesus Christ, and you will be saved, you and your household.",
     "choices": [
       "Peter and John",
-      "Barnabas and Mark",
       "Timothy and Titus",
+      "Barnabas and Mark",
       "Paul and Silas"
     ],
     "answer": 3,
@@ -263,12 +263,12 @@
     "id": "ws021",
     "quote": "This is my beloved Son, with whom I am well pleased.",
     "choices": [
-      "God",
-      "John the Baptist",
       "an angel",
-      "Moses"
+      "Moses",
+      "God",
+      "John the Baptist"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "A voice from heaven says this immediately after Jesus is baptized by John in the Jordan.",
     "ref": "Matthew 3:17"
   },
@@ -276,12 +276,12 @@
     "id": "ws022",
     "quote": "Cheer up! It is I! Don’t be afraid.",
     "choices": [
-      "John",
-      "Jesus",
       "Peter",
-      "an angel"
+      "an angel",
+      "Jesus",
+      "John"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "Jesus calls this out to his terrified disciples as he walks toward their boat on the water.",
     "ref": "Matthew 14:27"
   },
@@ -289,12 +289,12 @@
     "id": "ws023",
     "quote": "Peace! Be still!",
     "choices": [
+      "Peter",
       "an angel",
       "John the Baptist",
-      "Jesus",
-      "Peter"
+      "Jesus"
     ],
-    "answer": 2,
+    "answer": 3,
     "why": "Jesus speaks this to the wind and waves during a storm on the Sea of Galilee, and they obey.",
     "ref": "Mark 4:39"
   },
@@ -302,12 +302,12 @@
     "id": "ws024",
     "quote": "My Father, if it is possible, let this cup pass away from me; nevertheless, not what I desire, but what you desire.",
     "choices": [
-      "Peter",
-      "James",
       "John",
-      "Jesus"
+      "James",
+      "Jesus",
+      "Peter"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "Jesus prays this in Gethsemane the night before his crucifixion.",
     "ref": "Matthew 26:39"
   },
@@ -328,12 +328,12 @@
     "id": "ws026",
     "quote": "Lord, you know everything. You know that I have affection for you.",
     "choices": [
+      "John",
       "Thomas",
       "Peter",
-      "John",
       "Andrew"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "Peter answers this way, grieved, the third time the risen Jesus asks if he loves him.",
     "ref": "John 21:17"
   },
@@ -342,11 +342,11 @@
     "quote": "I am innocent of the blood of this righteous person. You see to it.",
     "choices": [
       "the centurion",
+      "Herod",
       "Caiaphas",
-      "Pilate",
-      "Herod"
+      "Pilate"
     ],
-    "answer": 2,
+    "answer": 3,
     "why": "Pilate says this while washing his hands before the crowd at Jesus’ trial.",
     "ref": "Matthew 27:24"
   },
@@ -354,8 +354,8 @@
     "id": "ws028",
     "quote": "Let him be crucified!",
     "choices": [
-      "the Pharisees",
       "the Roman soldiers",
+      "the Pharisees",
       "the chief priests alone",
       "the crowd"
     ],
@@ -367,12 +367,12 @@
     "id": "ws029",
     "quote": "What is truth?",
     "choices": [
-      "Pilate",
       "Caiaphas",
+      "the centurion",
       "Herod",
-      "the centurion"
+      "Pilate"
     ],
-    "answer": 0,
+    "answer": 3,
     "why": "Pilate asks this rhetorically after Jesus tells him he came to testify to the truth.",
     "ref": "John 18:38"
   },
@@ -380,9 +380,9 @@
     "id": "ws030",
     "quote": "Lord, remember me when you come into your Kingdom.",
     "choices": [
-      "one of the Pharisees",
-      "one of the criminals crucified with Jesus",
       "a Roman centurion",
+      "one of the criminals crucified with Jesus",
+      "one of the Pharisees",
       "Pilate"
     ],
     "answer": 1,
@@ -393,12 +393,12 @@
     "id": "ws031",
     "quote": "Depart from me, for I am a sinful man, Lord.",
     "choices": [
-      "James",
-      "John",
+      "Andrew",
       "Simon Peter",
-      "Andrew"
+      "John",
+      "James"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "Peter falls at Jesus’ knees after a miraculous catch of fish overwhelms the boats.",
     "ref": "Luke 5:8"
   },
@@ -406,12 +406,12 @@
     "id": "ws032",
     "quote": "Let there be light",
     "choices": [
-      "Moses",
-      "an angel",
       "Adam",
-      "God"
+      "Moses",
+      "God",
+      "an angel"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "This is God’s first recorded command in creation, on the first day.",
     "ref": "Genesis 1:3"
   },
@@ -419,12 +419,12 @@
     "id": "ws033",
     "quote": "The serpent deceived me, and I ate.",
     "choices": [
-      "Eve",
-      "Adam",
       "the serpent",
-      "Cain"
+      "Eve",
+      "Cain",
+      "Adam"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "Eve answers Yahweh this way after she and Adam eat the forbidden fruit.",
     "ref": "Genesis 3:13"
   },
@@ -432,12 +432,12 @@
     "id": "ws034",
     "quote": "Am I my brother’s keeper?",
     "choices": [
-      "Seth",
-      "Cain",
+      "Adam",
       "Abel",
-      "Adam"
+      "Seth",
+      "Cain"
     ],
-    "answer": 1,
+    "answer": 3,
     "why": "Cain answers this way when Yahweh asks where his brother is, after murdering him.",
     "ref": "Genesis 4:9"
   },
@@ -458,12 +458,12 @@
     "id": "ws036",
     "quote": "God will provide himself the lamb for a burnt offering, my son.",
     "choices": [
-      "Isaac",
       "an angel of Yahweh",
-      "Sarah",
-      "Abraham"
+      "Isaac",
+      "Abraham",
+      "Sarah"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "Abraham answers Isaac’s question about the sacrifice on the way up Mount Moriah.",
     "ref": "Genesis 22:8"
   },
@@ -472,9 +472,9 @@
     "quote": "I AM WHO I AM",
     "choices": [
       "God",
+      "Aaron",
       "Moses",
-      "an angel",
-      "Aaron"
+      "an angel"
     ],
     "answer": 0,
     "why": "God gives this name for himself to Moses at the burning bush on Mount Horeb.",
@@ -484,10 +484,10 @@
     "id": "ws038",
     "quote": "‘Let my people go, that they may hold a feast to me in the wilderness.’",
     "choices": [
-      "Joshua",
-      "Moses",
       "Aaron alone",
-      "Joseph"
+      "Moses",
+      "Joseph",
+      "Joshua"
     ],
     "answer": 1,
     "why": "Moses and Aaron deliver this demand to Pharaoh on Yahweh’s behalf.",
@@ -497,12 +497,12 @@
     "id": "ws039",
     "quote": "Haven’t I commanded you? Be strong and courageous. Don’t be afraid. Don’t be dismayed, for Yahweh your God is with you wherever you go.",
     "choices": [
-      "an angel",
-      "Caleb",
       "Yahweh",
-      "Moses"
+      "Caleb",
+      "Moses",
+      "an angel"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "Yahweh commissions Joshua this way as he takes over leadership of Israel after Moses’ death.",
     "ref": "Joshua 1:9"
   },
@@ -510,12 +510,12 @@
     "id": "ws040",
     "quote": "If it seems evil to you to serve Yahweh, choose today whom you will serve; whether the gods which your fathers served that were beyond the River, or the gods of the Amorites, in whose land you dwell; but as for me and my house, we will serve Yahweh.",
     "choices": [
-      "Caleb",
-      "Eleazar the priest",
       "Moses",
-      "Joshua"
+      "Caleb",
+      "Joshua",
+      "Eleazar the priest"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "Joshua declares this to the tribes of Israel gathered at Shechem near the end of his life.",
     "ref": "Joshua 24:15"
   },
@@ -536,9 +536,9 @@
     "id": "ws042",
     "quote": "for where you go, I will go; and where you stay, I will stay. Your people will be my people, and your God my God.",
     "choices": [
-      "Boaz",
-      "Ruth",
       "Orpah",
+      "Ruth",
+      "Boaz",
       "Naomi"
     ],
     "answer": 1,
@@ -550,11 +550,11 @@
     "quote": "Speak; for your servant hears.",
     "choices": [
       "David",
-      "Saul",
       "Samuel",
-      "Eli"
+      "Eli",
+      "Saul"
     ],
-    "answer": 2,
+    "answer": 1,
     "why": "The boy Samuel answers this way once he recognizes it is Yahweh calling him in the night.",
     "ref": "1 Samuel 3:10"
   },
@@ -564,10 +564,10 @@
     "choices": [
       "Saul",
       "Jonathan",
-      "Abner",
-      "David"
+      "David",
+      "Abner"
     ],
-    "answer": 3,
+    "answer": 2,
     "why": "David answers Goliath’s taunts before the fight in the Valley of Elah.",
     "ref": "1 Samuel 17:45"
   },
@@ -575,12 +575,12 @@
     "id": "ws045",
     "quote": "Behold, to obey is better than sacrifice, and to listen than the fat of rams.",
     "choices": [
-      "Samuel",
       "Saul",
       "Nathan",
-      "Eli"
+      "Eli",
+      "Samuel"
     ],
-    "answer": 0,
+    "answer": 3,
     "why": "Samuel rebukes Saul for disobeying Yahweh’s command regarding the Amalekites.",
     "ref": "1 Samuel 15:22"
   },
@@ -588,12 +588,12 @@
     "id": "ws046",
     "quote": "You are the man! This is what Yahweh, the God of Israel, says: ‘I anointed you king over Israel, and I delivered you out of the hand of Saul.",
     "choices": [
-      "Abiathar",
-      "Nathan",
+      "Samuel",
       "Gad",
-      "Samuel"
+      "Nathan",
+      "Abiathar"
     ],
-    "answer": 1,
+    "answer": 2,
     "why": "The prophet Nathan confronts King David after telling him a parable about a rich man and a poor man’s lamb.",
     "ref": "2 Samuel 12:7"
   },
@@ -601,10 +601,10 @@
     "id": "ws047",
     "quote": "Give your servant therefore an understanding heart to judge your people, that I may discern between good and evil; for who is able to judge this great people of yours?",
     "choices": [
+      "David",
       "Nathan",
-      "Bathsheba",
       "Solomon",
-      "David"
+      "Bathsheba"
     ],
     "answer": 2,
     "why": "Solomon asks God for this at Gibeon, when Yahweh offers to give him whatever he asks.",
@@ -614,12 +614,12 @@
     "id": "ws048",
     "quote": "How long will you waver between the two sides? If Yahweh is God, follow him; but if Baal, then follow him.",
     "choices": [
+      "Elijah",
       "Elisha",
-      "Obadiah",
       "Ahab",
-      "Elijah"
+      "Obadiah"
     ],
-    "answer": 3,
+    "answer": 0,
     "why": "Elijah challenges the people of Israel on Mount Carmel to choose between Yahweh and Baal.",
     "ref": "1 Kings 18:21"
   },
@@ -627,12 +627,12 @@
     "id": "ws049",
     "quote": "I have been very jealous for Yahweh, the God of Armies; for the children of Israel have forsaken your covenant, thrown down your altars, and killed your prophets with the sword. I, even I only, am left; and they seek my life, to take it away.",
     "choices": [
-      "Elijah",
-      "Elisha",
       "Obadiah",
-      "Micaiah"
+      "Micaiah",
+      "Elijah",
+      "Elisha"
     ],
-    "answer": 0,
+    "answer": 2,
     "why": "Elijah says this to Yahweh in a cave on Mount Horeb after fleeing from Jezebel.",
     "ref": "1 Kings 19:10"
   },
@@ -640,12 +640,12 @@
     "id": "ws050",
     "quote": "Please let a double portion of your spirit be on me.",
     "choices": [
-      "the sons of the prophets",
       "Elisha",
+      "Obadiah",
       "Gehazi",
-      "Obadiah"
+      "the sons of the prophets"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "Elisha makes this request of Elijah just before his mentor is taken up to heaven.",
     "ref": "2 Kings 2:9"
   },
@@ -653,12 +653,12 @@
     "id": "ws051",
     "quote": "Naked I came out of my mother’s womb, and naked will I return there. Yahweh gave, and Yahweh has taken away. Blessed be Yahweh’s name.",
     "choices": [
+      "Job",
       "Eliphaz",
       "one of Job’s servants",
-      "Job",
       "Job’s wife"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "Job says this after losing his children and all his possessions in a single day.",
     "ref": "Job 1:21"
   },
@@ -666,8 +666,8 @@
     "id": "ws052",
     "quote": "Here I am. Send me!",
     "choices": [
-      "Jeremiah",
       "an angel",
+      "Jeremiah",
       "Uzziah",
       "Isaiah"
     ],
@@ -679,12 +679,12 @@
     "id": "ws053",
     "quote": "Woe is me! For I am undone, because I am a man of unclean lips and I live among a people of unclean lips, for my eyes have seen the King, Yahweh of Armies!",
     "choices": [
-      "Isaiah",
-      "Uzziah",
       "a seraph",
-      "Jeremiah"
+      "Jeremiah",
+      "Uzziah",
+      "Isaiah"
     ],
-    "answer": 0,
+    "answer": 3,
     "why": "Isaiah cries this out on seeing a vision of Yahweh seated on his throne in the temple.",
     "ref": "Isaiah 6:5"
   },
@@ -694,8 +694,8 @@
     "choices": [
       "Hilkiah",
       "Jeremiah",
-      "Isaiah",
-      "Baruch"
+      "Baruch",
+      "Isaiah"
     ],
     "answer": 1,
     "why": "Jeremiah protests this way when Yahweh first calls him to be a prophet.",
@@ -705,8 +705,8 @@
     "id": "ws055",
     "quote": "If it happens, our God whom we serve is able to deliver us from the burning fiery furnace; and he will deliver us out of your hand, O king.",
     "choices": [
-      "the king’s wise men",
       "Nebuchadnezzar’s guards",
+      "the king’s wise men",
       "Shadrach, Meshach, and Abednego",
       "Daniel"
     ],
@@ -719,11 +719,11 @@
     "quote": "My God has sent his angel, and has shut the lions’ mouths, and they have not hurt me, because innocence was found in me before him; and also before you, O king, I have done no harm.",
     "choices": [
       "Darius",
+      "Daniel",
       "one of the satraps",
-      "Shadrach",
-      "Daniel"
+      "Shadrach"
     ],
-    "answer": 3,
+    "answer": 1,
     "why": "Daniel says this to King Darius after surviving a night in the lions’ den.",
     "ref": "Daniel 6:22"
   },
@@ -732,9 +732,9 @@
     "quote": "I am a Hebrew, and I fear Yahweh, the God of heaven, who has made the sea and the dry land.",
     "choices": [
       "Jonah",
+      "the king of Nineveh",
       "the ship’s captain",
-      "one of the sailors",
-      "the king of Nineveh"
+      "one of the sailors"
     ],
     "answer": 0,
     "why": "Jonah identifies himself this way to the terrified sailors after the storm arises.",
@@ -744,12 +744,12 @@
     "id": "ws058",
     "quote": "Therefore now, Yahweh, take, I beg you, my life from me, for it is better for me to die than to live.",
     "choices": [
-      "an angel",
       "Jonah",
+      "one of the sailors",
       "the king of Nineveh",
-      "one of the sailors"
+      "an angel"
     ],
-    "answer": 1,
+    "answer": 0,
     "why": "Jonah asks to die, angry that Yahweh spared Nineveh after Jonah’s warning of judgment.",
     "ref": "Jonah 4:3"
   },
@@ -757,10 +757,10 @@
     "id": "ws059",
     "quote": "if I perish, I perish.",
     "choices": [
-      "Zeresh",
+      "Vashti",
       "Queen Esther’s maid",
       "Esther",
-      "Vashti"
+      "Zeresh"
     ],
     "answer": 2,
     "why": "Esther says this to Mordecai as she resolves to approach the king uninvited to plead for her people.",
@@ -770,12 +770,12 @@
     "id": "ws060",
     "quote": "I am Joseph, your brother, whom you sold into Egypt.",
     "choices": [
+      "Joseph",
       "Benjamin",
       "Reuben",
-      "Judah",
-      "Joseph"
+      "Judah"
     ],
-    "answer": 3,
+    "answer": 0,
     "why": "Joseph finally reveals his identity to the brothers who sold him into slavery in Egypt years earlier.",
     "ref": "Genesis 45:4"
   },
@@ -783,12 +783,12 @@
     "id": "ws061",
     "quote": "I am Esau your firstborn. I have done what you asked me to do. Please arise, sit and eat of my venison, that your soul may bless me.",
     "choices": [
-      "Jacob",
       "Esau",
-      "Isaac",
-      "Laban"
+      "Jacob",
+      "Laban",
+      "Isaac"
     ],
-    "answer": 0,
+    "answer": 1,
     "why": "Jacob says this to his blind father Isaac while impersonating his brother Esau to steal the blessing.",
     "ref": "Genesis 27:19"
   },
@@ -796,12 +796,12 @@
     "id": "ws062",
     "quote": "Yahweh of Armies, if you will indeed look at the affliction of your servant and remember me, and not forget your servant, but will give to your servant a boy, then I will give him to Yahweh all the days of his life, and no razor shall come on his head.",
     "choices": [
-      "Miriam",
-      "Hannah",
+      "Deborah",
       "Peninnah",
-      "Deborah"
+      "Miriam",
+      "Hannah"
     ],
-    "answer": 1,
+    "answer": 3,
     "why": "Hannah makes this vow at the tabernacle in Shiloh, weeping over her childlessness.",
     "ref": "1 Samuel 1:11"
   },
@@ -809,12 +809,12 @@
     "id": "ws063",
     "quote": "Should a man like me flee? Who is there that, being such as I, would go into the temple to save his life? I will not go in.",
     "choices": [
+      "Nehemiah",
       "Sanballat",
       "Tobiah",
-      "Nehemiah",
       "Ezra"
     ],
-    "answer": 2,
+    "answer": 0,
     "why": "Nehemiah refuses to hide in the temple when enemies plot to intimidate him during the wall’s rebuilding.",
     "ref": "Nehemiah 6:11"
   },
@@ -836,8 +836,8 @@
     "quote": "O Lord, how shall I save Israel? Behold, my family is the poorest in Manasseh, and I am the least in my father’s house.",
     "choices": [
       "Gideon",
-      "Barak",
       "Deborah",
+      "Barak",
       "Ehud"
     ],
     "answer": 0,
