@@ -1,11 +1,21 @@
+import { render, screen, cleanup } from '@testing-library/react'
 import { readFileSync } from 'node:fs'
+import { vi } from 'vitest'
 import { buildStore } from '../../content/verseStore'
 import { refText } from '../../content/verseStore'
-import { memoryPool, MEMORY_MAX_CHARS } from './resolve'
+import { memoryPool, MEMORY_MAX_CHARS, resolveCard } from './resolve'
 import curated from '../../content/curated.json'
-import type { CuratedRef } from '../../content/types'
+import whosaid from '../../content/whosaid.json'
+import cont from '../../content/continue.json'
+import prayer from '../../content/prayer.json'
+import names from '../../content/names.json'
+import type { CuratedRef, WhoSaidItem, ContinueItem, PrayerItem, NamesItem } from '../../content/types'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
+
+afterEach(() => {
+  cleanup()
+})
 
 test('memory pool only includes curated refs at or under the char cap', () => {
   const pool = memoryPool(store)
@@ -35,4 +45,46 @@ test('excludes long multi-verse ranges like Psalms 23:1–6 (595 chars)', () => 
   // sanity: it really is in the full curated set (so the exclusion is the filter, not a typo)
   const inCurated = (curated as CuratedRef[]).some(([b, c, v, end]) => b === 'PSA' && c === 23 && v === 1 && end === 6)
   expect(inCurated).toBe(true)
+})
+
+test('whosaid kind renders its distinct kicker', () => {
+  const onScore = vi.fn()
+  const item = {
+    kind: 'whosaid' as const,
+    pool: 'whosaid' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, onScore) as React.ReactElement)
+  expect(screen.getByText('Who said it?')).toBeInTheDocument()
+})
+
+test('continue kind renders its distinct kicker', () => {
+  const onScore = vi.fn()
+  const item = {
+    kind: 'continue' as const,
+    pool: 'continue' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, onScore) as React.ReactElement)
+  expect(screen.getByText('Continue the verse')).toBeInTheDocument()
+})
+
+test('prayer kind renders its distinct kicker', () => {
+  const item = {
+    kind: 'prayer' as const,
+    pool: 'prayer' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
+  expect(screen.getByText('A moment of prayer')).toBeInTheDocument()
+})
+
+test('names kind renders its distinct kicker', () => {
+  const item = {
+    kind: 'names' as const,
+    pool: 'names' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
+  expect(screen.getByText('Names of God')).toBeInTheDocument()
 })

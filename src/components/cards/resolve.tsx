@@ -8,12 +8,20 @@ import { FactCard } from './FactCard'
 import { TriviaCard } from './TriviaCard'
 import { MapCard } from './MapCard'
 import { MemoryCard } from './MemoryCard'
+import { WhoSaidCard } from './WhoSaidCard'
+import { ContinueCard } from './ContinueCard'
+import { PrayerCard } from './PrayerCard'
+import { NamesCard } from './NamesCard'
 import { BOOKS } from '../../content/books'
 import curated from '../../content/curated.json'
 import trivia from '../../content/trivia.json'
 import facts from '../../content/facts.json'
 import maps from '../../content/maps.json'
-import type { CuratedRef, TriviaItem, FactItem, MapStory } from '../../content/types'
+import whosaid from '../../content/whosaid.json'
+import cont from '../../content/continue.json'
+import prayer from '../../content/prayer.json'
+import names from '../../content/names.json'
+import type { CuratedRef, TriviaItem, FactItem, MapStory, WhoSaidItem, ContinueItem, PrayerItem, NamesItem } from '../../content/types'
 
 export const POOL_SIZES = {
   curated: (curated as CuratedRef[]).length,
@@ -21,6 +29,10 @@ export const POOL_SIZES = {
   trivia: (trivia as TriviaItem[]).length,
   fact: (facts as FactItem[]).length,
   map: (maps as MapStory[]).length,
+  whosaid: (whosaid as WhoSaidItem[]).length,
+  continue: (cont as ContinueItem[]).length,
+  prayer: (prayer as PrayerItem[]).length,
+  names: (names as NamesItem[]).length,
 }
 
 // A memory-card puzzle renders its full curated text plus up to 10 word-bank
@@ -71,5 +83,13 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
           seed={`mem:${item.poolIndex}`} theme={theme} onScore={onScore} />
       )
     }
+    case 'whosaid':
+      return <WhoSaidCard item={(whosaid as WhoSaidItem[])[item.poolIndex]} theme={theme} onScore={onScore} />
+    case 'continue':
+      return <ContinueCard item={(cont as ContinueItem[])[item.poolIndex]} theme={theme} onScore={onScore} />
+    case 'prayer':
+      return <PrayerCard item={(prayer as PrayerItem[])[item.poolIndex]} theme={theme} />
+    case 'names':
+      return <NamesCard item={(names as NamesItem[])[item.poolIndex]} theme={theme} />
   }
 }

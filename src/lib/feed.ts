@@ -1,15 +1,19 @@
 import { shuffledRange } from './rng'
 
-export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number }
+export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number; whosaid: number; continue: number; prayer: number; names: number }
 export interface FeedItem {
-  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory'
-  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory'
+  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names'
+  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names'
   poolIndex: number
   votd?: boolean
 }
 
-const CYCLE = ['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'fact', 'verse', 'memory', 'verse', 'trivia'] as const
-const PER_CYCLE = { verse: 6, fact: 2, trivia: 2, map: 1, memory: 1 } as const
+const CYCLE = [
+  'verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid',
+  'verse', 'fact', 'verse', 'trivia', 'verse', 'memory', 'verse', 'continue',
+  'verse', 'prayer', 'verse', 'names',
+] as const
+const PER_CYCLE = { verse: 10, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1 } as const
 
 function poolIndexFor(pool: string, occ: number, size: number, seed: string): number {
   const epoch = Math.floor(occ / size)
