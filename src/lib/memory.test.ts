@@ -7,8 +7,8 @@ const OTHERS = ['For God so loved the world that he gave his only Son.',
 
 test('cleanWord strips edge punctuation, keeps inner apostrophes', () => {
   expect(cleanWord('shepherd:')).toBe('shepherd')
-  expect(cleanWord('"Come,')).toBe('Come')
-  expect(cleanWord("don't")).toBe("don't")
+  expect(cleanWord('“Come,')).toBe('Come')
+  expect(cleanWord("don’t")).toBe("don’t")
 })
 
 test('puzzle is deterministic per seed and differs across seeds', () => {
@@ -51,6 +51,34 @@ test('bank contains all answers plus distractors, deduped case-insensitively', (
 test('verse with few significant words still yields at least one blank', () => {
   const p = buildPuzzle('And he said to me, it is done.', OTHERS, 's1')
   expect(p.blankIndexes.length).toBeGreaterThanOrEqual(1)
+})
+
+test('clustered significant candidates still reach the target blank count (maximal non-adjacent selection)', () => {
+  const t = 'so much wonderful gracious blessing at it he up' // 9 words → want 2
+  const words = t.split(/\s+/)
+  const significant = words.filter((w) => cleanWord(w).length >= 4)
+  // sanity: the significant words form a contiguous adjacent cluster
+  expect(significant).toEqual(['much', 'wonderful', 'gracious', 'blessing'])
+  for (let i = 0; i < 20; i++) {
+    const p = buildPuzzle(t, OTHERS, `s${i}`)
+    expect(p.blankIndexes.length).toBe(2)
+    for (let j = 1; j < p.blankIndexes.length; j++) {
+      expect(p.blankIndexes[j] - p.blankIndexes[j - 1]).toBeGreaterThan(1)
+    }
+  }
+})
+
+test('EXO 20:3 style verse with only one non-adjacent-capable pair yields exactly 1 blank', () => {
+  const t = '“You shall have no other gods before me.'
+  for (let i = 0; i < 10; i++) {
+    const p = buildPuzzle(t, OTHERS, `s${i}`)
+    expect(p.blankIndexes.length).toBe(1)
+  }
+})
+
+test('zero significant words still yields exactly one blank (longest word chosen)', () => {
+  const p = buildPuzzle('a is of it to in', [], 'x')
+  expect(p.blankIndexes.length).toBe(1)
 })
 
 test('DISTRACTOR_TEXTS contains at least 15 entries, each with length > 20', () => {

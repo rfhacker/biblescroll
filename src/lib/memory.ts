@@ -30,18 +30,61 @@ function blankCount(wordCount: number): number {
 
 export function buildPuzzle(text: string, distractorSource: string[], seed: string): MemoryPuzzle {
   const words = text.split(/\s+/).filter(Boolean)
-  const candidates = words.map((w, i) => ({ w, i })).filter(({ w }) => isSignificant(w))
-  const want = Math.min(blankCount(words.length), candidates.length)
+  let candidates = words.map((w, i) => ({ w, i })).filter(({ w }) => isSignificant(w))
 
-  // Seeded pick, enforcing non-adjacency greedily.
-  const shuffled = seededShuffle(candidates, `${seed}:blanks`)
-  const chosen: number[] = []
-  for (const { i } of shuffled) {
-    if (chosen.length >= want) break
-    if (chosen.some((c) => Math.abs(c - i) <= 1)) continue
-    chosen.push(i)
+  // No significant words at all: blank the single longest word (ties -> first) so we still hit min 1.
+  if (candidates.length === 0 && words.length > 0) {
+    let longestIdx = 0
+    let longestLen = -1
+    words.forEach((w, i) => {
+      const len = cleanWord(w).length
+      if (len > longestLen) {
+        longestLen = len
+        longestIdx = i
+      }
+    })
+    candidates = [{ w: words[longestIdx], i: longestIdx }]
   }
-  if (chosen.length === 0 && candidates.length > 0) chosen.push(candidates[0].i)
+
+  const sortedIndexes = candidates.map(({ i }) => i).sort((a, b) => a - b)
+
+  // Left-to-right greedy over sorted candidate indices is provably maximal for
+  // non-adjacency on a line: it also gives us a deterministic fallback selection.
+  const maximalSelection = (): number[] => {
+    const sel: number[] = []
+    let last = -Infinity
+    for (const i of sortedIndexes) {
+      if (i - last >= 2) {
+        sel.push(i)
+        last = i
+      }
+    }
+    return sel
+  }
+
+  const maxPossible = maximalSelection().length
+  const target = Math.max(candidates.length > 0 ? 1 : 0, Math.min(blankCount(words.length), maxPossible))
+
+  // Retry the seeded-shuffle greedy pass with a few different sub-seeds; a clustered
+  // pick order can under-fill even when a valid `target`-size selection exists.
+  let chosen: number[] = []
+  for (let k = 0; k < 8; k++) {
+    const shuffled = seededShuffle(candidates, `${seed}:blanks:${k}`)
+    const attempt: number[] = []
+    for (const { i } of shuffled) {
+      if (attempt.length >= target) break
+      if (attempt.some((c) => Math.abs(c - i) <= 1)) continue
+      attempt.push(i)
+    }
+    if (attempt.length >= target) {
+      chosen = attempt
+      break
+    }
+  }
+  if (chosen.length < target) {
+    // Vanishingly rare: fall back to the deterministic maximal set, truncated to target.
+    chosen = maximalSelection().slice(0, target)
+  }
   chosen.sort((a, b) => a - b)
 
   const answers = chosen.map((i) => cleanWord(words[i]))
