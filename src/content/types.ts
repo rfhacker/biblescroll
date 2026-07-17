@@ -38,6 +38,22 @@ export interface ContinueItem {
   ref: string
 }
 
+export interface PrayerItem {
+  id: string
+  prompt: string
+  ref: string
+}
+
+export interface NamesItem {
+  id: string
+  name: string
+  original: string
+  language: 'Hebrew' | 'Greek'
+  meaning: string
+  body: string
+  refs: string[]
+}
+
 export interface Place {
   name: string
   lat: number

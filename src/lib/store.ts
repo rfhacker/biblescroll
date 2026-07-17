@@ -21,7 +21,7 @@ function readJSON<T>(key: string, ok: (v: unknown) => boolean): T | null {
   } catch { return null }
 }
 
-const FAVORITE_KINDS: CardKind[] = ['verse', 'trivia', 'fact', 'map']
+const FAVORITE_KINDS: CardKind[] = ['verse', 'trivia', 'fact', 'map', 'whosaid', 'continue', 'names']
 function isFavoriteShape(v: unknown): v is Favorite {
   return typeof v === 'object' && v !== null &&
     FAVORITE_KINDS.includes((v as Favorite).kind) &&

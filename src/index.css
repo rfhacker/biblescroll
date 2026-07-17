@@ -70,6 +70,11 @@ body {
 .kicker { color: var(--text-dim); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
 .fact-title { font-family: var(--serif); font-size: 1.5rem; margin-bottom: 0.8rem; line-height: 1.3; }
 .fact-body { font-size: 1.08rem; line-height: 1.6; color: var(--text); }
+.prayer-text { font-family: var(--serif); font-size: 1.3rem; line-height: 1.7; margin-bottom: 1.1rem; }
+.names-title { font-family: var(--serif); font-size: 1.9rem; margin-bottom: 0.4rem; }
+.names-original { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 0.8rem; }
+.names-meaning { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.8rem; }
+.names-refs { margin-top: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .read-more { background: none; border: none; color: var(--accent); font-size: 1rem; margin-top: 0.6rem; cursor: pointer; padding: 0.6rem 0.2rem; }
 .card-actions { position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); right: 1.6rem; display: flex; gap: 0.9rem; }
 .act {
