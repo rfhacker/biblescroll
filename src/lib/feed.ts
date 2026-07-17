@@ -1,15 +1,15 @@
 import { shuffledRange } from './rng'
 
-export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number }
+export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number }
 export interface FeedItem {
-  kind: 'verse' | 'trivia' | 'fact' | 'map'
-  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map'
+  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory'
+  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory'
   poolIndex: number
   votd?: boolean
 }
 
-const CYCLE = ['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'fact', 'verse', 'trivia'] as const
-const PER_CYCLE = { verse: 5, fact: 2, trivia: 2, map: 1 } as const
+const CYCLE = ['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'fact', 'verse', 'memory', 'verse', 'trivia'] as const
+const PER_CYCLE = { verse: 6, fact: 2, trivia: 2, map: 1, memory: 1 } as const
 
 function poolIndexFor(pool: string, occ: number, size: number, seed: string): number {
   const epoch = Math.floor(occ / size)

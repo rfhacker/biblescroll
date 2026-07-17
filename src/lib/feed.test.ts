@@ -1,15 +1,15 @@
 import { cardAt, type PoolSizes } from './feed'
 
-const SIZES: PoolSizes = { curated: 280, corpus: 31103, trivia: 150, fact: 100, map: 14 }
+const SIZES: PoolSizes = { curated: 280, corpus: 31103, trivia: 150, fact: 100, map: 14, memory: 280 }
 const at = (i: number) => cardAt(i, 'test-seed', SIZES, 7)
 
 test('card 0 is the verse of the day', () => {
   expect(at(0)).toEqual({ kind: 'verse', pool: 'curated', poolIndex: 7, votd: true })
 })
 
-test('cards 1..10 follow the interleave cycle', () => {
-  const kinds = Array.from({ length: 10 }, (_, j) => at(j + 1).kind)
-  expect(kinds).toEqual(['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'fact', 'verse', 'trivia'])
+test('cards 1..12 follow the interleave cycle', () => {
+  const kinds = Array.from({ length: 12 }, (_, j) => at(j + 1).kind)
+  expect(kinds).toEqual(['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'fact', 'verse', 'memory', 'verse', 'trivia'])
 })
 
 test('deterministic for same seed, different for different seed', () => {
@@ -27,6 +27,15 @@ test('no fact repeats until the fact pool is exhausted', () => {
     if (c.kind === 'fact') seen.push(c.poolIndex)
   }
   expect(new Set(seen).size).toBe(SIZES.fact)
+})
+
+test('no memory repeats until the memory pool is exhausted', () => {
+  const seen: number[] = []
+  for (let i = 1; seen.length < SIZES.memory; i++) {
+    const c = at(i)
+    if (c.kind === 'memory') seen.push(c.poolIndex)
+  }
+  expect(new Set(seen).size).toBe(SIZES.memory)
 })
 
 test('map pool reshuffles each epoch (still covers all items)', () => {

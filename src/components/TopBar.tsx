@@ -8,7 +8,7 @@ export function TopBar({ streak, score, onMenu }: {
       <span className="brand">JesusFeed</span>
       <span className="stats">
         <span title="Daily streak">🔥 {streak}</span>
-        <span title={`Trivia score — ${scoreTitle(score)}`}>✓ {score}</span>
+        <span title={`Score — ${scoreTitle(score)}`}>✓ {score}</span>
       </span>
       <span className="topbar-actions">
         <button aria-label="Menu" onClick={onMenu}>☰</button>

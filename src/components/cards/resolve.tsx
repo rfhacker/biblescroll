@@ -7,6 +7,7 @@ import { VerseSlide } from './VerseSlide'
 import { FactCard } from './FactCard'
 import { TriviaCard } from './TriviaCard'
 import { MapCard } from './MapCard'
+import { MemoryCard } from './MemoryCard'
 import { BOOKS } from '../../content/books'
 import curated from '../../content/curated.json'
 import trivia from '../../content/trivia.json'
@@ -20,6 +21,7 @@ export const POOL_SIZES = {
   trivia: (trivia as TriviaItem[]).length,
   fact: (facts as FactItem[]).length,
   map: (maps as MapStory[]).length,
+  memory: (curated as CuratedRef[]).length,
 }
 
 export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, onScore: () => void): ReactNode {
@@ -46,5 +48,12 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
       return <FactCard fact={(facts as FactItem[])[item.poolIndex]} theme={theme} />
     case 'map':
       return <MapCard story={(maps as MapStory[])[item.poolIndex]} theme={theme} />
+    case 'memory': {
+      const ref = (curated as CuratedRef[])[item.poolIndex]
+      return (
+        <MemoryCard text={refText(verses, ref)} label={refLabel(ref)}
+          seed={`mem:${item.poolIndex}`} theme={theme} onScore={onScore} />
+      )
+    }
   }
 }
