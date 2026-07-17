@@ -1,47 +1,227 @@
 [
-  { "id": "pr001", "prompt": "Before you scroll on, name one good thing from today out loud — even a small one. Gratitude has a way of growing when you say it.", "ref": "Psalms 100:4" },
-  { "id": "pr002", "prompt": "You don’t have to wait for a perfect day to say thank you. Offer it now, exactly where you are.", "ref": "1 Thessalonians 5:18" },
-  { "id": "pr003", "prompt": "Whatever kindness came your way today, however small, let it land. Someone bigger than luck was behind it.", "ref": "Psalms 107:1" },
-  { "id": "pr004", "prompt": "Let thankfulness settle the noise in your chest for a moment — it has a quieting power all its own.", "ref": "Colossians 3:15" },
-  { "id": "pr005", "prompt": "Some days deserve nothing more than a simple, unhurried thank you. Let this be one of them.", "ref": "Psalms 136:1" },
-  { "id": "pr006", "prompt": "Whatever is looping in your mind right now, say it plainly instead of carrying it silently. You were never meant to hold it alone.", "ref": "Philippians 4:6" },
-  { "id": "pr007", "prompt": "Tomorrow will still be there when it comes. Let today be the only day you have to manage right now.", "ref": "Matthew 6:25" },
-  { "id": "pr008", "prompt": "Whatever you’re bracing for, you don’t have to brace alone — hand it over instead of gripping it tighter.", "ref": "1 Peter 5:7" },
-  { "id": "pr009", "prompt": "Picture setting the heavy thing down, just for tonight. It will still be there in the morning if you need to pick it back up.", "ref": "Psalms 55:22" },
-  { "id": "pr010", "prompt": "Before you scroll on, hand today’s worry to the One who holds tomorrow.", "ref": "Isaiah 41:10" },
-  { "id": "pr011", "prompt": "If there’s something you’ve been carrying quietly, let it go here. You don’t need to earn a clean slate — it’s already offered.", "ref": "1 John 1:9" },
-  { "id": "pr012", "prompt": "Whatever you did or didn’t do, the distance it put between you and mercy is smaller than you think.", "ref": "Psalms 103:8" },
-  { "id": "pr013", "prompt": "Think of someone who still owes you an apology. Let grace loosen your grip on that debt tonight.", "ref": "Ephesians 4:32" },
-  { "id": "pr014", "prompt": "Forgiving someone doesn’t mean the hurt didn’t happen — it means you’re done letting it run the room.", "ref": "Colossians 3:13" },
-  { "id": "pr015", "prompt": "The grudge you’re holding is heavier than the person who caused it. Set it down, even just a little, tonight.", "ref": "Matthew 6:14" },
-  { "id": "pr016", "prompt": "If your shoulders have been up around your ears all day, let them drop now. You’re allowed to stop.", "ref": "Matthew 11:28" },
-  { "id": "pr017", "prompt": "Rest isn’t something you have to justify. Let this be permission, if you needed it.", "ref": "Psalms 23:2" },
-  { "id": "pr018", "prompt": "You don’t have to arrive anywhere else to be allowed to breathe. This moment counts.", "ref": "Exodus 33:14" },
-  { "id": "pr019", "prompt": "Let your soul stop pacing for a minute. It doesn’t have to solve anything right now.", "ref": "Psalms 62:1" },
-  { "id": "pr020", "prompt": "Striving can wait until morning. Tonight, just rest — you’re not required to earn it.", "ref": "Hebrews 4:9" },
-  { "id": "pr021", "prompt": "Bring someone else to mind — the one who’s been on your heart lately — and quietly ask for good things on their behalf.", "ref": "James 5:16" },
-  { "id": "pr022", "prompt": "Think of someone in a hard season right now. Let a few honest words on their behalf be your gift to them tonight.", "ref": "1 Timothy 2:1" },
-  { "id": "pr023", "prompt": "Whoever you love most, ask that their love would keep deepening, not just holding steady.", "ref": "Philippians 1:9" },
-  { "id": "pr024", "prompt": "Someone you know is trying to figure out what to do next. Ask for clarity to land in their hands, not just yours.", "ref": "Colossians 1:9" },
-  { "id": "pr025", "prompt": "Stay watchful for the people around you tonight — a short prayer for someone else can outlast a long one for yourself.", "ref": "Ephesians 6:18" },
-  { "id": "pr026", "prompt": "Let something in you go loud for a second — not for show, just because it’s true.", "ref": "Psalms 150:6" },
-  { "id": "pr027", "prompt": "Sing badly if you have to. The tune matters less than the fact that you meant it.", "ref": "Psalms 96:1" },
-  { "id": "pr028", "prompt": "Let praise be the first thing out of your mouth today, before the complaints get a running start.", "ref": "Psalms 34:1" },
-  { "id": "pr029", "prompt": "Some things are too big to fully explain — so don’t explain them, just admire them out loud.", "ref": "Psalms 145:3" },
-  { "id": "pr030", "prompt": "You didn’t create anything you’re looking at right now, and that’s worth pausing over.", "ref": "Revelation 4:11" },
-  { "id": "pr031", "prompt": "Skip the polished version and just say the true one — the mess, the mistake, all of it. Honesty is the whole point.", "ref": "Psalms 51:1" },
-  { "id": "pr032", "prompt": "You already know what it is. Stop carrying it in silence and just say it plainly tonight.", "ref": "Psalms 51:3" },
-  { "id": "pr033", "prompt": "Hiding it hasn’t made it lighter — it never does. Bring it into the open instead.", "ref": "Proverbs 28:13" },
-  { "id": "pr034", "prompt": "You said it out loud once before and the weight lifted. It works the same way again tonight.", "ref": "Psalms 32:5" },
-  { "id": "pr035", "prompt": "Ask to be shown what you can’t see in yourself — not to be shamed by it, but to be free of it.", "ref": "Psalms 139:23" },
-  { "id": "pr036", "prompt": "Before the day gets away from you, ask for its first minutes — before the noise, before the scrolling, before anything else gets there first.", "ref": "Psalms 5:3" },
-  { "id": "pr037", "prompt": "Whatever failed yesterday doesn’t get a vote in how today starts. Mercy resets the count every morning.", "ref": "Lamentations 3:22" },
-  { "id": "pr038", "prompt": "Ask for enough kindness this morning to carry you further than caffeine ever could.", "ref": "Psalms 90:14" },
-  { "id": "pr039", "prompt": "Before you decide what today is about, ask to be shown which way to walk in it.", "ref": "Psalms 143:8" },
-  { "id": "pr040", "prompt": "Let the first ache of the morning be a hunger for something that actually satisfies. Chase that instead of the phone.", "ref": "Psalms 63:1" },
-  { "id": "pr041", "prompt": "Let your body actually rest tonight, not just stop moving. Safety isn’t something you have to manufacture yourself.", "ref": "Psalms 4:8" },
-  { "id": "pr042", "prompt": "Whatever kept you up last night doesn’t get to run the show again tonight. Sleep like someone is watching over you — because someone is.", "ref": "Psalms 3:5" },
-  { "id": "pr043", "prompt": "Picture the safest room you know, then trade it for something sturdier: shelter that doesn’t depend on locked doors.", "ref": "Psalms 91:1" },
-  { "id": "pr044", "prompt": "You can finally stop keeping watch over your own life for a few hours. Someone else has already taken the shift.", "ref": "Psalms 121:3" },
-  { "id": "pr045", "prompt": "Let the quiet hours do their work in you — some of the best counsel arrives after the lights go out.", "ref": "Psalms 16:7" }
+  {
+    "id": "pr001",
+    "prompt": "Before you scroll on, name one good thing from today out loud — even a small one. Gratitude has a way of growing when you say it.",
+    "ref": "Psalms 100:4"
+  },
+  {
+    "id": "pr002",
+    "prompt": "You don’t have to wait for a perfect day to say thank you. Offer it now, exactly where you are.",
+    "ref": "1 Thessalonians 5:18"
+  },
+  {
+    "id": "pr003",
+    "prompt": "Whatever kindness came your way today, however small, let it land. Someone bigger than luck was behind it.",
+    "ref": "Psalms 107:1"
+  },
+  {
+    "id": "pr004",
+    "prompt": "Let thankfulness settle the noise in your chest for a moment — it has a quieting power all its own.",
+    "ref": "Colossians 3:15"
+  },
+  {
+    "id": "pr005",
+    "prompt": "Some days deserve nothing more than a simple, unhurried thank you. Let this be one of them.",
+    "ref": "Psalms 136:1"
+  },
+  {
+    "id": "pr006",
+    "prompt": "Whatever is looping in your mind right now, say it plainly instead of carrying it silently. You were never meant to hold it alone.",
+    "ref": "Philippians 4:6"
+  },
+  {
+    "id": "pr007",
+    "prompt": "Tomorrow will still be there when it comes. Let today be the only day you have to manage right now.",
+    "ref": "Matthew 6:25"
+  },
+  {
+    "id": "pr008",
+    "prompt": "Whatever you’re bracing for, you don’t have to brace alone — hand it over instead of gripping it tighter.",
+    "ref": "1 Peter 5:7"
+  },
+  {
+    "id": "pr009",
+    "prompt": "Picture setting the heavy thing down, just for tonight. It will still be there in the morning if you need to pick it back up.",
+    "ref": "Psalms 55:22"
+  },
+  {
+    "id": "pr010",
+    "prompt": "Pause and name the thing you’re bracing against. Breathe once, slowly. The God who steadies trembling hands is already at your side.",
+    "ref": "Isaiah 41:10"
+  },
+  {
+    "id": "pr011",
+    "prompt": "If there’s something you’ve been carrying quietly, let it go here. You don’t need to earn a clean slate — it’s already offered.",
+    "ref": "1 John 1:9"
+  },
+  {
+    "id": "pr012",
+    "prompt": "Whatever you did or didn’t do, the distance it put between you and mercy is smaller than you think.",
+    "ref": "Psalms 103:8"
+  },
+  {
+    "id": "pr013",
+    "prompt": "Think of someone who still owes you an apology. Let grace loosen your grip on that debt tonight.",
+    "ref": "Ephesians 4:32"
+  },
+  {
+    "id": "pr014",
+    "prompt": "Forgiving someone doesn’t mean the hurt didn’t happen — it means you’re done letting it run the room.",
+    "ref": "Colossians 3:13"
+  },
+  {
+    "id": "pr015",
+    "prompt": "The grudge you’re holding is heavier than the person who caused it. Set it down, even just a little, tonight.",
+    "ref": "Matthew 6:14"
+  },
+  {
+    "id": "pr016",
+    "prompt": "If your shoulders have been up around your ears all day, let them drop now. You’re allowed to stop.",
+    "ref": "Matthew 11:28"
+  },
+  {
+    "id": "pr017",
+    "prompt": "Rest isn’t something you have to justify. Let this be permission, if you needed it.",
+    "ref": "Psalms 23:2"
+  },
+  {
+    "id": "pr018",
+    "prompt": "You don’t have to arrive anywhere else to be allowed to breathe. This moment counts.",
+    "ref": "Exodus 33:14"
+  },
+  {
+    "id": "pr019",
+    "prompt": "Let your soul stop pacing for a minute. It doesn’t have to solve anything right now.",
+    "ref": "Psalms 62:1"
+  },
+  {
+    "id": "pr020",
+    "prompt": "Striving can wait until morning. Tonight, just rest — you’re not required to earn it.",
+    "ref": "Hebrews 4:9"
+  },
+  {
+    "id": "pr021",
+    "prompt": "Bring someone else to mind — the one who’s been on your heart lately — and quietly ask for good things on their behalf.",
+    "ref": "James 5:16"
+  },
+  {
+    "id": "pr022",
+    "prompt": "Think of someone in a hard season right now. Let a few honest words on their behalf be your gift to them tonight.",
+    "ref": "1 Timothy 2:1"
+  },
+  {
+    "id": "pr023",
+    "prompt": "Whoever you love most, ask that their love would keep deepening, not just holding steady.",
+    "ref": "Philippians 1:9"
+  },
+  {
+    "id": "pr024",
+    "prompt": "Someone you know is trying to figure out what to do next. Ask for clarity to land in their hands, not just yours.",
+    "ref": "Colossians 1:9"
+  },
+  {
+    "id": "pr025",
+    "prompt": "Stay watchful for the people around you tonight — a short prayer for someone else can outlast a long one for yourself.",
+    "ref": "Ephesians 6:18"
+  },
+  {
+    "id": "pr026",
+    "prompt": "Let something in you go loud for a second — not for show, just because it’s true.",
+    "ref": "Psalms 150:6"
+  },
+  {
+    "id": "pr027",
+    "prompt": "Sing badly if you have to. The tune matters less than the fact that you meant it.",
+    "ref": "Psalms 96:1"
+  },
+  {
+    "id": "pr028",
+    "prompt": "Let praise be the first thing out of your mouth today, before the complaints get a running start.",
+    "ref": "Psalms 34:1"
+  },
+  {
+    "id": "pr029",
+    "prompt": "Some things are too big to fully explain — so don’t explain them, just admire them out loud.",
+    "ref": "Psalms 145:3"
+  },
+  {
+    "id": "pr030",
+    "prompt": "You didn’t create anything you’re looking at right now, and that’s worth pausing over.",
+    "ref": "Revelation 4:11"
+  },
+  {
+    "id": "pr031",
+    "prompt": "Skip the polished version and just say the true one — the mess, the mistake, all of it. Honesty is the whole point.",
+    "ref": "Psalms 51:1"
+  },
+  {
+    "id": "pr032",
+    "prompt": "You already know what it is. Stop carrying it in silence and just say it plainly tonight.",
+    "ref": "Psalms 51:3"
+  },
+  {
+    "id": "pr033",
+    "prompt": "Hiding it hasn’t made it lighter — it never does. Bring it into the open instead.",
+    "ref": "Proverbs 28:13"
+  },
+  {
+    "id": "pr034",
+    "prompt": "You said it out loud once before and the weight lifted. It works the same way again tonight.",
+    "ref": "Psalms 32:5"
+  },
+  {
+    "id": "pr035",
+    "prompt": "Ask to be shown what you can’t see in yourself — not to be shamed by it, but to be free of it.",
+    "ref": "Psalms 139:23"
+  },
+  {
+    "id": "pr036",
+    "prompt": "Before the day gets away from you, ask for its first minutes — before the noise, before the scrolling, before anything else gets there first.",
+    "ref": "Psalms 5:3"
+  },
+  {
+    "id": "pr037",
+    "prompt": "Whatever failed yesterday doesn’t get a vote in how today starts. Mercy resets the count every morning.",
+    "ref": "Lamentations 3:22"
+  },
+  {
+    "id": "pr038",
+    "prompt": "Ask for enough kindness this morning to carry you further than caffeine ever could.",
+    "ref": "Psalms 90:14"
+  },
+  {
+    "id": "pr039",
+    "prompt": "Before you decide what today is about, ask to be shown which way to walk in it.",
+    "ref": "Psalms 143:8"
+  },
+  {
+    "id": "pr040",
+    "prompt": "Let the first ache of the morning be a hunger for something that actually satisfies. Chase that instead of the phone.",
+    "ref": "Psalms 63:1"
+  },
+  {
+    "id": "pr041",
+    "prompt": "Let your body actually rest tonight, not just stop moving. Safety isn’t something you have to manufacture yourself.",
+    "ref": "Psalms 4:8"
+  },
+  {
+    "id": "pr042",
+    "prompt": "Whatever kept you up last night doesn’t get to run the show again tonight. Sleep like someone is watching over you — because someone is.",
+    "ref": "Psalms 3:5"
+  },
+  {
+    "id": "pr043",
+    "prompt": "Picture the safest room you know, then trade it for something sturdier: shelter that doesn’t depend on locked doors.",
+    "ref": "Psalms 91:1"
+  },
+  {
+    "id": "pr044",
+    "prompt": "You can finally stop keeping watch over your own life for a few hours. Someone else has already taken the shift.",
+    "ref": "Psalms 121:3"
+  },
+  {
+    "id": "pr045",
+    "prompt": "Let the quiet hours do their work in you — some of the best counsel arrives after the lights go out.",
+    "ref": "Psalms 16:7"
+  }
 ]
