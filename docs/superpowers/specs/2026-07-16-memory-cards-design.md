@@ -44,8 +44,8 @@ performance untouched. Suite green throughout.
   existing score via `addScore` — once ever per card, persisted in
   `bs:memorized` (mirrors `bs:answered`): a completed card remounts in its
   completed state and can never re-award.
-- TopBar's score tooltip becomes just "Score" (it now spans trivia +
-  memory).
+- TopBar's score tooltip becomes "Score — {score title}" (generic: the
+  score now spans trivia + memory; the playful rank title stays).
 
 ## 2. Feed integration
 
