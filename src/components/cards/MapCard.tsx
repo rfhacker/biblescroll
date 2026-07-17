@@ -40,7 +40,7 @@ export function MapCard({ story, theme }: { story: MapStory; theme: number }) {
   const DODGE = 12 * s
 
   return (
-    <CardShell theme={theme} shareText={`${story.title} — ${story.body} (${story.ref})`}
+    <CardShell theme={theme} kindClass="map-card" shareText={`${story.title} — ${story.body} (${story.ref})`}
       fav={{ kind: 'map', id: story.id, title: story.title, body: `${story.body} (${story.ref})` }}>
       <div className="kicker">Biblical places</div>
       <h2 className="fact-title">{story.title}</h2>

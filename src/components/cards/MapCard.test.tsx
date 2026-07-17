@@ -170,3 +170,8 @@ test('all 14 stories render without error and with ≤6 context labels', () => {
     unmount()
   }
 })
+
+test('card article carries the map-card class (scoped overflow styling)', () => {
+  const { container } = render(<MapCard story={story} theme={0} />)
+  expect(container.querySelector('article.card.map-card')).not.toBeNull()
+})

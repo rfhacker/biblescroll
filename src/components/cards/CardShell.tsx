@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Favorite } from '../../content/types'
 import { toggleFavorite, isFavorite } from '../../lib/store'
 
-export function CardShell({ fav, shareText, theme, children }: {
-  fav: Favorite; shareText: string; theme: number; children: ReactNode
+export function CardShell({ fav, shareText, theme, kindClass, children }: {
+  fav: Favorite; shareText: string; theme: number; kindClass?: string; children: ReactNode
 }) {
   const [saved, setSaved] = useState(() => isFavorite(fav.kind, fav.id))
   const [copied, setCopied] = useState(false)
@@ -33,7 +33,7 @@ export function CardShell({ fav, shareText, theme, children }: {
   }
 
   return (
-    <article className={`card theme-${theme}`}>
+    <article className={kindClass ? `card ${kindClass} theme-${theme}` : `card theme-${theme}`}>
       <div className="card-body">{children}</div>
       <footer className="card-actions">
         <button aria-label={saved ? 'Unsave' : 'Save'} className={saved ? 'act saved' : 'act'}

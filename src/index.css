@@ -48,7 +48,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 1.6rem calc(5.5rem + env(safe-area-inset-bottom));
+  /* Top padding must clear the fixed .topbar (env(safe-area-inset-top) +
+     0.6rem + 2.75rem buttons + 0.6rem ≈ 3.95rem): tall centered content
+     (maps, long memory verses) tops out at this line, so anything less
+     puts it under the bar. */
+  padding: calc(env(safe-area-inset-top) + 4rem) 1.6rem calc(5.5rem + env(safe-area-inset-bottom));
   position: relative;
 }
 .card-body { max-width: 34rem; margin: 0 auto; width: 100%; }
@@ -310,7 +314,7 @@ body {
   display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
 }
 .xref-more { margin-top: 0.5rem; }
-.memory-card .card-body { max-height: 100%; overflow-y: auto; }
+.memory-card .card-body, .map-card .card-body { max-height: 100%; overflow-y: auto; }
 .memory-hint { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 0.8rem; }
 .memory-blank { color: var(--accent-soft); letter-spacing: 0.05em; }
 .memory-next { color: var(--accent); animation: memorypulse 2.4s ease-in-out infinite; }
