@@ -1,0 +1,254 @@
+[
+  {
+    "id": "ng001",
+    "name": "El Shaddai",
+    "original": "אֵל שַׁדַּי",
+    "language": "Hebrew",
+    "meaning": "God Almighty",
+    "body": "God introduced himself to Abram by this name just before renaming him Abraham, promising to make an old, childless man the father of nations. It is a name that shows up when the odds look impossible.",
+    "refs": ["Genesis 17:1"]
+  },
+  {
+    "id": "ng002",
+    "name": "El Elyon",
+    "original": "אֵל עֶלְיוֹן",
+    "language": "Hebrew",
+    "meaning": "God Most High",
+    "body": "Melchizedek, the mysterious priest-king of Salem, blessed Abram in this name after his rescue of Lot — the first time in Scripture God is called Most High, possessor of heaven and earth.",
+    "refs": ["Genesis 14:18", "Genesis 14:19"]
+  },
+  {
+    "id": "ng003",
+    "name": "El Roi",
+    "original": "אֵל רֳאִי",
+    "language": "Hebrew",
+    "meaning": "The God who sees",
+    "body": "Hagar, alone and pregnant in the wilderness after being cast out, gave God this name — the only time in the Bible a person names God. She named him for noticing her when no one else did.",
+    "refs": ["Genesis 16:13"]
+  },
+  {
+    "id": "ng004",
+    "name": "Elohim",
+    "original": "אֱלֹהִים",
+    "language": "Hebrew",
+    "meaning": "God (the mighty Creator)",
+    "body": "The very first word used for God in Scripture, a plural form of majesty used with singular verbs. It opens the Bible over creation itself, before any covenant name is given.",
+    "refs": ["Genesis 1:1"]
+  },
+  {
+    "id": "ng005",
+    "name": "Yahweh-Jireh",
+    "original": "יְהוָה יִרְאֶה",
+    "language": "Hebrew",
+    "meaning": "Yahweh will provide",
+    "body": "Abraham named the mountain this after God supplied a ram in place of Isaac at the last possible moment. The name became proverbial: on Yahweh's mountain, it will be provided.",
+    "refs": ["Genesis 22:14"]
+  },
+  {
+    "id": "ng006",
+    "name": "Yahweh-Rapha",
+    "original": "יְהוָה רֹפְאֶךָ",
+    "language": "Hebrew",
+    "meaning": "Yahweh who heals you",
+    "body": "Just after the Israelites left Egypt, God revealed himself by this name at Marah, promising to keep them free of the diseases they had known there if they listened to him.",
+    "refs": ["Exodus 15:26"]
+  },
+  {
+    "id": "ng007",
+    "name": "Yahweh-Nissi",
+    "original": "יְהוָה נִסִּי",
+    "language": "Hebrew",
+    "meaning": "Yahweh is my banner",
+    "body": "After Israel's victory over Amalek, Moses built an altar and gave it this name, marking Yahweh as the rallying standard under which the battle had actually been won.",
+    "refs": ["Exodus 17:15"]
+  },
+  {
+    "id": "ng008",
+    "name": "Yahweh-Shalom",
+    "original": "יְהוָה שָׁלוֹם",
+    "language": "Hebrew",
+    "meaning": "Yahweh is peace",
+    "body": "Gideon built an altar by this name after an angel of Yahweh met him and he lived to tell about it, expecting to die for seeing God face to face. Peace, not judgment, met him instead.",
+    "refs": ["Judges 6:24"]
+  },
+  {
+    "id": "ng009",
+    "name": "Yahweh-Raah",
+    "original": "יְהוָה רֹעִי",
+    "language": "Hebrew",
+    "meaning": "Yahweh is my shepherd",
+    "body": "David, once a shepherd himself, opens his most beloved psalm with this confession — Yahweh doing for him what he once did for sheep: leading, feeding, and guarding.",
+    "refs": ["Psalms 23:1"]
+  },
+  {
+    "id": "ng010",
+    "name": "Yahweh-Tsidkenu",
+    "original": "יְהוָה צִדְקֵנוּ",
+    "language": "Hebrew",
+    "meaning": "Yahweh our righteousness",
+    "body": "Jeremiah gives this as the name of the coming righteous Branch of David, a king who would succeed where Judah's failed kings had not, becoming the very righteousness his people lacked.",
+    "refs": ["Jeremiah 23:6", "Jeremiah 33:16"]
+  },
+  {
+    "id": "ng011",
+    "name": "Immanuel",
+    "original": "עִמָּנוּ אֵל",
+    "language": "Hebrew",
+    "meaning": "God with us",
+    "body": "First given to Isaiah as a sign to a frightened king, this name is picked up centuries later by Matthew to describe the birth of Jesus — the promise that God had not stayed distant after all.",
+    "refs": ["Isaiah 7:14", "Matthew 1:23"]
+  },
+  {
+    "id": "ng012",
+    "name": "Alpha and Omega",
+    "original": "Τὸ Ἄλφα καὶ τὸ Ὦ",
+    "language": "Greek",
+    "meaning": "The Beginning and the End",
+    "body": "The first and last letters of the Greek alphabet, used three times in Revelation as a title for God and for Jesus — everything that exists falls somewhere between these two letters.",
+    "refs": ["Revelation 1:8", "Revelation 21:6", "Revelation 22:13"]
+  },
+  {
+    "id": "ng013",
+    "name": "I Am",
+    "original": "אֶהְיֶה אֲשֶׁר אֶהְיֶה",
+    "language": "Hebrew",
+    "meaning": "I Am Who I Am",
+    "body": "God's answer to Moses at the burning bush when asked for a name — a declaration of pure, self-sustaining existence. Centuries later, Jesus applied the same words to himself before a stunned crowd.",
+    "refs": ["Exodus 3:14", "John 8:58"]
+  },
+  {
+    "id": "ng014",
+    "name": "Lamb of God",
+    "original": "Ὁ Ἀμνὸς τοῦ Θεοῦ",
+    "language": "Greek",
+    "meaning": "The sacrificial Lamb provided by God",
+    "body": "John the Baptist used this title the moment he saw Jesus approaching, pointing to a sacrifice that would finally take away sin rather than merely cover it for another year.",
+    "refs": ["John 1:29"]
+  },
+  {
+    "id": "ng015",
+    "name": "Lion of Judah",
+    "original": "Ὁ λέων ὁ ἐκ τῆς φυλῆς Ἰούδα",
+    "language": "Greek",
+    "meaning": "The Lion of the tribe of Judah",
+    "body": "In John's vision of heaven, an elder announces this title to explain who alone is worthy to open the sealed scroll — strength and kingship, tracing back to Jacob's ancient blessing over Judah.",
+    "refs": ["Revelation 5:5"]
+  },
+  {
+    "id": "ng016",
+    "name": "Wonderful Counselor",
+    "original": "פֶּלֶא יוֹעֵץ",
+    "language": "Hebrew",
+    "meaning": "Wonderful Counselor",
+    "body": "One of four titles Isaiah gives the promised child whose government would never end — wisdom beyond ordinary counsel, wonderful in the sense of astonishing, beyond expectation.",
+    "refs": ["Isaiah 9:6"]
+  },
+  {
+    "id": "ng017",
+    "name": "Mighty God",
+    "original": "אֵל גִּבּוֹר",
+    "language": "Hebrew",
+    "meaning": "Mighty God",
+    "body": "The second of Isaiah's four titles for the coming child, placing raw divine power alongside the tenderness of a newborn — a paradox the prophet leaves unresolved on the page.",
+    "refs": ["Isaiah 9:6"]
+  },
+  {
+    "id": "ng018",
+    "name": "Everlasting Father",
+    "original": "אֲבִיעַד",
+    "language": "Hebrew",
+    "meaning": "Father of Eternity",
+    "body": "The third of Isaiah's titles, an unusual pairing of fatherly care with an eternity no human father could offer — closer to protector of ages than the modern sense of a parent.",
+    "refs": ["Isaiah 9:6"]
+  },
+  {
+    "id": "ng019",
+    "name": "Prince of Peace",
+    "original": "שַׂר־שָׁלוֹם",
+    "language": "Hebrew",
+    "meaning": "Prince of Peace",
+    "body": "Isaiah's fourth title for the coming king, promising an end to the endless wars of his day through a ruler whose peace would keep expanding rather than being negotiated away.",
+    "refs": ["Isaiah 9:6"]
+  },
+  {
+    "id": "ng020",
+    "name": "Bread of Life",
+    "original": "Ὁ Ἄρτος τῆς Ζωῆς",
+    "language": "Greek",
+    "meaning": "The Bread of Life",
+    "body": "Jesus used this title the day after feeding a crowd with a few loaves, telling them that the true bread they needed wasn't physical at all — it was himself, freely offered.",
+    "refs": ["John 6:35"]
+  },
+  {
+    "id": "ng021",
+    "name": "Light of the World",
+    "original": "Τὸ Φῶς τοῦ Κόσμου",
+    "language": "Greek",
+    "meaning": "The Light of the World",
+    "body": "Spoken during the Feast of Tabernacles, when huge lamps lit the temple courts each night, Jesus claimed to be a light that his followers would carry with them long after the festival lamps went out.",
+    "refs": ["John 8:12"]
+  },
+  {
+    "id": "ng022",
+    "name": "Good Shepherd",
+    "original": "Ὁ Ποιμὴν ὁ Καλός",
+    "language": "Greek",
+    "meaning": "The Good Shepherd",
+    "body": "Jesus contrasts himself with hired hands who flee when danger comes, describing a shepherd who knows each sheep by name and is willing to die to protect the flock.",
+    "refs": ["John 10:11", "John 10:14"]
+  },
+  {
+    "id": "ng023",
+    "name": "The Word",
+    "original": "Ὁ Λόγος",
+    "language": "Greek",
+    "meaning": "The Word",
+    "body": "John opens his Gospel with this title, echoing Genesis's opening line to declare that the one who would become flesh had already existed with God, and as God, before anything was made.",
+    "refs": ["John 1:1"]
+  },
+  {
+    "id": "ng024",
+    "name": "Ancient of Days",
+    "original": "עַתִּיק יוֹמִין",
+    "language": "Hebrew",
+    "meaning": "The Ancient of Days",
+    "body": "In Daniel's night vision, thrones are set and one whose clothing is white as snow takes his seat — an image of timeless authority, presiding over kingdoms that rise and fall beneath him.",
+    "refs": ["Daniel 7:9"]
+  },
+  {
+    "id": "ng025",
+    "name": "The Rock",
+    "original": "הַצּוּר",
+    "language": "Hebrew",
+    "meaning": "The Rock",
+    "body": "Moses uses this title in his closing song over Israel, and Isaiah later calls Yahweh an everlasting Rock — an image of a foundation that does not shift no matter what else moves around it.",
+    "refs": ["Deuteronomy 32:4", "Isaiah 26:4"]
+  },
+  {
+    "id": "ng026",
+    "name": "King of Kings",
+    "original": "Βασιλεὺς Βασιλέων",
+    "language": "Greek",
+    "meaning": "King of Kings and Lord of Lords",
+    "body": "Written on the robe and thigh of the rider on the white horse in Revelation's vision, and used by Paul of the one true Ruler — a title that outranks every throne that has ever claimed authority.",
+    "refs": ["Revelation 19:16", "1 Timothy 6:15"]
+  },
+  {
+    "id": "ng027",
+    "name": "Chief Cornerstone",
+    "original": "Ἀκρογωνιαῖος",
+    "language": "Greek",
+    "meaning": "The Chief Cornerstone",
+    "body": "Peter and Paul both apply this image to Jesus, quoting an old psalm about a stone the builders rejected — the one piece that ends up setting the alignment for an entire structure.",
+    "refs": ["1 Peter 2:6", "Ephesians 2:20"]
+  },
+  {
+    "id": "ng028",
+    "name": "Bright Morning Star",
+    "original": "Ὁ ἀστὴρ ὁ λαμπρὸς ὁ πρωϊνός",
+    "language": "Greek",
+    "meaning": "The Bright and Morning Star",
+    "body": "Near the very end of Revelation, Jesus gives himself this title — the star that signals night is ending, appearing right before the first light of an unending morning.",
+    "refs": ["Revelation 22:16"]
+  }
+]
