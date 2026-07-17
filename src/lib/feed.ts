@@ -10,9 +10,9 @@ export interface FeedItem {
 
 const CYCLE = [
   'verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid',
-  'verse', 'memory', 'verse', 'continue', 'verse', 'prayer', 'verse', 'names',
-  'verse', 'prophecy', 'verse', 'hymn', 'verse', 'timeline', 'verse', 'fact',
-  'verse', 'trivia',
+  'verse', 'prophecy', 'verse', 'fact', 'verse', 'trivia', 'verse', 'memory',
+  'verse', 'continue', 'verse', 'hymn', 'verse', 'prayer', 'verse', 'names',
+  'verse', 'timeline',
 ] as const
 const PER_CYCLE = { verse: 13, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1, prophecy: 1, hymn: 1, timeline: 1 } as const
 

@@ -9,7 +9,7 @@ test('card 0 is the verse of the day', () => {
 
 test('cards 1..26 follow the interleave cycle', () => {
   const kinds = Array.from({ length: 26 }, (_, j) => at(j + 1).kind)
-  expect(kinds).toEqual(['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid', 'verse', 'memory', 'verse', 'continue', 'verse', 'prayer', 'verse', 'names', 'verse', 'prophecy', 'verse', 'hymn', 'verse', 'timeline', 'verse', 'fact', 'verse', 'trivia'])
+  expect(kinds).toEqual(['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid', 'verse', 'prophecy', 'verse', 'fact', 'verse', 'trivia', 'verse', 'memory', 'verse', 'continue', 'verse', 'hymn', 'verse', 'prayer', 'verse', 'names', 'verse', 'timeline'])
 })
 
 test('deterministic for same seed, different for different seed', () => {
