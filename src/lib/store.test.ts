@@ -141,3 +141,16 @@ test('commentary source preference accepts mhc and round-trips', async () => {
   const store3 = await import('./store')
   expect(store3.getCommentarySource()).toBe('mhcc')
 })
+
+test('memorized ids round-trip and reject corrupt data', async () => {
+  vi.resetModules()
+  localStorage.clear()
+  const s = await import('./store')
+  expect(s.isMemorized('Psalms 23:1')).toBe(false)
+  s.setMemorized('Psalms 23:1')
+  expect(s.isMemorized('Psalms 23:1')).toBe(true)
+  localStorage.setItem('bs:memorized', '{broken')
+  vi.resetModules()
+  const s2 = await import('./store')
+  expect(s2.isMemorized('Psalms 23:1')).toBe(false)
+})

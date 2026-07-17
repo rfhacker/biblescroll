@@ -105,3 +105,16 @@ export function getCommentarySource(): CommentarySource {
 export function setCommentarySource(s: CommentarySource): void {
   write('bs:commentary', s)
 }
+
+export function isMemorized(id: string): boolean {
+  const rec = readJSON<Record<string, number>>('bs:memorized', (v) =>
+    typeof v === 'object' && v !== null && !Array.isArray(v) &&
+    Object.values(v as Record<string, unknown>).every((x) => typeof x === 'number'))
+  return !!rec?.[id]
+}
+export function setMemorized(id: string): void {
+  const rec = readJSON<Record<string, number>>('bs:memorized', (v) =>
+    typeof v === 'object' && v !== null && !Array.isArray(v)) ?? {}
+  rec[id] = 1
+  write('bs:memorized', JSON.stringify(rec))
+}
