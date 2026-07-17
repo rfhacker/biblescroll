@@ -19,6 +19,25 @@ export interface FactItem {
   ref: string
 }
 
+export interface WhoSaidItem {
+  id: string
+  quote: string
+  choices: string[]
+  answer: number
+  why: string
+  ref: string
+}
+
+export interface ContinueItem {
+  id: string
+  stem: string
+  endings: string[]
+  sources: string[]
+  answer: number
+  why: string
+  ref: string
+}
+
 export interface Place {
   name: string
   lat: number
@@ -34,7 +53,7 @@ export interface MapStory {
   route: boolean
 }
 
-export type CardKind = 'verse' | 'trivia' | 'fact' | 'map'
+export type CardKind = 'verse' | 'trivia' | 'fact' | 'map' | 'whosaid' | 'continue' | 'names'
 
 export interface Favorite {
   kind: CardKind
