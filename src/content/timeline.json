@@ -10,7 +10,7 @@
   {
     "id": "tl002",
     "title": "Covenant confirmed with Abraham",
-    "when": "c. 2066 BC",
+    "when": "c. 2081 BC",
     "position": 9,
     "blurb": "God renews his promise to Abram, telling him to count the stars, for so his descendants would be.",
     "ref": "Genesis 15:5-6"
@@ -26,7 +26,7 @@
   {
     "id": "tl004",
     "title": "Joseph rises to rule Egypt",
-    "when": "c. 1876 BC",
+    "when": "c. 1885 BC",
     "position": 15,
     "blurb": "Joseph, once a prisoner, is elevated to govern Egypt and later welcomes his family into Goshen.",
     "ref": "Genesis 45:4-5"
@@ -106,7 +106,7 @@
   {
     "id": "tl014",
     "title": "Elijah at Mount Carmel",
-    "when": "c. 850 BC",
+    "when": "c. 855 BC",
     "position": 47,
     "blurb": "Elijah confronts the prophets of Baal in a public contest, and fire from heaven proves Yahweh is God.",
     "ref": "1 Kings 18:38"
@@ -140,7 +140,7 @@
     "title": "Exile in Babylon",
     "when": "586 BC",
     "position": 56,
-    "blurb": "Israel’s captives grieve their homeland by the rivers of Babylon, uncertain if they will ever return.",
+    "blurb": "Judah’s captives grieve their homeland by the rivers of Babylon, uncertain if they will ever return.",
     "ref": "Psalms 137:1"
   },
   {
@@ -172,7 +172,7 @@
     "title": "Nehemiah rebuilds the wall",
     "when": "445 BC",
     "position": 69,
-    "blurb": "Nehemiah leads the exiles who remained in rebuilding Jerusalem’s broken walls in just fifty-two days.",
+    "blurb": "Nehemiah leads the returned exiles in rebuilding Jerusalem’s broken walls in just fifty-two days.",
     "ref": "Nehemiah 6:15"
   },
   {

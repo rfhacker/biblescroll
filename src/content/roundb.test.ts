@@ -1,16 +1,12 @@
 import { readFileSync } from 'node:fs'
-import { buildStore, parseLooseRef, refText } from './verseStore'
+import { buildStore, looseRefTuple, parseLooseRef, refText } from './verseStore'
 import type { CuratedRef } from './types'
 import prophecy from './prophecy.json'
 import hymns from './hymns.json'
 import timeline from './timeline.json'
 
 const store = buildStore(JSON.parse(readFileSync('public/content/verses.json', 'utf8')))
-const toTuple = (ref: string): CuratedRef => {
-  const r = parseLooseRef(ref)!
-  const m = ref.match(/:(\d+)[–-](\d+)/)
-  return m ? [r.b, r.c, r.v, Number(m[2])] : [r.b, r.c, r.v]
-}
+const toTuple = (ref: string): CuratedRef => looseRefTuple(ref)!
 const NT = new Set(['MAT', 'MRK', 'LUK', 'JHN', 'ACT', 'ROM', '1CO', '2CO', 'GAL', 'EPH', 'PHP', 'COL', '1TH', '2TH', '1TI', '2TI', 'TIT', 'PHM', 'HEB', 'JAS', '1PE', '2PE', '1JN', '2JN', '3JN', 'JUD', 'REV'])
 
 interface PF { id: string; prophecyRef: string; fulfillmentRef: string; note: string }
@@ -55,6 +51,9 @@ test('hymns: 20+, unique ids, public-domain years, sized fields, curly apostroph
     expect(h.year).toBeLessThanOrEqual(1928)
     expect(h.stanza.length).toBeGreaterThanOrEqual(100)
     expect(h.stanza.length).toBeLessThanOrEqual(500)
+    // Line budget: 7+ source lines double-wrap on a 375px card and push the
+    // story/RefButton below the fold (measured in the round B final review).
+    expect(h.stanza.split('\n').length, `${h.id} stanza too many lines`).toBeLessThanOrEqual(6)
     expect(h.story.length).toBeGreaterThanOrEqual(80)
     expect(h.story.length).toBeLessThanOrEqual(400)
     expect(h.title.length).toBeGreaterThan(2)

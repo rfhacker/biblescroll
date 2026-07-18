@@ -5,7 +5,7 @@
     "author": "John Newton",
     "year": 1779,
     "stanza": "Amazing grace! How sweet the sound,\nThat saved a wretch like me!\nI once was lost, but now am found,\nWas blind, but now I see.",
-    "story": "John Newton had captained slave ships before a violent storm at sea in 1748 turned him toward faith; he later became an Anglican pastor in Olney, England. He wrote this hymn’s words for a New Year’s Day sermon in 1773, reflecting on his own rescue from a life he called wretched.",
+    "story": "John Newton was a sailor in the Atlantic slave trade when a violent storm at sea in 1748 turned him toward faith; he captained slave ships for several more years before eventually becoming an Anglican pastor in Olney, England. He wrote this hymn’s words for a New Year’s Day sermon in 1773, reflecting on his own rescue from a life he called wretched.",
     "ref": "Ephesians 2:8"
   },
   {
@@ -23,7 +23,7 @@
     "author": "Thomas O. Chisholm",
     "year": 1923,
     "stanza": "Great is Thy faithfulness, O God my Father,\nThere is no shadow of turning with Thee;\nThou changest not, Thy compassions, they fail not,\nAs Thou hast been, Thou forever wilt be.",
-    "story": "Thomas Chisholm was a Kentucky schoolteacher and pastor who wrote the words late in life, not after any dramatic crisis but as a quiet reflection on God’s steady provision through an ordinary, modest income. He sent the poem to composer William Runyan, who set it to music in 1923.",
+    "story": "Thomas Chisholm was a Kentucky schoolteacher and pastor who wrote the words in his fifties, not after any dramatic crisis but as a quiet reflection on God’s steady provision through an ordinary, modest income. He sent the poem to composer William Runyan, who set it to music in 1923.",
     "ref": "Lamentations 3:23"
   },
   {
@@ -41,13 +41,13 @@
     "author": "Reginald Heber",
     "year": 1826,
     "stanza": "Holy, holy, holy! Lord God Almighty!\nEarly in the morning our song shall rise to Thee;\nHoly, holy, holy! Merciful and mighty!\nGod in three Persons, blessed Trinity!",
-    "story": "Reginald Heber wrote the hymn for Trinity Sunday while serving as a parish vicar in Shropshire, England, and it was first published in 1826, the year he died as Bishop of Calcutta. He died in India in 1826, and his widow published the hymn posthumously the following year in a collection of his works.",
+    "story": "Reginald Heber wrote the hymn for Trinity Sunday while serving as a parish vicar in Shropshire, England, and it was first published in 1826, the year he died in India as Bishop of Calcutta. His widow included it the following year in a posthumous collection of his hymns.",
     "ref": "Revelation 4:8"
   },
   {
     "id": "hy006",
     "title": "How Firm a Foundation",
-    "author": "John Rippon (attributed to “K”)",
+    "author": "Unknown (“K” in Rippon’s Selection)",
     "year": 1787,
     "stanza": "How firm a foundation, ye saints of the Lord,\nIs laid for your faith in His excellent Word!\nWhat more can He say than to you He hath said,\nTo you who for refuge to Jesus have fled?",
     "story": "The hymn first appeared in John Rippon’s 1787 hymnal, credited only to a mysterious signature, “K,” whose identity scholars still debate. Biographers record that Andrew Jackson asked to have it sung at his bedside in the days before his death in 1845.",
@@ -77,7 +77,7 @@
     "author": "Joseph Scriven",
     "year": 1855,
     "stanza": "What a friend we have in Jesus,\nAll our sins and griefs to bear!\nWhat a privilege to carry\nEverything to God in prayer!",
-    "story": "Joseph Scriven wrote the poem to comfort his mother in Ireland after grief struck his own life in Canada: his first fiancee drowned the night before their wedding, and years later a second engagement ended when his bride-to-be died of illness before they could marry.",
+    "story": "Joseph Scriven wrote the poem to comfort his mother in Ireland after repeated grief in his own life: his first fiancée drowned in Ireland the night before their wedding, and years later in Canada a second engagement ended when his bride-to-be died of illness before they could marry.",
     "ref": "Philippians 4:6"
   },
   {
@@ -94,7 +94,7 @@
     "title": "All Creatures of Our God and King",
     "author": "St. Francis of Assisi (trans. William H. Draper)",
     "year": 1919,
-    "stanza": "All creatures of our God and King,\nLift up your voice and with us sing:\nAlleluia! Alleluia!\nThou burning sun with golden beam,\nThou silver moon with softer gleam,\nO praise Him! O praise Him!\nAlleluia! Alleluia! Alleluia!",
+    "stanza": "All creatures of our God and King,\nLift up your voice and with us sing:\nAlleluia! Alleluia!\nThou burning sun with golden beam,",
     "story": "The words descend from Francis of Assisi’s “Canticle of the Sun,” composed near the end of his life around 1225 while he was gravely ill and nearly blind. William Draper paraphrased it into English for a children’s Whitsuntide festival in Leeds in 1919.",
     "ref": "Psalms 148:3"
   },
@@ -103,8 +103,8 @@
     "title": "Come Thou Fount of Every Blessing",
     "author": "Robert Robinson",
     "year": 1758,
-    "stanza": "Come, Thou Fount of every blessing,\nTune my heart to sing Thy grace;\nStreams of mercy, never ceasing,\nCall for songs of loudest praise.\nTeach me some melodious sonnet,\nSung by flaming tongues above;\nPraise the mount—I’m fixed upon it—\nMount of Thy redeeming love.",
-    "story": "Robert Robinson wrote the hymn at about age twenty-two, not long after his conversion under the preaching of George Whitefield. His biographers tell that in later years he grew troubled in his faith, and wept upon hearing a stranger in a carriage sing his own hymn back to him.",
+    "stanza": "Come, Thou Fount of every blessing,\nTune my heart to sing Thy grace;\nStreams of mercy, never ceasing,\nCall for songs of loudest praise.",
+    "story": "Robert Robinson wrote the hymn at about age twenty-two, not long after his conversion under the preaching of George Whitefield. An often-repeated but unverifiable story tells that in later years he drifted in his faith, and wept upon hearing a stranger in a carriage quote his own hymn back to him.",
     "ref": "1 Samuel 7:12"
   },
   {
@@ -167,7 +167,7 @@
     "author": "Charles Wesley",
     "year": 1739,
     "stanza": "O for a thousand tongues to sing\nMy great Redeemer’s praise,\nThe glories of my God and King,\nThe triumphs of His grace!",
-    "story": "Charles Wesley wrote the hymn to mark the first anniversary of his own conversion on May 21, 1739. Wesley scholars often trace its opening line to a comment by the Moravian leader Peter Bohler, who once said he would praise God with a thousand tongues if he had them.",
+    "story": "Charles Wesley wrote the hymn to mark the first anniversary of his conversion of May 21, 1738. Wesley scholars often trace its opening line to a comment by the Moravian leader Peter Bohler, who once said he would praise God with a thousand tongues if he had them.",
     "ref": "Psalms 103:1"
   },
   {
@@ -176,7 +176,7 @@
     "author": "Frances Ridley Havergal",
     "year": 1874,
     "stanza": "Take my life, and let it be\nConsecrated, Lord, to Thee;\nTake my moments and my days,\nLet them flow in ceaseless praise.",
-    "story": "Frances Havergal wrote the hymn in a single sitting in 1874 after a personal season of renewed devotion, during a visit in a house where she prayed for every person present to come to faith. Her sister’s memoir of her records that all ten short couplets came in one evening.",
+    "story": "Frances Havergal wrote the hymn in a single sitting in 1874 after a personal season of renewed devotion, during a visit in a house where she prayed for every person present to come to faith. Her sister’s memoir of her records that Her sister’s memoir of her records that its twelve short couplets came in one evening.",
     "ref": "1 Corinthians 6:20"
   },
   {
@@ -184,8 +184,8 @@
     "title": "Turn Your Eyes upon Jesus",
     "author": "Helen H. Lemmel",
     "year": 1922,
-    "stanza": "O soul, are you weary and troubled?\nNo light in the darkness you see?\nThere’s a light for a look at the Savior,\nAnd life more abundant and free!\nTurn your eyes upon Jesus,\nLook full in His wonderful face,\nAnd the things of earth will grow strangely dim,\nIn the light of His glory and grace.",
-    "story": "Helen Lemmel wrote both words and music in 1922 after reading a small missionary tract containing the line “turn your eyes upon Jesus, look full in His face, and the things of earth will grow strangely dim.” She said the tune came to her almost as quickly as the phrase itself.",
+    "stanza": "O soul, are you weary and troubled?\nNo light in the darkness you see?\nThere’s a light for a look at the Savior,\nAnd life more abundant and free!",
+    "story": "Helen Lemmel wrote both words and music in 1922 after reading a missionary tract that urged readers to turn their eyes upon Jesus and find the things of earth taking on a strange new dimness. She said the tune came to her almost as quickly as the phrase itself.",
     "ref": "Hebrews 12:2"
   }
 ]

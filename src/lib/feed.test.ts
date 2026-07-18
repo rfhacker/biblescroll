@@ -81,7 +81,8 @@ test('verse cards are ~70% curated', () => {
 })
 
 test('themeFor rotates every cycle slot through all 5 themes across cycles', () => {
-  // 26-slot cycle; a plain i % 5 would pin each non-verse slot to one theme forever.
+  // Every slot must drift through all 5 themes across cycles — a plain
+  // i % 5 pins slots forever whenever the cycle length divides by 5.
   for (let slot = 0; slot < 26; slot++) {
     const themes = new Set(Array.from({ length: 5 }, (_, c) => themeFor(slot + c * 26)))
     expect(themes.size).toBe(5)
