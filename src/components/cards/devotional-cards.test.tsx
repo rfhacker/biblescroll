@@ -30,11 +30,11 @@ test('favorites accept whosaid/continue/names kinds', async () => {
   toggleFavorite({ kind: 'trivia', id: 'x-trivia', title: 't', body: 'b' })
   expect(isFavorite('trivia', 'x-trivia')).toBe(true)
   // Then add new kind favorites
-  for (const kind of ['whosaid', 'continue', 'names', 'prophecy', 'hymn', 'timeline'] as const) {
+  for (const kind of ['whosaid', 'continue', 'names', 'prophecy', 'hymn', 'timeline', 'word'] as const) {
     toggleFavorite({ kind, id: `x-${kind}`, title: 't', body: 'b' })
     expect(isFavorite(kind, `x-${kind}`)).toBe(true)
   }
   // Verify the trivia favorite is still there
   expect(isFavorite('trivia', 'x-trivia')).toBe(true)
-  expect(getFavorites()).toHaveLength(7)
+  expect(getFavorites()).toHaveLength(8)
 })

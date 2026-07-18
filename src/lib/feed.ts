@@ -1,9 +1,9 @@
 import { shuffledRange } from './rng'
 
-export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number; whosaid: number; continue: number; prayer: number; names: number; prophecy: number; hymn: number; timeline: number }
+export interface PoolSizes { curated: number; corpus: number; trivia: number; fact: number; map: number; memory: number; whosaid: number; continue: number; prayer: number; names: number; prophecy: number; hymn: number; timeline: number; word: number }
 export interface FeedItem {
-  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names' | 'prophecy' | 'hymn' | 'timeline'
-  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names' | 'prophecy' | 'hymn' | 'timeline'
+  kind: 'verse' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names' | 'prophecy' | 'hymn' | 'timeline' | 'word'
+  pool: 'curated' | 'corpus' | 'trivia' | 'fact' | 'map' | 'memory' | 'whosaid' | 'continue' | 'prayer' | 'names' | 'prophecy' | 'hymn' | 'timeline' | 'word'
   poolIndex: number
   votd?: boolean
 }
@@ -12,9 +12,9 @@ const CYCLE = [
   'verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid',
   'verse', 'prophecy', 'verse', 'fact', 'verse', 'trivia', 'verse', 'memory',
   'verse', 'continue', 'verse', 'hymn', 'verse', 'prayer', 'verse', 'names',
-  'verse', 'timeline',
+  'verse', 'timeline', 'verse', 'word',
 ] as const
-const PER_CYCLE = { verse: 13, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1, prophecy: 1, hymn: 1, timeline: 1 } as const
+const PER_CYCLE = { verse: 14, fact: 2, trivia: 2, map: 1, memory: 1, whosaid: 1, continue: 1, prayer: 1, names: 1, prophecy: 1, hymn: 1, timeline: 1, word: 1 } as const
 
 // Card background theme. The per-cycle shift keeps every slot's theme
 // drifting across cycles regardless of CYCLE.length: with plain i % 5, any

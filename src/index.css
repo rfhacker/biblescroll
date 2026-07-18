@@ -84,6 +84,9 @@ body {
 .timeline-svg { width: 100%; margin: 0.6rem 0 0.9rem; }
 .timeline-era { font-size: 11px; fill: var(--text-dim); font-family: var(--sans); }
 .timeline-when { font-size: 13px; fill: var(--accent); font-family: var(--sans); letter-spacing: 0.04em; }
+.word-original { font-family: var(--serif); font-size: 2.4rem; margin-bottom: 0.5rem; }
+.word-byline { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 0.7rem; }
+.word-gloss { color: var(--accent); font-family: var(--serif); font-size: 1.15rem; margin-bottom: 0.8rem; }
 .read-more { background: none; border: none; color: var(--accent); font-size: 1rem; margin-top: 0.6rem; cursor: pointer; padding: 0.6rem 0.2rem; }
 .card-actions { position: absolute; bottom: calc(2.2rem + env(safe-area-inset-bottom)); right: 1.6rem; display: flex; gap: 0.9rem; }
 .act {

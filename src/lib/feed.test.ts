@@ -1,15 +1,15 @@
 import { cardAt, type PoolSizes, themeFor } from './feed'
 
-const SIZES: PoolSizes = { curated: 280, corpus: 31103, trivia: 150, fact: 100, map: 14, memory: 280, whosaid: 60, continue: 50, prayer: 40, names: 25, prophecy: 40, hymn: 20, timeline: 25 }
+const SIZES: PoolSizes = { curated: 280, corpus: 31103, trivia: 150, fact: 100, map: 14, memory: 280, whosaid: 60, continue: 50, prayer: 40, names: 25, prophecy: 40, hymn: 20, timeline: 25, word: 50 }
 const at = (i: number) => cardAt(i, 'test-seed', SIZES, 7)
 
 test('card 0 is the verse of the day', () => {
   expect(at(0)).toEqual({ kind: 'verse', pool: 'curated', poolIndex: 7, votd: true })
 })
 
-test('cards 1..26 follow the interleave cycle', () => {
-  const kinds = Array.from({ length: 26 }, (_, j) => at(j + 1).kind)
-  expect(kinds).toEqual(['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid', 'verse', 'prophecy', 'verse', 'fact', 'verse', 'trivia', 'verse', 'memory', 'verse', 'continue', 'verse', 'hymn', 'verse', 'prayer', 'verse', 'names', 'verse', 'timeline'])
+test('cards 1..28 follow the interleave cycle', () => {
+  const kinds = Array.from({ length: 28 }, (_, j) => at(j + 1).kind)
+  expect(kinds).toEqual(['verse', 'fact', 'verse', 'trivia', 'verse', 'map', 'verse', 'whosaid', 'verse', 'prophecy', 'verse', 'fact', 'verse', 'trivia', 'verse', 'memory', 'verse', 'continue', 'verse', 'hymn', 'verse', 'prayer', 'verse', 'names', 'verse', 'timeline', 'verse', 'word'])
 })
 
 test('deterministic for same seed, different for different seed', () => {
@@ -56,6 +56,15 @@ test('no prophecy repeats until the prophecy pool is exhausted', () => {
   expect(new Set(seen).size).toBe(SIZES.prophecy)
 })
 
+test('no word repeats until the word pool is exhausted', () => {
+  const seen: number[] = []
+  for (let i = 1; seen.length < SIZES.word; i++) {
+    const c = at(i)
+    if (c.kind === 'word') seen.push(c.poolIndex)
+  }
+  expect(new Set(seen).size).toBe(SIZES.word)
+})
+
 test('map pool reshuffles each epoch (still covers all items)', () => {
   const first: number[] = [], second: number[] = []
   for (let i = 1; second.length < SIZES.map; i++) {
@@ -83,8 +92,8 @@ test('verse cards are ~70% curated', () => {
 test('themeFor rotates every cycle slot through all 5 themes across cycles', () => {
   // Every slot must drift through all 5 themes across cycles — a plain
   // i % 5 pins slots forever whenever the cycle length divides by 5.
-  for (let slot = 0; slot < 26; slot++) {
-    const themes = new Set(Array.from({ length: 5 }, (_, c) => themeFor(slot + c * 26)))
+  for (let slot = 0; slot < 28; slot++) {
+    const themes = new Set(Array.from({ length: 5 }, (_, c) => themeFor(slot + c * 28)))
     expect(themes.size).toBe(5)
   }
 })

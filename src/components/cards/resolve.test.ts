@@ -121,3 +121,13 @@ test('timeline kind renders its distinct kicker', () => {
   render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
   expect(screen.getByText('Biblical Timeline')).toBeInTheDocument()
 })
+
+test('word kind renders its distinct kicker', () => {
+  const item = {
+    kind: 'word' as const,
+    pool: 'word' as const,
+    poolIndex: 0,
+  }
+  render(resolveCard(item, store, 0, () => {}) as React.ReactElement)
+  expect(screen.getByText('Word Study')).toBeInTheDocument()
+})

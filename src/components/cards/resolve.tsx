@@ -15,6 +15,7 @@ import { NamesCard } from './NamesCard'
 import { ProphecyCard } from './ProphecyCard'
 import { HymnCard } from './HymnCard'
 import { TimelineCard } from './TimelineCard'
+import { WordCard } from './WordCard'
 import { BOOKS } from '../../content/books'
 import curated from '../../content/curated.json'
 import trivia from '../../content/trivia.json'
@@ -27,7 +28,8 @@ import names from '../../content/names.json'
 import prophecy from '../../content/prophecy.json'
 import hymns from '../../content/hymns.json'
 import timeline from '../../content/timeline.json'
-import type { CuratedRef, TriviaItem, FactItem, MapStory, WhoSaidItem, ContinueItem, PrayerItem, NamesItem, ProphecyItem, HymnItem, TimelineItem } from '../../content/types'
+import words from '../../content/words.json'
+import type { CuratedRef, TriviaItem, FactItem, MapStory, WhoSaidItem, ContinueItem, PrayerItem, NamesItem, ProphecyItem, HymnItem, TimelineItem, WordItem } from '../../content/types'
 
 export const POOL_SIZES = {
   curated: (curated as CuratedRef[]).length,
@@ -42,6 +44,7 @@ export const POOL_SIZES = {
   prophecy: (prophecy as ProphecyItem[]).length,
   hymn: (hymns as HymnItem[]).length,
   timeline: (timeline as TimelineItem[]).length,
+  word: (words as WordItem[]).length,
 }
 
 // A memory-card puzzle renders its full curated text plus up to 10 word-bank
@@ -106,5 +109,7 @@ export function resolveCard(item: FeedItem, verses: VerseStore, theme: number, o
       return <HymnCard item={(hymns as HymnItem[])[item.poolIndex]} theme={theme} />
     case 'timeline':
       return <TimelineCard item={(timeline as TimelineItem[])[item.poolIndex]} theme={theme} />
+    case 'word':
+      return <WordCard item={(words as WordItem[])[item.poolIndex]} theme={theme} />
   }
 }

@@ -7,7 +7,7 @@ import { parseRefLabel } from '../content/verseStore'
 const GROUPS: [CardKind, string][] = [
   ['verse', 'Verses'], ['trivia', 'Trivia'], ['fact', 'Facts'], ['map', 'Maps'],
   ['whosaid', 'Who said it?'], ['continue', 'Continue the verse'], ['names', 'Names of God'],
-  ['prophecy', 'Prophecy & Fulfillment'], ['hymn', 'Hymn Stories'], ['timeline', 'Timeline'],
+  ['prophecy', 'Prophecy & Fulfillment'], ['hymn', 'Hymn Stories'], ['timeline', 'Timeline'], ['word', 'Word Studies'],
 ]
 
 export function Favorites({ onClose }: { onClose: () => void }) {

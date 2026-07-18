@@ -95,7 +95,18 @@ export interface TimelineItem {
   ref: string
 }
 
-export type CardKind = 'verse' | 'trivia' | 'fact' | 'map' | 'whosaid' | 'continue' | 'names' | 'prophecy' | 'hymn' | 'timeline'
+export interface WordItem {
+  id: string
+  strongs: string
+  word: string
+  translit: string
+  language: 'Hebrew' | 'Greek' | 'Aramaic'
+  gloss: string
+  body: string
+  refs: string[]
+}
+
+export type CardKind = 'verse' | 'trivia' | 'fact' | 'map' | 'whosaid' | 'continue' | 'names' | 'prophecy' | 'hymn' | 'timeline' | 'word'
 
 export interface Favorite {
   kind: CardKind
