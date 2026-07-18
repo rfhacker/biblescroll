@@ -19,8 +19,12 @@ test('words: 48+, unique ids, valid shapes', () => {
     expect(w.gloss.length).toBeGreaterThanOrEqual(10)
     expect(w.gloss.length).toBeLessThanOrEqual(60)
     expect(w.body.length).toBeGreaterThanOrEqual(80)
-    expect(w.body.length).toBeLessThanOrEqual(400)
+    // 320-char ceiling: a 400-char body + 60-char gloss + 3 refs measures
+    // ~514px vs the 515px content box at 375x667 — zero slack (final review).
+    expect(w.body.length).toBeLessThanOrEqual(320)
     expect(w.body.includes("'"), `${w.id} straight apostrophe`).toBe(false)
+    expect(w.gloss.includes("'"), `${w.id} straight apostrophe in gloss`).toBe(false)
+    expect(w.translit.includes("'"), `${w.id} straight apostrophe in translit`).toBe(false)
     expect(w.refs.length).toBeGreaterThanOrEqual(1)
     expect(w.refs.length).toBeLessThanOrEqual(3)
   }

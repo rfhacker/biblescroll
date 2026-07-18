@@ -64,7 +64,7 @@ Full chain of custody per the same prologue:
   (`greek/StrongsGreekDictionaryXML_1.4/README.txt`, dated 2007-09-14).
 
 5,624 entries, Strong's numbers G1-G5624 contiguous, no gaps (verified by
-parsing). 101 of these (e.g. G302, G687, G814, G3203-3221, ...) are numbers
+parsing). 101 of these (e.g. G2717, G3203-3221) are numbers
 Strong's dictionary itself marks "Not Used" (reserved/skipped numbers with no
 headword) -- these are vendored as empty-lemma placeholder entries so the
 key range stays contiguous; see Normalization below.
