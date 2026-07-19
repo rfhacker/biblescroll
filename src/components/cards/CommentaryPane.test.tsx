@@ -31,7 +31,8 @@ test('inactive pane fetches and renders nothing', () => {
 test('active pane loads and shows source, covered range, and paragraphs', async () => {
   mockFetchOk()
   render(<CommentaryPane book="JHN" c={3} v={16} active={true} />)
-  await waitFor(() => expect(screen.getByText(/Matthew Henry \(Concise\) · John 3:14–18/)).toBeInTheDocument())
+  // Default source is the unabridged Henry (Full).
+  await waitFor(() => expect(screen.getByText(/Matthew Henry \(Complete\) · John 3:14–18/)).toBeInTheDocument())
   expect(screen.getByText('Bible Commentary')).toBeInTheDocument()
   expect(screen.getByText(/herein is love indeed/)).toBeInTheDocument()
   expect(screen.getByText(/Second paragraph/)).toBeInTheDocument()
@@ -40,19 +41,22 @@ test('active pane loads and shows source, covered range, and paragraphs', async 
 test('three toggle chips render with aria-pressed reflecting the selected source', async () => {
   mockFetchOk()
   render(<CommentaryPane book="1CH" c={3} v={16} active={true} />)
-  await waitFor(() => screen.getByText(/Matthew Henry \(Concise\)/))
+  await waitFor(() => screen.getByText(/Matthew Henry \(Complete\)/))
   const concise = screen.getByRole('button', { name: 'Concise' })
   const full = screen.getByRole('button', { name: 'Full' })
   const jfb = screen.getByRole('button', { name: 'JFB' })
-  expect(concise).toHaveAttribute('aria-pressed', 'true')
-  expect(full).toHaveAttribute('aria-pressed', 'false')
+  expect(full).toHaveAttribute('aria-pressed', 'true')
+  expect(concise).toHaveAttribute('aria-pressed', 'false')
   expect(jfb).toHaveAttribute('aria-pressed', 'false')
+  // Chip order: Full, then Concise, then JFB.
+  const chips = screen.getAllByRole('button').map((b) => b.textContent)
+  expect(chips.slice(0, 3)).toEqual(['Full', 'Concise', 'JFB'])
 })
 
 test('toggle switches source, persists, and refetches', async () => {
   const spy = mockFetchOk()
   render(<CommentaryPane book="GEN" c={3} v={16} active={true} />)
-  await waitFor(() => screen.getByText(/Matthew Henry \(Concise\) · Genesis/))
+  await waitFor(() => screen.getByText(/Matthew Henry \(Complete\) · Genesis/))
   await userEvent.click(screen.getByRole('button', { name: 'JFB' }))
   await waitFor(() => expect(screen.getByText(/Jamieson-Fausset-Brown/)).toBeInTheDocument())
   expect(spy.mock.calls.some(([url]) => String(url).includes('/jfb/'))).toBe(true)

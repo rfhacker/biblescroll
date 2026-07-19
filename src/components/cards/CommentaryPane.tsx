@@ -9,7 +9,7 @@ import { getCommentarySource, setCommentarySource } from '../../lib/store'
 
 type Status = 'loading' | 'ready' | 'failed'
 
-const SOURCES: CommentarySource[] = ['mhcc', 'mhc', 'jfb']
+const SOURCES: CommentarySource[] = ['mhc', 'mhcc', 'jfb']
 const TOGGLE_LABELS: Record<CommentarySource, string> = { mhcc: 'Concise', mhc: 'Full', jfb: 'JFB' }
 
 export function CommentaryPane({ book, c, v, active }: {

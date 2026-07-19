@@ -111,7 +111,7 @@ test('commentary source preference defaults, persists, and rejects garbage', asy
   vi.resetModules()
   const store = await import('./store')
   localStorage.clear()
-  expect(store.getCommentarySource()).toBe('mhcc')
+  expect(store.getCommentarySource()).toBe('mhc') // Full is the default
   store.setCommentarySource('jfb')
   expect(store.getCommentarySource()).toBe('jfb')
 
@@ -120,7 +120,7 @@ test('commentary source preference defaults, persists, and rejects garbage', asy
   localStorage.setItem('bs:commentary', '"latin-vulgate"')
   vi.resetModules()
   const store2 = await import('./store')
-  expect(store2.getCommentarySource()).toBe('mhcc')
+  expect(store2.getCommentarySource()).toBe('mhc')
 })
 
 test('commentary source preference accepts mhc and round-trips', async () => {
@@ -135,8 +135,8 @@ test('commentary source preference accepts mhc and round-trips', async () => {
   const store2 = await import('./store')
   expect(store2.getCommentarySource()).toBe('mhc')
 
-  // Garbage still falls back to 'mhcc', not 'mhc'.
-  localStorage.setItem('bs:commentary', '"latin-vulgate"')
+  // An explicit stored 'mhcc' choice is still honored.
+  localStorage.setItem('bs:commentary', '"mhcc"')
   vi.resetModules()
   const store3 = await import('./store')
   expect(store3.getCommentarySource()).toBe('mhcc')
